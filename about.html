@@ -1,3 +1,608 @@
+
+
+
+1. CSS HERO MỚI (full màn hình + responsive 3 thiết bị)
+
+👉 Dán thay thế đoạn CSS .hero / .hero-content / mini-app / card hero trước đó bằng đoạn này:
+
+/* --- 4. HERO SECTION FULL SCREEN --- */
+.hero {
+    /* Full màn hình trên mọi thiết bị */
+    min-height: 100vh;
+    min-height: 100svh; /* Hỗ trợ mobile có thanh điều hướng */
+    padding-top: 150px; /* chừa chỗ cho header nổi */
+    padding-bottom: 40px;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    background: radial-gradient(circle at 50% 0%, rgba(var(--primary-rgb), 0.3), transparent 60%);
+}
+
+.hero .container {
+    width: 100%;
+}
+
+/* Layout 2 cột trên desktop, 1 cột trên tablet/mobile */
+.hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: stretch;
+}
+
+/* Cột bên trái: text + mini app */
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    background: rgba(var(--secondary-rgb), 0.1);
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(var(--secondary-rgb), 0.25);
+}
+
+.hero-title {
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.hero-title span {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-sub {
+    font-size: 1.02rem;
+    color: var(--text-sub);
+    max-width: 540px;
+}
+
+.hero-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.hero-bullet {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--glass-border);
+    color: var(--text-sub);
+}
+
+/* Mini app nút nhanh */
+.mini-app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    padding: 16px 18px;
+}
+
+.app-icon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 6px;
+    border-radius: 14px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.app-icon-btn:hover {
+    background: var(--surface);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.app-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-body), var(--surface));
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.app-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* Cột bên phải: Form + 6 card */
+.hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Form tính tiền */
+.hero-form {
+    border-radius: 20px;
+    padding: 18px 18px 16px;
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}
+
+.hero-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hero-form-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.hero-form-note {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+.hero-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    margin-top: 6px;
+}
+
+.hero-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+}
+
+.hero-field label {
+    font-weight: 500;
+}
+
+.hero-field small {
+    font-size: 0.75rem;
+    color: var(--text-sub);
+}
+
+/* Input style dùng chung */
+.hero-input,
+.hero-select {
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: rgba(255,255,255,0.9);
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    outline: none;
+    transition: var(--transition);
+}
+
+.hero-input:focus,
+.hero-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px rgba(var(--primary-rgb), 0.2);
+}
+
+[data-theme="dark"] .hero-input,
+[data-theme="dark"] .hero-select {
+    background: rgba(21,21,25,0.95);
+    color: #f5f5f7;
+}
+
+/* Hàng cuối: result + nút gửi */
+.hero-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--glass-border);
+    flex-wrap: wrap;
+}
+
+.hero-price-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hero-price-label {
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+.hero-price-value {
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--primary);
+}
+
+.hero-btn-main {
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: #fff;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.hero-btn-main i {
+    font-size: 0.85rem;
+}
+
+/* Lưới 6 card giá + cọc */
+.hero-plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.hero-plan-card {
+    border-radius: 14px;
+    padding: 10px 10px 9px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid var(--glass-border);
+    font-size: 0.78rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+[data-theme="dark"] .hero-plan-card {
+    background: rgba(21,21,25,0.96);
+}
+
+.hero-plan-label {
+    font-weight: 600;
+}
+
+.hero-plan-price {
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.hero-plan-note {
+    font-size: 0.7rem;
+    color: var(--text-sub);
+}
+
+/* Responsive cho tablet & mobile */
+@media (max-width: 1024px) {
+    .hero {
+        padding-top: 140px;
+        padding-bottom: 30px;
+    }
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    /* Form nhảy lên trên cho dễ bấm trên màn nhỏ */
+    .hero-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 130px;
+    }
+    .mini-app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 14px;
+    }
+    .hero-plans-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-layout {
+        gap: 20px;
+    }
+    .hero-plans-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+⸻
+
+2. HTML HERO MỚI (form + 6 card + giá chuẩn)
+
+👉 Thay toàn bộ <section class="hero">...</section> hiện tại bằng đoạn này:
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-layout fade-in-up">
+
+            <!-- BÊN TRÁI: TEXT + MINI APP -->
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <span class="material-symbols-rounded">verified</span>
+                    Uy tín thuê xe máy tại Hà Nội
+                </div>
+
+                <h1 class="hero-title">
+                    Thuê xe máy<br>
+                    <span>Hoàn Kiếm & Hà Nội</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Giao xe tận nơi 20–40 phút, thủ tục đơn giản, xe mới – máy êm, hỗ trợ 24/7 cho khách du lịch, đi công tác và người ở dài ngày.
+                </p>
+
+                <div class="hero-bullets">
+                    <div class="hero-bullet">
+                        <i class="fa-solid fa-clock"></i> Giao xe nhanh 20–40 phút
+                    </div>
+                    <div class="hero-bullet">
+                        <i class="fa-solid fa-id-card"></i> Chỉ cần CCCD / Passport
+                    </div>
+                    <div class="hero-bullet">
+                        <i class="fa-solid fa-helmet-safety"></i> Tặng 2 mũ + áo mưa
+                    </div>
+                </div>
+
+                <div class="mini-app-grid">
+                    <a href="tel:0942467674" class="app-icon-btn" aria-label="Gọi ngay 0942.467.674">
+                        <div class="app-icon-box">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span class="app-label">Gọi ngay</span>
+                    </a>
+                    <a href="https://zalo.me/0942467674" class="app-icon-btn" target="_blank" rel="noopener" aria-label="Chat Zalo với Nguyễn Tú">
+                        <div class="app-icon-box" style="color:#0068FF">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <span class="app-label">Chat Zalo</span>
+                    </a>
+                    <a href="banggia.html" class="app-icon-btn">
+                        <div class="app-icon-box" style="color:#FF9500">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <span class="app-label">Bảng giá</span>
+                    </a>
+                    <a href="#diadiem" class="app-icon-btn">
+                        <div class="app-icon-box" style="color:#34C759">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <span class="app-label">Địa điểm</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BÊN PHẢI: FORM + 6 CARD GIÁ -->
+            <div class="hero-right">
+
+                <!-- FORM TÍNH TIỀN -->
+                <div class="hero-form glass">
+                    <div class="hero-form-header">
+                        <div>
+                            <div class="hero-form-title">Ước tính chi phí thuê xe</div>
+                            <div class="hero-form-note">Giá đã bao gồm xe + mũ bảo hiểm, chưa bao gồm xăng</div>
+                        </div>
+                        <span style="font-size:0.75rem; color:var(--text-sub);">
+                            Tạm tính • Không phải đặt cọc online
+                        </span>
+                    </div>
+
+                    <div class="hero-form-grid">
+                        <div class="hero-field">
+                            <label>Loại xe</label>
+                            <select class="hero-select" data-hero-field="type">
+                                <option value="manual">Xe số – 150.000đ/ngày</option>
+                                <option value="scooter">Xe ga – 200.000đ/ngày</option>
+                            </select>
+                        </div>
+
+                        <div class="hero-field">
+                            <label>Số ngày thuê</label>
+                            <input type="number" min="1" value="1"
+                                   class="hero-input"
+                                   data-hero-field="days">
+                            <small>Từ 1 ngày đến dài hạn</small>
+                        </div>
+
+                        <div class="hero-field">
+                            <label>Thời gian nhận xe</label>
+                            <input type="time" class="hero-input" value="09:00">
+                            <small>Tuỳ chỉnh linh hoạt</small>
+                        </div>
+
+                        <div class="hero-field">
+                            <label>Khu vực giao xe</label>
+                            <select class="hero-select">
+                                <option>Hoàn Kiếm / Phố Cổ</option>
+                                <option>Long Biên / Gia Lâm</option>
+                                <option>Ba Đình / Đống Đa</option>
+                                <option>Tây Hồ / Cầu Giấy</option>
+                                <option>Hà Đông / Thanh Xuân</option>
+                                <option>Khác (trao đổi)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="hero-form-footer">
+                        <div class="hero-price-box">
+                            <span class="hero-price-label">Tạm tính cho chuyến đi</span>
+                            <span class="hero-price-value" data-hero-field="result">150.000 đ</span>
+                            <small style="font-size:0.7rem; color:var(--text-sub);">
+                                Cọc từ 1–5 triệu tuỳ dòng xe, thanh toán khi nhận xe
+                            </small>
+                        </div>
+                        <a href="https://zalo.me/0942467674" class="hero-btn-main" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-bolt"></i>
+                            Chốt xe qua Zalo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6 CARD GIÁ & QUY ƯỚC -->
+                <div class="hero-plans-grid">
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Xe số</div>
+                        <div class="hero-plan-price">150.000đ / ngày</div>
+                        <div class="hero-plan-note">Phù hợp đi xa, tiết kiệm xăng</div>
+                    </div>
+
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Xe ga</div>
+                        <div class="hero-plan-price">200.000đ / ngày</div>
+                        <div class="hero-plan-note">Dễ đi trong phố, êm ái</div>
+                    </div>
+
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Tiền cọc</div>
+                        <div class="hero-plan-price">1–5 triệu</div>
+                        <div class="hero-plan-note">Tuỳ dòng xe & giấy tờ</div>
+                    </div>
+
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Giấy tờ</div>
+                        <div class="hero-plan-note">
+                            CCCD gắn chip / Passport<br>
+                            hoặc thoả thuận thêm
+                        </div>
+                    </div>
+
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Miễn phí kèm theo</div>
+                        <div class="hero-plan-note">
+                            2 mũ bảo hiểm + 1 áo mưa<br>
+                            Hỗ trợ sự cố 24/7
+                        </div>
+                    </div>
+
+                    <div class="hero-plan-card">
+                        <div class="hero-plan-label">Thời gian giao xe</div>
+                        <div class="hero-plan-note">
+                            Nội thành: 20–40 phút<br>
+                            Đặt trước càng sớm càng tốt
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+⸻
+
+3. JS TÍNH TIỀN TỰ ĐỘNG (dựa trên giá bạn cho)
+
+Trong <script defer> (function() { ... })();</script> hiện tại của bạn, hãy:
+	1.	Thêm object HeroCalc trước phần // Init
+	2.	Gọi HeroCalc.init(); cùng với Theme.init(); và UI.init();
+
+Ví dụ, chèn đoạn này trước dòng // Init:
+
+    const HeroCalc = {
+        prices: {
+            manual: 150000,  // Xe số 150k/ngày
+            scooter: 200000  // Xe ga 200k/ngày
+        },
+        init() {
+            const typeEl = document.querySelector('[data-hero-field="type"]');
+            const daysEl = document.querySelector('[data-hero-field="days"]');
+            const resultEl = document.querySelector('[data-hero-field="result"]');
+
+            if (!typeEl || !daysEl || !resultEl) return;
+
+            const update = () => {
+                const type = typeEl.value || 'manual';
+                let days = parseInt(daysEl.value || '1', 10);
+                if (isNaN(days) || days < 1) days = 1;
+
+                const pricePerDay = this.prices[type] || this.prices.manual;
+                const total = pricePerDay * days;
+
+                resultEl.textContent = total.toLocaleString('vi-VN') + ' đ';
+            };
+
+            typeEl.addEventListener('change', update);
+            daysEl.addEventListener('input', update);
+
+            update(); // chạy lần đầu
+        }
+    };
+
+Và ở cuối file JS, chỗ // Init hiện đang là:
+
+    // Init
+    Render.menu();
+    Render.sections();
+    Render.footer();
+    Theme.init();
+    UI.init();
+})();
+
+Sửa thành:
+
+    // Init
+    Render.menu();
+    Render.sections();
+    Render.footer();
+    Theme.init();
+    UI.init();
+    HeroCalc.init();
+})();
+
+
+⸻
+
+Như vậy:
+	•	Hero full-screen trên laptop / tablet / mobile
+	•	Form tự tính tiền đúng giá: xe số 150k, xe ga 200k
+	•	Card bên dưới ghi rõ cọc 1–5 triệu + vài thông tin hỗ trợ.
+
+Nâng cấp hero 
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -1263,3 +1868,4 @@
 </script>
 </body>
 </html>
+
