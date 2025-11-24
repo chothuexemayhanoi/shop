@@ -1,1263 +1,1283 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <!-- Viewport: cho phép zoom, tốt cho UX / accessibility -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<!-- Viewport: cho phép zoom, tốt cho UX / accessibility -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+code
+Code
 
-    <title>Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú</title>
-    <meta name="description" content="Thuê xe máy Hà Nội giá rẻ, uy tín – Nguyễn Tú. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, cọc nhẹ, hỗ trợ 24/7.">
+download
 
-    <!-- Theme color: sẽ được JS cập nhật theo dark / light -->
-    <meta name="theme-color" content="#05060a" id="theme-color-meta">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+content_copy
 
-    <!-- Open Graph & Meta -->
-    <meta property="og:title" content="Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú">
-    <meta property="og:description" content="Thuê xe máy Hà Nội giá rẻ, uy tín. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, hỗ trợ 24/7.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thuexemaynguyentu.com/">
-    <meta property="og:image" content="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/BANNER-THUE-XE-MAY-1.png">
-    <meta property="og:image:alt" content="Thuê xe máy Hoàn Kiếm - Nguyễn Tú">
+expand_less
+<title>Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú</title>
+<meta name="description" content="Thuê xe máy Hà Nội giá rẻ, uy tín – Nguyễn Tú. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, cọc nhẹ, hỗ trợ 24/7.">
 
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Theme color: Đã cố định màu tối để Safari hiển thị đẹp, không đổi theo JS -->
+<meta name="theme-color" content="#05060a">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <style>
-        /* --- 1. CORE VARIABLES --- */
-        :root {
-            --primary: #0A84FF;
-            --primary-rgb: 10, 132, 255;
-            --secondary: #00C49A;
-            --secondary-rgb: 0, 196, 154;
-            --bg-body: #f9fafa;
-            --text-main: #1c1c1e;
-            --text-sub: #6e6e73;
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(0, 0, 0, 0.06);
-            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
-            --surface: #ffffff;
+<!-- Open Graph & Meta -->
+<meta property="og:title" content="Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú">
+<meta property="og:description" content="Thuê xe máy Hà Nội giá rẻ, uy tín. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, hỗ trợ 24/7.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thuexemaynguyentu.com/">
+<meta property="og:image" content="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/BANNER-THUE-XE-MAY-1.png">
+<meta property="og:image:alt" content="Thuê xe máy Hoàn Kiếm - Nguyễn Tú">
 
-            --radius-sm: 12px;
-            --radius-md: 20px;
-            --radius-lg: 32px;
-            --font-main: 'Inter', sans-serif;
-            --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            --safe-area-inset-bottom: env(safe-area-inset-bottom);
-        }
+<!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        [data-theme="dark"] {
-            --bg-body: #05060a;
-            --text-main: #f5f5f7;
-            --text-sub: #a1a1a6;
-            --glass-bg: rgba(12, 12, 16, 0.9);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
-            --surface: #151519;
-        }
+<style>
+    /* --- 1. CORE VARIABLES --- */
+    :root {
+        --primary: #0A84FF;
+        --primary-rgb: 10, 132, 255;
+        --secondary: #00C49A;
+        --secondary-rgb: 0, 196, 154;
+        --bg-body: #f9fafa;
+        --text-main: #1c1c1e;
+        --text-sub: #6e6e73;
+        --glass-bg: rgba(255, 255, 255, 0.75);
+        --glass-border: rgba(0, 0, 0, 0.06);
+        --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+        --surface: #ffffff;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            -webkit-tap-highlight-color: transparent;
-        }
+        --radius-sm: 12px;
+        --radius-md: 20px;
+        --radius-lg: 32px;
+        --font-main: 'Inter', sans-serif;
+        --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        --safe-area-inset-bottom: env(safe-area-inset-bottom);
+    }
 
-        :focus-visible {
-            outline: 2px solid var(--primary);
-            outline-offset: 2px;
-        }
+    [data-theme="dark"] {
+        --bg-body: #05060a;
+        --text-main: #f5f5f7;
+        --text-sub: #a1a1a6;
+        --glass-bg: rgba(12, 12, 16, 0.9);
+        --glass-border: rgba(255, 255, 255, 0.08);
+        --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+        --surface: #151519;
+    }
 
-        html { scroll-behavior: smooth; font-size: 16px; }
-        body {
-            font-family: var(--font-main);
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-            transition: background-color 0.5s ease, color 0.5s ease;
-            overflow-x: hidden;
-        }
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
 
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        ul { list-style: none; }
-        img { max-width: 100%; height: auto; display: block; }
+    :focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
 
-        /* --- 2. UTILITIES --- */
-        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        .glass {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--glass-shadow);
-        }
-        .section-padding { padding: 80px 0; }
-        .text-center { text-align: center; }
-        .text-gradient {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            display: inline-block;
-        }
-        .flex-center { display: flex; align-items: center; justify-content: center; }
-        .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
-        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-body);
+        color: var(--text-main);
+        line-height: 1.6;
+        transition: background-color 0.5s ease, color 0.5s ease;
+        overflow-x: hidden;
+    }
 
-        /* --- 3. HEADER & MENU --- */
-        .header {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            transition: var(--transition); padding: 10px 0;
-        }
-        .header.scrolled {
-            background: var(--glass-bg); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
 
-        /* LOGO STYLES */
-        .logo {
-            display: flex; align-items: center; gap: 12px; color: var(--text-main);
-            text-decoration: none; user-select: none;
-        }
-        .logo-badge {
-            position: relative; width: 44px; height: 44px; border-radius: 14px; padding: 2px;
-            background: conic-gradient(from 180deg, rgba(var(--primary-rgb), 1), rgba(var(--secondary-rgb), 1), rgba(255, 184, 0, 1), rgba(var(--primary-rgb), 1));
-            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset, 0 8px 20px rgba(0, 0, 0, 0.15);
-            overflow: hidden; animation: spinGradient 10s linear infinite;
-        }
-        .logo-badge-inner {
-            position: relative; width: 100%; height: 100%; border-radius: 12px;
-            background: radial-gradient(circle at 0 0, #ffffff, #f2f2f7 80%);
-            display: flex; align-items: center; justify-content: center; overflow: hidden;
-            animation: spinGradient 10s linear infinite reverse;
-        }
-        .logo-badge-glow {
-            position: absolute; inset: -20%;
-            background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.9), transparent 60%);
-            opacity: 0.6; pointer-events: none; z-index: 2;
-        }
-        .logo-badge-inner img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); z-index: 1; }
-        .logo-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
-        .logo-title { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
-        .logo-subtitle { font-size: 0.75rem; color: var(--text-sub); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
-        @keyframes spinGradient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @media (max-width: 768px) {
-            .logo-title { font-size: 0.95rem; }
-            .logo-subtitle { font-size: 0.7rem; }
-            .logo-badge { width: 38px; height: 38px; border-radius: 12px; }
-            .logo { gap: 10px; }
-        }
+    /* --- 2. UTILITIES --- */
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .glass {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+    }
+    .section-padding { padding: 80px 0; }
+    .text-center { text-align: center; }
+    .text-gradient {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+    }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* DESKTOP NAV – PILL STYLE */
-        .nav-menu {
-            display: flex; align-items: center; gap: 4px; padding: 3px 4px;
-            border-radius: 999px; background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-            border: 1px solid var(--glass-border);
-        }
-        [data-theme="dark"] .nav-menu { background: rgba(22, 22, 24, 0.96); }
+    /* --- 3. HEADER & MENU --- */
+    .header {
+        position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+        transition: var(--transition); padding: 10px 0;
+    }
+    .header.scrolled {
+        background: var(--glass-bg); backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
-        .nav-item {
-            position: relative; padding: 6px 12px; border-radius: 999px;
-            font-size: 0.8rem; font-weight: 500; color: var(--text-sub);
-            cursor: pointer; white-space: nowrap; display: inline-flex;
-            align-items: center; gap: 6px; transition: var(--transition);
-        }
-        .nav-item:hover {
-            color: var(--primary);
-            background: rgba(var(--primary-rgb), 0.06);
-        }
-        .nav-item.has-dropdown i.fa-chevron-down {
-            font-size: 9px; opacity: 0.7;
-        }
+    /* LOGO STYLES */
+    .logo {
+        display: flex; align-items: center; gap: 12px; color: var(--text-main);
+        text-decoration: none; user-select: none;
+    }
+    .logo-badge {
+        position: relative; width: 44px; height: 44px; border-radius: 14px; padding: 2px;
+        background: conic-gradient(from 180deg, rgba(var(--primary-rgb), 1), rgba(var(--secondary-rgb), 1), rgba(255, 184, 0, 1), rgba(var(--primary-rgb), 1));
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset, 0 8px 20px rgba(0, 0, 0, 0.15);
+        overflow: hidden; animation: spinGradient 10s linear infinite;
+    }
+    .logo-badge-inner {
+        position: relative; width: 100%; height: 100%; border-radius: 12px;
+        background: radial-gradient(circle at 0 0, #ffffff, #f2f2f7 80%);
+        display: flex; align-items: center; justify-content: center; overflow: hidden;
+        animation: spinGradient 10s linear infinite reverse;
+    }
+    .logo-badge-glow {
+        position: absolute; inset: -20%;
+        background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.9), transparent 60%);
+        opacity: 0.6; pointer-events: none; z-index: 2;
+    }
+    .logo-badge-inner img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); z-index: 1; }
+    .logo-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+    .logo-title { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+    .logo-subtitle { font-size: 0.75rem; color: var(--text-sub); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    @keyframes spinGradient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @media (max-width: 768px) {
+        .logo-title { font-size: 0.95rem; }
+        .logo-subtitle { font-size: 0.7rem; }
+        .logo-badge { width: 38px; height: 38px; border-radius: 12px; }
+        .logo { gap: 10px; }
+    }
 
-        .nav-item[role="button"] { user-select: none; }
+    /* DESKTOP NAV – PILL STYLE */
+    .nav-menu {
+        display: flex; align-items: center; gap: 4px; padding: 3px 4px;
+        border-radius: 999px; background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+        box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+        border: 1px solid var(--glass-border);
+    }
+    [data-theme="dark"] .nav-menu { background: rgba(22, 22, 24, 0.96); }
 
-        /* mở dropdown khi hover (desktop) HOẶC khi có class .open (touch / click) */
-        .has-dropdown:hover .dropdown-menu,
-        .nav-item.has-dropdown.open .dropdown-menu {
-            opacity: 1; visibility: visible; transform: translateY(0);
-        }
+    .nav-item {
+        position: relative; padding: 6px 12px; border-radius: 999px;
+        font-size: 0.8rem; font-weight: 500; color: var(--text-sub);
+        cursor: pointer; white-space: nowrap; display: inline-flex;
+        align-items: center; gap: 6px; transition: var(--transition);
+    }
+    .nav-item:hover {
+        color: var(--primary);
+        background: rgba(var(--primary-rgb), 0.06);
+    }
+    .nav-item.has-dropdown i.fa-chevron-down {
+        font-size: 9px; opacity: 0.7;
+    }
 
-        .dropdown-menu {
-            position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
-            background: var(--surface); border-radius: 16px; padding: 8px;
-            border: 1px solid var(--glass-border); box-shadow: 0 18px 45px rgba(0,0,0,0.28);
-            opacity: 0; visibility: hidden; transform: translateY(8px);
-            transition: var(--transition); z-index: 40; display: flex; flex-direction: column; gap: 4px;
-        }
-        .dropdown-item {
-            padding: 8px 10px; border-radius: 10px; font-size: 0.8rem;
-            color: var(--text-sub); display: flex; align-items: center; gap: 6px;
-        }
-        .dropdown-item:hover {
-            background: rgba(var(--primary-rgb), 0.06);
-            color: var(--primary);
-            padding-left: 14px;
-        }
+    .nav-item[role="button"] { user-select: none; }
 
-        /* Actions */
-        .header-actions { display: flex; gap: 12px; align-items: center; }
-        .btn-theme {
-            width: 40px; height: 40px; border-radius: 50%;
-            background: rgba(var(--primary-rgb), 0.1); color: var(--primary);
-            display: flex; align-items: center; justify-content: center;
-            transition: var(--transition); cursor: pointer; border: none;
-        }
-        .btn-theme:hover { transform: rotate(15deg) scale(1.1); }
-        .hamburger { display: none; font-size: 24px; color: var(--text-main); cursor: pointer; }
+    /* mở dropdown khi hover (desktop) HOẶC khi có class .open (touch / click) */
+    .has-dropdown:hover .dropdown-menu,
+    .nav-item.has-dropdown.open .dropdown-menu {
+        opacity: 1; visibility: visible; transform: translateY(0);
+    }
 
-        /* DARK HEADER */
-        [data-theme="dark"] .header {
-            background: rgba(5, 6, 10, 0.98);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
-        }
-        [data-theme="dark"] .nav-item {
-            color: #e5e5ea;
-        }
-        [data-theme="dark"] .nav-item:hover {
-            background: rgba(255, 255, 255, 0.06);
-            color: #ffffff;
-        }
+    .dropdown-menu {
+        position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
+        background: var(--surface); border-radius: 16px; padding: 8px;
+        border: 1px solid var(--glass-border); box-shadow: 0 18px 45px rgba(0,0,0,0.28);
+        opacity: 0; visibility: hidden; transform: translateY(8px);
+        transition: var(--transition); z-index: 40; display: flex; flex-direction: column; gap: 4px;
+    }
+    .dropdown-item {
+        padding: 8px 10px; border-radius: 10px; font-size: 0.8rem;
+        color: var(--text-sub); display: flex; align-items: center; gap: 6px;
+    }
+    .dropdown-item:hover {
+        background: rgba(var(--primary-rgb), 0.06);
+        color: var(--primary);
+        padding-left: 14px;
+    }
 
-        /* MOBILE MENU ULTRA–IOS */
-        .mobile-menu-overlay {
-            position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 999;
-            display: flex; justify-content: flex-end; transform: translateX(100%);
-            transition: var(--transition);
-        }
-        .mobile-menu-overlay.active { transform: translateX(0); }
+    /* Actions */
+    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .btn-theme {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(var(--primary-rgb), 0.1); color: var(--primary);
+        display: flex; align-items: center; justify-content: center;
+        transition: var(--transition); cursor: pointer; border: none;
+    }
+    .btn-theme:hover { transform: rotate(15deg) scale(1.1); }
+    .hamburger { display: none; font-size: 24px; color: var(--text-main); cursor: pointer; }
 
-        .mobile-menu-inner {
-            width: 82%; max-width: 380px; height: 100%; background: var(--surface);
-            padding: 14px 16px 24px; box-shadow: -18px 0 40px rgba(0,0,0,0.35);
-            overflow-y: auto; border-radius: 24px 0 0 24px;
-        }
+    /* DARK HEADER */
+    [data-theme="dark"] .header {
+        background: rgba(5, 6, 10, 0.98);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+    }
+    [data-theme="dark"] .nav-item {
+        color: #e5e5ea;
+    }
+    [data-theme="dark"] .nav-item:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: #ffffff;
+    }
 
-        .mobile-menu-header {
-            display: flex; align-items: center; justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .mobile-menu-title { font-weight: 700; font-size: 0.95rem; }
-        .mobile-menu-close {
-            width: 34px; height: 34px; border-radius: 999px; border: none;
-            background: rgba(142, 142, 147, 0.18); display: inline-flex;
-            align-items: center; justify-content: center; cursor: pointer; color: var(--text-main);
-        }
+    /* MOBILE MENU ULTRA–IOS */
+    .mobile-menu-overlay {
+        position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 999;
+        display: flex; justify-content: flex-end; transform: translateX(100%);
+        transition: var(--transition);
+    }
+    .mobile-menu-overlay.active { transform: translateX(0); }
 
-        .mobile-nav-list {
-            margin-top: 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .mobile-menu-inner {
+        width: 82%; max-width: 380px; height: 100%; background: var(--surface);
+        padding: 14px 16px 24px; box-shadow: -18px 0 40px rgba(0,0,0,0.35);
+        overflow-y: auto; border-radius: 24px 0 0 24px;
+    }
 
-        .mobile-item-group {
-            border-radius: 18px;
-            padding: 6px 10px 8px;
-            border: 1px solid rgba(0,0,0,0.06);
-            background: rgba(0, 0, 0, 0.02);
-        }
+    .mobile-menu-header {
+        display: flex; align-items: center; justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .mobile-menu-title { font-weight: 700; font-size: 0.95rem; }
+    .mobile-menu-close {
+        width: 34px; height: 34px; border-radius: 999px; border: none;
+        background: rgba(142, 142, 147, 0.18); display: inline-flex;
+        align-items: center; justify-content: center; cursor: pointer; color: var(--text-main);
+    }
 
-        .mobile-item {
-            font-size: 1.05rem; font-weight: 600; padding: 10px 4px;
-            display: flex; justify-content: space-between; align-items: center;
-            cursor: pointer;
-        }
-        .mobile-item > i { font-size: 12px; opacity: 0.5; transition: transform 0.2s ease; }
-        .mobile-item.open > i { transform: rotate(180deg); }
+    .mobile-nav-list {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
 
-        .mobile-link {
-            border-radius: 18px;
-            padding: 12px 12px;
-            background: rgba(0, 0, 0, 0.02);
-            border: 1px solid rgba(0,0,0,0.06);
-            display: flex;
-            align-items: center;
-            font-size: 1.02rem;
-        }
+    .mobile-item-group {
+        border-radius: 18px;
+        padding: 6px 10px 8px;
+        border: 1px solid rgba(0,0,0,0.06);
+        background: rgba(0, 0, 0, 0.02);
+    }
 
-        .mobile-item span,
-        .mobile-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .mobile-item {
+        font-size: 1.05rem; font-weight: 600; padding: 10px 4px;
+        display: flex; justify-content: space-between; align-items: center;
+        cursor: pointer;
+    }
+    .mobile-item > i { font-size: 12px; opacity: 0.5; transition: transform 0.2s ease; }
+    .mobile-item.open > i { transform: rotate(180deg); }
 
-        .mobile-item-group:active,
-        .mobile-link:active {
-            transform: scale(0.98);
-            background: rgba(var(--primary-rgb), 0.06);
-            border-color: rgba(var(--primary-rgb), 0.4);
-        }
+    .mobile-link {
+        border-radius: 18px;
+        padding: 12px 12px;
+        background: rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0,0,0,0.06);
+        display: flex;
+        align-items: center;
+        font-size: 1.02rem;
+    }
 
-        .mobile-dropdown {
-            padding-left: 4px;
-            margin-top: 4px;
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .mobile-dropdown.open { display: flex; }
+    .mobile-item span,
+    .mobile-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
 
-        .mobile-sub-item {
-            font-size: 0.9rem; font-weight: 400; color: var(--text-sub);
-            padding: 4px 0; display: block;
-        }
+    .mobile-item-group:active,
+    .mobile-link:active {
+        transform: scale(0.98);
+        background: rgba(var(--primary-rgb), 0.06);
+        border-color: rgba(var(--primary-rgb), 0.4);
+    }
 
-        [data-theme="dark"] .mobile-menu-inner {
-            background: #151519;
-        }
-        [data-theme="dark"] .mobile-item-group,
-        [data-theme="dark"] .mobile-link {
-            background: rgba(255, 255, 255, 0.03);
-            border-color: rgba(255, 255, 255, 0.08);
-        }
-        [data-theme="dark"] .mobile-link,
-        [data-theme="dark"] .mobile-item {
-            color: #f5f5f7;
-        }
-        [data-theme="dark"] .mobile-sub-item {
-            color: #a1a1a6;
-        }
+    .mobile-dropdown {
+        padding-left: 4px;
+        margin-top: 4px;
+        display: none;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .mobile-dropdown.open { display: flex; }
 
-        @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .hamburger { display: block; }
-            .mini-app-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero h1 { font-size: 2.5rem; }
-            .footer-grid { grid-template-columns: repeat(2, 1fr); }
-            .quick-dock {
-                bottom: calc(20px + var(--safe-area-inset-bottom));
-            }
-        }
-        @media (max-width: 480px) {
-            .mobile-menu-inner { width: 88%; padding-inline: 12px; }
-        }
+    .mobile-sub-item {
+        font-size: 0.9rem; font-weight: 400; color: var(--text-sub);
+        padding: 4px 0; display: block;
+    }
 
-        /* --- 4. HERO SECTION --- */
-        .hero {
-            padding-top: 130px; padding-bottom: 60px; min-height: 90vh;
-            background: radial-gradient(circle at 50% 30%, rgba(var(--primary-rgb), 0.25), transparent 60%);
-            display: flex; align-items: center; position: relative;
-        }
-        .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 100px;
-            background: rgba(var(--secondary-rgb), 0.1); color: var(--secondary);
-            font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;
-            border: 1px solid rgba(var(--secondary-rgb), 0.2);
-        }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.03em; }
-        .hero p { font-size: 1.1rem; color: var(--text-sub); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    [data-theme="dark"] .mobile-menu-inner {
+        background: #151519;
+    }
+    [data-theme="dark"] .mobile-item-group,
+    [data-theme="dark"] .mobile-link {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.08);
+    }
+    [data-theme="dark"] .mobile-link,
+    [data-theme="dark"] .mobile-item {
+        color: #f5f5f7;
+    }
+    [data-theme="dark"] .mobile-sub-item {
+        color: #a1a1a6;
+    }
 
-        .mini-app-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
-            background: var(--glass-bg); backdrop-filter: blur(20px);
-            padding: 24px; border-radius: var(--radius-lg);
-            border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
-            max-width: 600px; margin: 0 auto;
-        }
-        .app-icon-btn {
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
-            padding: 12px; border-radius: var(--radius-md); transition: var(--transition);
-            text-align: center;
-        }
-        .app-icon-btn:hover {
-            background: var(--surface);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-        .app-icon-box {
-            width: 56px; height: 56px;
-            background: linear-gradient(135deg, var(--bg-body), var(--surface));
-            border-radius: 18px; display: flex; align-items: center; justify-content: center;
-            font-size: 28px; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .app-label { font-size: 0.85rem; font-weight: 500; color: var(--text-main); }
-
-        /* --- 5. CONTENT SECTIONS --- */
-        .section-title { margin-bottom: 48px; text-align: center; }
-        .section-title h2 { font-size: 2rem; margin-bottom: 12px; letter-spacing: -0.02em; }
-
-        .benefit-card {
-            padding: 32px; border-radius: var(--radius-md); background: var(--surface);
-            border: 1px solid var(--glass-border); transition: var(--transition);
-            position: relative; overflow: hidden;
-        }
-        .benefit-card:hover {
-            transform: translateY(-8px); border-color: var(--primary);
-            box-shadow: 0 12px 30px rgba(var(--primary-rgb), 0.15);
-        }
-        .check-icon {
-            color: var(--secondary); font-size: 24px; margin-bottom: 16px; display: block;
-        }
-
-        .step-list {
-            counter-reset: step;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        .step-item {
-            position: relative; padding-left: 60px;
-        }
-        .step-item::before {
-            counter-increment: step; content: counter(step);
-            position: absolute; left: 0; top: 0; width: 40px; height: 40px;
-            background: var(--primary); color: white; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 700; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
-        }
-
-        .review-card {
-            background: var(--surface); padding: 24px;
-            border-radius: var(--radius-md); box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        .stars { color: #FFB800; margin-bottom: 10px; }
-        .review-name { font-weight: 700; margin-top: 16px; display: block; font-size: 0.9rem; }
-
-        .place-card {
-            background: var(--surface); border-radius: var(--radius-md); overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: var(--transition);
-        }
-        .place-card:hover { transform: scale(1.02); }
-        .place-icon {
-            font-size: 48px; display: block; padding: 20px; text-align: center;
-            background: rgba(var(--primary-rgb), 0.05);
-        }
-        .place-info { padding: 20px; }
-
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white; border-radius: var(--radius-lg); padding: 60px 40px;
-            text-align: center; margin: 80px auto;
-            box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
-        }
-        .cta-buttons {
-            display: flex; gap: 16px; justify-content: center;
-            margin-top: 30px; flex-wrap: wrap;
-        }
-        .btn-white {
-            background: white; color: var(--primary); padding: 14px 32px;
-            border-radius: 100px; font-weight: 700; transition: var(--transition);
-            display: inline-flex; align-items: center; gap: 8px;
-        }
-        .btn-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .btn-outline-white {
-            border: 2px solid rgba(255,255,255,0.8); color: white;
-            padding: 14px 32px; border-radius: 100px; font-weight: 700;
-            transition: var(--transition); display: inline-flex; align-items: center; gap: 8px;
-        }
-        .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
-
-        /* --- 6. FOOTER & DOCK --- */
-        .footer {
-            background: var(--surface); border-top: 1px solid var(--glass-border);
-            padding: 60px 0 30px; font-size: 0.9rem;
-        }
-        .footer-grid {
-            display: grid; grid-template-columns: repeat(6, 1fr);
-            gap: 20px; margin-bottom: 50px;
-        }
-        .footer-col h4 {
-            margin-bottom: 20px; font-weight: 700;
-            font-size: 1rem; color: var(--text-main);
-        }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a {
-            color: var(--text-sub); display: flex;
-            align-items: center; gap: 8px;
-        }
-        .footer-col ul li a:hover {
-            color: var(--primary); transform: translateX(4px);
-        }
-
-        .social-inline {
-            display: flex; gap: 10px; flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        .social-btn {
-            width: 36px; height: 36px; border-radius: 10px;
-            background: var(--bg-body); color: var(--text-main);
-            display: flex; align-items: center; justify-content: center;
-            transition: var(--transition); border: 1px solid var(--glass-border);
-        }
-        .social-btn:hover {
-            background: var(--primary); color: white;
-            transform: translateY(-3px);
-        }
-        .copyright {
-            text-align: center; padding-top: 30px;
-            border-top: 1px solid var(--glass-border);
-            color: var(--text-sub); font-size: 0.85rem;
-        }
-
-        /* Quick Dock */
+    @media (max-width: 1024px) {
+        .footer-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+        .nav-menu { display: none; }
+        .hamburger { display: block; }
+        .mini-app-grid { grid-template-columns: repeat(2, 1fr); }
+        .hero h1 { font-size: 2.5rem; }
+        .footer-grid { grid-template-columns: repeat(2, 1fr); }
         .quick-dock {
-            position: fixed; left: 20px; bottom: 20px; z-index: 990;
-            display: flex; flex-direction: column-reverse; gap: 12px; align-items: center;
+            bottom: calc(20px + var(--safe-area-inset-bottom));
         }
-        .dock-toggle {
-            width: 56px; height: 56px; background: var(--primary); color: white;
-            border-radius: 20px; box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.4);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px; transition: var(--transition); border: none; cursor: pointer;
-        }
-        .dock-toggle.active { transform: rotate(45deg); background: #FF3B30; }
-        .dock-items {
-            display: flex; flex-direction: column-reverse; gap: 12px;
-            opacity: 0; visibility: hidden; transform: translateY(20px);
-            transition: var(--transition);
-        }
-        .dock-items.show { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dock-btn {
-            width: 48px; height: 48px; background: var(--surface); color: var(--text-main);
-            border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 20px; transition: var(--transition); position: relative;
-        }
-        .dock-btn:hover { transform: scale(1.1); }
-        .dock-tooltip {
-            position: absolute; left: 60px; background: rgba(0,0,0,0.8); color: white;
-            padding: 4px 8px; border-radius: 6px; font-size: 12px; white-space: nowrap;
-            opacity: 0; pointer-events: none; transition: var(--transition);
-        }
-        .dock-btn:hover .dock-tooltip { opacity: 1; left: 56px; }
-    </style>
+    }
+    @media (max-width: 480px) {
+        .mobile-menu-inner { width: 88%; padding-inline: 12px; }
+    }
+
+    /* --- 4. HERO SECTION --- */
+    .hero {
+        padding-top: 130px; padding-bottom: 60px; min-height: 90vh;
+        background: radial-gradient(circle at 50% 30%, rgba(var(--primary-rgb), 0.25), transparent 60%);
+        display: flex; align-items: center; position: relative;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+    .hero-badge {
+        display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 100px;
+        background: rgba(var(--secondary-rgb), 0.1); color: var(--secondary);
+        font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;
+        border: 1px solid rgba(var(--secondary-rgb), 0.2);
+    }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.1rem; color: var(--text-sub); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    .mini-app-grid {
+        display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+        background: var(--glass-bg); backdrop-filter: blur(20px);
+        padding: 24px; border-radius: var(--radius-lg);
+        border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+        max-width: 600px; margin: 0 auto;
+    }
+    .app-icon-btn {
+        display: flex; flex-direction: column; align-items: center; gap: 10px;
+        padding: 12px; border-radius: var(--radius-md); transition: var(--transition);
+        text-align: center;
+    }
+    .app-icon-btn:hover {
+        background: var(--surface);
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    .app-icon-box {
+        width: 56px; height: 56px;
+        background: linear-gradient(135deg, var(--bg-body), var(--surface));
+        border-radius: 18px; display: flex; align-items: center; justify-content: center;
+        font-size: 28px; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .app-label { font-size: 0.85rem; font-weight: 500; color: var(--text-main); }
+
+    /* --- 5. CONTENT SECTIONS --- */
+    .section-title { margin-bottom: 48px; text-align: center; }
+    .section-title h2 { font-size: 2rem; margin-bottom: 12px; letter-spacing: -0.02em; }
+
+    .benefit-card {
+        padding: 32px; border-radius: var(--radius-md); background: var(--surface);
+        border: 1px solid var(--glass-border); transition: var(--transition);
+        position: relative; overflow: hidden;
+    }
+    .benefit-card:hover {
+        transform: translateY(-8px); border-color: var(--primary);
+        box-shadow: 0 12px 30px rgba(var(--primary-rgb), 0.15);
+    }
+    .check-icon {
+        color: var(--secondary); font-size: 24px; margin-bottom: 16px; display: block;
+    }
+
+    .step-list {
+        counter-reset: step;
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    .step-item {
+        position: relative; padding-left: 60px;
+    }
+    .step-item::before {
+        counter-increment: step; content: counter(step);
+        position: absolute; left: 0; top: 0; width: 40px; height: 40px;
+        background: var(--primary); color: white; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 700; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
+    }
+
+    .review-card {
+        background: var(--surface); padding: 24px;
+        border-radius: var(--radius-md); box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .stars { color: #FFB800; margin-bottom: 10px; }
+    .review-name { font-weight: 700; margin-top: 16px; display: block; font-size: 0.9rem; }
+
+    .place-card {
+        background: var(--surface); border-radius: var(--radius-md); overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: var(--transition);
+    }
+    .place-card:hover { transform: scale(1.02); }
+    .place-icon {
+        font-size: 48px; display: block; padding: 20px; text-align: center;
+        background: rgba(var(--primary-rgb), 0.05);
+    }
+    .place-info { padding: 20px; }
+
+    .cta-section {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white; border-radius: var(--radius-lg); padding: 60px 40px;
+        text-align: center; margin: 80px auto;
+        box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
+    }
+    .cta-buttons {
+        display: flex; gap: 16px; justify-content: center;
+        margin-top: 30px; flex-wrap: wrap;
+    }
+    .btn-white {
+        background: white; color: var(--primary); padding: 14px 32px;
+        border-radius: 100px; font-weight: 700; transition: var(--transition);
+        display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-white:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .btn-outline-white {
+        border: 2px solid rgba(255,255,255,0.8); color: white;
+        padding: 14px 32px; border-radius: 100px; font-weight: 700;
+        transition: var(--transition); display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
+
+    /* --- 6. FOOTER & DOCK --- */
+    .footer {
+        background: var(--surface); border-top: 1px solid var(--glass-border);
+        padding: 60px 0 30px; font-size: 0.9rem;
+    }
+    .footer-grid {
+        display: grid; grid-template-columns: repeat(6, 1fr);
+        gap: 20px; margin-bottom: 50px;
+    }
+    .footer-col h4 {
+        margin-bottom: 20px; font-weight: 700;
+        font-size: 1rem; color: var(--text-main);
+    }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a {
+        color: var(--text-sub); display: flex;
+        align-items: center; gap: 8px;
+    }
+    .footer-col ul li a:hover {
+        color: var(--primary); transform: translateX(4px);
+    }
+
+    .social-inline {
+        display: flex; gap: 10px; flex-wrap: wrap;
+        margin-top: 12px;
+    }
+    .social-btn {
+        width: 36px; height: 36px; border-radius: 10px;
+        background: var(--bg-body); color: var(--text-main);
+        display: flex; align-items: center; justify-content: center;
+        transition: var(--transition); border: 1px solid var(--glass-border);
+    }
+    .social-btn:hover {
+        background: var(--primary); color: white;
+        transform: translateY(-3px);
+    }
+    .copyright {
+        text-align: center; padding-top: 30px;
+        border-top: 1px solid var(--glass-border);
+        color: var(--text-sub); font-size: 0.85rem;
+    }
+
+    /* Quick Dock */
+    .quick-dock {
+        position: fixed; left: 20px; bottom: 20px; z-index: 990;
+        display: flex; flex-direction: column-reverse; gap: 12px; align-items: center;
+    }
+    .dock-toggle {
+        width: 56px; height: 56px; background: var(--primary); color: white;
+        border-radius: 20px; box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.4);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 24px; transition: var(--transition); border: none; cursor: pointer;
+    }
+    .dock-toggle.active { transform: rotate(45deg); background: #FF3B30; }
+    .dock-items {
+        display: flex; flex-direction: column-reverse; gap: 12px;
+        opacity: 0; visibility: hidden; transform: translateY(20px);
+        transition: var(--transition);
+    }
+    .dock-items.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .dock-btn {
+        width: 48px; height: 48px; background: var(--surface); color: var(--text-main);
+        border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px; transition: var(--transition); position: relative;
+    }
+    .dock-btn:hover { transform: scale(1.1); }
+    .dock-tooltip {
+        position: absolute; left: 60px; background: rgba(0,0,0,0.8); color: white;
+        padding: 4px 8px; border-radius: 6px; font-size: 12px; white-space: nowrap;
+        opacity: 0; pointer-events: none; transition: var(--transition);
+    }
+    .dock-btn:hover .dock-tooltip { opacity: 1; left: 56px; }
+</style>
 </head>
 <body id="top">
+code
+Code
 
-    <!-- HEADER -->
-    <header class="header glass" id="main-header">
-        <div class="container nav-container">
+download
 
-            <!-- LOGO BLOCK ULTRA APP -->
-            <a href="./" class="logo">
-                <div class="logo-badge">
-                    <div class="logo-badge-glow"></div>
-                    <div class="logo-badge-inner">
-                        <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Nguyễn Tú Motorbike Rental">
-                    </div>
+content_copy
+
+expand_less
+<!-- HEADER -->
+<header class="header glass" id="main-header">
+    <div class="container nav-container">
+
+        <!-- LOGO BLOCK ULTRA APP -->
+        <a href="./" class="logo">
+            <div class="logo-badge">
+                <div class="logo-badge-glow"></div>
+                <div class="logo-badge-inner">
+                    <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Nguyễn Tú Motorbike Rental">
                 </div>
-                <div class="logo-text">
-                    <span class="logo-title">Nguyễn Tú</span>
-                    <span class="logo-subtitle">Motorbike Rental</span>
-                </div>
-            </a>
-
-            <!-- Desktop Nav -->
-            <nav class="nav-menu" id="desktop-menu" aria-label="Điều hướng chính"></nav>
-
-            <div class="header-actions">
-                <button class="btn-theme" id="theme-toggle" aria-label="Chuyển giao diện">
-                    <span class="material-symbols-rounded">light_mode</span>
-                </button>
-                <button class="hamburger" id="mobile-toggle" aria-label="Mở menu">
-                    <span class="material-symbols-rounded">menu</span>
-                </button>
             </div>
-        </div>
-    </header>
-
-    <!-- MOBILE MENU ULTRA–IOS -->
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true">
-        <div class="mobile-menu-inner">
-            <div class="mobile-menu-header">
-                <div class="mobile-menu-title">Menu</div>
-                <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
-                    <span class="material-symbols-rounded">close</span>
-                </button>
+            <div class="logo-text">
+                <span class="logo-title">Nguyễn Tú</span>
+                <span class="logo-subtitle">Motorbike Rental</span>
             </div>
+        </a>
 
-            <div class="mobile-nav-list" id="mobile-menu-list"></div>
+        <!-- Desktop Nav -->
+        <nav class="nav-menu" id="desktop-menu" aria-label="Điều hướng chính"></nav>
+
+        <div class="header-actions">
+            <button class="btn-theme" id="theme-toggle" aria-label="Chuyển giao diện">
+                <span class="material-symbols-rounded">light_mode</span>
+            </button>
+            <button class="hamburger" id="mobile-toggle" aria-label="Mở menu">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
         </div>
     </div>
+</header>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content fade-in-up">
-                    <div class="hero-badge">
-                        <span class="material-symbols-rounded">verified</span> Uy tín hàng đầu Hà Nội
-                    </div>
-                    <h1>Dịch vụ cho thuê xe máy<br><span class="text-gradient">Hoàn Kiếm &amp; Hà Nội</span></h1>
-                    <p>Giao xe tận nơi 20–40 phút. Thủ tục CCCD đơn giản. Giá minh bạch, không phí ẩn. Hỗ trợ 24/7.</p>
+<!-- MOBILE MENU ULTRA–IOS -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay" aria-hidden="true">
+    <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+            <div class="mobile-menu-title">Menu</div>
+            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Đóng menu">
+                <span class="material-symbols-rounded">close</span>
+            </button>
+        </div>
 
-                    <div class="mini-app-grid">
-                        <a href="tel:0942467674" class="app-icon-btn" aria-label="Gọi ngay 0942.467.674">
-                            <div class="app-icon-box">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <span class="app-label">Gọi ngay</span>
-                        </a>
-                        <a href="https://zalo.me/0942467674" class="app-icon-btn" target="_blank" rel="noopener" aria-label="Chat Zalo với Nguyễn Tú">
-                            <div class="app-icon-box" style="color:#0068FF">
-                                <i class="fa-solid fa-comment-dots"></i>
-                            </div>
-                            <span class="app-label">Chat Zalo</span>
-                        </a>
-                        <a href="banggia.html" class="app-icon-btn">
-                            <div class="app-icon-box" style="color:#FF9500">
-                                <i class="fa-solid fa-tag"></i>
-                            </div>
-                            <span class="app-label">Bảng giá</span>
-                        </a>
-                        <a href="#diadiem" class="app-icon-btn">
-                            <div class="app-icon-box" style="color:#34C759">
-                                <i class="fa-solid fa-map-location-dot"></i>
-                            </div>
-                            <span class="app-label">Địa điểm</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="mobile-nav-list" id="mobile-menu-list"></div>
+    </div>
+</div>
 
-        <!-- DYNAMIC CONTENT -->
-        <div id="body-content"></div>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
+<main>
+    <!-- HERO -->
+    <section class="hero">
         <div class="container">
-            <div class="footer-top text-center" style="margin-bottom:40px;">
-                <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Thuê xe máy uy tín – Nguyễn Tú</h3>
-                <p style="color: var(--text-sub);">Giao xe 20–40 phút • Giá minh bạch • Giấy tờ đầy đủ • Hỗ trợ 24/7</p>
-                <div style="margin-top: 10px; color: #FFB800; font-weight: 600;">⭐ 4.9/5 từ khách hàng</div>
-            </div>
-            <div class="footer-grid" id="footer-grid"></div>
-            <div class="copyright">
-                © 2025 Nguyễn Tú Motorbike Rental. All rights reserved.
+            <div class="hero-content fade-in-up">
+                <div class="hero-badge">
+                    <span class="material-symbols-rounded">verified</span> Uy tín hàng đầu Hà Nội
+                </div>
+                <h1>Dịch vụ cho thuê xe máy<br><span class="text-gradient">Hoàn Kiếm &amp; Hà Nội</span></h1>
+                <p>Giao xe tận nơi 20–40 phút. Thủ tục CCCD đơn giản. Giá minh bạch, không phí ẩn. Hỗ trợ 24/7.</p>
+
+                <div class="mini-app-grid">
+                    <a href="tel:0942467674" class="app-icon-btn" aria-label="Gọi ngay 0942.467.674">
+                        <div class="app-icon-box">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <span class="app-label">Gọi ngay</span>
+                    </a>
+                    <a href="https://zalo.me/0942467674" class="app-icon-btn" target="_blank" rel="noopener" aria-label="Chat Zalo với Nguyễn Tú">
+                        <div class="app-icon-box" style="color:#0068FF">
+                            <i class="fa-solid fa-comment-dots"></i>
+                        </div>
+                        <span class="app-label">Chat Zalo</span>
+                    </a>
+                    <a href="banggia.html" class="app-icon-btn">
+                        <div class="app-icon-box" style="color:#FF9500">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <span class="app-label">Bảng giá</span>
+                    </a>
+                    <a href="#diadiem" class="app-icon-btn">
+                        <div class="app-icon-box" style="color:#34C759">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <span class="app-label">Địa điểm</span>
+                    </a>
+                </div>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- QUICK DOCK -->
-    <div class="quick-dock" aria-label="Thanh hành động nhanh">
-        <button class="dock-toggle" id="dock-toggle" aria-label="Mở hành động nhanh">
-            <span class="material-symbols-rounded">add</span>
-        </button>
-        <div class="dock-items" id="dock-items">
-            <a href="https://wa.me/84942467674" class="dock-btn" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span class="dock-tooltip">WhatsApp</span>
-            </a>
-            <a href="tel:0942467674" class="dock-btn" style="color:#34C759" aria-label="Gọi điện 0942.467.674">
-                <i class="fa-solid fa-phone"></i>
-                <span class="dock-tooltip">Gọi điện</span>
-            </a>
-            <a href="https://zalo.me/0942467674" class="dock-btn" style="color:#0068FF" target="_blank" rel="noopener" aria-label="Zalo">
-                <i class="fa-solid fa-comment"></i>
-                <span class="dock-tooltip">Zalo</span>
-            </a>
-            <a href="https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc" class="dock-btn" style="color:#FF9500" target="_blank" rel="noopener" aria-label="Xem bản đồ">
-                <i class="fa-solid fa-location-dot"></i>
-                <span class="dock-tooltip">Bản đồ</span>
-            </a>
+    <!-- DYNAMIC CONTENT -->
+    <div id="body-content"></div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top text-center" style="margin-bottom:40px;">
+            <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Thuê xe máy uy tín – Nguyễn Tú</h3>
+            <p style="color: var(--text-sub);">Giao xe 20–40 phút • Giá minh bạch • Giấy tờ đầy đủ • Hỗ trợ 24/7</p>
+            <div style="margin-top: 10px; color: #FFB800; font-weight: 600;">⭐ 4.9/5 từ khách hàng</div>
+        </div>
+        <div class="footer-grid" id="footer-grid"></div>
+        <div class="copyright">
+            © 2025 Nguyễn Tú Motorbike Rental. All rights reserved.
         </div>
     </div>
+</footer>
 
-    <!-- JS ENGINE -->
-    <script defer>
-    (function() {
-        // --- DATA CONFIG ---
-        const CONFIG = {
-            MENU: [
-                { "🏠 Trang chủ": "./" },
-                { "📄 Giới thiệu": "gioithieu.html" },
-                { "⚙️ Dịch vụ": [
-                    { "🏷️ Bảng giá": "banggia.html" },
-                    { "📅 Theo ngày": "ngay.html" },
-                    { "🗓️ Theo tuần": "tuan.html" },
-                    { "📆 Theo tháng": "thang.html" },
-                    { "🎁 Ưu đãi": "uudai.html" },
-                    { "📑 Thủ tục": "thutuc.html" },
-                    { "💰 Đặt cọc": "datcoc.html" },
-                    { "📍 Địa điểm (hub)": "diadiem.html" }
-                ]},
-                { "📍 Địa điểm": [
-                    { "Long Biên": "longbien.html" },
-                    { "Gia Lâm": "gialam.html" },
-                    { "Phố Cổ": "phoco.html" },
-                    { "Hoàn Kiếm": "hoankiem.html" },
-                    { "Ba Đình": "badinh.html" },
-                    { "Tây Hồ": "tayho.html" },
-                    { "Đống Đa": "dongda.html" },
-                    { "Cầu Giấy": "caugiay.html" },
-                    { "Hà Đông": "hadong.html" },
-                    { "Thanh Xuân": "thanhxuan.html" },
-                    { "Từ Liêm": "tuliem.html" },
-                    { "Ga Hà Nội": "gahn.html" }
-                ]},
-                { "❓ FAQ": "faq.html" },
-                { "💬 Liên hệ": "lienhe.html" }
-            ],
-            BODY_SECTIONS: [
-                {
-                    TITLE:"Giới thiệu cho thuê xe máy Hà Nội",
-                    TYPE:"intro",
-                    CONTENT:[
-                        "Dịch vụ cho thuê xe máy uy tín tại Hoàn Kiếm, Hà Nội.",
-                        "Cung cấp xe ga, xe số, xe điện, giao tận nơi 20–40 phút.",
-                        "Hỗ trợ 24/7, phù hợp du khách, dân văn phòng, người đi công tác."
-                    ]
-                },
-                {
-                    TITLE:"Lý do nên thuê xe tại Nguyễn Tú",
-                    TYPE:"benefits",
-                    POINTS:[
-                        "Xe mới, sạch, bảo dưỡng thường xuyên.",
-                        "Thủ tục đơn giản – chỉ cần CCCD hoặc Passport.",
-                        "Giao nhận linh hoạt tại khách sạn, homestay, nhà riêng.",
-                        "Giá minh bạch, không phát sinh chi phí ẩn.",
-                        "Có nhân viên hỗ trợ kỹ thuật và hướng dẫn đường đi."
-                    ]
-                },
-                {
-                    TITLE:"Quy trình thuê xe đơn giản",
-                    TYPE:"steps",
-                    STEPS:[
-                        "Chọn loại xe phù hợp nhu cầu (ga / số / điện).",
-                        "Liên hệ Zalo hoặc gọi trực tiếp để đặt xe.",
-                        "Xác nhận vị trí, thời gian, giao xe trong 20–40 phút.",
-                        "Kiểm tra xe → ký nhận → sử dụng."
-                    ]
-                },
-                {
-                    TITLE:"Khách hàng nói gì?",
-                    TYPE:"testimonials",
-                    REVIEWS:[
-                        {name:"Linh – Du khách",stars:5,text:"Xe đẹp, giao nhanh, giá hợp lý, đúng như tư vấn."},
-                        {name:"Đức – Freelancer",stars:5,text:"Đi êm, xăng ít hao, nhân viên rất dễ thương."},
-                        {name:"Sarah – Traveller",stars:4,text:"Easy to rent, delivery was fast, staff was helpful!"}
-                    ]
-                },
-                {
-                    TITLE:"Điểm đến gợi ý tại Hà Nội",
-                    TYPE:"places",
-                    ITEMS:[
-                        {icon:"🏯",name:"Phố cổ Hoàn Kiếm",desc:"Khám phá văn hóa, ẩm thực và cà phê."},
-                        {icon:"🌉",name:"Cầu Long Biên",desc:"Địa điểm check-in hoài cổ, gần khu Long Biên."},
-                        {icon:"🏞️",name:"Hồ Tây",desc:"Lái xe vòng hồ cực chill, phù hợp buổi chiều tối."}
-                    ]
-                },
-                {
-                    TITLE:"Ưu đãi & Nội dung hữu ích",
-                    TYPE:"links",
-                    LINKS:[
-                        {label:"🎁 Ưu đãi thuê xe",href:"uudai.html"},
-                        {label:"💡 Kinh nghiệm thuê xe",href:"kinhnghiem.html"},
-                        {label:"📘 Hướng dẫn thuê xe",href:"huongdan.html"},
-                        {label:"⚖️ Điều khoản thuê xe",href:"dieukhoansudung.html"}
-                    ]
-                },
-                {
-                    TITLE:"Câu hỏi thường gặp (FAQ)",
-                    TYPE:"faq",
-                    QUESTIONS:[
-                        {q:"Có cần đặt cọc không?",a:"Có, tuỳ dòng xe, thường từ 500.000đ hoặc giữ giấy tờ."},
-                        {q:"Có giao xe ban đêm không?",a:"Có, hỗ trợ 24/7 trong khu vực nội thành Hà Nội."},
-                        {q:"Mất xe thì sao?",a:"Liên hệ ngay với chúng tôi để được hướng dẫn xử lý theo hợp đồng."}
-                    ]
-                },
-                {
-                    TITLE:"Liên hệ & đặt xe ngay",
-                    TYPE:"cta",
-                    DESC:"Bạn cần thuê xe ngay khu vực Hoàn Kiếm, Long Biên, phố cổ Hà Nội? Gọi hoặc nhắn Zalo để được giao xe trong 20–40 phút.",
-                    BUTTONS:[
-                        {label:"📞 Gọi ngay",href:"tel:0942467674"},
-                        {label:"💬 Chat Zalo",href:"https://zalo.me/0942467674"},
-                        {label:"📍 Xem bản đồ",href:"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc"}
-                    ]
-                }
-            ],
-            FOOTER_COLS: {
-                col1: {
-                    title: "Trang chủ",
-                    items: [
-                        {"🏠 Trang chủ":"./"},
-                        {"📄 Giới thiệu":"gioithieu.html"}
-                    ]
-                },
-                col2: {
-                    title: "Dịch vụ",
-                    items: [
-                        {"🏷️ Bảng giá":"banggia.html"},
-                        {"📅 Theo ngày":"ngay.html"},
-                        {"🗓️ Theo tuần":"tuan.html"},
-                        {"📆 Theo tháng":"thang.html"},
-                        {"🎁 Ưu đãi":"uudai.html"},
-                        {"📑 Thủ tục":"thutuc.html"},
-                        {"💰 Đặt cọc":"datcoc.html"}
-                    ]
-                },
-                col3: {
-                    title: "Địa điểm xe",
-                    items: [
-                        {"Long Biên":"longbien.html"},
-                        {"Gia Lâm":"gialam.html"},
-                        {"Phố Cổ":"phoco.html"},
-                        {"Hoàn Kiếm":"hoankiem.html"},
-                        {"Ba Đình":"badinh.html"},
-                        {"Tây Hồ":"tayho.html"},
-                        {"Đống Đa":"dongda.html"}
-                    ]
-                },
-                col4: {
-                    title: "Khu vực khác",
-                    items: [
-                        {"Cầu Giấy":"caugiay.html"},
-                        {"Hà Đông":"hadong.html"},
-                        {"Thanh Xuân":"thanhxuan.html"},
-                        {"Từ Liêm":"tuliem.html"},
-                        {"Ga Hà Nội":"gahn.html"}
-                    ]
-                },
-                col5: {
-                    title: "Thông tin & Chính sách",
-                    items: [
-                        {"❓ FAQ":"faq.html"},
-                        {"📜 Điều khoản":"dieukhoansudung.html"},
-                        {"🔒 Bảo mật":"chinhsachbaomat.html"},
-                        {"💡 Kinh nghiệm":"kinhnghiem.html"},
-                        {"📘 Hướng dẫn":"huongdan.html"}
-                    ]
-                },
-                col6: {
-                    title: "Liên hệ & Social",
-                    items: [
-                        {"📞 0942467674":"tel:0942467674"},
-                        {"💬 Zalo":"https://zalo.me/0942467674"},
-                        {"🌐 Website":"https://thuexemaynguyentu.com"}
-                    ],
-                    isSocial: true
-                }
+<!-- QUICK DOCK -->
+<div class="quick-dock" aria-label="Thanh hành động nhanh">
+    <button class="dock-toggle" id="dock-toggle" aria-label="Mở hành động nhanh">
+        <span class="material-symbols-rounded">add</span>
+    </button>
+    <div class="dock-items" id="dock-items">
+        <a href="https://wa.me/84942467674" class="dock-btn" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="dock-tooltip">WhatsApp</span>
+        </a>
+        <a href="tel:0942467674" class="dock-btn" style="color:#34C759" aria-label="Gọi điện 0942.467.674">
+            <i class="fa-solid fa-phone"></i>
+            <span class="dock-tooltip">Gọi điện</span>
+        </a>
+        <a href="https://zalo.me/0942467674" class="dock-btn" style="color:#0068FF" target="_blank" rel="noopener" aria-label="Zalo">
+            <i class="fa-solid fa-comment"></i>
+            <span class="dock-tooltip">Zalo</span>
+        </a>
+        <a href="https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc" class="dock-btn" style="color:#FF9500" target="_blank" rel="noopener" aria-label="Xem bản đồ">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="dock-tooltip">Bản đồ</span>
+        </a>
+    </div>
+</div>
+
+<!-- JS ENGINE -->
+<script defer>
+(function() {
+    // --- DATA CONFIG ---
+    const CONFIG = {
+        MENU: [
+            { "🏠 Trang chủ": "./" },
+            { "📄 Giới thiệu": "gioithieu.html" },
+            { "⚙️ Dịch vụ": [
+                { "🏷️ Bảng giá": "banggia.html" },
+                { "📅 Theo ngày": "ngay.html" },
+                { "🗓️ Theo tuần": "tuan.html" },
+                { "📆 Theo tháng": "thang.html" },
+                { "🎁 Ưu đãi": "uudai.html" },
+                { "📑 Thủ tục": "thutuc.html" },
+                { "💰 Đặt cọc": "datcoc.html" },
+                { "📍 Địa điểm (hub)": "diadiem.html" }
+            ]},
+            { "📍 Địa điểm": [
+                { "Long Biên": "longbien.html" },
+                { "Gia Lâm": "gialam.html" },
+                { "Phố Cổ": "phoco.html" },
+                { "Hoàn Kiếm": "hoankiem.html" },
+                { "Ba Đình": "badinh.html" },
+                { "Tây Hồ": "tayho.html" },
+                { "Đống Đa": "dongda.html" },
+                { "Cầu Giấy": "caugiay.html" },
+                { "Hà Đông": "hadong.html" },
+                { "Thanh Xuân": "thanhxuan.html" },
+                { "Từ Liêm": "tuliem.html" },
+                { "Ga Hà Nội": "gahn.html" }
+            ]},
+            { "❓ FAQ": "faq.html" },
+            { "💬 Liên hệ": "lienhe.html" }
+        ],
+        BODY_SECTIONS: [
+            {
+                TITLE:"Giới thiệu cho thuê xe máy Hà Nội",
+                TYPE:"intro",
+                CONTENT:[
+                    "Dịch vụ cho thuê xe máy uy tín tại Hoàn Kiếm, Hà Nội.",
+                    "Cung cấp xe ga, xe số, xe điện, giao tận nơi 20–40 phút.",
+                    "Hỗ trợ 24/7, phù hợp du khách, dân văn phòng, người đi công tác."
+                ]
             },
-            SOCIAL_LINKS: [
-                {"icon":"fa-facebook-f", "url":"https://m.facebook.com/chothuexemay0857255868/"},
-                {"icon":"fa-instagram", "url":"https://www.instagram.com/nguyentumotorbike/"},
-                {"icon":"fa-tripadvisor", "url":"https://www.tripadvisor.com/Attraction_Review-g21333608-d9826317-Reviews-Nguyen_Tu_Motorbike_Rental-Long_Bien_Hanoi.html"}
-            ]
-        };
+            {
+                TITLE:"Lý do nên thuê xe tại Nguyễn Tú",
+                TYPE:"benefits",
+                POINTS:[
+                    "Xe mới, sạch, bảo dưỡng thường xuyên.",
+                    "Thủ tục đơn giản – chỉ cần CCCD hoặc Passport.",
+                    "Giao nhận linh hoạt tại khách sạn, homestay, nhà riêng.",
+                    "Giá minh bạch, không phát sinh chi phí ẩn.",
+                    "Có nhân viên hỗ trợ kỹ thuật và hướng dẫn đường đi."
+                ]
+            },
+            {
+                TITLE:"Quy trình thuê xe đơn giản",
+                TYPE:"steps",
+                STEPS:[
+                    "Chọn loại xe phù hợp nhu cầu (ga / số / điện).",
+                    "Liên hệ Zalo hoặc gọi trực tiếp để đặt xe.",
+                    "Xác nhận vị trí, thời gian, giao xe trong 20–40 phút.",
+                    "Kiểm tra xe → ký nhận → sử dụng."
+                ]
+            },
+            {
+                TITLE:"Khách hàng nói gì?",
+                TYPE:"testimonials",
+                REVIEWS:[
+                    {name:"Linh – Du khách",stars:5,text:"Xe đẹp, giao nhanh, giá hợp lý, đúng như tư vấn."},
+                    {name:"Đức – Freelancer",stars:5,text:"Đi êm, xăng ít hao, nhân viên rất dễ thương."},
+                    {name:"Sarah – Traveller",stars:4,text:"Easy to rent, delivery was fast, staff was helpful!"}
+                ]
+            },
+            {
+                TITLE:"Điểm đến gợi ý tại Hà Nội",
+                TYPE:"places",
+                ITEMS:[
+                    {icon:"🏯",name:"Phố cổ Hoàn Kiếm",desc:"Khám phá văn hóa, ẩm thực và cà phê."},
+                    {icon:"🌉",name:"Cầu Long Biên",desc:"Địa điểm check-in hoài cổ, gần khu Long Biên."},
+                    {icon:"🏞️",name:"Hồ Tây",desc:"Lái xe vòng hồ cực chill, phù hợp buổi chiều tối."}
+                ]
+            },
+            {
+                TITLE:"Ưu đãi & Nội dung hữu ích",
+                TYPE:"links",
+                LINKS:[
+                    {label:"🎁 Ưu đãi thuê xe",href:"uudai.html"},
+                    {label:"💡 Kinh nghiệm thuê xe",href:"kinhnghiem.html"},
+                    {label:"📘 Hướng dẫn thuê xe",href:"huongdan.html"},
+                    {label:"⚖️ Điều khoản thuê xe",href:"dieukhoansudung.html"}
+                ]
+            },
+            {
+                TITLE:"Câu hỏi thường gặp (FAQ)",
+                TYPE:"faq",
+                QUESTIONS:[
+                    {q:"Có cần đặt cọc không?",a:"Có, tuỳ dòng xe, thường từ 500.000đ hoặc giữ giấy tờ."},
+                    {q:"Có giao xe ban đêm không?",a:"Có, hỗ trợ 24/7 trong khu vực nội thành Hà Nội."},
+                    {q:"Mất xe thì sao?",a:"Liên hệ ngay với chúng tôi để được hướng dẫn xử lý theo hợp đồng."}
+                ]
+            },
+            {
+                TITLE:"Liên hệ & đặt xe ngay",
+                TYPE:"cta",
+                DESC:"Bạn cần thuê xe ngay khu vực Hoàn Kiếm, Long Biên, phố cổ Hà Nội? Gọi hoặc nhắn Zalo để được giao xe trong 20–40 phút.",
+                BUTTONS:[
+                    {label:"📞 Gọi ngay",href:"tel:0942467674"},
+                    {label:"💬 Chat Zalo",href:"https://zalo.me/0942467674"},
+                    {label:"📍 Xem bản đồ",href:"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc"}
+                ]
+            }
+        ],
+        FOOTER_COLS: {
+            col1: {
+                title: "Trang chủ",
+                items: [
+                    {"🏠 Trang chủ":"./"},
+                    {"📄 Giới thiệu":"gioithieu.html"}
+                ]
+            },
+            col2: {
+                title: "Dịch vụ",
+                items: [
+                    {"🏷️ Bảng giá":"banggia.html"},
+                    {"📅 Theo ngày":"ngay.html"},
+                    {"🗓️ Theo tuần":"tuan.html"},
+                    {"📆 Theo tháng":"thang.html"},
+                    {"🎁 Ưu đãi":"uudai.html"},
+                    {"📑 Thủ tục":"thutuc.html"},
+                    {"💰 Đặt cọc":"datcoc.html"}
+                ]
+            },
+            col3: {
+                title: "Địa điểm xe",
+                items: [
+                    {"Long Biên":"longbien.html"},
+                    {"Gia Lâm":"gialam.html"},
+                    {"Phố Cổ":"phoco.html"},
+                    {"Hoàn Kiếm":"hoankiem.html"},
+                    {"Ba Đình":"badinh.html"},
+                    {"Tây Hồ":"tayho.html"},
+                    {"Đống Đa":"dongda.html"}
+                ]
+            },
+            col4: {
+                title: "Khu vực khác",
+                items: [
+                    {"Cầu Giấy":"caugiay.html"},
+                    {"Hà Đông":"hadong.html"},
+                    {"Thanh Xuân":"thanhxuan.html"},
+                    {"Từ Liêm":"tuliem.html"},
+                    {"Ga Hà Nội":"gahn.html"}
+                ]
+            },
+            col5: {
+                title: "Thông tin & Chính sách",
+                items: [
+                    {"❓ FAQ":"faq.html"},
+                    {"📜 Điều khoản":"dieukhoansudung.html"},
+                    {"🔒 Bảo mật":"chinhsachbaomat.html"},
+                    {"💡 Kinh nghiệm":"kinhnghiem.html"},
+                    {"📘 Hướng dẫn":"huongdan.html"}
+                ]
+            },
+            col6: {
+                title: "Liên hệ & Social",
+                items: [
+                    {"📞 0942467674":"tel:0942467674"},
+                    {"💬 Zalo":"https://zalo.me/0942467674"},
+                    {"🌐 Website":"https://thuexemaynguyentu.com"}
+                ],
+                isSocial: true
+            }
+        },
+        SOCIAL_LINKS: [
+            {"icon":"fa-facebook-f", "url":"https://m.facebook.com/chothuexemay0857255868/"},
+            {"icon":"fa-instagram", "url":"https://www.instagram.com/nguyentumotorbike/"},
+            {"icon":"fa-tripadvisor", "url":"https://www.tripadvisor.com/Attraction_Review-g21333608-d9826317-Reviews-Nguyen_Tu_Motorbike_Rental-Long_Bien_Hanoi.html"}
+        ]
+    };
 
-        // --- RENDER ENGINE ---
-        const Render = {
-            menu: () => {
-                const desktopNav = document.getElementById('desktop-menu');
-                const mobileList = document.getElementById('mobile-menu-list');
-                let deskHTML = '';
-                let mobHTML = '';
+    // --- RENDER ENGINE ---
+    const Render = {
+        menu: () => {
+            const desktopNav = document.getElementById('desktop-menu');
+            const mobileList = document.getElementById('mobile-menu-list');
+            let deskHTML = '';
+            let mobHTML = '';
 
-                CONFIG.MENU.forEach(item => {
-                    const key = Object.keys(item)[0];
-                    const val = item[key];
-                    if (typeof val === 'string') {
-                        // desktop item
-                        deskHTML += `<a href="${val}" class="nav-item">${key}</a>`;
-                        // mobile item
-                        mobHTML += `<a href="${val}" class="mobile-link">${key}</a>`;
-                    } else {
-                        const sub = val
-                            .map(s => `<a href="${Object.values(s)[0]}" class="dropdown-item">${Object.keys(s)[0]}</a>`)
-                            .join('');
-                        deskHTML += `
-                            <div class="nav-item has-dropdown" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
-                                <span class="nav-label">${key}</span>
+            CONFIG.MENU.forEach(item => {
+                const key = Object.keys(item)[0];
+                const val = item[key];
+                if (typeof val === 'string') {
+                    // desktop item
+                    deskHTML += `<a href="${val}" class="nav-item">${key}</a>`;
+                    // mobile item
+                    mobHTML += `<a href="${val}" class="mobile-link">${key}</a>`;
+                } else {
+                    const sub = val
+                        .map(s => `<a href="${Object.values(s)[0]}" class="dropdown-item">${Object.keys(s)[0]}</a>`)
+                        .join('');
+                    deskHTML += `
+                        <div class="nav-item has-dropdown" role="button" tabindex="0" aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-label">${key}</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <div class="dropdown-menu glass">
+                                ${sub}
+                            </div>
+                        </div>
+                    `;
+                    const subMob = val
+                        .map(s => `<a href="${Object.values(s)[0]}" class="mobile-sub-item">• ${Object.keys(s)[0]}</a>`)
+                        .join('');
+                    mobHTML += `
+                        <div class="mobile-item-group">
+                            <div class="mobile-item has-sub">
+                                <span>${key}</span>
                                 <i class="fa-solid fa-chevron-down"></i>
-                                <div class="dropdown-menu glass">
-                                    ${sub}
+                            </div>
+                            <div class="mobile-dropdown">
+                                ${subMob}
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            desktopNav.innerHTML = deskHTML;
+            mobileList.innerHTML = mobHTML;
+        },
+        sections: () => {
+            const container = document.getElementById('body-content');
+            let html = '';
+            CONFIG.BODY_SECTIONS.forEach(sec => {
+                let content = '';
+                if (sec.TYPE === 'intro') {
+                    content = `
+                        <div class="text-center" style="max-width:800px; margin:0 auto; font-size:1.1rem;">
+                            ${sec.CONTENT.map(p => `<p style="margin-bottom:16px;">${p}</p>`).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'benefits') {
+                    content = `
+                        <div class="grid-auto">
+                            ${sec.POINTS.map(p => `
+                                <div class="benefit-card">
+                                    <i class="fa-solid fa-check-circle check-icon"></i>
+                                    <p>${p}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'steps') {
+                    content = `
+                        <div class="step-list">
+                            ${sec.STEPS.map(s => `
+                                <div class="step-item">
+                                    <p>${s}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'testimonials') {
+                    content = `
+                        <div class="grid-auto">
+                            ${sec.REVIEWS.map(r => `
+                                <div class="review-card">
+                                    <div class="stars">${'★'.repeat(r.stars)}</div>
+                                    <p>"${r.text}"</p>
+                                    <span class="review-name">- ${r.name}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'places') {
+                    content = `
+                        <div class="grid-auto">
+                            ${sec.ITEMS.map(i => `
+                                <div class="place-card">
+                                    <span class="place-icon">${i.icon}</span>
+                                    <div class="place-info">
+                                        <h3 style="margin-bottom:8px;">${i.name}</h3>
+                                        <p style="color:var(--text-sub); font-size:0.9rem;">${i.desc}</p>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'links') {
+                    content = `
+                        <div class="flex-center" style="gap:16px; flex-wrap:wrap;">
+                            ${sec.LINKS.map(l => `
+                                <a href="${l.href}" class="btn-white" style="background:var(--surface); color:var(--text-main);">
+                                    ${l.label}
+                                </a>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'faq') {
+                    content = `
+                        <div style="max-width:800px; margin:0 auto;">
+                            ${sec.QUESTIONS.map(q => `
+                                <details class="faq-item" style="border-bottom:1px solid var(--glass-border); margin-bottom:16px;">
+                                    <summary style="padding:16px 0; font-weight:600; cursor:pointer;">
+                                        ${q.q}
+                                    </summary>
+                                    <div style="padding-bottom:20px; color:var(--text-sub);">
+                                        ${q.a}
+                                    </div>
+                                </details>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (sec.TYPE === 'cta') {
+                    html += `
+                        <div class="container">
+                            <div class="cta-section fade-in-up">
+                                <h2>${sec.TITLE}</h2>
+                                <p style="opacity:0.9; max-width:700px; margin:0 auto;">
+                                    ${sec.DESC}
+                                </p>
+                                <div class="cta-buttons">
+                                    ${sec.BUTTONS.map((b, i) => `
+                                        <a href="${b.href}" class="${i === 0 ? 'btn-white' : 'btn-outline-white'}">
+                                            ${b.label}
+                                        </a>
+                                    `).join('')}
                                 </div>
                             </div>
-                        `;
-                        const subMob = val
-                            .map(s => `<a href="${Object.values(s)[0]}" class="mobile-sub-item">• ${Object.keys(s)[0]}</a>`)
-                            .join('');
-                        mobHTML += `
-                            <div class="mobile-item-group">
-                                <div class="mobile-item has-sub">
-                                    <span>${key}</span>
-                                    <i class="fa-solid fa-chevron-down"></i>
-                                </div>
-                                <div class="mobile-dropdown">
-                                    ${subMob}
-                                </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                html += `
+                    <section class="section-padding fade-in-up" ${sec.TYPE === 'places' ? 'id="diadiem"' : ''}>
+                        <div class="container">
+                            <div class="section-title">
+                                <h2>${sec.TITLE}</h2>
                             </div>
-                        `;
+                            ${content}
+                        </div>
+                    </section>
+                `;
+            });
+
+            container.innerHTML = html;
+        },
+        footer: () => {
+            const grid = document.getElementById('footer-grid');
+            let html = '';
+            Object.values(CONFIG.FOOTER_COLS).forEach(col => {
+                const links = col.items
+                    .map(item => `<li><a href="${Object.values(item)[0]}">${Object.keys(item)[0]}</a></li>`)
+                    .join('');
+                const social = col.isSocial
+                    ? `<div class="social-inline">
+                            ${CONFIG.SOCIAL_LINKS.map(s => `
+                                <a href="${s.url}" class="social-btn" target="_blank" rel="noopener">
+                                    <i class="fa-brands ${s.icon}"></i>
+                                </a>
+                            `).join('')}
+                       </div>`
+                    : '';
+                html += `
+                    <div class="footer-col">
+                        <h4>${col.title}</h4>
+                        <ul>${links}</ul>
+                        ${social}
+                    </div>
+                `;
+            });
+            grid.innerHTML = html;
+        }
+    };
+
+    // --- THEME & UI ---
+    const Theme = {
+        presets: [
+            {p:"#0A84FF",s:"#00C49A"},
+            {p:"#FF6B00",s:"#FFB800"},
+            {p:"#00b894",s:"#0984e3"},
+            {p:"#6c5ce7",s:"#a29bfe"}
+        ],
+        init: () => {
+            const t = document.getElementById('theme-toggle');
+            const i = t.querySelector('span');
+            // ĐÃ XOÁ: const themeMeta = ...
+
+            const rand = Theme.presets[Math.floor(Math.random() * Theme.presets.length)];
+            document.documentElement.style.setProperty('--primary', rand.p);
+            document.documentElement.style.setProperty('--primary-rgb', Theme.hexToRgb(rand.p));
+            document.documentElement.style.setProperty('--secondary', rand.s);
+            document.documentElement.style.setProperty('--secondary-rgb', Theme.hexToRgb(rand.s));
+
+            // ĐÃ XOÁ: const updateThemeColor = ...
+
+            const setMode = (isDark) => {
+                document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+                i.innerText = isDark ? 'dark_mode' : 'light_mode';
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                // ĐÃ XOÁ: updateThemeColor(isDark);
+            };
+
+            const saved = localStorage.getItem('theme');
+            const preferDark = window.matchMedia &&
+                window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            const initialDark = saved ? saved === 'dark' : preferDark;
+            setMode(initialDark);
+
+            t.onclick = () => {
+                const isDark = document.documentElement.getAttribute('data-theme') !== 'dark';
+                setMode(isDark);
+            };
+        },
+        hexToRgb: (hex) => {
+            const r = parseInt(hex.slice(1, 3), 16);
+            const g = parseInt(hex.slice(3, 5), 16);
+            const b = parseInt(hex.slice(5, 7), 16);
+            return `${r}, ${b}, ${g}`.replace(/,$/, '');
+        }
+    };
+
+    const UI = {
+        init: () => {
+            // --- MOBILE MENU LOGIC ---
+            const mt = document.getElementById('mobile-toggle');
+            const mo = document.getElementById('mobile-menu-overlay');
+            const mc = document.getElementById('mobile-menu-close');
+
+            const openMobileMenu = () => {
+                if (!mo) return;
+                mo.classList.add('active');
+                mo.setAttribute('aria-hidden', 'false');
+            };
+            const closeMobileMenu = () => {
+                if (!mo) return;
+                mo.classList.remove('active');
+                mo.setAttribute('aria-hidden', 'true');
+            };
+
+            if (mt && mo) {
+                // SỬA: Dùng toggle thay vì chỉ open
+                mt.addEventListener('click', () => {
+                    const isActive = mo.classList.contains('active');
+                    if (isActive) {
+                        closeMobileMenu();
+                    } else {
+                        openMobileMenu();
                     }
                 });
 
-                desktopNav.innerHTML = deskHTML;
-                mobileList.innerHTML = mobHTML;
-            },
-            sections: () => {
-                const container = document.getElementById('body-content');
-                let html = '';
-                CONFIG.BODY_SECTIONS.forEach(sec => {
-                    let content = '';
-                    if (sec.TYPE === 'intro') {
-                        content = `
-                            <div class="text-center" style="max-width:800px; margin:0 auto; font-size:1.1rem;">
-                                ${sec.CONTENT.map(p => `<p style="margin-bottom:16px;">${p}</p>`).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'benefits') {
-                        content = `
-                            <div class="grid-auto">
-                                ${sec.POINTS.map(p => `
-                                    <div class="benefit-card">
-                                        <i class="fa-solid fa-check-circle check-icon"></i>
-                                        <p>${p}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'steps') {
-                        content = `
-                            <div class="step-list">
-                                ${sec.STEPS.map(s => `
-                                    <div class="step-item">
-                                        <p>${s}</p>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'testimonials') {
-                        content = `
-                            <div class="grid-auto">
-                                ${sec.REVIEWS.map(r => `
-                                    <div class="review-card">
-                                        <div class="stars">${'★'.repeat(r.stars)}</div>
-                                        <p>"${r.text}"</p>
-                                        <span class="review-name">- ${r.name}</span>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'places') {
-                        content = `
-                            <div class="grid-auto">
-                                ${sec.ITEMS.map(i => `
-                                    <div class="place-card">
-                                        <span class="place-icon">${i.icon}</span>
-                                        <div class="place-info">
-                                            <h3 style="margin-bottom:8px;">${i.name}</h3>
-                                            <p style="color:var(--text-sub); font-size:0.9rem;">${i.desc}</p>
-                                        </div>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'links') {
-                        content = `
-                            <div class="flex-center" style="gap:16px; flex-wrap:wrap;">
-                                ${sec.LINKS.map(l => `
-                                    <a href="${l.href}" class="btn-white" style="background:var(--surface); color:var(--text-main);">
-                                        ${l.label}
-                                    </a>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'faq') {
-                        content = `
-                            <div style="max-width:800px; margin:0 auto;">
-                                ${sec.QUESTIONS.map(q => `
-                                    <details class="faq-item" style="border-bottom:1px solid var(--glass-border); margin-bottom:16px;">
-                                        <summary style="padding:16px 0; font-weight:600; cursor:pointer;">
-                                            ${q.q}
-                                        </summary>
-                                        <div style="padding-bottom:20px; color:var(--text-sub);">
-                                            ${q.a}
-                                        </div>
-                                    </details>
-                                `).join('')}
-                            </div>
-                        `;
-                    } else if (sec.TYPE === 'cta') {
-                        html += `
-                            <div class="container">
-                                <div class="cta-section fade-in-up">
-                                    <h2>${sec.TITLE}</h2>
-                                    <p style="opacity:0.9; max-width:700px; margin:0 auto;">
-                                        ${sec.DESC}
-                                    </p>
-                                    <div class="cta-buttons">
-                                        ${sec.BUTTONS.map((b, i) => `
-                                            <a href="${b.href}" class="${i === 0 ? 'btn-white' : 'btn-outline-white'}">
-                                                ${b.label}
-                                            </a>
-                                        `).join('')}
-                                    </div>
-                                </div>
-                            </div>
-                        `;
+                if (mc) mc.addEventListener('click', closeMobileMenu);
+
+                // Bấm nền ngoài để đóng
+                mo.addEventListener('click', (e) => {
+                    if (e.target === mo) closeMobileMenu();
+                });
+
+                // Toggle dropdown trong mobile menu
+                const mobileListEl = document.getElementById('mobile-menu-list');
+                if (mobileListEl) {
+                    mobileListEl.addEventListener('click', (e) => {
+                        const item = e.target.closest('.mobile-item.has-sub');
+                        if (!item || !mobileListEl.contains(item)) return;
+
+                        const dropdown = item.nextElementSibling;
+                        if (!dropdown || !dropdown.classList.contains('mobile-dropdown')) return;
+
+                        const isOpen = dropdown.classList.toggle('open');
+                        item.classList.toggle('open', isOpen);
+                    });
+                }
+            }
+
+            // Đổi từ mobile sang desktop -> đóng sheet nếu đang mở
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    closeMobileMenu();
+                }
+            });
+
+            // --- DESKTOP DROPDOWN (chuột + cảm ứng + bàn phím) ---
+            const desktopMenu = document.getElementById('desktop-menu');
+            if (desktopMenu) {
+                // Click: chỉ toggle khi click vào nav-item cha, KHÔNG chặn link con
+                desktopMenu.addEventListener('click', (e) => {
+                    const dropdownLink = e.target.closest('.dropdown-item');
+                    if (dropdownLink) {
+                        // cho phép browser điều hướng bình thường
                         return;
                     }
 
-                    html += `
-                        <section class="section-padding fade-in-up" ${sec.TYPE === 'places' ? 'id="diadiem"' : ''}>
-                            <div class="container">
-                                <div class="section-title">
-                                    <h2>${sec.TITLE}</h2>
-                                </div>
-                                ${content}
-                            </div>
-                        </section>
-                    `;
-                });
+                    const item = e.target.closest('.nav-item.has-dropdown');
+                    if (!item) return;
 
-                container.innerHTML = html;
-            },
-            footer: () => {
-                const grid = document.getElementById('footer-grid');
-                let html = '';
-                Object.values(CONFIG.FOOTER_COLS).forEach(col => {
-                    const links = col.items
-                        .map(item => `<li><a href="${Object.values(item)[0]}">${Object.keys(item)[0]}</a></li>`)
-                        .join('');
-                    const social = col.isSocial
-                        ? `<div class="social-inline">
-                                ${CONFIG.SOCIAL_LINKS.map(s => `
-                                    <a href="${s.url}" class="social-btn" target="_blank" rel="noopener">
-                                        <i class="fa-brands ${s.icon}"></i>
-                                    </a>
-                                `).join('')}
-                           </div>`
-                        : '';
-                    html += `
-                        <div class="footer-col">
-                            <h4>${col.title}</h4>
-                            <ul>${links}</ul>
-                            ${social}
-                        </div>
-                    `;
-                });
-                grid.innerHTML = html;
-            }
-        };
-
-        // --- THEME & UI ---
-        const Theme = {
-            presets: [
-                {p:"#0A84FF",s:"#00C49A"},
-                {p:"#FF6B00",s:"#FFB800"},
-                {p:"#00b894",s:"#0984e3"},
-                {p:"#6c5ce7",s:"#a29bfe"}
-            ],
-            init: () => {
-                const t = document.getElementById('theme-toggle');
-                const i = t.querySelector('span');
-                const themeMeta = document.getElementById('theme-color-meta');
-
-                const rand = Theme.presets[Math.floor(Math.random() * Theme.presets.length)];
-                document.documentElement.style.setProperty('--primary', rand.p);
-                document.documentElement.style.setProperty('--primary-rgb', Theme.hexToRgb(rand.p));
-                document.documentElement.style.setProperty('--secondary', rand.s);
-                document.documentElement.style.setProperty('--secondary-rgb', Theme.hexToRgb(rand.s));
-
-                const updateThemeColor = (isDark) => {
-                    if (!themeMeta) return;
-                    themeMeta.setAttribute('content', isDark ? '#05060a' : '#f9fafa');
-                };
-
-                const setMode = (isDark) => {
-                    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-                    i.innerText = isDark ? 'dark_mode' : 'light_mode';
-                    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                    updateThemeColor(isDark);
-                };
-
-                const saved = localStorage.getItem('theme');
-                const preferDark = window.matchMedia &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-                const initialDark = saved ? saved === 'dark' : preferDark;
-                setMode(initialDark);
-
-                t.onclick = () => {
-                    const isDark = document.documentElement.getAttribute('data-theme') !== 'dark';
-                    setMode(isDark);
-                };
-            },
-            hexToRgb: (hex) => {
-                const r = parseInt(hex.slice(1, 3), 16);
-                const g = parseInt(hex.slice(3, 5), 16);
-                const b = parseInt(hex.slice(5, 7), 16);
-                return `${r}, ${b}, ${g}`.replace(/,$/, '');
-            }
-        };
-
-        const UI = {
-            init: () => {
-                // --- MOBILE MENU LOGIC ---
-                const mt = document.getElementById('mobile-toggle');
-                const mo = document.getElementById('mobile-menu-overlay');
-                const mc = document.getElementById('mobile-menu-close');
-
-                const openMobileMenu = () => {
-                    if (!mo) return;
-                    mo.classList.add('active');
-                    mo.setAttribute('aria-hidden', 'false');
-                };
-                const closeMobileMenu = () => {
-                    if (!mo) return;
-                    mo.classList.remove('active');
-                    mo.setAttribute('aria-hidden', 'true');
-                };
-
-                if (mt && mo) {
-                    mt.addEventListener('click', openMobileMenu);
-                    if (mc) mc.addEventListener('click', closeMobileMenu);
-
-                    // Bấm nền ngoài để đóng
-                    mo.addEventListener('click', (e) => {
-                        if (e.target === mo) closeMobileMenu();
-                    });
-
-                    // Toggle dropdown trong mobile menu
-                    const mobileListEl = document.getElementById('mobile-menu-list');
-                    if (mobileListEl) {
-                        mobileListEl.addEventListener('click', (e) => {
-                            const item = e.target.closest('.mobile-item.has-sub');
-                            if (!item || !mobileListEl.contains(item)) return;
-
-                            const dropdown = item.nextElementSibling;
-                            if (!dropdown || !dropdown.classList.contains('mobile-dropdown')) return;
-
-                            const isOpen = dropdown.classList.toggle('open');
-                            item.classList.toggle('open', isOpen);
-                        });
-                    }
-                }
-
-                // Đổi từ mobile sang desktop -> đóng sheet nếu đang mở
-                window.addEventListener('resize', () => {
                     if (window.innerWidth >= 768) {
-                        closeMobileMenu();
-                    }
-                });
+                        e.preventDefault();
 
-                // --- DESKTOP DROPDOWN (chuột + cảm ứng + bàn phím) ---
-                const desktopMenu = document.getElementById('desktop-menu');
-                if (desktopMenu) {
-                    // Click: chỉ toggle khi click vào nav-item cha, KHÔNG chặn link con
-                    desktopMenu.addEventListener('click', (e) => {
-                        const dropdownLink = e.target.closest('.dropdown-item');
-                        if (dropdownLink) {
-                            // cho phép browser điều hướng bình thường
-                            return;
-                        }
+                        const isOpen = !item.classList.contains('open');
 
-                        const item = e.target.closest('.nav-item.has-dropdown');
-                        if (!item) return;
-
-                        if (window.innerWidth >= 768) {
-                            e.preventDefault();
-
-                            const isOpen = !item.classList.contains('open');
-
-                            // đóng các dropdown khác
-                            desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
-                                .forEach(el => {
-                                    if (el !== item) {
-                                        el.classList.remove('open');
-                                        el.setAttribute('aria-expanded', 'false');
-                                    }
-                                });
-
-                            item.classList.toggle('open', isOpen);
-                            item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                        }
-                    });
-
-                    // Bàn phím: Enter / Space trên nav-item cha
-                    desktopMenu.addEventListener('keydown', (e) => {
-                        const item = e.target.closest('.nav-item.has-dropdown');
-                        if (!item) return;
-                        if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault();
-                            const isOpen = !item.classList.contains('open');
-
-                            desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
-                                .forEach(el => {
-                                    if (el !== item) {
-                                        el.classList.remove('open');
-                                        el.setAttribute('aria-expanded', 'false');
-                                    }
-                                });
-
-                            item.classList.toggle('open', isOpen);
-                            item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                        }
-                    });
-
-                    // Click ngoài menu -> đóng dropdown
-                    document.addEventListener('click', (e) => {
-                        if (!desktopMenu.contains(e.target)) {
-                            desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
-                                .forEach(el => {
+                        // đóng các dropdown khác
+                        desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
+                            .forEach(el => {
+                                if (el !== item) {
                                     el.classList.remove('open');
                                     el.setAttribute('aria-expanded', 'false');
-                                });
-                        }
-                    });
-                }
+                                }
+                            });
 
-                // Header scroll
-                const header = document.getElementById('main-header');
-                if (header) {
-                    const onScroll = () => {
-                        header.classList.toggle('scrolled', window.scrollY > 50);
-                    };
-                    window.addEventListener('scroll', onScroll, { passive: true });
-                    onScroll();
-                }
+                        item.classList.toggle('open', isOpen);
+                        item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                });
 
-                // Quick dock
-                const dt = document.getElementById('dock-toggle');
-                const di = document.getElementById('dock-items');
-                if (dt && di) {
-                    dt.addEventListener('click', () => {
-                        dt.classList.toggle('active');
-                        di.classList.toggle('show');
-                    });
-                }
+                // Bàn phím: Enter / Space trên nav-item cha
+                desktopMenu.addEventListener('keydown', (e) => {
+                    const item = e.target.closest('.nav-item.has-dropdown');
+                    if (!item) return;
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        const isOpen = !item.classList.contains('open');
 
-                // Animations
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('visible');
-                            obs.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
+                        desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
+                            .forEach(el => {
+                                if (el !== item) {
+                                    el.classList.remove('open');
+                                    el.setAttribute('aria-expanded', 'false');
+                                }
+                            });
 
-                document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+                        item.classList.toggle('open', isOpen);
+                        item.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    }
+                });
+
+                // Click ngoài menu -> đóng dropdown
+                document.addEventListener('click', (e) => {
+                    if (!desktopMenu.contains(e.target)) {
+                        desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
+                            .forEach(el => {
+                                el.classList.remove('open');
+                                el.setAttribute('aria-expanded', 'false');
+                            });
+                    }
+                });
             }
-        };
 
-        // Init
-        Render.menu();
-        Render.sections();
-        Render.footer();
-        Theme.init();
-        UI.init();
-    })();
-    </script>
+            // Header scroll
+            const header = document.getElementById('main-header');
+            if (header) {
+                const onScroll = () => {
+                    header.classList.toggle('scrolled', window.scrollY > 50);
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+
+            // Quick dock
+            const dt = document.getElementById('dock-toggle');
+            const di = document.getElementById('dock-items');
+            if (dt && di) {
+                dt.addEventListener('click', () => {
+                    dt.classList.toggle('active');
+                    di.classList.toggle('show');
+                });
+            }
+
+            // Animations
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        }
+    };
+
+    // Init
+    Render.menu();
+    Render.sections();
+    Render.footer();
+    Theme.init();
+    UI.init();
+})();
+</script>
 </body>
 </html>
