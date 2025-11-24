@@ -88,7 +88,6 @@
     /* --- 2. UTILITIES --- */
     .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
     .glass {
-        background: var(--glass-bg);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
         border: 1px solid var(--glass-border);
@@ -107,17 +106,67 @@
     .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
-    /* --- 3. HEADER & MENU --- */
+    /* --- 3. HEADER & MENU (NEW iOS STYLE) --- */
+    
+    /* Wrapper chính của Header: Gradient nền để tách khỏi Safari */
     .header {
-        position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-        transition: var(--transition); padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 8px 0 10px; /* Cách trên xuống 8px */
+        transition: var(--transition);
+        /* Gradient từ đen (hoặc màu nền) xuống trong suốt */
+        background: linear-gradient(
+            to bottom,
+            rgba(5, 6, 10, 0.98),
+            rgba(5, 6, 10, 0.85),
+            transparent
+        );
     }
+
+    /* Khi cuộn xuống: Tăng độ tối nền header wrapper một chút */
     .header.scrolled {
-        background: var(--glass-bg); backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--glass-border);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        background: linear-gradient(
+            to bottom,
+            rgba(5, 6, 10, 0.98),
+            rgba(5, 6, 10, 0.98)
+        );
+        /* Thêm chút bóng nhẹ cho cả dải nếu muốn */
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
     }
-    .nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+    /* Thanh Bar nổi (Card) */
+    .header-bar {
+        border-radius: 18px;
+        padding: 6px 16px;
+        display: flex; /* Thay thế vai trò layout của container cũ */
+        flex-direction: column;
+        justify-content: center;
+        transition: var(--transition);
+        border: 1px solid var(--glass-border);
+    }
+
+    /* Light Mode Header Bar */
+    .header-bar {
+        background: rgba(255, 255, 255, 0.92);
+    }
+    
+    /* Dark Mode Header Bar - Màu xám tối nổi trên nền đen */
+    [data-theme="dark"] .header-bar {
+        background: rgba(22, 22, 24, 0.95); /* Xám đậm, không đen tuyền */
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    /* Nav Container bên trong Bar */
+    .nav-container { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        width: 100%;
+    }
 
     /* LOGO STYLES */
     .logo {
@@ -125,13 +174,13 @@
         text-decoration: none; user-select: none;
     }
     .logo-badge {
-        position: relative; width: 44px; height: 44px; border-radius: 14px; padding: 2px;
+        position: relative; width: 40px; height: 40px; border-radius: 12px; padding: 2px;
         background: conic-gradient(from 180deg, rgba(var(--primary-rgb), 1), rgba(var(--secondary-rgb), 1), rgba(255, 184, 0, 1), rgba(var(--primary-rgb), 1));
         box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset, 0 8px 20px rgba(0, 0, 0, 0.15);
         overflow: hidden; animation: spinGradient 10s linear infinite;
     }
     .logo-badge-inner {
-        position: relative; width: 100%; height: 100%; border-radius: 12px;
+        position: relative; width: 100%; height: 100%; border-radius: 10px;
         background: radial-gradient(circle at 0 0, #ffffff, #f2f2f7 80%);
         display: flex; align-items: center; justify-content: center; overflow: hidden;
         animation: spinGradient 10s linear infinite reverse;
@@ -143,25 +192,24 @@
     }
     .logo-badge-inner img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); z-index: 1; }
     .logo-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
-    .logo-title { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
-    .logo-subtitle { font-size: 0.75rem; color: var(--text-sub); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+    .logo-title { font-weight: 800; font-size: 1rem; letter-spacing: -0.01em; }
+    .logo-subtitle { font-size: 0.7rem; color: var(--text-sub); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
     @keyframes spinGradient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     @media (max-width: 768px) {
-        .logo-title { font-size: 0.95rem; }
-        .logo-subtitle { font-size: 0.7rem; }
-        .logo-badge { width: 38px; height: 38px; border-radius: 12px; }
-        .logo { gap: 10px; }
+        .logo-title { font-size: 0.9rem; }
+        .logo-subtitle { font-size: 0.65rem; }
+        .logo-badge { width: 36px; height: 36px; border-radius: 10px; }
+        .logo { gap: 8px; }
+        /* Tinh chỉnh mobile header cho gọn */
+        .header { padding: 6px 0 10px; }
+        .header-bar { padding: 5px 12px; }
     }
 
     /* DESKTOP NAV – PILL STYLE */
     .nav-menu {
         display: flex; align-items: center; gap: 4px; padding: 3px 4px;
-        border-radius: 999px; background: rgba(255, 255, 255, 0.92);
-        backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-        box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-        border: 1px solid var(--glass-border);
+        /* Desktop menu không cần background nữa vì đã nằm trong header-bar */
     }
-    [data-theme="dark"] .nav-menu { background: rgba(22, 22, 24, 0.96); }
 
     .nav-item {
         position: relative; padding: 6px 12px; border-radius: 999px;
@@ -171,30 +219,27 @@
     }
     .nav-item:hover {
         color: var(--primary);
-        background: rgba(var(--primary-rgb), 0.06);
+        background: rgba(var(--primary-rgb), 0.08);
     }
     .nav-item.has-dropdown i.fa-chevron-down {
         font-size: 9px; opacity: 0.7;
     }
 
-    .nav-item[role="button"] { user-select: none; }
-
-    /* mở dropdown khi hover (desktop) HOẶC khi có class .open (touch / click) */
-    .has-dropdown:hover .dropdown-menu,
-    .nav-item.has-dropdown.open .dropdown-menu {
-        opacity: 1; visibility: visible; transform: translateY(0);
-    }
-
     .dropdown-menu {
-        position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
+        position: absolute; top: calc(100% + 12px); left: 0; min-width: 220px;
         background: var(--surface); border-radius: 16px; padding: 8px;
         border: 1px solid var(--glass-border); box-shadow: 0 18px 45px rgba(0,0,0,0.28);
         opacity: 0; visibility: hidden; transform: translateY(8px);
         transition: var(--transition); z-index: 40; display: flex; flex-direction: column; gap: 4px;
     }
+    /* Sửa arrow dropdown cho khớp với header mới */
+    .has-dropdown:hover .dropdown-menu,
+    .nav-item.has-dropdown.open .dropdown-menu {
+        opacity: 1; visibility: visible; transform: translateY(0);
+    }
     .dropdown-item {
         padding: 8px 10px; border-radius: 10px; font-size: 0.8rem;
-        color: var(--text-sub); display: flex; align-items: center; gap: 6px;
+        color: var(--text-sub); display: flex; align-items: center; gap: 6px; text-decoration: none;
     }
     .dropdown-item:hover {
         background: rgba(var(--primary-rgb), 0.06);
@@ -203,29 +248,19 @@
     }
 
     /* Actions */
-    .header-actions { display: flex; gap: 12px; align-items: center; }
+    .header-actions { display: flex; gap: 10px; align-items: center; }
     .btn-theme {
-        width: 40px; height: 40px; border-radius: 50%;
+        width: 38px; height: 38px; border-radius: 50%;
         background: rgba(var(--primary-rgb), 0.1); color: var(--primary);
         display: flex; align-items: center; justify-content: center;
         transition: var(--transition); cursor: pointer; border: none;
     }
     .btn-theme:hover { transform: rotate(15deg) scale(1.1); }
-    .hamburger { display: none; font-size: 24px; color: var(--text-main); cursor: pointer; }
+    .hamburger { display: none; font-size: 22px; color: var(--text-main); cursor: pointer; background: transparent; border: none; }
 
-    /* DARK HEADER */
-    [data-theme="dark"] .header {
-        background: rgba(5, 6, 10, 0.98);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
-    }
-    [data-theme="dark"] .nav-item {
-        color: #e5e5ea;
-    }
-    [data-theme="dark"] .nav-item:hover {
-        background: rgba(255, 255, 255, 0.06);
-        color: #ffffff;
-    }
+    /* Dark theme specific overrides for items inside bar */
+    [data-theme="dark"] .nav-item { color: #e5e5ea; }
+    [data-theme="dark"] .nav-item:hover { background: rgba(255, 255, 255, 0.08); color: #ffffff; }
 
     /* MOBILE MENU ULTRA–IOS */
     .mobile-menu-overlay {
@@ -347,7 +382,8 @@
 
     /* --- 4. HERO SECTION --- */
     .hero {
-        padding-top: 130px; padding-bottom: 60px; min-height: 90vh;
+        padding-top: 140px; /* Tăng padding top vì header mới floating */
+        padding-bottom: 60px; min-height: 90vh;
         background: radial-gradient(circle at 50% 30%, rgba(var(--primary-rgb), 0.25), transparent 60%);
         display: flex; align-items: center; position: relative;
     }
@@ -539,42 +575,39 @@
 </style>
 </head>
 <body id="top">
-code
-Code
 
-download
+<!-- HEADER NEW STRUCTURE -->
+<header class="header" id="main-header">
+    <div class="container">
+        <!-- HEADER BAR NỔI (FLOATING) -->
+        <div class="header-bar glass">
+            <div class="nav-container">
+                <!-- LOGO BLOCK ULTRA APP -->
+                <a href="./" class="logo">
+                    <div class="logo-badge">
+                        <div class="logo-badge-glow"></div>
+                        <div class="logo-badge-inner">
+                            <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Nguyễn Tú Motorbike Rental">
+                        </div>
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-title">Nguyễn Tú</span>
+                        <span class="logo-subtitle">Motorbike Rental</span>
+                    </div>
+                </a>
 
-content_copy
+                <!-- Desktop Nav -->
+                <nav class="nav-menu" id="desktop-menu" aria-label="Điều hướng chính"></nav>
 
-expand_less
-<!-- HEADER -->
-<header class="header glass" id="main-header">
-    <div class="container nav-container">
-
-        <!-- LOGO BLOCK ULTRA APP -->
-        <a href="./" class="logo">
-            <div class="logo-badge">
-                <div class="logo-badge-glow"></div>
-                <div class="logo-badge-inner">
-                    <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Nguyễn Tú Motorbike Rental">
+                <div class="header-actions">
+                    <button class="btn-theme" id="theme-toggle" aria-label="Chuyển giao diện">
+                        <span class="material-symbols-rounded">light_mode</span>
+                    </button>
+                    <button class="hamburger" id="mobile-toggle" aria-label="Mở menu">
+                        <span class="material-symbols-rounded">menu</span>
+                    </button>
                 </div>
             </div>
-            <div class="logo-text">
-                <span class="logo-title">Nguyễn Tú</span>
-                <span class="logo-subtitle">Motorbike Rental</span>
-            </div>
-        </a>
-
-        <!-- Desktop Nav -->
-        <nav class="nav-menu" id="desktop-menu" aria-label="Điều hướng chính"></nav>
-
-        <div class="header-actions">
-            <button class="btn-theme" id="theme-toggle" aria-label="Chuyển giao diện">
-                <span class="material-symbols-rounded">light_mode</span>
-            </button>
-            <button class="hamburger" id="mobile-toggle" aria-label="Mở menu">
-                <span class="material-symbols-rounded">menu</span>
-            </button>
         </div>
     </div>
 </header>
@@ -1075,7 +1108,7 @@ expand_less
             document.documentElement.style.setProperty('--secondary', rand.s);
             document.documentElement.style.setProperty('--secondary-rgb', Theme.hexToRgb(rand.s));
 
-            // ĐÃ XOÁ: const updateThemeColor = ...
+            // ĐÃ XOÁ: updateThemeColor(isDark);
 
             const setMode = (isDark) => {
                 document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
