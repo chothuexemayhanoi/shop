@@ -1,3 +1,118 @@
+
+ mình tập trung menu thôi nhé – không đụng tới hero 👍
+
+1. Giảm “chóa” cho thanh điều hướng khi dark mode
+
+Thêm đúng đoạn này vào cuối <style> (sau tất cả CSS đang có) để override:
+
+/* ===== DARK MODE – HEADER & DESKTOP NAV ĐỠ CHÓA ===== */
+[data-theme="dark"] .header {
+    background: rgba(0, 0, 0, 0.96);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+}
+
+[data-theme="dark"] .nav-menu {
+    background: rgba(22, 22, 24, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .nav-item {
+    color: #e5e5ea;
+}
+
+[data-theme="dark"] .nav-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #ffffff;
+}
+
+Kết quả: thanh menu trong dark mode sẽ tối hơn, chữ sáng rõ, không còn kiểu xám xám khó nhìn.
+
+⸻
+
+2. Làm mobile menu kiểu “card + icon” cho đẹp như mini app
+
+HTML hiện tại của menu di động đã ok, mình chỉ styling lại cho giống card.
+Cũng chỉ cần thêm CSS dưới cùng <style>:
+
+/* ===== MOBILE MENU – CARD STYLE ===== */
+
+/* Nền list thoáng hơn một chút */
+.mobile-nav-list {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Nhóm có submenu thành 1 card */
+.mobile-item-group {
+    border-radius: 18px;
+    padding: 6px 10px 8px;
+    border: 1px solid rgba(0,0,0,0.06);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+/* Item bình thường (không submenu) cũng là card */
+.mobile-link {
+    border-radius: 18px;
+    padding: 12px 12px;
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    font-size: 1.02rem;
+}
+
+/* Text + emoji icon canh hàng ngang */
+.mobile-item span,
+.mobile-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hiệu ứng khi chạm */
+.mobile-item-group:active,
+.mobile-link:active {
+    transform: scale(0.98);
+    background: rgba(var(--primary-rgb), 0.06);
+    border-color: rgba(var(--primary-rgb), 0.4);
+}
+
+/* Submenu bên trong card */
+.mobile-dropdown {
+    padding-left: 4px;
+    margin-top: 4px;
+}
+
+.mobile-sub-item {
+    padding: 4px 0;
+    font-size: 0.92rem;
+}
+
+/* Dark mode cho card menu di động */
+[data-theme="dark"] .mobile-item-group,
+[data-theme="dark"] .mobile-link {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .mobile-link,
+[data-theme="dark"] .mobile-item {
+    color: #f5f5f7;
+}
+
+[data-theme="dark"] .mobile-sub-item {
+    color: #a1a1a6;
+}
+
+Không cần sửa JS đâu, dropdown vẫn hoạt động bình thường.
+Bạn chỉ cần copy 2 block CSS trên dán vào cuối <style> trong file hiện tại rồi push lại GitHub, reload trên iPhone là sẽ thấy:
+	•	Thanh nav dark mode đỡ chói.
+	•	Mobile menu thành từng card mềm, icon (emoji) + chữ nằm cùng một hàng, trông giống “mini app menu” hơn.
+
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
