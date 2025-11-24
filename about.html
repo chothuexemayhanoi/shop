@@ -34,7 +34,7 @@
             --text-main: #1c1c1e;
             --text-sub: #6e6e73;
             --glass-bg: rgba(255, 255, 255, 0.75);
-            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(0, 0, 0, 0.06);
             --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
             --surface: #ffffff;
             
@@ -50,7 +50,7 @@
             --bg-body: #0c0d0f;
             --text-main: #f5f5f7;
             --text-sub: #a1a1a6;
-            --glass-bg: rgba(20, 20, 22, 0.75);
+            --glass-bg: rgba(20, 20, 22, 0.85);
             --glass-border: rgba(255, 255, 255, 0.08);
             --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             --surface: #1c1c1e;
@@ -153,9 +153,10 @@
         /* DESKTOP NAV – ULTRA MINI APP STYLE */
         .nav-menu {
             display: flex; align-items: center; gap: 4px; padding: 3px 4px;
-            border-radius: 999px; background: rgba(255, 255, 255, 0.82);
+            border-radius: 999px; background: rgba(255, 255, 255, 0.92);
             backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
             box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+            border: 1px solid var(--glass-border);
         }
         [data-theme="dark"] .nav-menu { background: rgba(28, 28, 30, 0.92); }
 
@@ -173,9 +174,12 @@
             font-size: 9px; opacity: 0.7;
         }
 
-        .has-dropdown:hover .dropdown-menu {
+        /* mở dropdown khi hover (chuột) HOẶC khi có class .open (touch) */
+        .has-dropdown:hover .dropdown-menu,
+        .nav-item.has-dropdown.open .dropdown-menu {
             opacity: 1; visibility: visible; transform: translateY(0);
         }
+
         .dropdown-menu {
             position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
             background: var(--surface); border-radius: 16px; padding: 8px;
@@ -1044,18 +1048,53 @@
                         if (e.target === mo) closeMenu();
                     });
 
-                    // Toggle dropdown trong mobile menu
-                    document.querySelectorAll('#mobile-menu-list .mobile-item.has-sub')
-                        .forEach(item => {
-                            item.addEventListener('click', () => {
-                                const dropdown = item.nextElementSibling;
-                                if (!dropdown) return;
-                                const isOpen = dropdown.classList.toggle('open');
-                                item.classList.toggle('open', isOpen);
-                            });
+                    // Toggle dropdown trong mobile menu (event delegation)
+                    const mobileListEl = document.getElementById('mobile-menu-list');
+                    if (mobileListEl) {
+                        mobileListEl.addEventListener('click', (e) => {
+                            const item = e.target.closest('.mobile-item.has-sub');
+                            if (!item || !mobileListEl.contains(item)) return;
+
+                            const dropdown = item.nextElementSibling;
+                            if (!dropdown || !dropdown.classList.contains('mobile-dropdown')) return;
+
+                            const isOpen = dropdown.classList.toggle('open');
+                            item.classList.toggle('open', isOpen);
                         });
+                    }
                 }
                 
+                // --- DESKTOP DROPDOWN – HỖ TRỢ CẢ IPHONE NGANG ---
+                const desktopMenu = document.getElementById('desktop-menu');
+                if (desktopMenu) {
+                    desktopMenu.addEventListener('click', (e) => {
+                        const item = e.target.closest('.nav-item.has-dropdown');
+                        if (!item) return;
+
+                        // Chỉ xử lý khi đang ở layout desktop (>= 768px)
+                        if (window.innerWidth >= 768) {
+                            e.preventDefault();
+
+                            // Đóng các dropdown khác
+                            desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
+                                .forEach(el => {
+                                    if (el !== item) el.classList.remove('open');
+                                });
+
+                            // Toggle dropdown hiện tại
+                            item.classList.toggle('open');
+                        }
+                    });
+
+                    // Click ra ngoài để đóng dropdown
+                    document.addEventListener('click', (e) => {
+                        if (!desktopMenu.contains(e.target)) {
+                            desktopMenu.querySelectorAll('.nav-item.has-dropdown.open')
+                                .forEach(el => el.classList.remove('open'));
+                        }
+                    });
+                }
+
                 // Header scroll
                 const header = document.getElementById('main-header');
                 if (header) {
