@@ -6,9 +6,11 @@
     <title>Dịch vụ cho thuê xe máy Hoàn Kiếm, Hà Nội – Nguyễn Tú</title>
     <meta name="description" content="Thuê xe máy Hà Nội giá rẻ, uy tín – Nguyễn Tú. Xe ga, xe số, xe điện, giao nhanh 20–40 phút, cọc nhẹ, hỗ trợ 24/7.">
     
+    <!-- Open Graph & Meta -->
     <meta property="og:image" content="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/BANNER-THUE-XE-MAY-1.png">
-    <meta name="theme-color" content="#007AFF">
+    <meta name="theme-color" content="#0A84FF">
     
+    <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,539 +18,618 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- 1. CORE VARIABLES (IOS SYSTEM COLORS) --- */
+        /* --- 1. CORE VARIABLES --- */
         :root {
-            /* Light Mode */
-            --ios-blue: #007AFF;
-            --ios-green: #34C759;
-            --ios-orange: #FF9500;
-            --ios-red: #FF3B30;
-            --ios-teal: #30B0C7;
+            --primary: #0A84FF;
+            --primary-rgb: 10, 132, 255;
+            --secondary: #00C49A;
+            --secondary-rgb: 0, 196, 154;
+            --bg-body: #f9fafa;
+            --text-main: #1c1c1e;
+            --text-sub: #6e6e73;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.6);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+            --surface: #ffffff;
             
-            --bg-body: #F2F2F7; /* iOS System Gray 6 */
-            --bg-card: #FFFFFF;
-            --text-primary: #000000;
-            --text-secondary: #8E8E93;
-            --separator: #C6C6C8;
-            
-            --glass-material: rgba(255, 255, 255, 0.8);
-            --glass-border: rgba(255, 255, 255, 0.5);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
-            
-            --radius-app: 22px;   /* App Icon shape */
-            --radius-card: 16px;  /* Widget/Card shape */
-            --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --safe-bottom: env(safe-area-inset-bottom);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 32px;
+            --font-main: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            --safe-area-inset-bottom: env(safe-area-inset-bottom);
         }
 
         [data-theme="dark"] {
-            --bg-body: #000000;
-            --bg-card: #1C1C1E; /* iOS Dark Gray */
-            --text-primary: #FFFFFF;
-            --text-secondary: #98989D;
-            --separator: #38383A;
-            
-            --glass-material: rgba(30, 30, 30, 0.8);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.3);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.5);
+            --bg-body: #0c0d0f;
+            --text-main: #f5f5f7;
+            --text-sub: #a1a1a6;
+            --glass-bg: rgba(20, 20, 22, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --surface: #1c1c1e;
         }
 
-        /* --- 2. RESET & BASE --- */
         * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; font-size: 16px; }
         body {
             font-family: var(--font-main);
             background-color: var(--bg-body);
-            color: var(--text-primary);
-            line-height: 1.5;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: var(--text-main);
+            line-height: 1.6;
+            transition: background-color 0.5s ease, color 0.5s ease;
             overflow-x: hidden;
         }
-        a { text-decoration: none; color: inherit; cursor: pointer; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
         ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; height: auto; display: block; }
 
-        /* --- 3. COMPONENTS --- */
+        /* --- 2. UTILITIES --- */
+        .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 20px; }
         .glass {
-            background: var(--glass-material);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 0.5px solid var(--separator);
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
         }
-        
-        /* Typography */
-        h1, h2, h3 { letter-spacing: -0.02em; font-weight: 700; }
+        .section-padding { padding: 80px 0; }
+        .text-center { text-align: center; }
         .text-gradient {
-            background: linear-gradient(135deg, var(--ios-blue), var(--ios-teal));
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: inline-block;
         }
+        .flex-center { display: flex; align-items: center; justify-content: center; }
+        .grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .fade-in-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* Animations */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-in { animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; opacity: 0; }
-        .delay-1 { animation-delay: 0.1s; }
-        .delay-2 { animation-delay: 0.2s; }
-
-        /* --- 4. HEADER & LOGO --- */
+        /* --- 3. HEADER & MENU --- */
         .header {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            height: 64px; display: flex; align-items: center; transition: all 0.3s ease;
+            transition: var(--transition); padding: 10px 0;
         }
-        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .header.scrolled {
+            background: var(--glass-bg); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
-        /* LOGO STYLES (SIRI/AI GLOW) */
-        .logo-container {
-            display: flex; align-items: center; gap: 10px;
+        /* LOGO STYLES */
+        .logo {
+            display: flex; align-items: center; gap: 12px; color: var(--text-main);
+            text-decoration: none; user-select: none;
         }
-        .logo-icon {
-            width: 40px; height: 40px; border-radius: 12px;
-            position: relative; padding: 2px; overflow: hidden;
+        .logo-badge {
+            position: relative; width: 44px; height: 44px; border-radius: 14px; padding: 2px;
+            background: conic-gradient(from 180deg, rgba(var(--primary-rgb), 1), rgba(var(--secondary-rgb), 1), rgba(255, 184, 0, 1), rgba(var(--primary-rgb), 1));
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4) inset, 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden; animation: spinGradient 10s linear infinite;
         }
-        .logo-icon::before {
-            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(transparent, var(--ios-blue), var(--ios-green), var(--ios-orange), var(--ios-blue));
-            animation: spin 4s linear infinite;
+        .logo-badge-inner {
+            position: relative; width: 100%; height: 100%; border-radius: 12px;
+            background: radial-gradient(circle at 0 0, #ffffff, #f2f2f7 80%);
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+            animation: spinGradient 10s linear infinite reverse; 
         }
-        .logo-inner {
-            background: var(--bg-card); width: 100%; height: 100%; border-radius: 10px;
-            position: relative; display: flex; align-items: center; justify-content: center; z-index: 1;
+        .logo-badge-glow {
+            position: absolute; inset: -20%;
+            background: radial-gradient(circle at 30% 0%, rgba(255,255,255,0.9), transparent 60%);
+            opacity: 0.6; pointer-events: none; z-index: 2;
         }
-        .logo-inner img { width: 70%; height: 70%; object-fit: contain; }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .logo-badge-inner img { width: 70%; height: 70%; object-fit: contain; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); z-index: 1; }
+        .logo-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+        .logo-title { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; }
+        .logo-subtitle { font-size: 0.75rem; color: var(--text-sub); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+        @keyframes spinGradient { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @media (max-width: 768px) {
+            .logo-title { font-size: 0.95rem; }
+            .logo-subtitle { font-size: 0.7rem; }
+            .logo-badge { width: 38px; height: 38px; border-radius: 12px; }
+            .logo { gap: 10px; }
+        }
 
-        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-        .logo-title { font-weight: 700; font-size: 16px; }
-        .logo-sub { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
-
-        /* DESKTOP NAV */
-        .desktop-nav { display: flex; gap: 6px; }
-        .nav-link {
-            padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 500;
-            transition: all 0.2s ease; position: relative;
+        /* ========== ULTRA–IOS DESKTOP NAV (NEW) ========== */
+        .nav-menu {
+            display: flex; align-items: center; gap: 4px; padding: 3px 4px;
+            border-radius: 999px; background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.06);
         }
-        .nav-link:hover { background: rgba(0,0,0,0.05); color: var(--ios-blue); }
-        .nav-link i { margin-left: 4px; font-size: 10px; opacity: 0.6; }
-        
-        /* Dropdown */
-        .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
+        [data-theme="dark"] .nav-menu { background: rgba(28, 28, 30, 0.92); }
+        .nav-item {
+            position: relative; padding: 6px 12px; border-radius: 999px;
+            font-size: 0.8rem; font-weight: 500; color: var(--text-sub);
+            cursor: pointer; white-space: nowrap; display: inline-flex;
+            align-items: center; gap: 6px; transition: var(--transition);
+        }
+        .nav-item:hover { color: var(--primary); background: rgba(var(--primary-rgb), 0.06); }
+        .nav-item.has-dropdown i.fa-chevron-down { font-size: 9px; opacity: 0.7; }
+        .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown-menu {
-            position: absolute; top: 120%; left: 0; min-width: 220px;
-            background: var(--glass-material); backdrop-filter: blur(25px);
-            border: 0.5px solid var(--separator);
-            border-radius: 14px; padding: 6px;
-            box-shadow: var(--shadow-md);
-            opacity: 0; visibility: hidden; transform: translateY(10px) scale(0.95);
-            transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+            position: absolute; top: calc(100% + 8px); left: 0; min-width: 220px;
+            background: var(--surface); border-radius: 16px; padding: 8px;
+            border: 1px solid var(--glass-border); box-shadow: 0 18px 45px rgba(0,0,0,0.18);
+            opacity: 0; visibility: hidden; transform: translateY(8px);
+            transition: var(--transition); z-index: 40; display: flex; flex-direction: column; gap: 4px;
         }
         .dropdown-item {
-            display: block; padding: 10px 14px; border-radius: 8px; font-size: 14px;
+            padding: 8px 10px; border-radius: 10px; font-size: 0.8rem;
+            color: var(--text-sub); display: flex; align-items: center; gap: 6px;
         }
-        .dropdown-item:hover { background: var(--ios-blue); color: white; }
+        .dropdown-item:hover { background: rgba(var(--primary-rgb), 0.06); color: var(--primary); padding-left: 14px; }
 
-        /* HEADER ACTIONS */
-        .header-actions { display: flex; gap: 10px; align-items: center; }
-        .btn-icon {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: rgba(120,120,120,0.1); color: var(--text-primary);
-            display: flex; align-items: center; justify-content: center; cursor: pointer;
-            transition: 0.2s; border: none;
+        /* Actions */
+        .header-actions { display: flex; gap: 12px; align-items: center; }
+        .btn-theme { width: 40px; height: 40px; border-radius: 50%; background: rgba(var(--primary-rgb), 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; transition: var(--transition); cursor: pointer; }
+        .btn-theme:hover { transform: rotate(15deg) scale(1.1); }
+        .hamburger { display: none; font-size: 24px; color: var(--text-main); cursor: pointer; }
+
+        /* ========== MOBILE MENU ULTRA–IOS (SHEET + X BUTTON) ========== */
+        .mobile-menu-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 999;
+            display: flex; justify-content: flex-end; transform: translateX(100%); transition: var(--transition);
         }
-        .btn-icon:hover { background: rgba(120,120,120,0.2); }
-        .hamburger { display: none; font-size: 22px; }
+        .mobile-menu-overlay.active { transform: translateX(0); }
+        
+        .mobile-menu-inner {
+            width: 82%; max-width: 380px; height: 100%; background: var(--surface);
+            padding: 14px 16px 24px; box-shadow: -18px 0 40px rgba(0,0,0,0.35);
+            overflow-y: auto; border-radius: 24px 0 0 24px;
+        }
 
-        /* --- 5. HERO SECTION --- */
+        .mobile-menu-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+        .mobile-menu-title { font-weight: 700; font-size: 0.95rem; }
+        .mobile-menu-close {
+            width: 34px; height: 34px; border-radius: 999px; border: none;
+            background: rgba(142, 142, 147, 0.18); display: inline-flex;
+            align-items: center; justify-content: center; cursor: pointer; color: var(--text-main);
+        }
+
+        .mobile-nav-list { margin-top: 8px; display: flex; flex-direction: column; gap: 16px; }
+        .mobile-item {
+            font-size: 1.05rem; font-weight: 600; padding: 10px 4px;
+            border-bottom: 1px solid rgba(0,0,0,0.04); display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .mobile-dropdown { margin-top: 6px; margin-left: 4px; display: none; flex-direction: column; gap: 6px; }
+        .mobile-dropdown.open { display: flex; }
+        .mobile-sub-item { font-size: 0.9rem; font-weight: 400; color: var(--text-sub); padding: 2px 0; }
+
+        @media (max-width: 480px) {
+            .mobile-menu-inner { width: 88%; padding-inline: 12px; }
+        }
+
+        /* --- 4. HERO SECTION --- */
         .hero {
-            padding-top: 120px; padding-bottom: 60px; min-height: 85vh;
-            background: radial-gradient(circle at 50% 0%, rgba(0,122,255,0.15), transparent 70%);
-            display: flex; flex-direction: column; align-items: center; text-align: center;
+            padding-top: 130px; padding-bottom: 60px; min-height: 90vh;
+            background: radial-gradient(circle at 50% 30%, rgba(var(--primary-rgb), 0.15), transparent 60%);
+            display: flex; align-items: center; position: relative;
         }
-        .hero-tag {
-            background: rgba(52, 199, 89, 0.1); color: var(--ios-green);
-            padding: 6px 14px; border-radius: 100px; font-size: 13px; font-weight: 600;
-            margin-bottom: 20px; display: inline-flex; align-items: center; gap: 6px;
+        .hero-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 6px; padding: 6px 16px; border-radius: 100px;
+            background: rgba(var(--secondary-rgb), 0.1); color: var(--secondary);
+            font-weight: 600; font-size: 0.9rem; margin-bottom: 20px;
+            border: 1px solid rgba(var(--secondary-rgb), 0.2);
         }
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4rem); line-height: 1.05; margin-bottom: 20px;
-        }
-        .hero p {
-            font-size: 1.1rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px;
-        }
-
-        /* APP GRID (MINI APPS) */
-        .app-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-            margin-bottom: 40px;
-        }
-        .app-item {
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
-            cursor: pointer; transition: transform 0.2s;
-        }
-        .app-item:hover { transform: scale(1.05); }
-        .app-icon {
-            width: 60px; height: 60px; border-radius: var(--radius-app);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 28px; color: white;
-            box-shadow: var(--shadow-md);
-        }
-        .app-label { font-size: 12px; font-weight: 500; color: var(--text-primary); }
-
-        /* --- 6. MOBILE MENU (SETTINGS STYLE) --- */
-        .mobile-menu {
-            position: fixed; top: 0; right: 0; width: 100%; height: 100vh;
-            background: var(--bg-body); z-index: 999;
-            transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.32, 0.72, 0, 1);
-            overflow-y: auto; padding: 80px 20px 100px;
-        }
-        .mobile-menu.active { transform: translateX(0); }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.03em; }
+        .hero p { font-size: 1.1rem; color: var(--text-sub); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
         
-        .m-group {
-            background: var(--bg-card); border-radius: 12px;
-            overflow: hidden; margin-bottom: 24px;
-            box-shadow: var(--shadow-sm);
+        .mini-app-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            background: var(--glass-bg); backdrop-filter: blur(20px);
+            padding: 24px; border-radius: var(--radius-lg);
+            border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow);
+            max-width: 600px; margin: 0 auto;
         }
-        .m-item {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px; border-bottom: 1px solid var(--separator);
-            font-size: 16px; font-weight: 500; cursor: pointer;
+        .app-icon-btn {
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            padding: 12px; border-radius: var(--radius-md); transition: var(--transition);
+            text-align: center;
         }
-        .m-item:last-child { border-bottom: none; }
-        .m-item:active { background: rgba(0,0,0,0.05); }
-        .m-icon {
-            width: 28px; height: 28px; border-radius: 6px;
-            display: flex; align-items: center; justify-content: center;
-            color: white; font-size: 14px; margin-right: 12px;
+        .app-icon-btn:hover { background: var(--surface); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .app-icon-box {
+            width: 56px; height: 56px;
+            background: linear-gradient(135deg, var(--bg-body), var(--surface));
+            border-radius: 18px; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; color: var(--primary); box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .m-arrow { font-size: 14px; color: var(--text-secondary); }
+        .app-label { font-size: 0.85rem; font-weight: 500; color: var(--text-main); }
 
-        /* Submenu Accordion */
-        .m-submenu {
-            display: none; padding-left: 56px; background: var(--bg-card);
-        }
-        .m-submenu.open { display: block; animation: slideDown 0.3s; }
-        .m-sub-link {
-            display: block; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 15px; color: var(--text-secondary);
-        }
-        @keyframes slideDown { from {opacity:0; transform:translateY(-10px);} to {opacity:1; transform:translateY(0);} }
-
-        /* --- 7. CONTENT SECTIONS --- */
-        .section-box { padding: 60px 0; }
-        .card-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
-        }
-        .feature-card {
-            background: var(--bg-card); padding: 30px; border-radius: var(--radius-card);
-            box-shadow: var(--shadow-sm); transition: 0.3s;
-        }
-        .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        /* --- 5. CONTENT SECTIONS --- */
+        .section-title { margin-bottom: 48px; text-align: center; }
+        .section-title h2 { font-size: 2rem; margin-bottom: 12px; letter-spacing: -0.02em; }
         
-        /* --- 8. FOOTER --- */
-        footer {
-            background: var(--bg-card); padding: 60px 0 100px; border-top: 1px solid var(--separator);
+        .benefit-card {
+            padding: 32px; border-radius: var(--radius-md); background: var(--surface);
+            border: 1px solid var(--glass-border); transition: var(--transition);
+            position: relative; overflow: hidden;
         }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 30px; }
-        .footer-col h4 { font-size: 14px; margin-bottom: 16px; color: var(--text-primary); }
-        .footer-col ul li a { display: block; padding: 6px 0; font-size: 13px; color: var(--text-secondary); transition: 0.2s; }
-        .footer-col ul li a:hover { color: var(--ios-blue); padding-left: 5px; }
+        .benefit-card:hover { transform: translateY(-8px); border-color: var(--primary); }
+        .check-icon { color: var(--secondary); font-size: 24px; margin-bottom: 16px; display: block; }
 
-        /* --- 9. QUICK DOCK (FLOATING ACTION) --- */
-        .dock-container {
-            position: fixed; bottom: 30px; left: 20px; z-index: 990;
-        }
-        .dock-main {
-            width: 56px; height: 56px; border-radius: 20px;
-            background: rgba(255,255,255,0.8); backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.5);
+        .step-list { counter-reset: step; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .step-item { position: relative; padding-left: 60px; }
+        .step-item::before {
+            counter-increment: step; content: counter(step);
+            position: absolute; left: 0; top: 0; width: 40px; height: 40px;
+            background: var(--primary); color: white; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            cursor: pointer; transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: 700; box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.4);
         }
-        .dock-main:hover { transform: scale(1.1); }
-        .dock-main.active { transform: rotate(45deg); background: var(--ios-red); color: white; border: none; }
+
+        .review-card { background: var(--surface); padding: 24px; border-radius: var(--radius-md); box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+        .stars { color: #FFB800; margin-bottom: 10px; }
+        .review-name { font-weight: 700; margin-top: 16px; display: block; font-size: 0.9rem; }
+
+        .place-card {
+            background: var(--surface); border-radius: var(--radius-md); overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: var(--transition);
+        }
+        .place-card:hover { transform: scale(1.02); }
+        .place-icon { font-size: 48px; display: block; padding: 20px; text-align: center; background: rgba(var(--primary-rgb), 0.05); }
+        .place-info { padding: 20px; }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white; border-radius: var(--radius-lg); padding: 60px 40px;
+            text-align: center; margin: 80px auto;
+            box-shadow: 0 20px 40px rgba(var(--primary-rgb), 0.3);
+        }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn-white { background: white; color: var(--primary); padding: 14px 32px; border-radius: 100px; font-weight: 700; transition: var(--transition); }
+        .btn-white:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+        .btn-outline-white { border: 2px solid rgba(255,255,255,0.8); color: white; padding: 14px 32px; border-radius: 100px; font-weight: 700; transition: var(--transition); }
+        .btn-outline-white:hover { background: rgba(255,255,255,0.1); }
+
+        /* --- 6. FOOTER & DOCK --- */
+        .footer { background: var(--surface); border-top: 1px solid var(--glass-border); padding: 60px 0 30px; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; margin-bottom: 50px; }
+        .footer-col h4 { margin-bottom: 20px; font-weight: 700; font-size: 1rem; color: var(--text-main); }
+        .footer-col ul li { margin-bottom: 12px; }
+        .footer-col ul li a { color: var(--text-sub); display: flex; align-items: center; gap: 8px; }
+        .footer-col ul li a:hover { color: var(--primary); transform: translateX(4px); }
         
-        .dock-list {
-            position: absolute; bottom: 70px; left: 0;
-            display: flex; flex-direction: column; gap: 12px;
-            opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.8);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            transform-origin: bottom center;
+        .social-inline { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+        .social-btn {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: var(--bg-body); color: var(--text-main);
+            display: flex; align-items: center; justify-content: center;
+            transition: var(--transition); border: 1px solid var(--glass-border);
         }
-        .dock-list.show { opacity: 1; visibility: visible; transform: translateY(0) scale(1); }
-        .dock-item {
-            width: 48px; height: 48px; border-radius: 14px;
-            background: var(--bg-card); display: flex; align-items: center; justify-content: center;
-            font-size: 20px; box-shadow: var(--shadow-sm); color: var(--text-primary);
-            position: relative;
+        .social-btn:hover { background: var(--primary); color: white; transform: translateY(-3px); }
+        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid var(--glass-border); color: var(--text-sub); font-size: 0.85rem; }
+
+        /* Quick Dock */
+        .quick-dock {
+            position: fixed; left: 20px; bottom: 20px; z-index: 990;
+            display: flex; flex-direction: column-reverse; gap: 12px; align-items: center;
         }
+        .dock-toggle {
+            width: 56px; height: 56px; background: var(--primary); color: white;
+            border-radius: 20px; box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.4);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; transition: var(--transition); z-index: 2;
+        }
+        .dock-toggle.active { transform: rotate(45deg); background: #FF3B30; }
+        .dock-items {
+            display: flex; flex-direction: column-reverse; gap: 12px;
+            opacity: 0; visibility: hidden; transform: translateY(20px);
+            transition: var(--transition);
+        }
+        .dock-items.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dock-btn {
+            width: 48px; height: 48px; background: var(--surface); color: var(--text-main);
+            border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; transition: var(--transition); position: relative;
+        }
+        .dock-btn:hover { transform: scale(1.1); }
         .dock-tooltip {
             position: absolute; left: 60px; background: rgba(0,0,0,0.8); color: white;
             padding: 4px 8px; border-radius: 6px; font-size: 12px; white-space: nowrap;
-            opacity: 0; pointer-events: none; transition: 0.2s;
+            opacity: 0; pointer-events: none; transition: var(--transition);
         }
-        .dock-item:hover .dock-tooltip { opacity: 1; left: 56px; }
+        .dock-btn:hover .dock-tooltip { opacity: 1; left: 56px; }
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .desktop-nav { display: none; }
-            .hamburger { display: flex; }
-            .app-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        /* Responsive */
+        @media (max-width: 1024px) { .footer-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) {
+            .nav-menu, .header-actions .btn-theme { display: none; }
+            .hamburger { display: block; }
+            .header-actions .btn-theme { display: flex; }
+            .mini-app-grid { grid-template-columns: repeat(2, 1fr); }
             .hero h1 { font-size: 2.5rem; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .quick-dock { bottom: calc(20px + var(--safe-area-inset-bottom)); }
         }
     </style>
 </head>
 <body id="top">
 
-    <header class="header glass" id="navbar">
-        <div class="container nav-wrapper">
-            <a href="./" class="logo-container">
-                <div class="logo-icon">
-                    <div class="logo-inner">
-                        <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Logo">
+    <!-- HEADER -->
+    <header class="header glass" id="main-header">
+        <div class="container nav-container">
+            <!-- LOGO -->
+            <a href="./" class="logo">
+                <div class="logo-badge">
+                    <div class="logo-badge-glow"></div>
+                    <div class="logo-badge-inner">
+                        <img src="https://thuexemaynguyentu.com/wp-content/uploads/2025/09/cropped-Thue-xe-may-min-1-1.png" alt="Nguyễn Tú Logo">
                     </div>
                 </div>
                 <div class="logo-text">
                     <span class="logo-title">Nguyễn Tú</span>
-                    <span class="logo-sub">Motorbike Rental</span>
+                    <span class="logo-subtitle">Motorbike Rental</span>
                 </div>
             </a>
 
-            <nav class="desktop-nav" id="desktop-menu"></nav>
+            <!-- Desktop Nav -->
+            <nav class="nav-menu" id="desktop-menu"></nav>
 
             <div class="header-actions">
-                <button class="btn-icon" id="theme-btn" aria-label="Toggle Dark Mode">
-                    <span class="material-symbols-rounded">dark_mode</span>
+                <button class="btn-theme" id="theme-toggle" aria-label="Chuyển giao diện">
+                    <span class="material-symbols-rounded">light_mode</span>
                 </button>
-                <button class="btn-icon hamburger" id="mobile-btn" aria-label="Open Menu">
+                <div class="hamburger" id="mobile-toggle">
                     <span class="material-symbols-rounded">menu</span>
-                </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <div class="mobile-menu" id="mobile-menu-container">
+    <!-- MOBILE MENU ULTRA–IOS -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-title">Menu</div>
+                <button class="mobile-menu-close" id="mobile-menu-close">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+
+            <div class="mobile-nav-list" id="mobile-menu-list"></div>
         </div>
+    </div>
 
     <main>
+        <!-- HERO -->
         <section class="hero">
-            <div class="container animate-in">
-                <div class="hero-tag">
-                    <span class="material-symbols-rounded" style="font-size:16px">verified</span> #1 Rental in Hanoi
-                </div>
-                <h1>Thuê xe máy Hà Nội<br><span class="text-gradient">Uy tín & Tận tâm</span></h1>
-                <p>Giao xe tận nơi Hoàn Kiếm, Phố Cổ trong 20 phút. Xe mới, thủ tục CCCD đơn giản, hỗ trợ sự cố 24/7.</p>
-
-                <div class="app-grid">
-                    <a href="tel:0942467674" class="app-item">
-                        <div class="app-icon" style="background: var(--ios-green)"><i class="fa-solid fa-phone"></i></div>
-                        <span class="app-label">Gọi ngay</span>
-                    </a>
-                    <a href="https://zalo.me/0942467674" class="app-item">
-                        <div class="app-icon" style="background: var(--ios-blue)"><i class="fa-solid fa-comment-dots"></i></div>
-                        <span class="app-label">Zalo</span>
-                    </a>
-                    <a href="banggia.html" class="app-item">
-                        <div class="app-icon" style="background: var(--ios-orange)"><i class="fa-solid fa-tag"></i></div>
-                        <span class="app-label">Bảng giá</span>
-                    </a>
-                    <a href="https://goo.gl/maps/placeholder" class="app-item">
-                        <div class="app-icon" style="background: var(--ios-teal)"><i class="fa-solid fa-map-location-dot"></i></div>
-                        <span class="app-label">Bản đồ</span>
-                    </a>
+            <div class="container">
+                <div class="hero-content fade-in-up">
+                    <div class="hero-badge">
+                        <span class="material-symbols-rounded">verified</span> Uy tín hàng đầu Hà Nội
+                    </div>
+                    <h1>Dịch vụ cho thuê xe máy<br><span class="text-gradient">Hoàn Kiếm & Hà Nội</span></h1>
+                    <p>Giao xe tận nơi 20–40 phút. Thủ tục CCCD đơn giản. Giá minh bạch, không phí ẩn. Hỗ trợ 24/7.</p>
+                    
+                    <div class="mini-app-grid">
+                        <a href="tel:0942467674" class="app-icon-btn">
+                            <div class="app-icon-box"><i class="fa-solid fa-phone"></i></div>
+                            <span class="app-label">Gọi ngay</span>
+                        </a>
+                        <a href="https://zalo.me/0942467674" class="app-icon-btn">
+                            <div class="app-icon-box" style="color:#0068FF"><i class="fa-solid fa-comment-dots"></i></div>
+                            <span class="app-label">Chat Zalo</span>
+                        </a>
+                        <a href="banggia.html" class="app-icon-btn">
+                            <div class="app-icon-box" style="color:#FF9500"><i class="fa-solid fa-tag"></i></div>
+                            <span class="app-label">Bảng giá</span>
+                        </a>
+                        <a href="#diadiem" class="app-icon-btn">
+                            <div class="app-icon-box" style="color:#34C759"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <span class="app-label">Địa điểm</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div id="content-area"></div>
-
+        <!-- DYNAMIC CONTENT -->
+        <div id="body-content"></div>
     </main>
 
-    <footer>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-grid" id="footer-links"></div>
-            <div style="margin-top:40px; text-align:center; font-size:13px; color:var(--text-secondary); padding-top:20px; border-top:1px solid var(--separator)">
-                © 2025 Nguyễn Tú Motorbike Rental. Designed with Ultra Style.
+            <div class="footer-top text-center" style="margin-bottom:40px;">
+                <h3 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 8px;">Thuê xe máy uy tín – Nguyễn Tú</h3>
+                <p style="color: var(--text-sub);">Giao xe 20–40 phút • Giá minh bạch • Giấy tờ đầy đủ • Hỗ trợ 24/7</p>
+                <div style="margin-top: 10px; color: #FFB800; font-weight: 600;">⭐ 4.9/5 từ khách hàng</div>
+            </div>
+            <div class="footer-grid" id="footer-grid"></div>
+            <div class="copyright">
+                © 2025 Nguyễn Tú Motorbike Rental. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <div class="dock-container">
-        <div class="dock-list" id="dock-list">
-            <a href="https://wa.me/84942467674" class="dock-item" style="color:#25D366"><i class="fa-brands fa-whatsapp"></i><span class="dock-tooltip">WhatsApp</span></a>
-            <a href="tel:0942467674" class="dock-item" style="color:var(--ios-green)"><i class="fa-solid fa-phone"></i><span class="dock-tooltip">Call</span></a>
-            <a href="https://zalo.me/0942467674" class="dock-item" style="color:var(--ios-blue)"><i class="fa-solid fa-comment"></i><span class="dock-tooltip">Zalo</span></a>
+    <!-- QUICK DOCK -->
+    <div class="quick-dock">
+        <button class="dock-toggle" id="dock-toggle"><span class="material-symbols-rounded">add</span></button>
+        <div class="dock-items" id="dock-items">
+            <a href="https://wa.me/84942467674" class="dock-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i><span class="dock-tooltip">WhatsApp</span></a>
+            <a href="tel:0942467674" class="dock-btn" style="color:#34C759"><i class="fa-solid fa-phone"></i><span class="dock-tooltip">Gọi điện</span></a>
+            <a href="https://zalo.me/0942467674" class="dock-btn" style="color:#0068FF" target="_blank"><i class="fa-solid fa-comment"></i><span class="dock-tooltip">Zalo</span></a>
+            <a href="https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc" class="dock-btn" style="color:#FF9500" target="_blank"><i class="fa-solid fa-location-dot"></i><span class="dock-tooltip">Bản đồ</span></a>
         </div>
-        <button class="dock-main" id="dock-toggle">
-            <span class="material-symbols-rounded" style="font-size:28px">apps</span>
-        </button>
     </div>
 
-    <script>
+    <!-- JS ENGINE -->
+    <script defer>
     (function() {
-        // --- 1. DATA CONFIGURATION (CMS) ---
+        // --- DATA CONFIG ---
         const CONFIG = {
             MENU: [
-                { type: 'link', label: 'Trang chủ', url: './', icon: 'home' },
-                { type: 'link', label: 'Giới thiệu', url: 'gioithieu.html', icon: 'info' },
-                { type: 'group', label: 'Dịch vụ', icon: 'settings', color: '#FF9500', items: [
-                    { 'Bảng giá': 'banggia.html' },
-                    { 'Thuê theo ngày': 'ngay.html' },
-                    { 'Thuê theo tuần': 'tuan.html' },
-                    { 'Thuê theo tháng': 'thang.html' },
-                    { 'Thủ tục': 'thutuc.html' },
-                    { 'Đặt cọc': 'datcoc.html' },
-                    { 'Ưu đãi': 'uudai.html' }
+                { "🏠 Trang chủ": "./" },
+                { "📄 Giới thiệu": "gioithieu.html" },
+                { "⚙️ Dịch vụ": [
+                    { "🏷️ Bảng giá": "banggia.html" },
+                    { "📅 Theo ngày": "ngay.html" },
+                    { "🗓️ Theo tuần": "tuan.html" },
+                    { "📆 Theo tháng": "thang.html" },
+                    { "🎁 Ưu đãi": "uudai.html" },
+                    { "📑 Thủ tục": "thutuc.html" },
+                    { "💰 Đặt cọc": "datcoc.html" },
+                    { "📍 Địa điểm (hub)": "diadiem.html" }
                 ]},
-                { type: 'group', label: 'Địa điểm', icon: 'map', color: '#34C759', items: [
-                    { 'Hoàn Kiếm': 'hoankiem.html' },
-                    { 'Phố Cổ': 'phoco.html' },
-                    { 'Long Biên': 'longbien.html' },
-                    { 'Tây Hồ': 'tayho.html' },
-                    { 'Gia Lâm': 'gialam.html' },
-                    { 'Ba Đình': 'badinh.html' },
-                    { 'Đống Đa': 'dongda.html' },
-                    { 'Cầu Giấy': 'caugiay.html' },
-                    { 'Ga Hà Nội': 'gahn.html' }
+                { "📍 Địa điểm": [
+                    { "Long Biên": "longbien.html" },
+                    { "Gia Lâm": "gialam.html" },
+                    { "Phố Cổ": "phoco.html" },
+                    { "Hoàn Kiếm": "hoankiem.html" },
+                    { "Ba Đình": "badinh.html" },
+                    { "Tây Hồ": "tayho.html" },
+                    { "Đống Đa": "dongda.html" },
+                    { "Cầu Giấy": "caugiay.html" },
+                    { "Hà Đông": "hadong.html" },
+                    { "Thanh Xuân": "thanhxuan.html" },
+                    { "Từ Liêm": "tuliem.html" },
+                    { "Ga Hà Nội": "gahn.html" }
                 ]},
-                { type: 'link', label: 'FAQ', url: 'faq.html', icon: 'help' },
-                { type: 'link', label: 'Liên hệ', url: 'lienhe.html', icon: 'mail' }
+                { "❓ FAQ": "faq.html" },
+                { "💬 Liên hệ": "lienhe.html" }
             ],
-            SECTIONS: [
-                { title: "Vì sao chọn Nguyễn Tú?", items: [
-                    "Giao xe tận nơi miễn phí bán kính 3km", "Thủ tục đơn giản (CCCD/Passport)", "Hỗ trợ 24/7 khi gặp sự cố", "Xe đời mới, bảo dưỡng định kỳ"
-                ]},
-                { title: "Quy trình thuê xe", items: [
-                    "1. Chọn xe & Liên hệ", "2. Giao xe tận nơi", "3. Ký hợp đồng & Nhận xe", "4. Trả xe & Hoàn cọc"
-                ]}
+            BODY_SECTIONS: [
+                { TITLE:"Giới thiệu cho thuê xe máy Hà Nội", TYPE:"intro", CONTENT:["Dịch vụ cho thuê xe máy uy tín tại Hoàn Kiếm, Hà Nội.", "Cung cấp xe ga, xe số, xe điện, giao tận nơi 20–40 phút.", "Hỗ trợ 24/7, phù hợp du khách, dân văn phòng, người đi công tác."] },
+                { TITLE:"Lý do nên thuê xe tại Nguyễn Tú", TYPE:"benefits", POINTS:["Xe mới, sạch, bảo dưỡng thường xuyên.", "Thủ tục đơn giản – chỉ cần CCCD hoặc Passport.", "Giao nhận linh hoạt tại khách sạn, homestay, nhà riêng.", "Giá minh bạch, không phát sinh chi phí ẩn.", "Có nhân viên hỗ trợ kỹ thuật và hướng dẫn đường đi."] },
+                { TITLE:"Quy trình thuê xe đơn giản", TYPE:"steps", STEPS:["Chọn loại xe phù hợp nhu cầu (ga / số / điện).", "Liên hệ Zalo hoặc gọi trực tiếp để đặt xe.", "Xác nhận vị trí, thời gian, giao xe trong 20–40 phút.", "Kiểm tra xe → ký nhận → sử dụng."] },
+                { TITLE:"Khách hàng nói gì?", TYPE:"testimonials", REVIEWS:[{name:"Linh – Du khách",stars:5,text:"Xe đẹp, giao nhanh, giá hợp lý, đúng như tư vấn."},{name:"Đức – Freelancer",stars:5,text:"Đi êm, xăng ít hao, nhân viên rất dễ thương."},{name:"Sarah – Traveller",stars:4,text:"Easy to rent, delivery was fast, staff was helpful!"}] },
+                { TITLE:"Điểm đến gợi ý tại Hà Nội", TYPE:"places", ITEMS:[{icon:"🏯",name:"Phố cổ Hoàn Kiếm",desc:"Khám phá văn hóa, ẩm thực và cà phê."},{icon:"🌉",name:"Cầu Long Biên",desc:"Địa điểm check-in hoài cổ, gần khu Long Biên."},{icon:"🏞️",name:"Hồ Tây",desc:"Lái xe vòng hồ cực chill, phù hợp buổi chiều tối."}] },
+                { TITLE:"Ưu đãi & Nội dung hữu ích", TYPE:"links", LINKS:[{label:"🎁 Ưu đãi thuê xe",href:"uudai.html"},{label:"💡 Kinh nghiệm thuê xe",href:"kinhnghiem.html"},{label:"📘 Hướng dẫn thuê xe",href:"huongdan.html"},{label:"⚖️ Điều khoản thuê xe",href:"dieukhoansudung.html"}] },
+                { TITLE:"Câu hỏi thường gặp (FAQ)", TYPE:"faq", QUESTIONS:[{q:"Có cần đặt cọc không?",a:"Có, tuỳ dòng xe, thường từ 500.000đ hoặc giữ giấy tờ."},{q:"Có giao xe ban đêm không?",a:"Có, hỗ trợ 24/7 trong khu vực nội thành Hà Nội."},{q:"Mất xe thì sao?",a:"Liên hệ ngay với chúng tôi để được hướng dẫn xử lý theo hợp đồng."}] },
+                { TITLE:"Liên hệ & đặt xe ngay", TYPE:"cta", DESC:"Bạn cần thuê xe ngay khu vực Hoàn Kiếm, Long Biên, phố cổ Hà Nội? Gọi hoặc nhắn Zalo để được giao xe trong 20–40 phút.", BUTTONS:[{label:"📞 Gọi ngay",href:"tel:0942467674"},{label:"💬 Chat Zalo",href:"https://zalo.me/0942467674"},{label:"📍 Xem bản đồ",href:"https://maps.app.goo.gl/SR1hcwnCQjPkAvDh7?g_st=ipc"}] }
             ],
-            FOOTER: [
-                { title: "Về chúng tôi", links: [{"Trang chủ":"./"}, {"Giới thiệu":"gioithieu.html"}, {"Liên hệ":"lienhe.html"}] },
-                { title: "Dịch vụ", links: [{"Bảng giá":"banggia.html"}, {"Thủ tục":"thutuc.html"}, {"Quy định":"dieukhoansudung.html"}] },
-                { title: "Khu vực", links: [{"Hoàn Kiếm":"hoankiem.html"}, {"Tây Hồ":"tayho.html"}, {"Long Biên":"longbien.html"}] },
-                { title: "Social", links: [{"Facebook":"#"}, {"Instagram":"#"}, {"Zalo":"https://zalo.me/0942467674"}] }
+            FOOTER_COLS: {
+                col1: { title: "Trang chủ", items: [ {"🏠 Trang chủ":"./"}, {"📄 Giới thiệu":"gioithieu.html"} ]},
+                col2: { title: "Dịch vụ", items: [ {"🏷️ Bảng giá":"banggia.html"}, {"📅 Theo ngày":"ngay.html"}, {"🗓️ Theo tuần":"tuan.html"}, {"📆 Theo tháng":"thang.html"}, {"🎁 Ưu đãi":"uudai.html"}, {"📑 Thủ tục":"thutuc.html"}, {"💰 Đặt cọc":"datcoc.html"} ]},
+                col3: { title: "Địa điểm xe", items: [ {"Long Biên":"longbien.html"}, {"Gia Lâm":"gialam.html"}, {"Phố Cổ":"phoco.html"}, {"Hoàn Kiếm":"hoankiem.html"}, {"Ba Đình":"badinh.html"}, {"Tây Hồ":"tayho.html"}, {"Đống Đa":"dongda.html"} ]},
+                col4: { title: "Khu vực khác", items: [ {"Cầu Giấy":"caugiay.html"}, {"Hà Đông":"hadong.html"}, {"Thanh Xuân":"thanhxuan.html"}, {"Từ Liêm":"tuliem.html"}, {"Ga Hà Nội":"gahn.html"} ]},
+                col5: { title: "Thông tin & Chính sách", items: [ {"❓ FAQ":"faq.html"}, {"📜 Điều khoản":"dieukhoansudung.html"}, {"🔒 Bảo mật":"chinhsachbaomat.html"}, {"💡 Kinh nghiệm":"kinhnghiem.html"}, {"📘 Hướng dẫn":"huongdan.html"} ]},
+                col6: { title: "Liên hệ & Social", items: [ {"📞 0942467674":"tel:0942467674"}, {"💬 Zalo":"https://zalo.me/0942467674"}, {"🌐 Website":"https://thuexemaynguyentu.com"} ], isSocial: true }
+            },
+            SOCIAL_LINKS: [
+                {"icon":"fa-facebook-f", "url":"https://m.facebook.com/chothuexemay0857255868/"},
+                {"icon":"fa-instagram", "url":"https://www.instagram.com/nguyentumotorbike/"},
+                {"icon":"fa-tripadvisor", "url":"https://www.tripadvisor.com/Attraction_Review-g21333608-d9826317-Reviews-Nguyen_Tu_Motorbike_Rental-Long_Bien_Hanoi.html"}
             ]
         };
 
-        // --- 2. RENDER FUNCTIONS ---
+        // --- RENDER ENGINE ---
         const Render = {
-            desktopMenu: () => {
-                const nav = document.getElementById('desktop-menu');
-                nav.innerHTML = CONFIG.MENU.map(item => {
-                    if (item.type === 'link') {
-                        return `<a href="${item.url}" class="nav-link">${item.label}</a>`;
-                    } else {
-                        const sub = item.items.map(subItem => {
-                            const key = Object.keys(subItem)[0];
-                            return `<a href="${Object.values(subItem)[0]}" class="dropdown-item">${key}</a>`;
-                        }).join('');
-                        return `<div class="nav-link has-dropdown" style="cursor:default">${item.label} <i class="fa-solid fa-chevron-down"></i><div class="dropdown-menu">${sub}</div></div>`;
-                    }
-                }).join('');
-            },
-            mobileMenu: () => {
-                const container = document.getElementById('mobile-menu-container');
-                let html = '<h3 style="margin-bottom:20px; padding-left:10px; font-size:24px;">Menu</h3>';
-                
-                // Group 1: Single Links
-                html += `<div class="m-group">`;
-                CONFIG.MENU.filter(i => i.type === 'link').forEach(item => {
-                    html += `<a href="${item.url}" class="m-item"><div style="display:flex;align-items:center"><div class="m-icon" style="background:#8E8E93"><span class="material-symbols-rounded">${item.icon}</span></div>${item.label}</div><i class="fa-solid fa-chevron-right m-arrow"></i></a>`;
-                });
-                html += `</div>`;
+            menu: () => {
+                const desktopNav = document.getElementById('desktop-menu');
+                const mobileList = document.getElementById('mobile-menu-list');
+                let deskHTML = '', mobHTML = '';
 
-                // Group 2: Dropdowns (Settings Style)
-                CONFIG.MENU.filter(i => i.type === 'group').forEach(group => {
-                    html += `<div class="m-group">
-                        <div class="m-item" onclick="this.nextElementSibling.classList.toggle('open');">
-                            <div style="display:flex;align-items:center">
-                                <div class="m-icon" style="background:${group.color}"><span class="material-symbols-rounded">${group.icon}</span></div>
-                                ${group.label}
-                            </div>
-                            <i class="fa-solid fa-chevron-down m-arrow"></i>
-                        </div>
-                        <div class="m-submenu">
-                            ${group.items.map(sub => `<a href="${Object.values(sub)[0]}" class="m-sub-link">${Object.keys(sub)[0]}</a>`).join('')}
-                        </div>
-                    </div>`;
+                CONFIG.MENU.forEach(item => {
+                    const key = Object.keys(item)[0], val = item[key];
+                    if (typeof val === 'string') {
+                        deskHTML += `<a href="${val}" class="nav-item">${key}</a>`;
+                        mobHTML += `<a href="${val}" class="mobile-item">${key}</a>`;
+                    } else {
+                        let sub = val.map(s => `<a href="${Object.values(s)[0]}" class="dropdown-item">${Object.keys(s)[0]}</a>`).join('');
+                        deskHTML += `<div class="nav-item has-dropdown">${key} <i class="fa-solid fa-chevron-down"></i><div class="dropdown-menu glass">${sub}</div></div>`;
+                        let subMob = val.map(s => `<a href="${Object.values(s)[0]}" class="mobile-sub-item">• ${Object.keys(s)[0]}</a>`).join('');
+                        mobHTML += `<div class="mobile-item-group"><div class="mobile-item has-sub" onclick="this.nextElementSibling.classList.toggle('open')">${key} <i class="fa-solid fa-chevron-down" style="float:right; font-size:12px; opacity:0.5"></i></div><div class="mobile-dropdown">${subMob}</div></div>`;
+                    }
+                });
+                desktopNav.innerHTML = deskHTML; mobileList.innerHTML = mobHTML;
+            },
+            sections: () => {
+                const container = document.getElementById('body-content');
+                let html = '';
+                CONFIG.BODY_SECTIONS.forEach(sec => {
+                    let content = '';
+                    if(sec.TYPE === 'intro') content = `<div class="text-center" style="max-width:800px; margin:0 auto; font-size:1.1rem;">${sec.CONTENT.map(p=>`<p style="margin-bottom:16px;">${p}</p>`).join('')}</div>`;
+                    else if(sec.TYPE === 'benefits') content = `<div class="grid-auto">${sec.POINTS.map(p=>`<div class="benefit-card"><i class="fa-solid fa-check-circle check-icon"></i><p>${p}</p></div>`).join('')}</div>`;
+                    else if(sec.TYPE === 'steps') content = `<div class="step-list">${sec.STEPS.map(s=>`<div class="step-item"><p>${s}</p></div>`).join('')}</div>`;
+                    else if(sec.TYPE === 'testimonials') content = `<div class="grid-auto">${sec.REVIEWS.map(r=>`<div class="review-card"><div class="stars">${'★'.repeat(r.stars)}</div><p>"${r.text}"</p><span class="review-name">- ${r.name}</span></div>`).join('')}</div>`;
+                    else if(sec.TYPE === 'places') content = `<div class="grid-auto">${sec.ITEMS.map(i=>`<div class="place-card"><span class="place-icon">${i.icon}</span><div class="place-info"><h3 style="margin-bottom:8px;">${i.name}</h3><p style="color:var(--text-sub); font-size:0.9rem;">${i.desc}</p></div></div>`).join('')}</div>`;
+                    else if(sec.TYPE === 'links') content = `<div class="flex-center" style="gap:16px; flex-wrap:wrap;">${sec.LINKS.map(l=>`<a href="${l.href}" class="btn-white" style="background:var(--surface); color:var(--text-main);">${l.label}</a>`).join('')}</div>`;
+                    else if(sec.TYPE === 'faq') content = `<div style="max-width:800px; margin:0 auto;">${sec.QUESTIONS.map(q=>`<details class="faq-item" style="border-bottom:1px solid var(--glass-border); margin-bottom:16px;"><summary style="padding:16px 0; font-weight:600; cursor:pointer;">${q.q}</summary><div style="padding-bottom:20px; color:var(--text-sub);">${q.a}</div></details>`).join('')}</div>`;
+                    else if(sec.TYPE === 'cta') { html += `<div class="cta-section fade-in-up"><h2>${sec.TITLE}</h2><p style="opacity:0.9; max-width:700px; margin:0 auto;">${sec.DESC}</p><div class="cta-buttons">${sec.BUTTONS.map((b,i)=>`<a href="${b.href}" class="${i===0?'btn-white':'btn-outline-white'}">${b.label}</a>`).join('')}</div></div>`; return; }
+                    html += `<section class="section-padding fade-in-up" ${sec.TYPE==='places'?'id="diadiem"':''}><div class="container"><div class="section-title"><h2>${sec.TITLE}</h2></div>${content}</div></section>`;
                 });
                 container.innerHTML = html;
             },
-            bodyContent: () => {
-                const area = document.getElementById('content-area');
-                area.innerHTML = CONFIG.SECTIONS.map((sec, idx) => `
-                    <section class="section-box animate-in delay-${idx+1}">
-                        <div class="container">
-                            <h2 style="margin-bottom:24px; text-align:center;">${sec.title}</h2>
-                            <div class="card-grid">
-                                ${sec.items.map(txt => `<div class="feature-card"><p style="font-weight:500; color:var(--text-secondary)">${txt}</p></div>`).join('')}
-                            </div>
-                        </div>
-                    </section>
-                `).join('');
-            },
             footer: () => {
-                const grid = document.getElementById('footer-links');
-                grid.innerHTML = CONFIG.FOOTER.map(col => `
-                    <div class="footer-col">
-                        <h4>${col.title}</h4>
-                        <ul>${col.links.map(l => `<li><a href="${Object.values(l)[0]}">${Object.keys(l)[0]}</a></li>`).join('')}</ul>
-                    </div>
-                `).join('');
+                const grid = document.getElementById('footer-grid');
+                let html = '';
+                Object.values(CONFIG.FOOTER_COLS).forEach(col => {
+                    let links = col.items.map(item => `<li><a href="${Object.values(item)[0]}">${Object.keys(item)[0]}</a></li>`).join('');
+                    let social = col.isSocial ? `<div class="social-inline">${CONFIG.SOCIAL_LINKS.map(s=>`<a href="${s.url}" class="social-btn" target="_blank"><i class="fa-brands ${s.icon}"></i></a>`).join('')}</div>` : '';
+                    html += `<div class="footer-col"><h4>${col.title}</h4><ul>${links}</ul>${social}</div>`;
+                });
+                grid.innerHTML = html;
             }
         };
 
-        // --- 3. UI INTERACTIONS ---
+        // --- THEME & UI ---
+        const Theme = {
+            presets: [{p:"#0A84FF",s:"#00C49A"}, {p:"#FF6B00",s:"#FFB800"}, {p:"#00b894",s:"#0984e3"}, {p:"#6c5ce7",s:"#a29bfe"}],
+            init: () => {
+                const t = document.getElementById('theme-toggle'), i = t.querySelector('span');
+                const rand = Theme.presets[Math.floor(Math.random()*Theme.presets.length)];
+                document.documentElement.style.setProperty('--primary', rand.p);
+                document.documentElement.style.setProperty('--primary-rgb', Theme.hexToRgb(rand.p));
+                document.documentElement.style.setProperty('--secondary', rand.s);
+                document.documentElement.style.setProperty('--secondary-rgb', Theme.hexToRgb(rand.s));
+
+                const setMode = d => {
+                    document.documentElement.setAttribute('data-theme', d ? 'dark' : 'light');
+                    i.innerText = d ? 'dark_mode' : 'light_mode';
+                    localStorage.setItem('theme', d ? 'dark' : 'light');
+                };
+                setMode(localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches));
+                t.onclick = () => setMode(document.documentElement.getAttribute('data-theme') !== 'dark');
+            },
+            hexToRgb: h => `${parseInt(h.slice(1,3),16)}, ${parseInt(h.slice(3,5),16)}, ${parseInt(h.slice(5,7),16)}`
+        };
+
         const UI = {
             init: () => {
-                // Mobile Menu
-                const btn = document.getElementById('mobile-btn');
-                const menu = document.getElementById('mobile-menu-container');
-                const icon = btn.querySelector('span');
-                
-                btn.onclick = () => {
-                    menu.classList.toggle('active');
-                    icon.innerText = menu.classList.contains('active') ? 'close' : 'menu';
-                    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
-                };
+                // MOBILE MENU LOGIC
+                const mt = document.getElementById('mobile-toggle');
+                const mo = document.getElementById('mobile-menu-overlay');
+                const mc = document.getElementById('mobile-menu-close');
 
-                // Dark Mode
-                const themeBtn = document.getElementById('theme-btn');
-                const themeIcon = themeBtn.querySelector('span');
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark') {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    themeIcon.innerText = 'light_mode';
+                if (mt && mo) {
+                    const toggleMenu = () => {
+                        const isOpen = mo.classList.toggle('active');
+                        mt.querySelector('span').innerText = 'menu'; // luôn là menu
+                    };
+
+                    mt.onclick = toggleMenu;
+                    if (mc) mc.onclick = toggleMenu;
+
+                    // Click nền đen để đóng
+                    mo.addEventListener('click', (e) => {
+                        if (e.target === mo) {
+                            mo.classList.remove('active');
+                        }
+                    });
                 }
-                themeBtn.onclick = () => {
-                    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-                    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-                    themeIcon.innerText = isDark ? 'dark_mode' : 'light_mode';
-                };
+                
+                // Header scroll
+                const h = document.getElementById('main-header');
+                window.onscroll = () => h.classList.toggle('scrolled', window.scrollY > 50);
 
-                // Quick Dock
-                const dockBtn = document.getElementById('dock-toggle');
-                const dockList = document.getElementById('dock-list');
-                dockBtn.onclick = () => {
-                    dockBtn.classList.toggle('active');
-                    dockList.classList.toggle('show');
-                };
+                // Dock
+                const dt = document.getElementById('dock-toggle'), di = document.getElementById('dock-items');
+                dt.onclick = () => { dt.classList.toggle('active'); di.classList.toggle('show'); };
+
+                // Fade-in
+                const obs = new IntersectionObserver(e => e.forEach(en => en.isIntersecting && en.target.classList.add('visible')), {threshold:0.1});
+                document.querySelectorAll('.fade-in-up').forEach(el => obs.observe(el));
             }
         };
 
-        // --- 4. EXECUTE ---
-        Render.desktopMenu();
-        Render.mobileMenu();
-        Render.bodyContent();
-        Render.footer();
-        UI.init();
-
+        Render.menu(); Render.sections(); Render.footer(); Theme.init(); UI.init();
     })();
     </script>
 </body>
