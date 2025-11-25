@@ -574,6 +574,84 @@
     .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
     .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
 
+    /* ========= NEW SECTIONS STYLING ========= */
+    /* 1. Thủ tục chi tiết */
+    .papers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .papers-grid { grid-template-columns: 1fr; } }
+    
+    .paper-box {
+      background: var(--bg-elevated-soft);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+    }
+    .paper-title { font-weight: 600; margin-bottom: 12px; color: var(--accent); }
+
+    /* 2. Bảo dưỡng Grid */
+    .maint-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) { .maint-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .maint-grid { grid-template-columns: 1fr; } }
+
+    .maint-item {
+      background: var(--bg-elevated);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .maint-item:hover { transform: translateY(-4px); border-color: var(--accent); }
+    .maint-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+    .maint-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+    .maint-desc { font-size: 12px; color: var(--text-secondary); }
+
+    /* 3. FAQ Details */
+    details.faq-item {
+      background: var(--bg-elevated-soft);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      transition: background 0.2s;
+    }
+    details.faq-item summary {
+      padding: 16px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 15px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary:after {
+      content: '+'; 
+      font-size: 20px; 
+      font-weight: 300;
+      color: var(--text-secondary);
+      transition: transform 0.2s;
+    }
+    details.faq-item[open] summary:after { transform: rotate(45deg); }
+    details.faq-item[open] { background: var(--bg-elevated); border-color: var(--accent-soft); }
+    .faq-content {
+      padding: 0 16px 16px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.6;
+      border-top: 1px solid var(--border-light);
+      margin-top: 0;
+      padding-top: 12px;
+    }
+
     /* ========= FOOTER ULTRA 2.0 (UPDATED LAYOUT) ========= */
     footer {
       background:
@@ -1219,6 +1297,127 @@
           <li>Gửi xe tại bãi có vé, tránh để xe ngoài vỉa hè không có người trông.</li>
           <li>Nếu có vấn đề với xe (khó nổ, thủng lốp, va quệt nhẹ...) – cứ gọi thẳng số hotline để được xử lý.</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ========= SECTION MỚI 1: THỦ TỤC CHI TIẾT ========= -->
+    <section class="container" id="thutuc-chitiet">
+      <div class="section-head">
+        <h2 class="section-title">Thủ tục thuê xe chi tiết</h2>
+        <p class="section-desc">Đơn giản hóa tối đa để bạn nhận xe nhanh nhất.</p>
+      </div>
+      <div class="papers-grid">
+        <div class="paper-box">
+          <div class="paper-title">🇻🇳 Khách Việt Nam / Tourist</div>
+          <ul class="reason-list" style="padding-left:20px; margin:0;">
+            <li>Chụp ảnh CCCD / CMND (2 mặt).</li>
+            <li>Để lại CCCD gốc (hoặc cọc 1-2 triệu nếu muốn giữ giấy tờ).</li>
+            <li>Thanh toán tiền thuê trước khi nhận xe.</li>
+            <li>Ký hợp đồng thuê xe đơn giản (2 bản).</li>
+          </ul>
+        </div>
+        <div class="paper-box">
+          <div class="paper-title">🌎 Foreigner / Expats</div>
+          <ul class="reason-list" style="padding-left:20px; margin:0;">
+            <li>Passport photo (Valid Visa).</li>
+            <li>Deposit passport OR Cash Deposit (100$ - 200$).</li>
+            <li>Payment in advance (Cash/Transfer).</li>
+            <li>Simple rental agreement signing.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SECTION MỚI 2: QUY TRÌNH BẢO DƯỠNG ========= -->
+    <section class="container" id="cam-ket-bao-duong">
+      <div class="section-head">
+        <h2 class="section-title">Cam kết chất lượng & Bảo dưỡng</h2>
+        <p class="section-desc">Xe luôn được kiểm tra kỹ 4 hạng mục trước khi giao.</p>
+      </div>
+      <div class="maint-grid">
+        <div class="maint-item">
+          <span class="maint-icon">🛞</span>
+          <div class="maint-name">Lốp xe</div>
+          <div class="maint-desc">Độ bám đường tốt, không mòn</div>
+        </div>
+        <div class="maint-item">
+          <span class="maint-icon">🛑</span>
+          <div class="maint-name">Phanh (Thắng)</div>
+          <div class="maint-desc">Nhạy bén, an toàn tuyệt đối</div>
+        </div>
+        <div class="maint-item">
+          <span class="maint-icon">🛢️</span>
+          <div class="maint-name">Dầu nhớt</div>
+          <div class="maint-desc">Thay định kỳ mỗi 1000km</div>
+        </div>
+        <div class="maint-item">
+          <span class="maint-icon">⚙️</span>
+          <div class="maint-name">Động cơ</div>
+          <div class="maint-desc">Vận hành êm, tiết kiệm xăng</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========= SECTION MỚI 3: FAQ (CÂU HỎI THƯỜNG GẶP) ========= -->
+    <section class="container" id="faq-section">
+      <div class="section-head">
+        <h2 class="section-title">Câu hỏi thường gặp (FAQ)</h2>
+        <p class="section-desc">Giải đáp nhanh những thắc mắc của bạn.</p>
+      </div>
+      
+      <div class="content-card" style="padding:0; background:transparent; border:none; box-shadow:none;">
+        <details class="faq-item">
+          <summary>Tôi không có bằng lái xe thì thuê loại nào?</summary>
+          <div class="faq-content">
+            Bạn có thể thuê các dòng xe 50cc (Scoopy, Elite, Cub...) hoặc xe đạp điện. Các dòng xe này pháp luật không yêu cầu bằng lái, rất phù hợp với học sinh hoặc khách du lịch chưa đổi bằng quốc tế.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Có giao xe tận nơi không? Phí ship thế nào?</summary>
+          <div class="faq-content">
+            Nguyễn Tú miễn phí giao xe bán kính 3km quanh Hoàn Kiếm/Phố Cổ với hợp đồng trên 2 ngày. Nếu xa hơn hoặc thuê ngắn hạn, phí ship chỉ từ 20k - 30k tùy vị trí.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Nếu xe hỏng giữa đường thì sao?</summary>
+          <div class="faq-content">
+            Đừng lo, hãy gọi ngay hotline 0334.699.969. Nếu lỗi do xe, bên mình sẽ cử thợ đến sửa tận nơi hoặc đổi xe khác cho bạn ngay lập tức mà không mất phí.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Thời gian tính 1 ngày thuê như thế nào?</summary>
+          <div class="faq-content">
+            1 ngày được tính là 24 tiếng từ lúc nhận xe. Ví dụ nhận 9h sáng hôm nay thì trả trước 9h sáng hôm sau. Nếu quá giờ sẽ tính thêm phụ phí nhỏ theo giờ (khoảng 10-20k/h).
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Tôi có thể trả xe ở địa điểm khác không?</summary>
+          <div class="faq-content">
+            Có thể. Bạn vui lòng báo trước địa điểm trả xe. Nếu tiện đường bên mình sẽ hỗ trợ miễn phí, nếu xa sẽ tính một chút phí đi lại cho nhân viên nhận xe.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ========= SECTION MỚI 4: BẢN ĐỒ (GOOGLE MAP) ========= -->
+    <section class="container" id="ban-do">
+      <div class="section-head">
+        <h2 class="section-title">Vị trí cửa hàng</h2>
+        <p class="section-desc">Ghé trực tiếp để chọn xe ưng ý nhất.</p>
+      </div>
+      <div class="content-card" style="padding:10px;">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8638558814587!2d105.86695231533215!3d21.038132792834636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd76269389d%3A0x6335a76742e47458!2s108%20Nguyen%20Van%20Cu%2C%20Bo%20De%2C%20Long%20Bien%2C%20Hanoi!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+          width="100%" 
+          height="400" 
+          style="border:0; border-radius: 16px; display:block;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
       </div>
     </section>
 
