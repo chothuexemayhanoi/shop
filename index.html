@@ -595,7 +595,6 @@
       max-width: var(--max-w);
       margin: 0 auto;
       display: grid;
-      /* Laptop > 1024px: 4 Columns (adjusted widths) */
       grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
       gap: 30px; 
       padding: 24px;
@@ -614,11 +613,9 @@
     /* TABLET: 640px to 1024px */
     @media (max-width: 1024px) {
       .footer-grid {
-        /* Row 2: 3 equal columns for links */
         grid-template-columns: 1fr 1fr 1fr; 
         row-gap: 32px;
       }
-      /* Row 1: Brand takes full width */
       .col-brand {
         grid-column: 1 / -1; 
         display: flex;
@@ -635,7 +632,7 @@
     /* MOBILE: < 640px */
     @media (max-width: 640px) {
       .footer-grid {
-        grid-template-columns: 1fr; /* 1 Column */
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 40px;
       }
@@ -644,7 +641,7 @@
       }
       .footer-col,
       .footer-links {
-        align-items: center; /* Center items */
+        align-items: center;
       }
       .footer-social {
         justify-content: center;
@@ -748,7 +745,6 @@
     /* QUICK CALL FAB */
     .fab-container { position: fixed; bottom: 20px; right: 20px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
     
-    /* 2️⃣ ANIMATION KEYFRAMES CHO NÚT ⚡ */
     @keyframes fabWiggle {
       0%, 100% { transform: translateY(0) scale(1); }
       20% { transform: translateY(-2px) scale(1.06); }
@@ -769,11 +765,9 @@
       display: grid;
       place-items: center;
       transition: transform 0.2s;
-      /* Thêm animation RUNG RUNG */
       animation: fabWiggle 1.6s ease-in-out infinite;
     }
     
-    /* Khi hover thì ngừng rung để phóng to */
     .fab-main:hover {
       animation: none;
       transform: scale(1.1);
@@ -897,7 +891,6 @@
       </a>
     </div>
 
-    <!-- UPDATE: Thêm ID để JS bắt được -->
     <div class="header-right">
       <div class="status-chip">
         <span class="status-dot" id="statusDot"></span>
@@ -1169,6 +1162,66 @@
       </div>
       <style>@media(max-width:768px){ .container > div { grid-template-columns: 1fr !important; } }</style>
     </section>
+
+    <!-- HƯỚNG DẪN THUÊ XE NHANH -->
+    <section class="container" id="huongdan-nhanh">
+      <div class="section-head">
+        <h2 class="section-title">Thuê xe cực nhanh trong 3 bước</h2>
+        <p class="section-desc">Không rườm rà giấy tờ, tập trung vào trải nghiệm của bạn.</p>
+      </div>
+      <div class="content-card">
+        <ol class="reason-list" style="padding-left:20px; margin:0;">
+          <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969" style="color:var(--accent);">0334 699 969</a> để check xe trống &amp; giá.</li>
+          <li><strong>Bước 2:</strong> Gửi vị trí khách sạn/homestay hoặc hẹn nhận xe tại điểm trung tâm (Hoàn Kiếm / Phố Cổ).</li>
+          <li><strong>Bước 3:</strong> Nhận xe, ký biên nhận đơn giản (CCCD hoặc cọc nhẹ) là có thể chạy ngay.</li>
+        </ol>
+        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary);">
+          ⓘ Với khách nước ngoài, có thể hỗ trợ tiếng Anh cơ bản qua Zalo/WhatsApp (liên hệ trước để sắp xếp).
+        </p>
+      </div>
+    </section>
+
+    <!-- GỢI Ý LỊCH TRÌNH -->
+    <section class="container" id="goi-y-lich-trinh">
+      <div class="section-head">
+        <h2 class="section-title">Gợi ý lịch trình tham quan bằng xe máy</h2>
+        <p class="section-desc">Một vài gợi ý nhẹ nhàng để bạn đỡ mất công lên plan.</p>
+      </div>
+      <div class="content-card">
+        <ul class="reason-list" style="padding-left:20px; margin:0;">
+          <li>
+            <strong>Tour Phố Cổ &amp; Hồ Gươm (nửa ngày):</strong> Hồ Hoàn Kiếm → Nhà thờ Lớn → Chợ Đồng Xuân → Ô Quan Chưởng → ăn tối ở Tạ Hiện.
+          </li>
+          <li>
+            <strong>Tour Hồ Tây chill (nửa ngày):</strong> Hồ Tây → Phủ Tây Hồ → đường Thanh Niên → Trấn Quốc → cafe ngắm hoàng hôn ven hồ.
+          </li>
+          <li>
+            <strong>Tour Ba Đình – Văn Miếu (nửa ngày):</strong> Lăng Bác → Chùa Một Cột → Hoàng Thành → Văn Miếu → cafe trứng/Phố cổ.
+          </li>
+        </ul>
+        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary);">
+          Nếu cần gợi ý cụ thể theo khách sạn hiện tại, bạn chỉ cần gửi vị trí – bên mình tư vấn lịch trình miễn phí.
+        </p>
+      </div>
+    </section>
+
+    <!-- LƯU Ý KHI CHẠY XE Ở HÀ NỘI -->
+    <section class="container" id="luu-y-an-toan">
+      <div class="section-head">
+        <h2 class="section-title">Một vài lưu ý khi chạy xe ở Hà Nội</h2>
+        <p class="section-desc">Đặc biệt hữu ích với khách du lịch &amp; người mới tới.</p>
+      </div>
+      <div class="content-card">
+        <ul class="reason-list" style="padding-left:20px; margin:0;">
+          <li>Luôn đội mũ bảo hiểm, mang theo CCCD/hộ chiếu khi ra đường.</li>
+          <li>Giữ tốc độ vừa phải trong phố (30–40 km/h), chú ý xe bus &amp; ngã tư không đèn.</li>
+          <li>Tránh đi vào làn BRT, làn ô tô, và chú ý các biển cấm giờ hành chính quanh phố cổ.</li>
+          <li>Gửi xe tại bãi có vé, tránh để xe ngoài vỉa hè không có người trông.</li>
+          <li>Nếu có vấn đề với xe (khó nổ, thủng lốp, va quệt nhẹ...) – cứ gọi thẳng số hotline để được xử lý.</li>
+        </ul>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER MỚI -->
@@ -1332,7 +1385,7 @@
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
   }
 
-  // --- 1. OPENING STATUS LOGIC (UPDATE) ---
+  // --- 1. OPENING STATUS LOGIC ---
   const statusDot = document.getElementById('statusDot');
   const statusText = document.getElementById('statusText');
 
@@ -1348,11 +1401,11 @@
     if (isOpen) {
       statusDot.classList.add('open');
       statusDot.classList.remove('closed');
-      statusText.textContent = 'Mở • 9h – 21h';
+      statusText.textContent = 'Đang mở • 9h – 21h';
     } else {
       statusDot.classList.add('closed');
       statusDot.classList.remove('open');
-      statusText.textContent = 'Đóng • 9h – 21h';
+      statusText.textContent = 'Đã đóng • 9h – 21h';
     }
   }
 
@@ -1399,13 +1452,19 @@
   const totalPrice = document.getElementById('totalPrice');
 
   function updatePrice() {
-    const price = parseInt(bikeType.value);
-    const days = parseInt(dayCount.value) || 1;
+    const price = parseInt(bikeType.value) || 0;
+    let days = parseInt(dayCount.value);
+
+    if (isNaN(days) || days < 1) {
+      days = 1;
+      dayCount.value = 1; // luôn ép về 1 ngày tối thiểu
+    }
+
     const total = price * days;
     totalPrice.textContent = total.toLocaleString('vi-VN') + ' ₫';
   }
 
-  if(bikeType && dayCount) {
+  if (bikeType && dayCount) {
     bikeType.addEventListener('change', updatePrice);
     dayCount.addEventListener('input', updatePrice);
   }
@@ -1418,7 +1477,7 @@
   // --- TESTIMONIAL SLIDER ---
   let slideIndex = 0;
   const slides = document.querySelectorAll('.testi-item');
-  if(slides.length > 0) {
+  if (slides.length > 0) {
     setInterval(() => {
       slides[slideIndex].classList.remove('active');
       slideIndex = (slideIndex + 1) % slides.length;
@@ -1442,11 +1501,18 @@
     lb.classList.remove('active');
   }
 
+  // Đóng lightbox khi click ra nền đen
+  lb.addEventListener('click', (e) => {
+    if (e.target === lb) {
+      closeLightbox();
+    }
+  });
+
   // --- INIT ON LOAD ---
   document.addEventListener('DOMContentLoaded', () => {
     // 1. Cập nhật giờ mở cửa
     updateOpeningStatus();
-    setInterval(updateOpeningStatus, 60 * 1000); // Check lại mỗi phút
+    setInterval(updateOpeningStatus, 60 * 1000);
 
     // 2. Animation fade in cho các section
     const blocks = document.querySelectorAll('section, footer');
