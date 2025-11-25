@@ -208,9 +208,13 @@
     :root[data-theme="light"] .status-chip { background: rgba(0,0,0,0.05); }
     .status-dot { width: 6px; height: 6px; background: #30d158; border-radius: 50%; box-shadow: 0 0 8px #30d158; }
 
+    /* --- [SỬA 1b] MOBILE CSS: KHÔNG ẨN CHỮ, CHỈ THU NHỎ --- */
     @media (max-width: 768px) {
-      .status-chip span:last-child { display: none; } /* Hide text, keep dot on mobile */
-      .status-chip { padding: 4px; border-radius: 50%; width: 20px; height: 20px; justify-content: center; }
+      .status-chip {
+        padding: 4px 8px;
+        border-radius: 999px;
+        font-size: 11px;
+      }
     }
 
     /* ========= SIDEBAR (iOS Settings Style) ========= */
@@ -519,7 +523,7 @@
     .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
     .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
 
-    /* ========= FOOTER ULTRA ========= */
+    /* ========= FOOTER ULTRA (MỚI) ========= */
     footer {
       background: var(--bg-elevated);
       border-top: 1px solid var(--border-soft);
@@ -539,11 +543,76 @@
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
 
     .footer-col h4 { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 16px; letter-spacing: 1px; }
-    .footer-links a { display: block; color: var(--text); font-size: 14px; margin-bottom: 10px; opacity: 0.8; }
-    .footer-links a:hover { opacity: 1; color: var(--accent); }
 
-    .footer-brand p { font-size: 14px; color: var(--text-secondary); margin-top: 10px; line-height: 1.6; }
-    
+    /* --- [SỬA 2a] CSS CHO FOOTER MỚI --- */
+    .footer-col.col-brand .footer-tagline {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .footer-links a {
+      display: block;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 8px;
+      opacity: 0.85;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .footer-contact {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .footer-contact p {
+      margin: 4px 0;
+    }
+
+    .footer-contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-social {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+    }
+
+    :root[data-theme="light"] .social-pill {
+      background: rgba(0,0,0,0.03);
+    }
+
+    .social-pill:hover {
+      color: var(--accent);
+      border-color: var(--accent-soft);
+    }
+    /* ------------------------------------ */
+
     .footer-bottom {
       max-width: var(--max-w);
       margin: 40px auto 0;
@@ -679,7 +748,6 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-left">
-      <!-- 1. Accessiblity: aria-label -->
       <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
     </div>
 
@@ -694,11 +762,11 @@
     </div>
 
     <div class="header-right">
+      <!-- [SỬA 1a] HEADER HTML -->
       <div class="status-chip">
         <span class="status-dot"></span>
-        <span>Mở cửa 9:00–21:00</span>
+        <span>9h – 21h</span>
       </div>
-      <!-- 1. Accessiblity -->
       <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
     </div>
   </header>
@@ -716,7 +784,6 @@
           <h1 class="hero-title">Thuê xe máy <br /><span class="highlight">Hoàn Kiếm & Hà Nội</span></h1>
           <p class="hero-sub">Dịch vụ chuyên nghiệp, xe mới, thủ tục đơn giản (chỉ cần CCCD). Giao xe tận nơi khách sạn, homestay.</p>
           <div class="hero-actions">
-             <!-- 3. Đồng bộ format số điện thoại -->
             <a href="tel:0334699969" class="btn btn-primary">📞 Gọi 0334 699 969</a>
             <a href="https://zalo.me/0334699969" class="btn btn-secondary">💬 Chat Zalo</a>
           </div>
@@ -752,7 +819,7 @@
       </div>
     </section>
 
-    <!-- BIKE LIST - 4. Hoàn thiện đầy đủ danh sách xe -->
+    <!-- BIKE LIST -->
     <section class="container" id="danhsachxe">
       <div class="section-head">
         <h2 class="section-title">Danh sách xe</h2>
@@ -968,10 +1035,10 @@
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- [SỬA 2b] FOOTER MỚI -->
   <footer>
     <div class="footer-grid">
-      <!-- Brand -->
+      <!-- Cột brand + tagline -->
       <div class="footer-col col-brand">
         <div class="ultra-logo-pill" style="display:inline-flex;">
           <div class="logo-watch">NT</div>
@@ -980,59 +1047,71 @@
             <span>Motorbike Rental</span>
           </div>
         </div>
-        <p>
-          Chuyên cho thuê xe máy du lịch & công tác tại Hà Nội.
-          Uy tín – Chất lượng – Tận tâm.
-        </p>
-        <p style="font-size:13px; color:var(--text-secondary); max-width:380px; margin-top:6px;">
-          🚚 Giao xe tận nơi Hoàn Kiếm & khu vực lân cận chỉ trong <strong>20–40 phút</strong>.<br>
-          🧾 Thủ tục đơn giản, chỉ cần CCCD, hợp đồng rõ ràng – không phí ẩn.<br>
-          🕒 Hỗ trợ khách <strong>24/7</strong> qua Zalo / Điện thoại, xe luôn bảo dưỡng định kỳ.
+        <p class="footer-tagline">
+          Chuyên cho thuê xe máy du lịch &amp; công tác tại Hà Nội. 
+          Uy tín – Chất lượng – Tận tâm. Giao xe nhanh, thủ tục nhẹ, hỗ trợ 24/7.
         </p>
       </div>
 
-      <!-- Trang chính -->
+      <!-- Cột Trang chính -->
       <div class="footer-col footer-links">
         <h4>Trang chính</h4>
-        <a href="index.html">🏠 Trang chủ</a>
-        <a href="gioithieu.html">👋 Giới thiệu</a>
-        <a href="faq.html">❓ FAQ</a>
-        <a href="dieukhoan.html">📝 Điều khoản</a>
-        <a href="chinhsach.html">🛡️ Chính sách</a>
-        <a href="lienhe.html">📞 Liên hệ</a>
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="faq.html">FAQ</a>
+        <a href="dieukhoan.html">Điều khoản</a>
+        <a href="chinhsach.html">Chính sách</a>
+        <a href="lienhe.html">Liên hệ</a>
       </div>
 
-      <!-- Dịch vụ -->
+      <!-- Cột Dịch vụ -->
       <div class="footer-col footer-links">
         <h4>Dịch vụ</h4>
-        <a href="banggia.html">💰 Bảng giá</a>
-        <a href="thutuc.html">📄 Thủ tục thuê</a>
-        <a href="huongdan.html">🔰 Hướng dẫn thuê xe</a>
-        <a href="loaixe.html">🏍️ Các loại xe</a>
-        <a href="kinhnghiem.html">💡 Kinh nghiệm thuê xe</a>
-        <a href="ngay.html">📅 Thuê theo ngày</a>
-        <a href="tuan.html">📆 Thuê theo tuần</a>
-        <a href="thang.html">🗓️ Thuê theo tháng</a>
+        <a href="banggia.html">Bảng giá</a>
+        <a href="thutuc.html">Thủ tục</a>
+        <a href="huongdan.html">Hướng dẫn</a>
+        <a href="loaixe.html">Loại xe</a>
+        <a href="kinhnghiem.html">Kinh nghiệm</a>
       </div>
 
-      <!-- Khu vực -->
-      <div class="footer-col footer-links">
-        <h4>Khu vực</h4>
-        <a href="hoankiem.html">📍 Hoàn Kiếm</a>
-        <a href="phoco.html">🏙️ Phố Cổ</a>
-        <a href="longbien.html">🌉 Long Biên</a>
-        <a href="gialam.html">🏘️ Gia Lâm</a>
-        <a href="badinh.html">🏛️ Ba Đình</a>
-        <a href="tayho.html">🌊 Tây Hồ</a>
+      <!-- Cột Khu vực + Liên hệ -->
+      <div class="footer-col">
+        <h4>Khu vực &amp; liên hệ</h4>
+        <div class="footer-links" style="margin-bottom:10px;">
+          <a href="hoankiem.html">Hoàn Kiếm</a>
+          <a href="tayho.html">Tây Hồ</a>
+          <a href="badinh.html">Ba Đình</a>
+          <a href="longbien.html">Long Biên</a>
+          <a href="gialam.html">Gia Lâm</a>
+        </div>
+
+        <div class="footer-contact">
+          <p>📞 <a href="tel:0334699969">0334 699 969</a></p>
+          <p>✉️ <a href="mailto:nguyenthuha203@gmail.com">nguyenthuha203@gmail.com</a></p>
+          <p>📍 108 Nguyễn Văn Cừ, Bồ Đề, Long Biên, Hà Nội</p>
+          <p>⏰ 9h – 21h hàng ngày</p>
+
+          <div class="footer-social">
+            <a class="social-pill" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener">
+              <span>📘</span><span>Facebook</span>
+            </a>
+            <a class="social-pill" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener">
+              <span>📸</span><span>Instagram</span>
+            </a>
+            <a class="social-pill" href="https://www.pinterest.com/chothuexemayohanoi/" target="_blank" rel="noopener">
+              <span>📌</span><span>Pinterest</span>
+            </a>
+            <a class="social-pill" href="https://rentbikehanoi.com" target="_blank" rel="noopener">
+              <span>🌐</span><span>Website</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>© 2025 Nguyen Tu Motorbike. All rights reserved.</span>
-      <div style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a href="https://zalo.me/0334699969">💬 Zalo</a>
-        <a href="tel:0334699969">📞 Hotline 0334 699 969</a>
-      </div>
+      <span>Giá mang tính tham khảo – vui lòng liên hệ để nhận báo giá chính xác.</span>
     </div>
   </footer>
 
@@ -1049,13 +1128,11 @@
         <span>📍</span> Chỉ đường
       </a>
     </div>
-    <!-- 1. Accessiblity -->
     <button class="fab-main" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
   </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <!-- 1. Accessiblity -->
     <button class="lb-close" onclick="closeLightbox()" aria-label="Đóng ảnh">✕</button>
     <img id="lbImg" src="" alt="Zoom Bike">
   </div>
