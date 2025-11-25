@@ -226,6 +226,7 @@
     :root[data-theme="light"] .icon-btn { background: rgba(0,0,0,0.05); }
     .icon-btn:hover { background: var(--accent-soft); color: var(--accent); }
 
+    /* --- STATUS CHIP LOGIC --- */
     .status-chip {
       font-size: 12px;
       font-weight: 500;
@@ -238,7 +239,26 @@
       border-radius: var(--radius-pill);
     }
     :root[data-theme="light"] .status-chip { background: rgba(0,0,0,0.05); }
-    .status-dot { width: 6px; height: 6px; background: #30d158; border-radius: 50%; box-shadow: 0 0 8px #30d158; }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Trạng thái Mở (Xanh) */
+    .status-dot.open {
+      background: #30d158;
+      box-shadow: 0 0 8px #30d158;
+    }
+
+    /* Trạng thái Đóng (Đỏ) */
+    .status-dot.closed {
+      background: #ff453a;
+      box-shadow: 0 0 8px #ff453a;
+    }
 
     @media (max-width: 768px) {
       .status-chip {
@@ -877,10 +897,11 @@
       </a>
     </div>
 
+    <!-- UPDATE: Thêm ID để JS bắt được -->
     <div class="header-right">
       <div class="status-chip">
-        <span class="status-dot"></span>
-        <span>9h – 21h</span>
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">9h – 21h</span>
       </div>
       <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
     </div>
@@ -1311,6 +1332,30 @@
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
   }
 
+  // --- 1. OPENING STATUS LOGIC (UPDATE) ---
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+
+  function updateOpeningStatus() {
+    if (!statusDot || !statusText) return;
+
+    const now = new Date();
+    const hour = now.getHours();
+    
+    // Mở từ 9:00 đến trước 21:00
+    const isOpen = hour >= 9 && hour < 21;
+
+    if (isOpen) {
+      statusDot.classList.add('open');
+      statusDot.classList.remove('closed');
+      statusText.textContent = 'Mở • 9h – 21h';
+    } else {
+      statusDot.classList.add('closed');
+      statusDot.classList.remove('open');
+      statusText.textContent = 'Đóng • 9h – 21h';
+    }
+  }
+
   // --- SIDEBAR LOGIC ---
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebarOverlay');
@@ -1397,18 +1442,22 @@
     lb.classList.remove('active');
   }
 
-  // 3️⃣ SCRIPT FADE IN ULTRA TOÀN TRANG
+  // --- INIT ON LOAD ---
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Animation
+    // 1. Cập nhật giờ mở cửa
+    updateOpeningStatus();
+    setInterval(updateOpeningStatus, 60 * 1000); // Check lại mỗi phút
+
+    // 2. Animation fade in cho các section
     const blocks = document.querySelectorAll('section, footer');
     blocks.forEach((el, i) => {
       el.classList.add('section-fade');
       setTimeout(() => {
         el.classList.add('show');
-      }, 200 + i * 120); // delay nhẹ cho từng khối
+      }, 200 + i * 120);
     });
 
-    // 2. Gọi luôn 1 lần cho chắc kèo (Sync giá tiền ban đầu)
+    // 3. Sync giá tiền ban đầu
     if (bikeType && dayCount) {
       updatePrice();
     }
