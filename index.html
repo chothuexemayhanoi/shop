@@ -2,7 +2,7 @@
 <html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
   <!-- SEO Meta Tags -->
   <title>Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental</title>
@@ -17,266 +17,219 @@
   <meta property="og:title" content="Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú" />
   <meta property="og:description" content="Giao xe tận nơi 20 phút, xe mới, giá minh bạch từ 100k. Dịch vụ uy tín số 1 tại Phố Cổ Hà Nội." />
   <meta property="og:image" content="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://chothuexemayhanoi.github.io/vn.com/" />
-  <meta name="twitter:title" content="Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú" />
-  <meta name="twitter:description" content="Giao xe nhanh, thủ tục gọn, xe mới chất lượng cao tại Hà Nội." />
-  <meta name="twitter:image" content="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 
   <style>
+    /* =========================================
+       1. VARIABLES & RESET
+       ========================================= */
     :root {
-      /* Apple System Colors */
+      /* Palette - Apple Style */
       --accent: #0071e3;
-      --accent-soft: rgba(0,113,227,0.15);
       --accent-hover: #0077ed;
-
-      /* Dark Mode Base */
-      --bg: #000000;
-      --bg-elevated: #1c1c1e;
-      --bg-elevated-soft: #2c2c2e;
-      --bg-hero: radial-gradient(circle at 50% 0%, #1a2138 0%, #000000 70%);
+      --accent-soft: rgba(0, 113, 227, 0.12);
       
-      --text: #f5f5f7;
-      --text-secondary: #86868b; /* Apple Style Grey */
-      --muted: #6e6e73;
+      --success: #30d158;
+      --danger: #ff453a;
 
-      --border-soft: rgba(255,255,255,0.12);
-      --border-light: rgba(255,255,255,0.08);
+      /* Dark Mode Defaults */
+      --bg-body: #000000;
+      --bg-surface: #1c1c1e;
+      --bg-surface-2: #2c2c2e;
+      --bg-glass: rgba(28, 28, 30, 0.75);
       
-      --shadow-soft: 0 10px 40px rgba(0,0,0,0.8);
-      --shadow-card: 0 4px 12px rgba(0,0,0,0.5);
-
-      --radius-xl: 24px;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --radius-pill: 999px;
-      
-      --ease: cubic-bezier(0.25, 1, 0.5, 1);
-      --max-w: 1180px;
-      --header-height: 60px;
-    }
-
-    /* LIGHT MODE */
-    :root[data-theme="light"] {
-      --bg: #f5f5f7;
-      --bg-elevated: #ffffff;
-      --bg-elevated-soft: #f2f2f7;
-      --bg-hero: radial-gradient(circle at 50% 0%, #dbeafe 0%, #f5f5f7 70%);
-      
-      --text: #1d1d1f;
+      --text-primary: #f5f5f7;
       --text-secondary: #86868b;
-      --muted: #86868b;
+      --text-tertiary: #6e6e73;
 
-      --border-soft: rgba(0,0,0,0.08);
-      --border-light: rgba(0,0,0,0.05);
-      
-      --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
-      --shadow-card: 0 2px 8px rgba(0,0,0,0.04);
+      --border: rgba(255, 255, 255, 0.1);
+      --border-strong: rgba(255, 255, 255, 0.15);
+
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.2);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.3);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.5);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 999px;
+
+      --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --header-height: 60px;
+      --max-w: 1140px;
+      --ease: cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    /* Light Mode Overrides */
+    :root[data-theme="light"] {
+      --bg-body: #f5f5f7;
+      --bg-surface: #ffffff;
+      --bg-surface-2: #f2f2f7;
+      --bg-glass: rgba(255, 255, 255, 0.8);
+      
+      --text-primary: #1d1d1f;
+      --text-secondary: #86868b;
+      --text-tertiary: #a1a1a6;
 
-    html { scroll-behavior: smooth; }
+      --border: rgba(0, 0, 0, 0.08);
+      --border-strong: rgba(0, 0, 0, 0.12);
 
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 8px 20px rgba(0,0,0,0.06);
+      --shadow-lg: 0 20px 40px rgba(0,0,0,0.08);
+      
+      --accent-soft: rgba(0, 113, 227, 0.08);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    
+    html { scroll-behavior: smooth; font-size: 16px; }
+    
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-      opacity: 0;
-      animation: bodyFadeIn 0.8s var(--ease) forwards;
+      font-family: var(--font-main);
+      background: var(--bg-body);
+      color: var(--text-primary);
       line-height: 1.5;
-    }
-
-    @keyframes bodyFadeIn { to { opacity: 1; } }
-
-    a { color: inherit; text-decoration: none; transition: color 0.2s; }
-    img { max-width: 100%; display: block; height: auto; }
-    h1, h2, h3, h4, h5 { margin: 0; font-weight: 600; letter-spacing: -0.015em; }
-
-    .page-wrap {
-      width: 100%;
-      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s var(--ease), color 0.3s var(--ease);
       overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* ========= 1️⃣ FADE IN ULTRA CSS ========= */
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; transition: color 0.2s; }
+    ul, ol { padding-left: 20px; margin: 0 0 16px 0; }
+    h1, h2, h3, h4 { margin: 0; font-weight: 600; letter-spacing: -0.01em; }
+    p { margin: 0 0 16px 0; }
+    p:last-child { margin-bottom: 0; }
+
+    /* Utilities */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section { padding: 60px 0; }
+    .section-head { margin-bottom: 40px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .section-title { font-size: clamp(24px, 4vw, 32px); margin-bottom: 10px; }
+    .section-desc { color: var(--text-secondary); font-size: 16px; }
+
+    /* Fade In Animation */
     .section-fade {
       opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      transform: translateY(20px);
+      transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
       will-change: opacity, transform;
     }
+    .section-fade.show { opacity: 1; transform: translateY(0); }
 
-    .section-fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ========= HEADER ULTRA (GLASS) ========= */
+    /* =========================================
+       2. HEADER & NAVIGATION
+       ========================================= */
     .site-header {
       position: fixed;
-      inset-inline: 0;
-      top: 0;
-      z-index: 100;
+      top: 0; left: 0; right: 0;
       height: var(--header-height);
-      padding-inline: max(16px, env(safe-area-inset-left));
-      padding-right: max(16px, env(safe-area-inset-right));
+      z-index: 100;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      background: rgba(0,0,0,0.7);
-      border-bottom: 1px solid var(--border-light);
-      transition: background 0.3s, border-color 0.3s;
+      padding: 0 max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
     }
 
-    :root[data-theme="light"] .site-header {
-      background: rgba(255,255,255,0.75);
-    }
-
-    .header-left, .header-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex: 1;
-    }
+    .header-left, .header-right { display: flex; align-items: center; gap: 12px; flex: 1; }
     .header-right { justify-content: flex-end; }
+    .header-center { flex: 0 0 auto; }
 
-    .header-center {
-      display: flex;
-      justify-content: center;
-      flex: 0 0 auto;
-    }
-
-    /* LOGO PILL OPTIMIZED */
-    .ultra-logo-pill {
+    /* Logo Pill */
+    .logo-pill {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 5px 14px 5px 6px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-pill);
-      transition: transform 0.2s var(--ease);
+      padding: 4px 12px 4px 6px;
+      background: rgba(125, 125, 125, 0.1);
+      border-radius: var(--radius-full);
+      transition: transform 0.2s;
     }
+    .logo-pill:active { transform: scale(0.96); }
 
-    :root[data-theme="light"] .ultra-logo-pill {
-      background: rgba(0,0,0,0.04);
-    }
-
-    .ultra-logo-pill:active { transform: scale(0.96); }
-
-    .logo-watch {
-      width: 28px;
-      height: 28px;
+    .logo-icon {
+      width: 32px; height: 32px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #0071e3, #3fb4ff);
+      background: linear-gradient(135deg, #0071e3, #4facfe);
       color: white;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       display: grid;
       place-items: center;
-      box-shadow: inset 0 1px 2px rgba(255,255,255,0.3);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-      font-size: 13px;
-    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text strong { font-size: 13px; color: var(--text-primary); }
+    .logo-text small { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
 
-    .logo-text span:first-child { font-weight: 600; color: var(--text); }
-    .logo-text span:last-child { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
-
-    /* RESPONSIVE LOGO */
     @media (max-width: 480px) {
-      .ultra-logo-pill { padding: 4px; gap: 0; border: none; background: transparent; }
+      .logo-pill { padding: 0; background: none; }
       .logo-text { display: none; }
-      .logo-watch { width: 32px; height: 32px; font-size: 14px; }
-      .header-left, .header-right { gap: 8px; }
     }
 
-    /* HEADER BUTTONS */
+    /* Buttons */
     .icon-btn {
-      width: 36px;
-      height: 36px;
+      width: 40px; height: 40px;
       border-radius: 50%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(125, 125, 125, 0.1);
       border: none;
-      color: var(--text);
-      display: grid;
-      place-items: center;
+      color: var(--text-primary);
       cursor: pointer;
-      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: background 0.2s, color 0.2s;
     }
-    :root[data-theme="light"] .icon-btn { background: rgba(0,0,0,0.05); }
-    .icon-btn:hover { background: var(--accent-soft); color: var(--accent); }
+    .icon-btn:hover { background: var(--accent); color: white; }
 
-    /* --- STATUS CHIP LOGIC --- */
+    /* Status Chip */
     .status-chip {
+      background: rgba(125, 125, 125, 0.1);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
       font-size: 12px;
       font-weight: 500;
       color: var(--text-secondary);
       display: flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.06);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      gap: 8px;
     }
-    :root[data-theme="light"] .status-chip { background: rgba(0,0,0,0.05); }
-
     .status-dot {
-      width: 6px;
-      height: 6px;
+      width: 8px; height: 8px;
       border-radius: 50%;
-      display: inline-block;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      transition: background 0.3s;
     }
+    .status-dot.open { background: var(--success); box-shadow: 0 0 6px var(--success); }
+    .status-dot.closed { background: var(--danger); box-shadow: 0 0 6px var(--danger); }
 
-    /* Trạng thái Mở (Xanh) */
-    .status-dot.open {
-      background: #30d158;
-      box-shadow: 0 0 8px #30d158;
-    }
+    @media (max-width: 640px) { .status-chip span:last-child { display: none; } } /* Hide text on mobile */
 
-    /* Trạng thái Đóng (Đỏ) */
-    .status-dot.closed {
-      background: #ff453a;
-      box-shadow: 0 0 8px #ff453a;
-    }
-
-    @media (max-width: 768px) {
-      .status-chip {
-        padding: 4px 8px;
-        border-radius: 999px;
-        font-size: 11px;
-      }
-    }
-
-    /* ========= SIDEBAR (iOS Settings Style) ========= */
+    /* =========================================
+       3. SIDEBAR MENU
+       ========================================= */
     .sidebar-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.5);
       backdrop-filter: blur(4px);
       z-index: 101;
-      opacity: 0;
-      pointer-events: none;
+      opacity: 0; pointer-events: none;
       transition: opacity 0.3s;
     }
     .sidebar-overlay.show { opacity: 1; pointer-events: auto; }
@@ -284,121 +237,74 @@
     .sidebar {
       position: fixed;
       top: 10px; left: 10px; bottom: 10px;
-      width: 300px;
-      max-width: calc(100vw - 20px);
-      background: var(--bg-elevated);
-      border-radius: var(--radius-xl);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      width: 280px;
+      max-width: 85vw;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
       z-index: 102;
-      transform: translateX(calc(-100% - 20px));
+      transform: translateX(-110%);
       transition: transform 0.4s var(--ease);
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
       overflow: hidden;
     }
     .sidebar.open { transform: translateX(0); }
 
     .sidebar-header {
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.03);
-      border-bottom: 1px solid var(--border-light);
-    }
-
-    .sidebar-title { font-size: 17px; font-weight: 700; color: var(--text); }
-    .sidebar-close {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      background: rgba(118, 118, 128, 0.2);
-      border: none;
-      color: var(--text-secondary);
-      font-size: 14px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-    }
-
-    .sidebar-content {
       padding: 16px;
-      overflow-y: auto;
-      flex: 1;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .sidebar-title { font-size: 18px; font-weight: 700; }
+    .sidebar-close {
+      width: 30px; height: 30px; border-radius: 50%; border: none;
+      background: rgba(125, 125, 125, 0.15); color: var(--text-secondary);
+      cursor: pointer;
     }
 
-    /* iOS Grouped Menu Style */
+    .sidebar-content { padding: 16px; flex: 1; overflow-y: auto; }
+
     .nav-group {
-      background: var(--bg-elevated-soft);
+      background: var(--bg-surface-2);
       border-radius: 12px;
       overflow: hidden;
       margin-bottom: 20px;
     }
-
     .nav-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 14px 16px;
-      color: var(--text);
-      font-size: 16px;
-      border-bottom: 1px solid var(--border-soft);
+      font-size: 15px; color: var(--text-primary);
+      border-bottom: 1px solid var(--border);
       cursor: pointer;
       transition: background 0.2s;
     }
     .nav-item:last-child { border-bottom: none; }
-    .nav-item:active { background: rgba(255,255,255,0.05); }
-    
-    :root[data-theme="light"] .nav-item:active { background: rgba(0,0,0,0.05); }
+    .nav-item:active { background: rgba(125,125,125,0.1); }
+    .nav-icon { margin-right: 12px; font-size: 18px; width: 24px; text-align: center; }
 
-    .nav-left { display: flex; align-items: center; gap: 12px; }
-    .nav-icon { width: 24px; text-align: center; font-size: 18px; }
-    
-    /* Dropdown Arrow */
-    .nav-arrow {
-      font-size: 12px;
-      color: var(--text-secondary);
-      transition: transform 0.3s;
-    }
-    .nav-has-sub.active .nav-arrow { transform: rotate(90deg); }
-
-    /* Submenu */
-    .nav-sub {
-      display: none;
-      background: rgba(0,0,0,0.1);
-      padding-left: 52px; /* Indent */
-    }
-    :root[data-theme="light"] .nav-sub { background: rgba(0,0,0,0.03); }
-
-    .nav-sub.open { display: block; animation: slideDown 0.3s var(--ease); }
-    
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .nav-sub { display: none; background: rgba(0,0,0,0.05); }
+    .nav-sub.open { display: block; animation: slideDown 0.3s; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
     .nav-sub-link {
-      display: block;
-      padding: 12px 16px 12px 0;
-      font-size: 15px;
-      color: var(--text);
-      border-bottom: 1px solid var(--border-light);
+      display: block; padding: 12px 16px 12px 52px;
+      font-size: 14px; color: var(--text-primary);
+      border-bottom: 1px solid var(--border);
     }
-    .nav-sub-link:last-child { border-bottom: none; }
     .nav-sub-link:hover { color: var(--accent); }
 
-    /* ========= HERO ========= */
-    main { padding-top: var(--header-height); }
-
+    /* =========================================
+       4. HERO SECTION
+       ========================================= */
     .hero {
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      background: var(--bg-hero);
+      padding-top: calc(var(--header-height) + 40px);
+      padding-bottom: 60px;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.15) 0%, transparent 70%);
+      min-height: 80vh;
+      display: flex; align-items: center;
     }
 
-    .hero-inner {
-      width: 100%;
-      max-width: var(--max-w);
+    .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
       gap: 40px;
@@ -406,474 +312,327 @@
     }
 
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
       .hero-actions { justify-content: center; }
-      .hero-badge-row { justify-content: center; }
-      .hero-note { justify-content: center; }
+      .hero-badges { justify-content: center; }
     }
 
-    .hero-badge-row { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
-    .hero-badge {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+    .hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+    .badge {
+      font-size: 12px; font-weight: 600;
+      color: var(--accent); background: var(--accent-soft);
+      padding: 4px 10px; border-radius: var(--radius-full);
     }
 
     .hero-title {
-      font-size: clamp(28px, 5vw, 48px);
+      font-size: clamp(32px, 6vw, 56px);
       line-height: 1.1;
       margin-bottom: 16px;
-      color: var(--text);
+      letter-spacing: -0.02em;
     }
-    .highlight {
+    .text-gradient {
       background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-sub {
-      font-size: 17px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
+    .hero-desc { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; line-height: 1.6; }
+    @media (max-width: 900px) { .hero-desc { margin-inline: auto; } }
 
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 24px;
-      border-radius: var(--radius-pill);
-      font-weight: 500;
-      font-size: 15px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 500; font-size: 15px;
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
     }
     .btn:active { transform: scale(0.98); }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 4px 14px rgba(0,113,227,0.4);
-    }
+    .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
     .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
+    .btn-glass { background: rgba(125,125,125,0.1); color: var(--text-primary); border: 1px solid var(--border); }
+    .btn-glass:hover { background: rgba(125,125,125,0.2); }
 
-    .btn-secondary {
-      background: rgba(118, 118, 128, 0.12);
-      color: var(--text);
-    }
-    .btn-secondary:hover { background: rgba(118, 118, 128, 0.2); }
-
-    /* CALCULATOR CARD (Glassmorphism) */
+    /* Calculator Card */
     .calc-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      box-shadow: var(--shadow-soft);
+      background: var(--bg-surface);
+      padding: 30px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(10px);
       text-align: left;
     }
 
-    .calc-header { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
-    .calc-title { font-size: 15px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; }
-    
-    .form-group { margin-bottom: 16px; }
-    .form-label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; margin-bottom: 8px; font-size: 13px; font-weight: 500; color: var(--text-secondary); }
     .form-control {
       width: 100%;
-      padding: 12px;
+      padding: 14px;
       border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      background: var(--bg-elevated-soft);
-      color: var(--text);
+      border: 1px solid var(--border);
+      background: var(--bg-surface-2);
+      color: var(--text-primary);
       font-size: 16px;
       outline: none;
-      appearance: none;
+      transition: border-color 0.2s;
     }
     .form-control:focus { border-color: var(--accent); }
 
     .calc-result {
-      background: var(--accent-soft);
-      border-radius: 12px;
+      margin-top: 24px;
       padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
+      background: var(--accent-soft);
+      border-radius: 16px;
+      display: flex; justify-content: space-between; align-items: center;
     }
-    .total-price { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .price-display { font-size: 20px; font-weight: 700; color: var(--accent); }
 
-    /* ========= SECTIONS ========= */
-    .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 40px 20px; }
-    
-    .section-head { margin-bottom: 30px; }
-    .section-title { font-size: 28px; margin-bottom: 8px; }
-    .section-desc { color: var(--text-secondary); }
-
-    /* BIKE GRID */
+    /* =========================================
+       5. CONTENT SECTIONS
+       ========================================= */
+    /* Bike Grid */
     .bike-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
     }
-
+    
     .bike-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-soft);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius-lg);
       overflow: hidden;
       transition: transform 0.3s var(--ease), box-shadow 0.3s;
-      box-shadow: var(--shadow-card);
+      box-shadow: var(--shadow-sm);
+      display: flex; flex-direction: column;
     }
-    .bike-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+    .bike-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
 
     .bike-img-wrap {
-      position: relative;
-      background: var(--bg-elevated-soft);
       aspect-ratio: 4/3;
       overflow: hidden;
-      cursor: pointer;
+      background: var(--bg-surface-2);
+      position: relative;
+      cursor: zoom-in;
     }
-    .bike-img-wrap img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s; }
-    .bike-card:hover img { transform: scale(1.05); }
+    .bike-img-wrap img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s; padding: 10px; }
+    .bike-card:hover img { transform: scale(1.08); }
 
-    .bike-info { padding: 16px; }
-    .bike-name { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
-    .bike-price { color: var(--accent); font-weight: 600; font-size: 15px; margin-bottom: 8px; display: block; }
-    .bike-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.4; }
+    .bike-info { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .bike-name { font-size: 18px; margin-bottom: 4px; }
+    .bike-price { color: var(--accent); font-weight: 600; font-size: 15px; margin-bottom: 8px; }
+    .bike-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; flex: 1; line-height: 1.4; }
     
-    .bike-footer { display: flex; justify-content: space-between; align-items: center; }
-    .tag { font-size: 11px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 6px; color: var(--text-secondary); }
-    :root[data-theme="light"] .tag { background: rgba(0,0,0,0.05); }
+    .card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+    .tag { font-size: 11px; padding: 4px 8px; background: rgba(125,125,125,0.1); border-radius: 6px; color: var(--text-secondary); }
+    .link-action { font-size: 13px; font-weight: 600; color: var(--accent); }
 
-    /* TABLE & LISTS */
-    .content-card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-card);
-      overflow-x: auto;
+    /* Tables & Content Cards */
+    .card {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
     }
-    
+
+    /* Table Styles */
+    .table-responsive { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; min-width: 500px; }
-    th { text-align: left; padding: 12px; color: var(--text-secondary); font-size: 13px; border-bottom: 1px solid var(--border-soft); }
-    td { padding: 14px 12px; font-size: 15px; border-bottom: 1px solid var(--border-light); }
+    th { text-align: left; padding: 16px; color: var(--text-secondary); border-bottom: 1px solid var(--border); font-size: 13px; text-transform: uppercase; }
+    td { padding: 16px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
     tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: rgba(125,125,125,0.03); }
 
-    .reason-list li { margin-bottom: 10px; color: var(--text-secondary); font-size: 15px; }
+    /* Lists */
+    .list-pretty li {
+      margin-bottom: 12px;
+      padding-left: 8px;
+      color: var(--text-tertiary);
+      position: relative;
+    }
+    .list-pretty li::marker { color: var(--accent); }
 
-    /* TESTIMONIALS */
-    .testi-wrap { position: relative; min-height: 120px; }
-    .testi-item { display: none; animation: fadeIn 0.5s; }
+    /* Testimonials */
+    .testi-wrap { position: relative; min-height: 140px; }
+    .testi-item { display: none; animation: fadeIn 0.6s; }
     .testi-item.active { display: block; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
-    .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
+    .quote { font-size: 18px; font-style: italic; margin-bottom: 12px; color: var(--text-primary); line-height: 1.6; }
+    .author { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
 
-    /* ========= NEW SECTIONS STYLING ========= */
-    /* 1. Thủ tục chi tiết */
-    .papers-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    @media (max-width: 768px) { .papers-grid { grid-template-columns: 1fr; } }
+    /* 2 Column Layout */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* Detailed Papers */
+    .papers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 600px) { .papers-grid { grid-template-columns: 1fr; } }
     
     .paper-box {
-      background: var(--bg-elevated-soft);
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid var(--border-soft);
+      background: var(--bg-surface-2);
+      padding: 24px; border-radius: 16px;
+      border: 1px solid var(--border);
     }
-    .paper-title { font-weight: 600; margin-bottom: 12px; color: var(--accent); }
+    .paper-head { font-weight: 700; color: var(--accent); margin-bottom: 12px; display: block; }
 
-    /* 2. Bảo dưỡng Grid */
+    /* Maintenance Grid */
     .maint-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
     }
     @media (max-width: 900px) { .maint-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .maint-grid { grid-template-columns: 1fr; } }
 
     .maint-item {
-      background: var(--bg-elevated);
-      padding: 20px;
-      border-radius: 16px;
-      border: 1px solid var(--border-soft);
-      text-align: center;
-      transition: transform 0.2s;
+      background: var(--bg-surface); border: 1px solid var(--border);
+      padding: 24px; border-radius: 16px; text-align: center;
+      transition: transform 0.3s;
     }
     .maint-item:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .maint-icon { font-size: 32px; margin-bottom: 12px; display: block; }
-    .maint-name { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
-    .maint-desc { font-size: 12px; color: var(--text-secondary); }
+    .maint-icon { font-size: 32px; display: block; margin-bottom: 12px; }
 
-    /* 3. FAQ Details */
+    /* FAQ Details */
+    .faq-group { display: flex; flex-direction: column; gap: 12px; }
     details.faq-item {
-      background: var(--bg-elevated-soft);
+      background: var(--bg-surface-2);
       border-radius: 12px;
-      margin-bottom: 12px;
       overflow: hidden;
-      border: 1px solid var(--border-soft);
-      transition: background 0.2s;
+      border: 1px solid var(--border);
+      transition: background 0.3s;
     }
-    details.faq-item summary {
-      padding: 16px;
-      cursor: pointer;
-      font-weight: 500;
-      font-size: 15px;
-      list-style: none;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    details.faq-item[open] { background: var(--bg-surface); border-color: var(--accent); }
+    
+    summary {
+      padding: 16px 20px;
+      cursor: pointer; font-weight: 500; font-size: 15px;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
     }
-    details.faq-item summary::-webkit-details-marker { display: none; }
-    details.faq-item summary:after {
-      content: '+'; 
-      font-size: 20px; 
-      font-weight: 300;
-      color: var(--text-secondary);
-      transition: transform 0.2s;
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: '+'; font-size: 20px; font-weight: 300;
+      color: var(--text-secondary); transition: transform 0.3s;
     }
-    details.faq-item[open] summary:after { transform: rotate(45deg); }
-    details.faq-item[open] { background: var(--bg-elevated); border-color: var(--accent-soft); }
-    .faq-content {
-      padding: 0 16px 16px;
-      color: var(--text-secondary);
-      font-size: 14px;
-      line-height: 1.6;
-      border-top: 1px solid var(--border-light);
-      margin-top: 0;
-      padding-top: 12px;
+    details[open] summary::after { transform: rotate(45deg); }
+    
+    .faq-body {
+      padding: 0 20px 20px; color: var(--text-secondary); font-size: 14px;
+      line-height: 1.6; border-top: 1px solid var(--border); margin-top: 0; padding-top: 16px;
     }
 
-    /* ========= FOOTER ULTRA 2.0 (UPDATED LAYOUT) ========= */
+    /* Map */
+    .map-frame {
+      width: 100%; height: 400px; border: 0;
+      border-radius: 16px; overflow: hidden;
+      background: var(--bg-surface-2);
+    }
+
+    /* =========================================
+       6. FOOTER
+       ========================================= */
     footer {
-      background:
-        radial-gradient(circle at top, rgba(0,113,227,0.18), transparent 55%),
-        var(--bg-elevated);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 48px 16px 28px;
-      margin-top: 60px;
-    }
-
-    :root[data-theme="light"] footer {
-      background:
-        radial-gradient(circle at top, rgba(0,113,227,0.12), transparent 55%),
-        var(--bg);
-      border-top: 1px solid rgba(0,0,0,0.04);
+      margin-top: 80px;
+      padding: 60px 0 30px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      font-size: 14px;
     }
 
     .footer-grid {
-      max-width: var(--max-w);
-      margin: 0 auto;
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 30px; 
-      padding: 24px;
-      border-radius: 24px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(18px);
+      gap: 40px;
+      margin-bottom: 40px;
     }
 
-    :root[data-theme="light"] .footer-grid {
-      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(245,245,247,0.96));
-      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-    }
-
-    /* TABLET: 640px to 1024px */
     @media (max-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr 1fr; 
-        row-gap: 32px;
-      }
-      .col-brand {
-        grid-column: 1 / -1; 
-        display: flex;
-        align-items: center;
-        text-align: center;
-      }
-      .col-brand .footer-tagline {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+      .col-brand { grid-column: 1 / -1; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
     }
 
-    /* MOBILE: < 640px */
-    @media (max-width: 640px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-      }
-      .col-brand {
-        flex-direction: column;
-      }
-      .footer-col,
-      .footer-links {
-        align-items: center;
-      }
-      .footer-social {
-        justify-content: center;
-      }
+    .col-title {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      color: var(--text-secondary); margin-bottom: 20px; letter-spacing: 0.05em;
     }
-
-    /* Column Styles */
-    .footer-col { display: flex; flex-direction: column; }
     
-    .footer-col h4 {
-      font-size: 12px;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      letter-spacing: 0.12em;
-    }
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { color: var(--text-tertiary); display: inline-flex; align-items: center; gap: 8px; }
+    .footer-links a:hover { color: var(--accent); }
+    @media (max-width: 600px) { .footer-links a { justify-content: center; } }
 
-    .col-brand .footer-tagline {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    .brand-desc { color: var(--text-secondary); margin-top: 16px; line-height: 1.6; max-width: 300px; }
+    @media (max-width: 1024px) { .brand-desc { margin: 16px auto 0; } }
 
-    /* Links */
-    .footer-links { display: flex; flex-direction: column; gap: 8px; }
-
-    .footer-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-size: 14px;
-      opacity: 0.9;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-    .footer-links a:hover { opacity: 1; color: var(--accent); transform: translateX(2px); }
-    .footer-link-icon { font-size: 16px; }
-
-    /* Contact Info */
-    .footer-contact { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-    .footer-contact p { margin: 6px 0; }
-    .footer-contact a { color: var(--accent); text-decoration: none; }
-    .footer-contact a:hover { text-decoration: underline; }
-
-    /* SOCIAL ICONS BEAUTIFIED (Circle, No Text) */
-    .footer-social {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .social-row { display: flex; gap: 12px; margin-top: 20px; }
+    @media (max-width: 600px) { .social-row { justify-content: center; } }
     
     .social-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      font-size: 20px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--bg-surface-2);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
     }
+    .social-btn:hover { background: var(--accent); color: white; transform: translateY(-3px); }
 
-    :root[data-theme="light"] .social-btn {
-      background: rgba(0,0,0,0.04);
-      border-color: rgba(0,0,0,0.08);
-    }
-
-    .social-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-      transform: scale(1.15);
-      box-shadow: 0 4px 12px rgba(0,113,227,0.4);
-    }
-
-    /* Bottom Copyright */
-    .footer-bottom {
-      max-width: var(--max-w);
-      margin: 24px auto 0;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-tertiary);
       font-size: 12px;
-      gap: 10px;
-    }
-    
-    @media (max-width: 640px) {
-      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
-    /* QUICK CALL FAB */
-    .fab-container { position: fixed; bottom: 20px; right: 20px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-    
-    @keyframes fabWiggle {
-      0%, 100% { transform: translateY(0) scale(1); }
-      20% { transform: translateY(-2px) scale(1.06); }
-      40% { transform: translateY(2px) scale(0.98); }
-      60% { transform: translateY(-1px) scale(1.03); }
-      80% { transform: translateY(1px) scale(0.99); }
+    /* =========================================
+       7. FLOATING ELEMENTS (FAB & Lightbox)
+       ========================================= */
+    /* FAB */
+    .fab-container {
+      position: fixed; bottom: 24px; right: 24px;
+      z-index: 99; display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
     }
-
-    .fab-main {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      border: none;
-      box-shadow: 0 4px 20px rgba(0,113,227,0.5);
-      font-size: 24px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: transform 0.2s;
-      animation: fabWiggle 1.6s ease-in-out infinite;
+    .fab-menu {
+      display: flex; flex-direction: column; gap: 10px;
+      opacity: 0; transform: translateY(10px); pointer-events: none;
+      transition: all 0.3s var(--ease);
     }
+    .fab-container.open .fab-menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
     
-    .fab-main:hover {
-      animation: none;
-      transform: scale(1.1);
-    }
-
-    .fab-menu { display: flex; flex-direction: column; gap: 10px; opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.3s; }
-    .fab-container.open .fab-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
-    
-    .fab-item {
+    .fab-label {
+      background: var(--bg-surface); padding: 8px 16px;
+      border-radius: var(--radius-full); box-shadow: var(--shadow-md);
+      font-weight: 500; font-size: 14px;
       display: flex; align-items: center; gap: 8px;
-      background: var(--bg-elevated);
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-card);
-      color: var(--text);
-      font-size: 14px;
-      border: 1px solid var(--border-soft);
+      border: 1px solid var(--border);
     }
+    
+    .fab-main {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: var(--accent); color: white;
+      border: none; font-size: 24px;
+      box-shadow: 0 4px 20px rgba(0,113,227,0.4);
+      cursor: pointer; display: grid; place-items: center;
+      transition: transform 0.2s;
+    }
+    .fab-main:hover { transform: scale(1.1); }
 
-    /* LIGHTBOX */
+    /* Lightbox */
     .lightbox {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.95);
+      position: fixed; inset: 0; background: rgba(0,0,0,0.9);
       z-index: 200; display: none; align-items: center; justify-content: center;
+      backdrop-filter: blur(5px);
     }
-    .lightbox.active { display: flex; }
-    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
-    .lb-close { position: absolute; top: 20px; right: 20px; color: white; background: none; border: none; font-size: 30px; cursor: pointer; }
-
+    .lightbox.active { display: flex; animation: fadeIn 0.3s; }
+    .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+    .lb-close {
+      position: absolute; top: 20px; right: 20px;
+      background: rgba(255,255,255,0.1); border: none;
+      color: white; width: 40px; height: 40px; border-radius: 50%;
+      font-size: 20px; cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -891,10 +650,10 @@
       <!-- Group 1: Main -->
       <nav class="nav-group">
         <div class="nav-item" onclick="window.location.href='index.html'">
-          <div class="nav-left"><span class="nav-icon">🏠</span> Trang chủ</div>
+          <span class="nav-icon">🏠</span> Trang chủ
         </div>
         <div class="nav-item" onclick="window.location.href='gioithieu.html'">
-          <div class="nav-left"><span class="nav-icon">👋</span> Giới thiệu</div>
+          <span class="nav-icon">👋</span> Giới thiệu
         </div>
       </nav>
 
@@ -903,8 +662,8 @@
         <!-- Dropdown Dịch vụ -->
         <div class="nav-has-sub" id="serviceMenu">
           <div class="nav-item" onclick="toggleSub('serviceMenu')">
-            <div class="nav-left"><span class="nav-icon">🏍️</span> Dịch vụ</div>
-            <span class="nav-arrow">▶</span>
+            <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
+            <span style="font-size:12px; color:var(--text-secondary);">▼</span>
           </div>
           <div class="nav-sub">
             <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
@@ -921,8 +680,8 @@
         <!-- Dropdown Địa chỉ -->
         <div class="nav-has-sub" id="addrMenu">
           <div class="nav-item" onclick="toggleSub('addrMenu')">
-            <div class="nav-left"><span class="nav-icon">📍</span> Khu vực</div>
-            <span class="nav-arrow">▶</span>
+            <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
+            <span style="font-size:12px; color:var(--text-secondary);">▼</span>
           </div>
           <div class="nav-sub">
             <a href="longbien.html" class="nav-sub-link">Long Biên</a>
@@ -938,16 +697,16 @@
       <!-- Group 3: Info -->
       <nav class="nav-group">
         <a href="faq.html" class="nav-item">
-          <div class="nav-left"><span class="nav-icon">❓</span> FAQ</div>
+          <span class="nav-icon">❓</span> FAQ
         </a>
         <a href="dieukhoan.html" class="nav-item">
-          <div class="nav-left"><span class="nav-icon">📝</span> Điều khoản</div>
+          <span class="nav-icon">📝</span> Điều khoản
         </a>
         <a href="chinhsach.html" class="nav-item">
-          <div class="nav-left"><span class="nav-icon">🛡️</span> Chính sách</div>
+          <span class="nav-icon">🛡️</span> Chính sách
         </a>
         <a href="lienhe.html" class="nav-item">
-          <div class="nav-left"><span class="nav-icon">📞</span> Liên hệ</div>
+          <span class="nav-icon">📞</span> Liên hệ
         </a>
       </nav>
     </div>
@@ -960,11 +719,11 @@
     </div>
 
     <div class="header-center">
-      <a href="index.html" class="ultra-logo-pill">
-        <div class="logo-watch">NT</div>
+      <a href="index.html" class="logo-pill">
+        <div class="logo-icon">NT</div>
         <div class="logo-text">
-          <span>Nguyễn Tú</span>
-          <span>Motorbike Rental</span>
+          <strong>Nguyễn Tú</strong>
+          <small>Motorbike Rental</small>
         </div>
       </a>
     </div>
@@ -982,573 +741,541 @@
   <main>
     <!-- HERO -->
     <section class="hero" id="hero">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-badge-row">
-            <span class="hero-badge">✅ Uy tín số 1</span>
-            <span class="hero-badge">⚡ Giao xe 20p</span>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div>
+            <div class="hero-badges">
+              <span class="badge">✅ Uy tín số 1</span>
+              <span class="badge">⚡ Giao xe 20p</span>
+            </div>
+            <h1 class="hero-title">Thuê xe máy <br /><span class="text-gradient">Hoàn Kiếm & Hà Nội</span></h1>
+            <p class="hero-desc">Dịch vụ chuyên nghiệp, xe mới, thủ tục đơn giản (chỉ cần CCCD). Giao xe tận nơi khách sạn, homestay.</p>
+            
+            <div class="hero-actions">
+              <a href="tel:0334699969" class="btn btn-primary">📞 Gọi 0334 699 969</a>
+              <a href="https://zalo.me/0334699969" class="btn btn-glass">💬 Chat Zalo</a>
+            </div>
+            <div style="margin-top:20px; font-size:13px; color:var(--text-secondary);">
+              ⭐ 4.9/5 đánh giá • Hỗ trợ 24/7
+            </div>
           </div>
-          <h1 class="hero-title">Thuê xe máy <br /><span class="highlight">Hoàn Kiếm & Hà Nội</span></h1>
-          <p class="hero-sub">Dịch vụ chuyên nghiệp, xe mới, thủ tục đơn giản (chỉ cần CCCD). Giao xe tận nơi khách sạn, homestay.</p>
-          <div class="hero-actions">
-            <a href="tel:0334699969" class="btn btn-primary">📞 Gọi 0334 699 969</a>
-            <a href="https://zalo.me/0334699969" class="btn btn-secondary">💬 Chat Zalo</a>
-          </div>
-          <div class="hero-note" style="font-size:13px; color:var(--text-secondary);">
-            ⭐ 4.9/5 đánh giá • Hỗ trợ 24/7
-          </div>
-        </div>
 
-        <!-- Calculator -->
-        <div class="calc-card">
-          <div class="calc-header">
-            <span class="calc-title">Dự tính chi phí</span>
-            <span style="font-size:20px;">🧮</span>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Loại xe</label>
-            <select id="bikeType" class="form-control">
-              <option value="150000">Xe số (Wave, Sirius) - 150k</option>
-              <option value="200000">Xe ga (Vision, AirBlade) - 200k</option>
-              <option value="200000">Xe 50cc (Không cần bằng) - 200k</option>
-              <option value="150000">Xe điện - 150k</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Số ngày thuê</label>
-            <input type="number" id="dayCount" class="form-control" value="1" min="1">
-          </div>
-          <div class="calc-result">
-            <span style="font-size:13px; color:var(--text-secondary);">Tạm tính:</span>
-            <span class="total-price" id="totalPrice">150.000 ₫</span>
+          <!-- Calculator -->
+          <div class="calc-card">
+            <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+              <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
+              <span>🧮</span>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Loại xe</label>
+              <select id="bikeType" class="form-control">
+                <option value="150000">Xe số (Wave, Sirius) - 150k</option>
+                <option value="200000">Xe ga (Vision, AirBlade) - 200k</option>
+                <option value="200000">Xe 50cc (Không cần bằng) - 200k</option>
+                <option value="150000">Xe điện - 150k</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Số ngày thuê</label>
+              <input type="number" id="dayCount" class="form-control" value="1" min="1">
+            </div>
+            
+            <div class="calc-result">
+              <span style="font-size:14px; color:var(--text-tertiary);">Tạm tính:</span>
+              <span class="price-display" id="totalPrice">150.000 ₫</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- BIKE LIST -->
-    <section class="container" id="danhsachxe">
-      <div class="section-head">
-        <h2 class="section-title">Danh sách xe</h2>
-        <p class="section-desc">Xe được bảo dưỡng định kỳ, vận hành êm ái.</p>
-      </div>
-      
-      <div class="bike-grid">
-        <!-- Item 1 - Elite 50cc -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" alt="Xe ga 50cc SYM Elite">
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">SYM Elite 50cc</div>
-            <span class="bike-price">200.000 ₫/ngày</span>
-            <p class="bike-desc">Dáng nhỏ gọn, cổ điển. Không cần bằng lái. Phù hợp học sinh, khách du lịch nữ.</p>
-            <div class="bike-footer">
-              <span class="tag">Xe ga 50cc</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">Đặt ngay &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 2 - Sirius -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png" alt="Xe số Yamaha Sirius">
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Yamaha Sirius</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">Xe số mạnh mẽ, leo dốc tốt, tiết kiệm xăng. Phù hợp đi phượt nhẹ.</p>
-            <div class="bike-footer">
-              <span class="tag">Xe số</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">Đặt ngay &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 3 - Vision -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" alt="Xe ga Honda Vision">
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Honda Vision</div>
-            <span class="bike-price">200.000 ₫/ngày</span>
-            <p class="bike-desc">Xe ga quốc dân, cốp rộng, vận hành êm ái. Xe đời mới.</p>
-            <div class="bike-footer">
-              <span class="tag">Xe ga</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">Đặt ngay &rarr;</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 4 - Honda Wave 110cc -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png" alt="Honda Wave 110cc" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Honda Wave 110cc</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe số huyền thoại, tiết kiệm nhiên liệu, dễ sửa chữa – đi xa, đi gần đều ổn.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Xe số phổ thông</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 5 - Honda Air Blade 125cc -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png" alt="Honda Air Blade 125cc" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Honda Air Blade 125cc</div>
-            <span class="bike-price">200.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe tay ga thể thao, thiết kế sang, tăng tốc tốt – đi hai người rất thoải mái.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Mạnh mẽ • sang trọng</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 6 - Xe đạp điện -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg" alt="Xe đạp điện" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Xe đạp điện</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Thân thiện môi trường, không xăng, vận hành êm – phù hợp di chuyển cự ly gần trong phố.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Không xăng • êm ái</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 7 - Yamaha Mio -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png" alt="Yamaha Mio" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Yamaha Mio</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe tay ga nhỏ gọn, yên thấp, dễ điều khiển – cực hợp khách nữ và người thấp, di chuyển trong phố rất linh hoạt.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Nhỏ gọn • linh hoạt</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
+    <section class="section" id="danhsachxe">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Danh sách xe</h2>
+          <p class="section-desc">Xe được bảo dưỡng định kỳ, vận hành êm ái.</p>
         </div>
         
+        <div class="bike-grid">
+          <!-- Item 1 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" loading="lazy" alt="Xe ga 50cc SYM Elite">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">SYM Elite 50cc</div>
+              <span class="bike-price">200.000 ₫/ngày</span>
+              <p class="bike-desc">Dáng nhỏ gọn, cổ điển. Không cần bằng lái. Phù hợp học sinh, khách du lịch nữ.</p>
+              <div class="card-footer">
+                <span class="tag">Xe ga 50cc</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png" loading="lazy" alt="Xe số Yamaha Sirius">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Yamaha Sirius</div>
+              <span class="bike-price">150.000 ₫/ngày</span>
+              <p class="bike-desc">Xe số mạnh mẽ, leo dốc tốt, tiết kiệm xăng. Phù hợp đi phượt nhẹ.</p>
+              <div class="card-footer">
+                <span class="tag">Xe số</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" loading="lazy" alt="Xe ga Honda Vision">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Honda Vision</div>
+              <span class="bike-price">200.000 ₫/ngày</span>
+              <p class="bike-desc">Xe ga quốc dân, cốp rộng, vận hành êm ái. Xe đời mới.</p>
+              <div class="card-footer">
+                <span class="tag">Xe ga</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png" loading="lazy" alt="Honda Wave 110cc">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Honda Wave 110cc</div>
+              <span class="bike-price">150.000 ₫/ngày</span>
+              <p class="bike-desc">Xe số huyền thoại, tiết kiệm nhiên liệu, dễ sửa chữa – đi xa, đi gần đều ổn.</p>
+              <div class="card-footer">
+                <span class="tag">Xe số phổ thông</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png" loading="lazy" alt="Honda Air Blade 125cc">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Honda Air Blade 125cc</div>
+              <span class="bike-price">200.000 ₫/ngày</span>
+              <p class="bike-desc">Xe tay ga thể thao, thiết kế sang, tăng tốc tốt – đi hai người rất thoải mái.</p>
+              <div class="card-footer">
+                <span class="tag">Mạnh mẽ</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg" loading="lazy" alt="Xe đạp điện">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Xe đạp điện</div>
+              <span class="bike-price">150.000 ₫/ngày</span>
+              <p class="bike-desc">Thân thiện môi trường, không xăng, vận hành êm – phù hợp di chuyển cự ly gần trong phố.</p>
+              <div class="card-footer">
+                <span class="tag">Không xăng</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 7 -->
+          <div class="bike-card">
+            <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png">
+              <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png" loading="lazy" alt="Yamaha Mio">
+            </div>
+            <div class="bike-info">
+              <div class="bike-name">Yamaha Mio</div>
+              <span class="bike-price">150.000 ₫/ngày</span>
+              <p class="bike-desc">Xe tay ga nhỏ gọn, yên thấp, dễ điều khiển – cực hợp khách nữ và người thấp.</p>
+              <div class="card-footer">
+                <span class="tag">Nhỏ gọn</span>
+                <a href="https://zalo.me/0334699969" class="link-action">Đặt ngay &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- PRICING -->
-    <section class="container" id="banggia">
-      <div class="section-head">
-        <h2 class="section-title">Bảng giá tham khảo</h2>
-        <p class="section-desc">Thuê càng lâu giá càng rẻ.</p>
-      </div>
-      <div class="content-card">
-        <table>
-          <thead>
-            <tr>
-              <th>Loại xe</th>
-              <th>Ngày</th>
-              <th>Tuần</th>
-              <th>Tháng</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Xe số (Wave/Sirius)</td>
-              <td>150k</td>
-              <td>800k</td>
-              <td>1.2tr</td>
-            </tr>
-            <tr>
-              <td>Xe ga (Vision/AB)</td>
-              <td>200k</td>
-              <td>1tr</td>
-              <td>1.5tr - 2tr</td>
-            </tr>
-            <tr>
-              <td>Xe 50cc</td>
-              <td>200k</td>
-              <td>1tr</td>
-              <td>2tr</td>
-            </tr>
-          </tbody>
-        </table>
+    <section class="section" id="banggia">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Bảng giá tham khảo</h2>
+          <p class="section-desc">Thuê càng lâu giá càng rẻ.</p>
+        </div>
+        <div class="card" style="padding: 0; overflow: hidden;">
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loại xe</th>
+                  <th>Ngày</th>
+                  <th>Tuần</th>
+                  <th>Tháng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Xe số (Wave/Sirius)</td>
+                  <td>150k</td>
+                  <td>800k</td>
+                  <td>1.2tr</td>
+                </tr>
+                <tr>
+                  <td>Xe ga (Vision/AB)</td>
+                  <td>200k</td>
+                  <td>1tr</td>
+                  <td>1.5tr - 2tr</td>
+                </tr>
+                <tr>
+                  <td>Xe 50cc</td>
+                  <td>200k</td>
+                  <td>1tr</td>
+                  <td>2tr</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- REASONS & REVIEWS -->
-    <section class="container" style="padding-top:0;">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
-        <!-- Reasons -->
-        <div class="content-card" id="lydo">
-          <h3 style="margin-bottom:16px;">Vì sao chọn Nguyễn Tú?</h3>
-          <ul class="reason-list" style="padding-left:20px; margin:0;">
-            <li>Giao xe tận nơi 20-40 phút khu vực Hoàn Kiếm.</li>
-            <li>Thủ tục đơn giản, giữ CCCD hoặc cọc nhẹ.</li>
-            <li>Hỗ trợ 24/7 khi xe gặp sự cố trên đường.</li>
-            <li>Mũ bảo hiểm sạch sẽ, tặng kèm áo mưa.</li>
-          </ul>
-        </div>
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="grid-2">
+          <!-- Reasons -->
+          <div class="card" id="lydo">
+            <h3 style="margin-bottom:20px;">Vì sao chọn Nguyễn Tú?</h3>
+            <ul class="list-pretty">
+              <li>Giao xe tận nơi 20-40 phút khu vực Hoàn Kiếm.</li>
+              <li>Thủ tục đơn giản, giữ CCCD hoặc cọc nhẹ.</li>
+              <li>Hỗ trợ 24/7 khi xe gặp sự cố trên đường.</li>
+              <li>Mũ bảo hiểm sạch sẽ, tặng kèm áo mưa.</li>
+            </ul>
+          </div>
 
-        <!-- Reviews -->
-        <div class="content-card" id="danhgia">
-          <h3 style="margin-bottom:16px;">Khách hàng nói gì</h3>
-          <div class="testi-wrap" id="testiSlider">
-            <div class="testi-item active">
-              <div class="testi-text">"Xe rất mới, anh chủ nhiệt tình chỉ chỗ ăn ngon."</div>
-              <div class="testi-author">Minh Anh - TP.HCM</div>
-            </div>
-            <div class="testi-item">
-              <div class="testi-text">"Giá cả minh bạch, không phụ phí. Xe 50cc đi rất êm."</div>
-              <div class="testi-author">Hye Jin - Korea</div>
-            </div>
-            <div class="testi-item">
-              <div class="testi-text">"Giao xe đúng giờ hẹn tại khách sạn. 10 điểm!"</div>
-              <div class="testi-author">Tuấn - Đà Nẵng</div>
+          <!-- Reviews -->
+          <div class="card" id="danhgia">
+            <h3 style="margin-bottom:20px;">Khách hàng nói gì</h3>
+            <div class="testi-wrap" id="testiSlider">
+              <div class="testi-item active">
+                <div class="quote">"Xe rất mới, anh chủ nhiệt tình chỉ chỗ ăn ngon."</div>
+                <div class="author">Minh Anh - TP.HCM</div>
+              </div>
+              <div class="testi-item">
+                <div class="quote">"Giá cả minh bạch, không phụ phí. Xe 50cc đi rất êm."</div>
+                <div class="author">Hye Jin - Korea</div>
+              </div>
+              <div class="testi-item">
+                <div class="quote">"Giao xe đúng giờ hẹn tại khách sạn. 10 điểm!"</div>
+                <div class="author">Tuấn - Đà Nẵng</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <style>@media(max-width:768px){ .container > div { grid-template-columns: 1fr !important; } }</style>
     </section>
 
-    <!-- HƯỚNG DẪN THUÊ XE NHANH -->
-    <section class="container" id="huongdan-nhanh">
-      <div class="section-head">
-        <h2 class="section-title">Thuê xe cực nhanh trong 3 bước</h2>
-        <p class="section-desc">Không rườm rà giấy tờ, tập trung vào trải nghiệm của bạn.</p>
-      </div>
-      <div class="content-card">
-        <ol class="reason-list" style="padding-left:20px; margin:0;">
-          <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969" style="color:var(--accent);">0334 699 969</a> để check xe trống &amp; giá.</li>
-          <li><strong>Bước 2:</strong> Gửi vị trí khách sạn/homestay hoặc hẹn nhận xe tại điểm trung tâm (Hoàn Kiếm / Phố Cổ).</li>
-          <li><strong>Bước 3:</strong> Nhận xe, ký biên nhận đơn giản (CCCD hoặc cọc nhẹ) là có thể chạy ngay.</li>
-        </ol>
-        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary);">
-          ⓘ Với khách nước ngoài, có thể hỗ trợ tiếng Anh cơ bản qua Zalo/WhatsApp (liên hệ trước để sắp xếp).
-        </p>
-      </div>
-    </section>
-
-    <!-- GỢI Ý LỊCH TRÌNH -->
-    <section class="container" id="goi-y-lich-trinh">
-      <div class="section-head">
-        <h2 class="section-title">Gợi ý lịch trình tham quan bằng xe máy</h2>
-        <p class="section-desc">Một vài gợi ý nhẹ nhàng để bạn đỡ mất công lên plan.</p>
-      </div>
-      <div class="content-card">
-        <ul class="reason-list" style="padding-left:20px; margin:0;">
-          <li>
-            <strong>Tour Phố Cổ &amp; Hồ Gươm (nửa ngày):</strong> Hồ Hoàn Kiếm → Nhà thờ Lớn → Chợ Đồng Xuân → Ô Quan Chưởng → ăn tối ở Tạ Hiện.
-          </li>
-          <li>
-            <strong>Tour Hồ Tây chill (nửa ngày):</strong> Hồ Tây → Phủ Tây Hồ → đường Thanh Niên → Trấn Quốc → cafe ngắm hoàng hôn ven hồ.
-          </li>
-          <li>
-            <strong>Tour Ba Đình – Văn Miếu (nửa ngày):</strong> Lăng Bác → Chùa Một Cột → Hoàng Thành → Văn Miếu → cafe trứng/Phố cổ.
-          </li>
-        </ul>
-        <p style="margin-top:16px; font-size:13px; color:var(--text-secondary);">
-          Nếu cần gợi ý cụ thể theo khách sạn hiện tại, bạn chỉ cần gửi vị trí – bên mình tư vấn lịch trình miễn phí.
-        </p>
-      </div>
-    </section>
-
-    <!-- LƯU Ý KHI CHẠY XE Ở HÀ NỘI -->
-    <section class="container" id="luu-y-an-toan">
-      <div class="section-head">
-        <h2 class="section-title">Một vài lưu ý khi chạy xe ở Hà Nội</h2>
-        <p class="section-desc">Đặc biệt hữu ích với khách du lịch &amp; người mới tới.</p>
-      </div>
-      <div class="content-card">
-        <ul class="reason-list" style="padding-left:20px; margin:0;">
-          <li>Luôn đội mũ bảo hiểm, mang theo CCCD/hộ chiếu khi ra đường.</li>
-          <li>Giữ tốc độ vừa phải trong phố (30–40 km/h), chú ý xe bus &amp; ngã tư không đèn.</li>
-          <li>Tránh đi vào làn BRT, làn ô tô, và chú ý các biển cấm giờ hành chính quanh phố cổ.</li>
-          <li>Gửi xe tại bãi có vé, tránh để xe ngoài vỉa hè không có người trông.</li>
-          <li>Nếu có vấn đề với xe (khó nổ, thủng lốp, va quệt nhẹ...) – cứ gọi thẳng số hotline để được xử lý.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ========= SECTION MỚI 1: THỦ TỤC CHI TIẾT ========= -->
-    <section class="container" id="thutuc-chitiet">
-      <div class="section-head">
-        <h2 class="section-title">Thủ tục thuê xe chi tiết</h2>
-        <p class="section-desc">Đơn giản hóa tối đa để bạn nhận xe nhanh nhất.</p>
-      </div>
-      <div class="papers-grid">
-        <div class="paper-box">
-          <div class="paper-title">🇻🇳 Khách Việt Nam / Tourist</div>
-          <ul class="reason-list" style="padding-left:20px; margin:0;">
-            <li>Chụp ảnh CCCD / CMND (2 mặt).</li>
-            <li>Để lại CCCD gốc (hoặc cọc 1-2 triệu nếu muốn giữ giấy tờ).</li>
-            <li>Thanh toán tiền thuê trước khi nhận xe.</li>
-            <li>Ký hợp đồng thuê xe đơn giản (2 bản).</li>
-          </ul>
+    <!-- STEPS -->
+    <section class="section" id="huongdan-nhanh">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Thuê xe cực nhanh trong 3 bước</h2>
+          <p class="section-desc">Không rườm rà giấy tờ, tập trung vào trải nghiệm của bạn.</p>
         </div>
-        <div class="paper-box">
-          <div class="paper-title">🌎 Foreigner / Expats</div>
-          <ul class="reason-list" style="padding-left:20px; margin:0;">
-            <li>Passport photo (Valid Visa).</li>
-            <li>Deposit passport OR Cash Deposit (100$ - 200$).</li>
-            <li>Payment in advance (Cash/Transfer).</li>
-            <li>Simple rental agreement signing.</li>
+        <div class="card">
+          <ol class="list-pretty" style="padding-left:20px;">
+            <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969" style="color:var(--accent);">0334 699 969</a> để check xe trống &amp; giá.</li>
+            <li><strong>Bước 2:</strong> Gửi vị trí khách sạn/homestay hoặc hẹn nhận xe tại điểm trung tâm (Hoàn Kiếm / Phố Cổ).</li>
+            <li><strong>Bước 3:</strong> Nhận xe, ký biên nhận đơn giản (CCCD hoặc cọc nhẹ) là có thể chạy ngay.</li>
+          </ol>
+          <p style="margin-top:20px; font-size:13px; color:var(--text-tertiary); background:var(--bg-surface-2); padding:12px; border-radius:8px;">
+            ⓘ Với khách nước ngoài, có thể hỗ trợ tiếng Anh cơ bản qua Zalo/WhatsApp (liên hệ trước để sắp xếp).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ITINERARY -->
+    <section class="section" id="goi-y-lich-trinh">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Gợi ý lịch trình tham quan</h2>
+          <p class="section-desc">Một vài gợi ý nhẹ nhàng để bạn đỡ mất công lên plan.</p>
+        </div>
+        <div class="card">
+          <ul class="list-pretty">
+            <li>
+              <strong>Tour Phố Cổ &amp; Hồ Gươm (nửa ngày):</strong> Hồ Hoàn Kiếm → Nhà thờ Lớn → Chợ Đồng Xuân → Ô Quan Chưởng → ăn tối ở Tạ Hiện.
+            </li>
+            <li>
+              <strong>Tour Hồ Tây chill (nửa ngày):</strong> Hồ Tây → Phủ Tây Hồ → đường Thanh Niên → Trấn Quốc → cafe ngắm hoàng hôn ven hồ.
+            </li>
+            <li>
+              <strong>Tour Ba Đình – Văn Miếu (nửa ngày):</strong> Lăng Bác → Chùa Một Cột → Hoàng Thành → Văn Miếu → cafe trứng/Phố cổ.
+            </li>
+          </ul>
+          <p style="margin-top:16px; font-size:13px; color:var(--text-tertiary);">
+            Nếu cần gợi ý cụ thể theo khách sạn hiện tại, bạn chỉ cần gửi vị trí – bên mình tư vấn lịch trình miễn phí.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAFETY -->
+    <section class="section" id="luu-y-an-toan">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Lưu ý khi chạy xe ở Hà Nội</h2>
+          <p class="section-desc">Đặc biệt hữu ích với khách du lịch &amp; người mới tới.</p>
+        </div>
+        <div class="card">
+          <ul class="list-pretty">
+            <li>Luôn đội mũ bảo hiểm, mang theo CCCD/hộ chiếu khi ra đường.</li>
+            <li>Giữ tốc độ vừa phải trong phố (30–40 km/h), chú ý xe bus &amp; ngã tư không đèn.</li>
+            <li>Tránh đi vào làn BRT, làn ô tô, và chú ý các biển cấm giờ hành chính quanh phố cổ.</li>
+            <li>Gửi xe tại bãi có vé, tránh để xe ngoài vỉa hè không có người trông.</li>
+            <li>Nếu có vấn đề với xe (khó nổ, thủng lốp, va quệt nhẹ...) – cứ gọi thẳng số hotline để được xử lý.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- ========= SECTION MỚI 2: QUY TRÌNH BẢO DƯỠNG ========= -->
-    <section class="container" id="cam-ket-bao-duong">
-      <div class="section-head">
-        <h2 class="section-title">Cam kết chất lượng & Bảo dưỡng</h2>
-        <p class="section-desc">Xe luôn được kiểm tra kỹ 4 hạng mục trước khi giao.</p>
-      </div>
-      <div class="maint-grid">
-        <div class="maint-item">
-          <span class="maint-icon">🛞</span>
-          <div class="maint-name">Lốp xe</div>
-          <div class="maint-desc">Độ bám đường tốt, không mòn</div>
+    <!-- PAPERWORK -->
+    <section class="section" id="thutuc-chitiet">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Thủ tục thuê xe chi tiết</h2>
+          <p class="section-desc">Đơn giản hóa tối đa để bạn nhận xe nhanh nhất.</p>
         </div>
-        <div class="maint-item">
-          <span class="maint-icon">🛑</span>
-          <div class="maint-name">Phanh (Thắng)</div>
-          <div class="maint-desc">Nhạy bén, an toàn tuyệt đối</div>
-        </div>
-        <div class="maint-item">
-          <span class="maint-icon">🛢️</span>
-          <div class="maint-name">Dầu nhớt</div>
-          <div class="maint-desc">Thay định kỳ mỗi 1000km</div>
-        </div>
-        <div class="maint-item">
-          <span class="maint-icon">⚙️</span>
-          <div class="maint-name">Động cơ</div>
-          <div class="maint-desc">Vận hành êm, tiết kiệm xăng</div>
+        <div class="papers-grid">
+          <div class="paper-box">
+            <span class="paper-head">🇻🇳 Khách Việt Nam / Tourist</span>
+            <ul class="list-pretty">
+              <li>Chụp ảnh CCCD / CMND (2 mặt).</li>
+              <li>Để lại CCCD gốc (hoặc cọc 1-2 triệu nếu muốn giữ giấy tờ).</li>
+              <li>Thanh toán tiền thuê trước khi nhận xe.</li>
+              <li>Ký hợp đồng thuê xe đơn giản (2 bản).</li>
+            </ul>
+          </div>
+          <div class="paper-box">
+            <span class="paper-head">🌎 Foreigner / Expats</span>
+            <ul class="list-pretty">
+              <li>Passport photo (Valid Visa).</li>
+              <li>Deposit passport OR Cash Deposit (100$ - 200$).</li>
+              <li>Payment in advance (Cash/Transfer).</li>
+              <li>Simple rental agreement signing.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ========= SECTION MỚI 3: FAQ (CÂU HỎI THƯỜNG GẶP) ========= -->
-    <section class="container" id="faq-section">
-      <div class="section-head">
-        <h2 class="section-title">Câu hỏi thường gặp (FAQ)</h2>
-        <p class="section-desc">Giải đáp nhanh những thắc mắc của bạn.</p>
-      </div>
-      
-      <div class="content-card" style="padding:0; background:transparent; border:none; box-shadow:none;">
-        <details class="faq-item">
-          <summary>Tôi không có bằng lái xe thì thuê loại nào?</summary>
-          <div class="faq-content">
-            Bạn có thể thuê các dòng xe 50cc (Scoopy, Elite, Cub...) hoặc xe đạp điện. Các dòng xe này pháp luật không yêu cầu bằng lái, rất phù hợp với học sinh hoặc khách du lịch chưa đổi bằng quốc tế.
+    <!-- MAINTENANCE -->
+    <section class="section" id="cam-ket-bao-duong">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Cam kết chất lượng & Bảo dưỡng</h2>
+          <p class="section-desc">Xe luôn được kiểm tra kỹ 4 hạng mục trước khi giao.</p>
+        </div>
+        <div class="maint-grid">
+          <div class="maint-item">
+            <span class="maint-icon">🛞</span>
+            <div style="font-weight:600; margin-bottom:4px;">Lốp xe</div>
+            <div style="font-size:13px; color:var(--text-secondary);">Độ bám đường tốt, không mòn</div>
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Có giao xe tận nơi không? Phí ship thế nào?</summary>
-          <div class="faq-content">
-            Nguyễn Tú miễn phí giao xe bán kính 3km quanh Hoàn Kiếm/Phố Cổ với hợp đồng trên 2 ngày. Nếu xa hơn hoặc thuê ngắn hạn, phí ship chỉ từ 20k - 30k tùy vị trí.
+          <div class="maint-item">
+            <span class="maint-icon">🛑</span>
+            <div style="font-weight:600; margin-bottom:4px;">Phanh (Thắng)</div>
+            <div style="font-size:13px; color:var(--text-secondary);">Nhạy bén, an toàn tuyệt đối</div>
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Nếu xe hỏng giữa đường thì sao?</summary>
-          <div class="faq-content">
-            Đừng lo, hãy gọi ngay hotline 0334.699.969. Nếu lỗi do xe, bên mình sẽ cử thợ đến sửa tận nơi hoặc đổi xe khác cho bạn ngay lập tức mà không mất phí.
+          <div class="maint-item">
+            <span class="maint-icon">🛢️</span>
+            <div style="font-weight:600; margin-bottom:4px;">Dầu nhớt</div>
+            <div style="font-size:13px; color:var(--text-secondary);">Thay định kỳ mỗi 1000km</div>
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Thời gian tính 1 ngày thuê như thế nào?</summary>
-          <div class="faq-content">
-            1 ngày được tính là 24 tiếng từ lúc nhận xe. Ví dụ nhận 9h sáng hôm nay thì trả trước 9h sáng hôm sau. Nếu quá giờ sẽ tính thêm phụ phí nhỏ theo giờ (khoảng 10-20k/h).
+          <div class="maint-item">
+            <span class="maint-icon">⚙️</span>
+            <div style="font-weight:600; margin-bottom:4px;">Động cơ</div>
+            <div style="font-size:13px; color:var(--text-secondary);">Vận hành êm, tiết kiệm xăng</div>
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>Tôi có thể trả xe ở địa điểm khác không?</summary>
-          <div class="faq-content">
-            Có thể. Bạn vui lòng báo trước địa điểm trả xe. Nếu tiện đường bên mình sẽ hỗ trợ miễn phí, nếu xa sẽ tính một chút phí đi lại cho nhân viên nhận xe.
-          </div>
-        </details>
+        </div>
       </div>
     </section>
 
-    <!-- ========= SECTION MỚI 4: BẢN ĐỒ (GOOGLE MAP) ========= -->
-    <section class="container" id="ban-do">
-      <div class="section-head">
-        <h2 class="section-title">Vị trí cửa hàng</h2>
-        <p class="section-desc">Ghé trực tiếp để chọn xe ưng ý nhất.</p>
+    <!-- FAQ -->
+    <section class="section" id="faq-section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Câu hỏi thường gặp</h2>
+          <p class="section-desc">Giải đáp nhanh những thắc mắc của bạn.</p>
+        </div>
+        
+        <div class="faq-group">
+          <details class="faq-item">
+            <summary>Tôi không có bằng lái xe thì thuê loại nào?</summary>
+            <div class="faq-body">
+              Bạn có thể thuê các dòng xe 50cc (Scoopy, Elite, Cub...) hoặc xe đạp điện. Các dòng xe này pháp luật không yêu cầu bằng lái, rất phù hợp với học sinh hoặc khách du lịch chưa đổi bằng quốc tế.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Có giao xe tận nơi không? Phí ship thế nào?</summary>
+            <div class="faq-body">
+              Nguyễn Tú miễn phí giao xe bán kính 3km quanh Hoàn Kiếm/Phố Cổ với hợp đồng trên 2 ngày. Nếu xa hơn hoặc thuê ngắn hạn, phí ship chỉ từ 20k - 30k tùy vị trí.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Nếu xe hỏng giữa đường thì sao?</summary>
+            <div class="faq-body">
+              Đừng lo, hãy gọi ngay hotline 0334.699.969. Nếu lỗi do xe, bên mình sẽ cử thợ đến sửa tận nơi hoặc đổi xe khác cho bạn ngay lập tức mà không mất phí.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Thời gian tính 1 ngày thuê như thế nào?</summary>
+            <div class="faq-body">
+              1 ngày được tính là 24 tiếng từ lúc nhận xe. Ví dụ nhận 9h sáng hôm nay thì trả trước 9h sáng hôm sau. Nếu quá giờ sẽ tính thêm phụ phí nhỏ theo giờ (khoảng 10-20k/h).
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Tôi có thể trả xe ở địa điểm khác không?</summary>
+            <div class="faq-body">
+              Có thể. Bạn vui lòng báo trước địa điểm trả xe. Nếu tiện đường bên mình sẽ hỗ trợ miễn phí, nếu xa sẽ tính một chút phí đi lại cho nhân viên nhận xe.
+            </div>
+          </details>
+        </div>
       </div>
-      <div class="content-card" style="padding:10px;">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8638558814587!2d105.86695231533215!3d21.038132792834636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd76269389d%3A0x6335a76742e47458!2s108%20Nguyen%20Van%20Cu%2C%20Bo%20De%2C%20Long%20Bien%2C%20Hanoi!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
-          width="100%" 
-          height="400" 
-          style="border:0; border-radius: 16px; display:block;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
+    </section>
+
+    <!-- MAP -->
+    <section class="section" id="ban-do">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Vị trí cửa hàng</h2>
+          <p class="section-desc">Ghé trực tiếp để chọn xe ưng ý nhất.</p>
+        </div>
+        <div class="card" style="padding:10px;">
+          <iframe 
+            class="map-frame"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8638558814587!2d105.86695231533215!3d21.038132792834636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd76269389d%3A0x6335a76742e47458!2s108%20Nguyen%20Van%20Cu%2C%20Bo%20De%2C%20Long%20Bien%2C%20Hanoi!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+            allowfullscreen="" 
+            loading="lazy">
+          </iframe>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER MỚI -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-grid">
-      <!-- Cột Brand (Dòng 1 trên tablet) -->
-      <div class="footer-col col-brand">
-        <div class="ultra-logo-pill" style="display:inline-flex;">
-          <div class="logo-watch">NT</div>
-          <div class="logo-text">
-            <span>Nguyễn Tú</span>
-            <span>Motorbike Rental</span>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-col col-brand">
+          <div class="logo-pill" style="display:inline-flex;">
+            <div class="logo-icon">NT</div>
+            <div class="logo-text">
+              <strong>Nguyễn Tú</strong>
+              <small>Motorbike Rental</small>
+            </div>
+          </div>
+          <p class="brand-desc">
+            Chuyên cho thuê xe máy du lịch &amp; công tác tại Hà Nội. 
+            Uy tín – Chất lượng – Tận tâm. Giao xe nhanh, thủ tục nhẹ, hỗ trợ 24/7.
+          </p>
+        </div>
+
+        <!-- Links 1 -->
+        <div class="footer-col">
+          <h4 class="col-title">Trang chính</h4>
+          <div class="footer-links">
+            <a href="index.html"><span>🏠</span> Trang chủ</a>
+            <a href="gioithieu.html"><span>👋</span> Giới thiệu</a>
+            <a href="faq.html"><span>❓</span> FAQ</a>
+            <a href="dieukhoan.html"><span>📄</span> Điều khoản</a>
+            <a href="chinhsach.html"><span>🛡️</span> Chính sách</a>
+            <a href="lienhe.html"><span>📞</span> Liên hệ</a>
           </div>
         </div>
-        <p class="footer-tagline">
-          Chuyên cho thuê xe máy du lịch &amp; công tác tại Hà Nội. 
-          Uy tín – Chất lượng – Tận tâm. Giao xe nhanh, thủ tục nhẹ, hỗ trợ 24/7.
-        </p>
-      </div>
 
-      <!-- Cột Trang chính -->
-      <div class="footer-col footer-links">
-        <h4>Trang chính</h4>
-        <a href="index.html">
-          <span class="footer-link-icon">🏠</span><span>Trang chủ</span>
-        </a>
-        <a href="gioithieu.html">
-          <span class="footer-link-icon">👋</span><span>Giới thiệu</span>
-        </a>
-        <a href="faq.html">
-          <span class="footer-link-icon">❓</span><span>FAQ</span>
-        </a>
-        <a href="dieukhoan.html">
-          <span class="footer-link-icon">📄</span><span>Điều khoản</span>
-        </a>
-        <a href="chinhsach.html">
-          <span class="footer-link-icon">🛡️</span><span>Chính sách</span>
-        </a>
-        <a href="lienhe.html">
-          <span class="footer-link-icon">📞</span><span>Liên hệ</span>
-        </a>
-      </div>
-
-      <!-- Cột Dịch vụ -->
-      <div class="footer-col footer-links">
-        <h4>Dịch vụ</h4>
-        <a href="banggia.html">
-          <span class="footer-link-icon">💰</span><span>Bảng giá</span>
-        </a>
-        <a href="thutuc.html">
-          <span class="footer-link-icon">📑</span><span>Thủ tục</span>
-        </a>
-        <a href="huongdan.html">
-          <span class="footer-link-icon">📘</span><span>Hướng dẫn</span>
-        </a>
-        <a href="loaixe.html">
-          <span class="footer-link-icon">🏍️</span><span>Loại xe</span>
-        </a>
-        <a href="kinhnghiem.html">
-          <span class="footer-link-icon">💡</span><span>Kinh nghiệm</span>
-        </a>
-      </div>
-
-      <!-- Cột Khu vực & Liên hệ -->
-      <div class="footer-col">
-        <h4>Khu vực &amp; Liên hệ</h4>
-
-        <div class="footer-links" style="margin-bottom:10px;">
-          <a href="hoankiem.html">
-            <span class="footer-link-icon">📍</span><span>Hoàn Kiếm</span>
-          </a>
-          <a href="tayho.html">
-            <span class="footer-link-icon">📍</span><span>Tây Hồ</span>
-          </a>
-          <a href="badinh.html">
-            <span class="footer-link-icon">📍</span><span>Ba Đình</span>
-          </a>
-          <a href="longbien.html">
-            <span class="footer-link-icon">📍</span><span>Long Biên</span>
-          </a>
-          <a href="gialam.html">
-            <span class="footer-link-icon">📍</span><span>Gia Lâm</span>
-          </a>
+        <!-- Links 2 -->
+        <div class="footer-col">
+          <h4 class="col-title">Dịch vụ</h4>
+          <div class="footer-links">
+            <a href="banggia.html"><span>💰</span> Bảng giá</a>
+            <a href="thutuc.html"><span>📑</span> Thủ tục</a>
+            <a href="huongdan.html"><span>📘</span> Hướng dẫn</a>
+            <a href="loaixe.html"><span>🏍️</span> Loại xe</a>
+            <a href="kinhnghiem.html"><span>💡</span> Kinh nghiệm</a>
+          </div>
         </div>
-        
-        <h4 style="margin-top: 20px;">Thông tin liên hệ</h4>
 
-        <div class="footer-contact">
-          <p>📞 <a href="tel:0334699969">0334 699 969</a></p>
-          <p>✉️ <a href="mailto:nguyenthuha203@gmail.com">nguyenthuha203@gmail.com</a></p>
-          <p>📍 108 Nguyễn Văn Cừ, Bồ Đề, Long Biên, Hà Nội</p>
-          <p>⏰ 9h – 21h hàng ngày</p>
+        <!-- Contact & Area -->
+        <div class="footer-col">
+          <h4 class="col-title">Khu vực &amp; Liên hệ</h4>
+          <div class="footer-links" style="margin-bottom:20px;">
+            <a href="hoankiem.html"><span>📍</span> Hoàn Kiếm</a>
+            <a href="tayho.html"><span>📍</span> Tây Hồ</a>
+            <a href="badinh.html"><span>📍</span> Ba Đình</a>
+            <a href="longbien.html"><span>📍</span> Long Biên</a>
+          </div>
+          
+          <div style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
+             📞 <a href="tel:0334699969" style="color:var(--text-primary);">0334 699 969</a><br>
+             ✉️ nguyenthuha203@gmail.com<br>
+             📍 108 Nguyễn Văn Cừ, Long Biên
+          </div>
 
-          <!-- Social Buttons (Icon Only, Circle) -->
-          <div class="footer-social">
-            <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener" aria-label="Facebook">
-              <span>📘</span>
-            </a>
-            <a class="social-btn" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener" aria-label="Instagram">
-              <span>📸</span>
-            </a>
-            <a class="social-btn" href="https://www.pinterest.com/chothuexemayohanoi/" target="_blank" rel="noopener" aria-label="Pinterest">
-              <span>📌</span>
-            </a>
-            <a class="social-btn" href="https://rentbikehanoi.com" target="_blank" rel="noopener" aria-label="Website">
-              <span>🌐</span>
-            </a>
+          <div class="social-row">
+            <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+            <a class="social-btn" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+            <a class="social-btn" href="https://www.pinterest.com/chothuexemayohanoi/" target="_blank" rel="noopener" aria-label="Pinterest">📌</a>
+            <a class="social-btn" href="https://rentbikehanoi.com" target="_blank" rel="noopener" aria-label="Website">🌐</a>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="footer-bottom">
-      <span>© 2025 Nguyen Tu Motorbike. All rights reserved.</span>
-      <span>Giá mang tính tham khảo – vui lòng liên hệ để nhận báo giá chính xác.</span>
+      <div class="copyright">
+        © 2025 Nguyen Tu Motorbike. All rights reserved.<br>
+        Giá mang tính tham khảo – vui lòng liên hệ để nhận báo giá chính xác.
+      </div>
     </div>
   </footer>
 
   <!-- QUICK ACTION FAB -->
   <div class="fab-container" id="quickFab">
     <div class="fab-menu">
-      <a href="tel:0334699969" class="fab-item">
+      <a href="tel:0334699969" class="fab-label">
         <span>📞</span> Gọi điện
       </a>
-      <a href="https://zalo.me/0334699969" class="fab-item">
+      <a href="https://zalo.me/0334699969" class="fab-label">
         <span>💬</span> Chat Zalo
       </a>
-      <a href="https://maps.google.com" class="fab-item">
+      <a href="https://maps.google.com" class="fab-label">
         <span>📍</span> Chỉ đường
       </a>
     </div>
@@ -1560,14 +1287,14 @@
     <button class="lb-close" onclick="closeLightbox()" aria-label="Đóng ảnh">✕</button>
     <img id="lbImg" src="" alt="Zoom Bike">
   </div>
-
 </div>
 
 <script>
-  // --- TOGGLE THEME ---
+  // --- 1. TOGGLE DARK/LIGHT THEME ---
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   
+  // Load saved theme
   const savedTheme = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
@@ -1584,7 +1311,7 @@
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
   }
 
-  // --- 1. OPENING STATUS LOGIC ---
+  // --- 2. OPENING STATUS LOGIC (9h-21h) ---
   const statusDot = document.getElementById('statusDot');
   const statusText = document.getElementById('statusText');
 
@@ -1608,7 +1335,7 @@
     }
   }
 
-  // --- SIDEBAR LOGIC ---
+  // --- 3. SIDEBAR LOGIC ---
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebarOverlay');
   const menuBtn = document.getElementById('menuBtn');
@@ -1617,7 +1344,7 @@
   function openSidebar() {
     sidebar.classList.add('open');
     overlay.classList.add('show');
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden'; // Prevent scroll
   }
 
   function closeSidebar() {
@@ -1630,12 +1357,13 @@
   closeBtn.addEventListener('click', closeSidebar);
   overlay.addEventListener('click', closeSidebar);
 
-  // --- SUBMENU DROPDOWN ---
+  // --- 4. SUBMENU DROPDOWN ---
   function toggleSub(id) {
     const parent = document.getElementById(id);
     const sub = parent.querySelector('.nav-sub');
     const wasOpen = sub.classList.contains('open');
     
+    // Close others could be added here if needed, but keeping simple
     if (wasOpen) {
       sub.classList.remove('open');
       parent.classList.remove('active');
@@ -1645,7 +1373,7 @@
     }
   }
 
-  // --- CALCULATOR ---
+  // --- 5. CALCULATOR ---
   const bikeType = document.getElementById('bikeType');
   const dayCount = document.getElementById('dayCount');
   const totalPrice = document.getElementById('totalPrice');
@@ -1656,7 +1384,7 @@
 
     if (isNaN(days) || days < 1) {
       days = 1;
-      dayCount.value = 1; // luôn ép về 1 ngày tối thiểu
+      dayCount.value = 1;
     }
 
     const total = price * days;
@@ -1668,12 +1396,12 @@
     dayCount.addEventListener('input', updatePrice);
   }
 
-  // --- FAB ---
+  // --- 6. FAB (Floating Action Button) ---
   function toggleFab() {
     document.getElementById('quickFab').classList.toggle('open');
   }
 
-  // --- TESTIMONIAL SLIDER ---
+  // --- 7. TESTIMONIAL SLIDER ---
   let slideIndex = 0;
   const slides = document.querySelectorAll('.testi-item');
   if (slides.length > 0) {
@@ -1681,18 +1409,21 @@
       slides[slideIndex].classList.remove('active');
       slideIndex = (slideIndex + 1) % slides.length;
       slides[slideIndex].classList.add('active');
-    }, 4000);
+    }, 4000); // 4 seconds
   }
 
-  // --- LIGHTBOX ---
+  // --- 8. LIGHTBOX ---
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   
+  // Attach event to bike image wrappers
   document.querySelectorAll('.bike-img-wrap').forEach(wrap => {
     wrap.addEventListener('click', () => {
       const src = wrap.getAttribute('data-src');
-      lbImg.src = src;
-      lb.classList.add('active');
+      if (src) {
+        lbImg.src = src;
+        lb.classList.add('active');
+      }
     });
   });
 
@@ -1700,32 +1431,36 @@
     lb.classList.remove('active');
   }
 
-  // Đóng lightbox khi click ra nền đen
+  // Close when clicking outside image
   lb.addEventListener('click', (e) => {
     if (e.target === lb) {
       closeLightbox();
     }
   });
 
-  // --- INIT ON LOAD ---
+  // --- 9. INIT & FADE-IN ANIMATION ---
   document.addEventListener('DOMContentLoaded', () => {
-    // 1. Cập nhật giờ mở cửa
+    // Check status
     updateOpeningStatus();
     setInterval(updateOpeningStatus, 60 * 1000);
 
-    // 2. Animation fade in cho các section
-    const blocks = document.querySelectorAll('section, footer');
-    blocks.forEach((el, i) => {
-      el.classList.add('section-fade');
-      setTimeout(() => {
-        el.classList.add('show');
-      }, 200 + i * 120);
-    });
+    // Initial price calc
+    if (bikeType) updatePrice();
 
-    // 3. Sync giá tiền ban đầu
-    if (bikeType && dayCount) {
-      updatePrice();
-    }
+    // Fade in sections on scroll/load
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, footer').forEach(el => {
+      el.classList.add('section-fade');
+      observer.observe(el);
+    });
   });
 </script>
 
