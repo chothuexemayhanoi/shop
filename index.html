@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="light">
+<html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- 2. Meta viewport chuẩn, bỏ user-scalable=no để thân thiện người dùng -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental</title>
   <meta name="description" content="Dịch vụ cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental. Giao xe tận nơi 20–40 phút, xe mới, giá minh bạch, hỗ trợ 24/7." />
   <meta name="robots" content="index, follow" />
@@ -606,7 +608,7 @@
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-header">
       <div class="sidebar-title">Menu</div>
-      <button class="sidebar-close" id="sidebarClose">✕</button>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
     </div>
 
     <div class="sidebar-content">
@@ -678,6 +680,7 @@
   <!-- HEADER -->
   <header class="site-header">
     <div class="header-left">
+      <!-- 1. Accessiblity: aria-label -->
       <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
     </div>
 
@@ -696,7 +699,8 @@
         <span class="status-dot"></span>
         <span>Mở cửa 9:00–21:00</span>
       </div>
-      <button class="icon-btn" id="themeToggle">🌙</button>
+      <!-- 1. Accessiblity -->
+      <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
     </div>
   </header>
 
@@ -713,6 +717,7 @@
           <h1 class="hero-title">Thuê xe máy <br /><span class="highlight">Hoàn Kiếm & Hà Nội</span></h1>
           <p class="hero-sub">Dịch vụ chuyên nghiệp, xe mới, thủ tục đơn giản (chỉ cần CCCD). Giao xe tận nơi khách sạn, homestay.</p>
           <div class="hero-actions">
+             <!-- 3. Đồng bộ format số điện thoại -->
             <a href="tel:0334699969" class="btn btn-primary">📞 Gọi 0334 699 969</a>
             <a href="https://zalo.me/0334699969" class="btn btn-secondary">💬 Chat Zalo</a>
           </div>
@@ -748,7 +753,7 @@
       </div>
     </section>
 
-    <!-- BIKE LIST -->
+    <!-- BIKE LIST - 4. Hoàn thiện đầy đủ danh sách xe -->
     <section class="container" id="danhsachxe">
       <div class="section-head">
         <h2 class="section-title">Danh sách xe</h2>
@@ -756,7 +761,7 @@
       </div>
       
       <div class="bike-grid">
-        <!-- Item 1 -->
+        <!-- Item 1 - Elite 50cc -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg">
             <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" alt="Xe 50cc">
@@ -771,7 +776,8 @@
             </div>
           </div>
         </div>
-        <!-- Item 2 -->
+
+        <!-- Item 2 - Sirius -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png">
             <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png" alt="Sirius">
@@ -786,7 +792,8 @@
             </div>
           </div>
         </div>
-        <!-- Item 3 -->
+
+        <!-- Item 3 - Vision -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png">
             <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" alt="Vision">
@@ -801,6 +808,87 @@
             </div>
           </div>
         </div>
+
+        <!-- Item 4 - Honda Wave 110cc -->
+        <div class="bike-card">
+          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png" alt="Honda Wave 110cc" />
+          </div>
+          <div class="bike-info">
+            <div class="bike-name">Honda Wave 110cc</div>
+            <span class="bike-price">150.000 ₫/ngày</span>
+            <p class="bike-desc">
+              Xe số huyền thoại, tiết kiệm nhiên liệu, dễ sửa chữa – đi xa, đi gần đều ổn.
+            </p>
+            <div class="bike-footer">
+              <span class="tag">Xe số phổ thông</span>
+              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
+                Đặt ngay &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 - Honda Air Blade 125cc -->
+        <div class="bike-card">
+          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png" alt="Honda Air Blade 125cc" />
+          </div>
+          <div class="bike-info">
+            <div class="bike-name">Honda Air Blade 125cc</div>
+            <span class="bike-price">200.000 ₫/ngày</span>
+            <p class="bike-desc">
+              Xe tay ga thể thao, thiết kế sang, tăng tốc tốt – đi hai người rất thoải mái.
+            </p>
+            <div class="bike-footer">
+              <span class="tag">Mạnh mẽ • sang trọng</span>
+              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
+                Đặt ngay &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 - Xe đạp điện -->
+        <div class="bike-card">
+          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg" alt="Xe đạp điện" />
+          </div>
+          <div class="bike-info">
+            <div class="bike-name">Xe đạp điện</div>
+            <span class="bike-price">150.000 ₫/ngày</span>
+            <p class="bike-desc">
+              Thân thiện môi trường, không xăng, vận hành êm – phù hợp di chuyển cự ly gần trong phố.
+            </p>
+            <div class="bike-footer">
+              <span class="tag">Không xăng • êm ái</span>
+              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
+                Đặt ngay &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 7 - Yamaha Mio -->
+        <div class="bike-card">
+          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png" alt="Yamaha Mio" />
+          </div>
+          <div class="bike-info">
+            <div class="bike-name">Yamaha Mio</div>
+            <span class="bike-price">150.000 ₫/ngày</span>
+            <p class="bike-desc">
+              Xe tay ga nhỏ gọn, yên thấp, dễ điều khiển – cực hợp khách nữ và người thấp, di chuyển trong phố rất linh hoạt.
+            </p>
+            <div class="bike-footer">
+              <span class="tag">Nhỏ gọn • linh hoạt</span>
+              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
+                Đặt ngay &rarr;
+              </a>
+            </div>
+          </div>
+        </div>
+        
       </div>
     </section>
 
@@ -923,8 +1011,9 @@
     <div class="footer-bottom">
       <span>© 2025 Nguyen Tu Motorbike. All rights reserved.</span>
       <div style="display:flex; gap:10px;">
+        <!-- 3. Format sđt footer -->
         <a href="https://zalo.me/0334699969">Zalo</a>
-        <a href="tel:0334699969">Hotline</a>
+        <a href="tel:0334699969">Hotline 0334 699 969</a>
       </div>
     </div>
   </footer>
@@ -942,12 +1031,14 @@
         <span>📍</span> Chỉ đường
       </a>
     </div>
-    <button class="fab-main" onclick="toggleFab()">⚡</button>
+    <!-- 1. Accessiblity -->
+    <button class="fab-main" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
   </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
-    <button class="lb-close" onclick="closeLightbox()">✕</button>
+    <!-- 1. Accessiblity -->
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Đóng ảnh">✕</button>
     <img id="lbImg" src="" alt="Zoom Bike">
   </div>
 
@@ -1051,6 +1142,7 @@
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   
+  // Logic này tự động nhận diện tất cả .bike-img-wrap kể cả các xe mới thêm
   document.querySelectorAll('.bike-img-wrap').forEach(wrap => {
     wrap.addEventListener('click', () => {
       const src = wrap.getAttribute('data-src');
