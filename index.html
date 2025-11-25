@@ -1,12 +1,29 @@
+<!-- toàn bộ file index.html ở đây -->
 <!DOCTYPE html>
 <html lang="vi" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
+  <!-- SEO Standard -->
   <title>Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental</title>
-  <meta name="description" content="Dịch vụ cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental. Giao xe tận nơi 20–40 phút, xe mới, giá minh bạch, hỗ trợ 24/7." />
+  <meta name="description" content="Dịch vụ cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental. Giao xe tận nơi 20–40 phút, xe mới, giá minh bạch, hỗ trợ 24/7. Thủ tục đơn giản." />
+  <meta name="keywords" content="cho thuê xe máy Hà Nội, thuê xe máy Hoàn Kiếm, thuê xe máy 50cc, thuê xe máy phố cổ, thuê xe máy giá rẻ, motorbike rental hanoi, nguyen tu motorbike" />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://chothuexemayhanoi.github.io/vn.com/" />
+
+  <!-- Open Graph (Facebook/Zalo) -->
+  <meta property="og:title" content="Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental" />
+  <meta property="og:description" content="Dịch vụ chuyên nghiệp, giao xe 20 phút. Xe ga, xe số, xe 50cc đời mới." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://chothuexemayhanoi.github.io/vn.com/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cho thuê xe máy Hoàn Kiếm & Hà Nội - Nguyễn Tú Motorbike Rental" />
+  <meta name="twitter:description" content="Xe mới, giá tốt, giao xe tận nơi 20p tại Hà Nội." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" />
 
   <!-- Favicon -->
   <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
@@ -25,7 +42,7 @@
       --bg-hero: radial-gradient(circle at 50% 0%, #1a2138 0%, #000000 70%);
       
       --text: #f5f5f7;
-      --text-secondary: #86868b; /* Apple Style Grey */
+      --text-secondary: #86868b;
       --muted: #6e6e73;
 
       --border-soft: rgba(255,255,255,0.12);
@@ -92,7 +109,7 @@
       flex-direction: column;
     }
 
-    /* ========= HEADER ULTRA (GLASS) ========= */
+    /* ========= HEADER (Glass) ========= */
     .site-header {
       position: fixed;
       inset-inline: 0;
@@ -129,7 +146,6 @@
       flex: 0 0 auto;
     }
 
-    /* LOGO PILL OPTIMIZED */
     .ultra-logo-pill {
       display: flex;
       align-items: center;
@@ -140,11 +156,7 @@
       border-radius: var(--radius-pill);
       transition: transform 0.2s var(--ease);
     }
-
-    :root[data-theme="light"] .ultra-logo-pill {
-      background: rgba(0,0,0,0.04);
-    }
-
+    :root[data-theme="light"] .ultra-logo-pill { background: rgba(0,0,0,0.04); }
     .ultra-logo-pill:active { transform: scale(0.96); }
 
     .logo-watch {
@@ -166,324 +178,175 @@
       line-height: 1.1;
       font-size: 13px;
     }
-
     .logo-text span:first-child { font-weight: 600; color: var(--text); }
     .logo-text span:last-child { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.05em; }
 
-    /* RESPONSIVE LOGO */
     @media (max-width: 480px) {
       .ultra-logo-pill { padding: 4px; gap: 0; border: none; background: transparent; }
       .logo-text { display: none; }
       .logo-watch { width: 32px; height: 32px; font-size: 14px; }
-      .header-left, .header-right { gap: 8px; }
     }
 
-    /* HEADER BUTTONS */
     .icon-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      color: var(--text);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: background 0.2s;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.1); border: none; color: var(--text);
+      display: grid; place-items: center; cursor: pointer; transition: background 0.2s;
     }
     :root[data-theme="light"] .icon-btn { background: rgba(0,0,0,0.05); }
     .icon-btn:hover { background: var(--accent-soft); color: var(--accent); }
 
     .status-chip {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.06);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      font-size: 12px; font-weight: 500; color: var(--text-secondary);
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,0.06); padding: 4px 10px; border-radius: var(--radius-pill);
     }
     :root[data-theme="light"] .status-chip { background: rgba(0,0,0,0.05); }
     .status-dot { width: 6px; height: 6px; background: #30d158; border-radius: 50%; box-shadow: 0 0 8px #30d158; }
 
-    @media (max-width: 768px) {
-      .status-chip {
-        padding: 4px 8px;
-        border-radius: 999px;
-        font-size: 11px;
-      }
-    }
+    @media (max-width: 768px) { .status-chip { display: none; } }
 
-    /* ========= SIDEBAR (iOS Settings Style) ========= */
+    /* ========= SIDEBAR ========= */
     .sidebar-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(4px);
-      z-index: 101;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(4px);
+      z-index: 101; opacity: 0; pointer-events: none; transition: opacity 0.3s;
     }
     .sidebar-overlay.show { opacity: 1; pointer-events: auto; }
 
     .sidebar {
-      position: fixed;
-      top: 10px; left: 10px; bottom: 10px;
-      width: 300px;
-      max-width: calc(100vw - 20px);
-      background: var(--bg-elevated);
-      border-radius: var(--radius-xl);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-      z-index: 102;
-      transform: translateX(calc(-100% - 20px));
-      transition: transform 0.4s var(--ease);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+      position: fixed; top: 10px; left: 10px; bottom: 10px;
+      width: 300px; max-width: calc(100vw - 20px);
+      background: var(--bg-elevated); border-radius: var(--radius-xl);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5); z-index: 102;
+      transform: translateX(calc(-100% - 20px)); transition: transform 0.4s var(--ease);
+      display: flex; flex-direction: column; overflow: hidden;
     }
     .sidebar.open { transform: translateX(0); }
 
     .sidebar-header {
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.03);
-      border-bottom: 1px solid var(--border-light);
+      padding: 16px 20px; display: flex; justify-content: space-between; align-items: center;
+      background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--border-light);
     }
-
     .sidebar-title { font-size: 17px; font-weight: 700; color: var(--text); }
     .sidebar-close {
-      width: 30px; height: 30px;
-      border-radius: 50%;
-      background: rgba(118, 118, 128, 0.2);
-      border: none;
-      color: var(--text-secondary);
-      font-size: 14px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
+      width: 30px; height: 30px; border-radius: 50%; background: rgba(118, 118, 128, 0.2);
+      border: none; color: var(--text-secondary); cursor: pointer; display: grid; place-items: center;
     }
 
-    .sidebar-content {
-      padding: 16px;
-      overflow-y: auto;
-      flex: 1;
-    }
+    .sidebar-content { padding: 16px; overflow-y: auto; flex: 1; }
 
-    /* iOS Grouped Menu Style */
     .nav-group {
-      background: var(--bg-elevated-soft);
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 20px;
+      background: var(--bg-elevated-soft); border-radius: 12px; overflow: hidden; margin-bottom: 20px;
     }
-
     .nav-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      color: var(--text);
-      font-size: 16px;
-      border-bottom: 1px solid var(--border-soft);
-      cursor: pointer;
-      transition: background 0.2s;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 16px; color: var(--text); font-size: 16px;
+      border-bottom: 1px solid var(--border-soft); cursor: pointer; transition: background 0.2s;
     }
     .nav-item:last-child { border-bottom: none; }
     .nav-item:active { background: rgba(255,255,255,0.05); }
-    
     :root[data-theme="light"] .nav-item:active { background: rgba(0,0,0,0.05); }
 
     .nav-left { display: flex; align-items: center; gap: 12px; }
     .nav-icon { width: 24px; text-align: center; font-size: 18px; }
     
-    /* Dropdown Arrow */
-    .nav-arrow {
-      font-size: 12px;
-      color: var(--text-secondary);
-      transition: transform 0.3s;
-    }
+    .nav-arrow { font-size: 12px; color: var(--text-secondary); transition: transform 0.3s; }
     .nav-has-sub.active .nav-arrow { transform: rotate(90deg); }
 
-    /* Submenu */
-    .nav-sub {
-      display: none;
-      background: rgba(0,0,0,0.1);
-      padding-left: 52px; /* Indent */
-    }
+    .nav-sub { display: none; background: rgba(0,0,0,0.1); padding-left: 52px; }
     :root[data-theme="light"] .nav-sub { background: rgba(0,0,0,0.03); }
-
     .nav-sub.open { display: block; animation: slideDown 0.3s var(--ease); }
     
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
     .nav-sub-link {
-      display: block;
-      padding: 12px 16px 12px 0;
-      font-size: 15px;
-      color: var(--text);
-      border-bottom: 1px solid var(--border-light);
+      display: block; padding: 12px 16px 12px 0; font-size: 15px;
+      color: var(--text); border-bottom: 1px solid var(--border-light);
     }
-    .nav-sub-link:last-child { border-bottom: none; }
     .nav-sub-link:hover { color: var(--accent); }
 
     /* ========= HERO ========= */
     main { padding-top: var(--header-height); }
 
-    .hero {
-      padding: 40px 20px;
-      display: flex;
-      justify-content: center;
-      background: var(--bg-hero);
-    }
+    .hero { padding: 40px 20px; display: flex; justify-content: center; background: var(--bg-hero); }
 
     .hero-inner {
-      width: 100%;
-      max-width: var(--max-w);
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
+      width: 100%; max-width: var(--max-w); display: grid;
+      grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
     }
 
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 30px; text-align: center; }
       .hero-actions { justify-content: center; }
       .hero-badge-row { justify-content: center; }
-      .hero-note { justify-content: center; }
     }
 
     .hero-badge-row { display: flex; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
     .hero-badge {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent);
-      background: var(--accent-soft);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
+      font-size: 12px; font-weight: 600; color: var(--accent);
+      background: var(--accent-soft); padding: 4px 10px; border-radius: var(--radius-pill);
     }
 
-    .hero-title {
-      font-size: clamp(28px, 5vw, 48px);
-      line-height: 1.1;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
+    .hero-title { font-size: clamp(28px, 5vw, 48px); line-height: 1.1; margin-bottom: 16px; color: var(--text); }
     .highlight {
       background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
-    .hero-sub {
-      font-size: 17px;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-      line-height: 1.6;
-    }
-
+    .hero-sub { font-size: 17px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.6; }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 24px;
-      border-radius: var(--radius-pill);
-      font-weight: 500;
-      font-size: 15px;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 12px 24px; border-radius: var(--radius-pill); font-weight: 500; font-size: 15px;
+      cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
     }
     .btn:active { transform: scale(0.98); }
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: 0 4px 14px rgba(0,113,227,0.4);
-    }
+    .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 14px rgba(0,113,227,0.4); }
     .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
 
-    .btn-secondary {
-      background: rgba(118, 118, 128, 0.12);
-      color: var(--text);
-    }
+    .btn-secondary { background: rgba(118, 118, 128, 0.12); color: var(--text); }
     .btn-secondary:hover { background: rgba(118, 118, 128, 0.2); }
 
-    /* CALCULATOR CARD (Glassmorphism) */
+    /* Calculator */
     .calc-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      box-shadow: var(--shadow-soft);
-      text-align: left;
+      background: var(--bg-elevated); border: 1px solid var(--border-soft);
+      border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-soft); text-align: left;
     }
-
     .calc-header { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
-    .calc-title { font-size: 15px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; }
+    .calc-title { font-size: 15px; font-weight: 600; text-transform: uppercase; color: var(--text-secondary); }
     
     .form-group { margin-bottom: 16px; }
     .form-label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
     .form-control {
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: 1px solid var(--border-soft);
-      background: var(--bg-elevated-soft);
-      color: var(--text);
-      font-size: 16px;
-      outline: none;
-      appearance: none;
+      width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--border-soft);
+      background: var(--bg-elevated-soft); color: var(--text); font-size: 16px; outline: none; appearance: none;
     }
     .form-control:focus { border-color: var(--accent); }
 
     .calc-result {
-      background: var(--accent-soft);
-      border-radius: 12px;
-      padding: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 10px;
+      background: var(--accent-soft); border-radius: 12px; padding: 16px;
+      display: flex; justify-content: space-between; align-items: center; margin-top: 10px;
     }
     .total-price { font-size: 20px; font-weight: 700; color: var(--accent); }
 
     /* ========= SECTIONS ========= */
     .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 40px 20px; }
-    
     .section-head { margin-bottom: 30px; }
     .section-title { font-size: 28px; margin-bottom: 8px; }
     .section-desc { color: var(--text-secondary); }
 
-    /* BIKE GRID */
-    .bike-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
+    /* Bike Grid */
+    .bike-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
     .bike-card {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-soft);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      transition: transform 0.3s var(--ease), box-shadow 0.3s;
-      box-shadow: var(--shadow-card);
+      background: var(--bg-elevated); border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s; box-shadow: var(--shadow-card);
     }
     .bike-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
 
     .bike-img-wrap {
-      position: relative;
-      background: var(--bg-elevated-soft);
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      cursor: pointer;
+      position: relative; background: var(--bg-elevated-soft); aspect-ratio: 4/3; overflow: hidden; cursor: pointer;
     }
     .bike-img-wrap img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.5s; }
     .bike-card:hover img { transform: scale(1.05); }
@@ -497,16 +360,11 @@
     .tag { font-size: 11px; padding: 4px 8px; background: rgba(255,255,255,0.1); border-radius: 6px; color: var(--text-secondary); }
     :root[data-theme="light"] .tag { background: rgba(0,0,0,0.05); }
 
-    /* TABLE & LISTS */
+    /* Content Cards */
     .content-card {
-      background: var(--bg-elevated);
-      border-radius: var(--radius-xl);
-      padding: 24px;
-      border: 1px solid var(--border-soft);
-      box-shadow: var(--shadow-card);
-      overflow-x: auto;
+      background: var(--bg-elevated); border-radius: var(--radius-xl); padding: 24px;
+      border: 1px solid var(--border-soft); box-shadow: var(--shadow-card); overflow-x: auto;
     }
-    
     table { width: 100%; border-collapse: collapse; min-width: 500px; }
     th { text-align: left; padding: 12px; color: var(--text-secondary); font-size: 13px; border-bottom: 1px solid var(--border-soft); }
     td { padding: 14px 12px; font-size: 15px; border-bottom: 1px solid var(--border-light); }
@@ -514,7 +372,7 @@
 
     .reason-list li { margin-bottom: 10px; color: var(--text-secondary); font-size: 15px; }
 
-    /* TESTIMONIALS */
+    /* Testimonials */
     .testi-wrap { position: relative; min-height: 120px; }
     .testi-item { display: none; animation: fadeIn 0.5s; }
     .testi-item.active { display: block; }
@@ -522,7 +380,7 @@
     .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
     .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
 
-    /* ========= FOOTER ULTRA 2.0 (UPDATED LAYOUT) ========= */
+    /* ========= FOOTER ULTRA GLASS ========= */
     footer {
       background:
         radial-gradient(circle at top, rgba(0,113,227,0.18), transparent 55%),
@@ -540,18 +398,15 @@
     }
 
     .footer-grid {
-      max-width: var(--max-w);
-      margin: 0 auto;
+      max-width: var(--max-w); margin: 0 auto;
       display: grid;
-      /* Laptop > 1024px: 4 Columns (adjusted widths) */
       grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 30px; 
-      padding: 24px;
+      gap: 30px; padding: 24px;
       border-radius: 24px;
       background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
     }
 
     :root[data-theme="light"] .footer-grid {
@@ -559,155 +414,67 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
-    /* TABLET: 640px to 1024px */
     @media (max-width: 1024px) {
-      .footer-grid {
-        /* Row 2: 3 equal columns for links */
-        grid-template-columns: 1fr 1fr 1fr; 
-        row-gap: 32px;
-      }
-      /* Row 1: Brand takes full width */
-      .col-brand {
-        grid-column: 1 / -1; 
-        display: flex;
-        align-items: center;
-        text-align: center;
-      }
-      .col-brand .footer-tagline {
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; row-gap: 32px; }
+      .col-brand { grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; text-align: center; }
+      .col-brand .footer-tagline { max-width: 600px; }
     }
 
-    /* MOBILE: < 640px */
     @media (max-width: 640px) {
-      .footer-grid {
-        grid-template-columns: 1fr; /* 1 Column */
-        text-align: center;
-        gap: 40px;
-      }
-      .col-brand {
-        flex-direction: column;
-      }
-      .footer-col,
-      .footer-links {
-        align-items: center; /* Center items */
-      }
-      .footer-social {
-        justify-content: center;
-      }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+      .footer-col, .footer-links { align-items: center; }
+      .footer-social { justify-content: center; }
     }
 
-    /* Column Styles */
     .footer-col { display: flex; flex-direction: column; }
-    
     .footer-col h4 {
-      font-size: 12px;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      letter-spacing: 0.12em;
+      font-size: 12px; color: var(--text-secondary); text-transform: uppercase;
+      margin-bottom: 16px; letter-spacing: 0.12em; font-weight: 600;
     }
 
-    .col-brand .footer-tagline {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
+    .footer-tagline { margin-top: 12px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-    /* Links */
     .footer-links { display: flex; flex-direction: column; gap: 8px; }
-
     .footer-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text);
-      font-size: 14px;
-      opacity: 0.9;
-      white-space: nowrap;
-      transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--text); font-size: 14px; opacity: 0.9;
+      white-space: nowrap; transition: all 0.2s;
     }
     .footer-links a:hover { opacity: 1; color: var(--accent); transform: translateX(2px); }
     .footer-link-icon { font-size: 16px; }
 
-    /* Contact Info */
     .footer-contact { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
     .footer-contact p { margin: 6px 0; }
-    .footer-contact a { color: var(--accent); text-decoration: none; }
-    .footer-contact a:hover { text-decoration: underline; }
+    .footer-contact a { color: var(--accent); }
 
-    /* SOCIAL ICONS BEAUTIFIED (Circle, No Text) */
-    .footer-social {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+    .footer-social { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 12px; }
     
     .social-btn {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border-soft);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-      font-size: 20px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text); font-size: 20px; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-
-    :root[data-theme="light"] .social-btn {
-      background: rgba(0,0,0,0.04);
-      border-color: rgba(0,0,0,0.08);
-    }
-
+    :root[data-theme="light"] .social-btn { background: rgba(0,0,0,0.04); border-color: rgba(0,0,0,0.08); }
     .social-btn:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: white;
-      transform: scale(1.15);
-      box-shadow: 0 4px 12px rgba(0,113,227,0.4);
+      background: var(--accent); border-color: var(--accent); color: white;
+      transform: scale(1.15); box-shadow: 0 4px 12px rgba(0,113,227,0.4);
     }
 
-    /* Bottom Copyright */
     .footer-bottom {
-      max-width: var(--max-w);
-      margin: 24px auto 0;
-      padding-top: 20px;
+      max-width: var(--max-w); margin: 24px auto 0; padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      color: var(--muted);
-      font-size: 12px;
-      gap: 10px;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+      color: var(--muted); font-size: 12px; gap: 10px;
     }
-    
-    @media (max-width: 640px) {
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
+    @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
 
-    /* QUICK CALL FAB */
+    /* Quick FAB */
     .fab-container { position: fixed; bottom: 20px; right: 20px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
-    
     .fab-main {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: white;
-      border: none;
-      box-shadow: 0 4px 20px rgba(0,113,227,0.5);
-      font-size: 24px;
-      cursor: pointer;
-      display: grid;
-      place-items: center;
-      transition: transform 0.2s;
+      width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: white;
+      border: none; box-shadow: 0 4px 20px rgba(0,113,227,0.5); font-size: 24px; cursor: pointer;
+      display: grid; place-items: center; transition: transform 0.2s;
     }
     .fab-main:hover { transform: scale(1.1); }
 
@@ -715,17 +482,11 @@
     .fab-container.open .fab-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
     
     .fab-item {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--bg-elevated);
-      padding: 8px 16px;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-card);
-      color: var(--text);
-      font-size: 14px;
-      border: 1px solid var(--border-soft);
+      display: flex; align-items: center; gap: 8px; background: var(--bg-elevated); padding: 8px 16px;
+      border-radius: var(--radius-pill); box-shadow: var(--shadow-card); color: var(--text); font-size: 14px; border: 1px solid var(--border-soft);
     }
 
-    /* LIGHTBOX */
+    /* Lightbox */
     .lightbox {
       position: fixed; inset: 0; background: rgba(0,0,0,0.95);
       z-index: 200; display: none; align-items: center; justify-content: center;
@@ -733,7 +494,6 @@
     .lightbox.active { display: flex; }
     .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
     .lb-close { position: absolute; top: 20px; right: 20px; color: white; background: none; border: none; font-size: 30px; cursor: pointer; }
-
   </style>
 </head>
 <body>
@@ -748,7 +508,6 @@
     </div>
 
     <div class="sidebar-content">
-      <!-- Group 1: Main -->
       <nav class="nav-group">
         <div class="nav-item" onclick="window.location.href='index.html'">
           <div class="nav-left"><span class="nav-icon">🏠</span> Trang chủ</div>
@@ -758,9 +517,7 @@
         </div>
       </nav>
 
-      <!-- Group 2: Services & Address (Dropdowns) -->
       <nav class="nav-group">
-        <!-- Dropdown Dịch vụ -->
         <div class="nav-has-sub" id="serviceMenu">
           <div class="nav-item" onclick="toggleSub('serviceMenu')">
             <div class="nav-left"><span class="nav-icon">🏍️</span> Dịch vụ</div>
@@ -772,30 +529,24 @@
             <a href="huongdan.html" class="nav-sub-link">Hướng dẫn</a>
             <a href="loaixe.html" class="nav-sub-link">Các loại xe</a>
             <a href="kinhnghiem.html" class="nav-sub-link">Kinh nghiệm</a>
-            <a href="ngay.html" class="nav-sub-link">Thuê theo ngày</a>
-            <a href="tuan.html" class="nav-sub-link">Thuê theo tuần</a>
-            <a href="thang.html" class="nav-sub-link">Thuê theo tháng</a>
           </div>
         </div>
 
-        <!-- Dropdown Địa chỉ -->
         <div class="nav-has-sub" id="addrMenu">
           <div class="nav-item" onclick="toggleSub('addrMenu')">
             <div class="nav-left"><span class="nav-icon">📍</span> Khu vực</div>
             <span class="nav-arrow">▶</span>
           </div>
           <div class="nav-sub">
+            <a href="hoankiem.html" class="nav-sub-link">Hoàn Kiếm</a>
+            <a href="tayho.html" class="nav-sub-link">Tây Hồ</a>
+            <a href="badinh.html" class="nav-sub-link">Ba Đình</a>
             <a href="longbien.html" class="nav-sub-link">Long Biên</a>
             <a href="gialam.html" class="nav-sub-link">Gia Lâm</a>
-            <a href="phoco.html" class="nav-sub-link">Phố Cổ</a>
-            <a href="hoankiem.html" class="nav-sub-link">Hoàn Kiếm</a>
-            <a href="badinh.html" class="nav-sub-link">Ba Đình</a>
-            <a href="tayho.html" class="nav-sub-link">Tây Hồ</a>
           </div>
         </div>
       </nav>
 
-      <!-- Group 3: Info -->
       <nav class="nav-group">
         <a href="faq.html" class="nav-item">
           <div class="nav-left"><span class="nav-icon">❓</span> FAQ</div>
@@ -859,7 +610,6 @@
           </div>
         </div>
 
-        <!-- Calculator -->
         <div class="calc-card">
           <div class="calc-header">
             <span class="calc-title">Dự tính chi phí</span>
@@ -894,10 +644,9 @@
       </div>
       
       <div class="bike-grid">
-        <!-- Item 1 - Elite 50cc -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" alt="Xe 50cc">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" alt="Xe 50cc" loading="lazy">
           </div>
           <div class="bike-info">
             <div class="bike-name">SYM Elite 50cc</div>
@@ -910,10 +659,9 @@
           </div>
         </div>
 
-        <!-- Item 2 - Sirius -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png" alt="Sirius">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5320.png" alt="Sirius" loading="lazy">
           </div>
           <div class="bike-info">
             <div class="bike-name">Yamaha Sirius</div>
@@ -926,10 +674,9 @@
           </div>
         </div>
 
-        <!-- Item 3 - Vision -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" alt="Vision">
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5327.png" alt="Vision" loading="lazy">
           </div>
           <div class="bike-info">
             <div class="bike-name">Honda Vision</div>
@@ -942,86 +689,20 @@
           </div>
         </div>
 
-        <!-- Item 4 - Honda Wave 110cc -->
         <div class="bike-card">
           <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png" alt="Honda Wave 110cc" />
+            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5324.png" alt="Wave" loading="lazy">
           </div>
           <div class="bike-info">
             <div class="bike-name">Honda Wave 110cc</div>
             <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe số huyền thoại, tiết kiệm nhiên liệu, dễ sửa chữa – đi xa, đi gần đều ổn.
-            </p>
+            <p class="bike-desc">Xe số huyền thoại, bền bỉ, tiết kiệm nhiên liệu. Đi xa gần đều tốt.</p>
             <div class="bike-footer">
               <span class="tag">Xe số phổ thông</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
+              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">Đặt ngay &rarr;</a>
             </div>
           </div>
         </div>
-
-        <!-- Item 5 - Honda Air Blade 125cc -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5326.png" alt="Honda Air Blade 125cc" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Honda Air Blade 125cc</div>
-            <span class="bike-price">200.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe tay ga thể thao, thiết kế sang, tăng tốc tốt – đi hai người rất thoải mái.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Mạnh mẽ • sang trọng</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 6 - Xe đạp điện -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5329.jpeg" alt="Xe đạp điện" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Xe đạp điện</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Thân thiện môi trường, không xăng, vận hành êm – phù hợp di chuyển cự ly gần trong phố.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Không xăng • êm ái</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Item 7 - Yamaha Mio -->
-        <div class="bike-card">
-          <div class="bike-img-wrap" data-src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png">
-            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5325.png" alt="Yamaha Mio" />
-          </div>
-          <div class="bike-info">
-            <div class="bike-name">Yamaha Mio</div>
-            <span class="bike-price">150.000 ₫/ngày</span>
-            <p class="bike-desc">
-              Xe tay ga nhỏ gọn, yên thấp, dễ điều khiển – cực hợp khách nữ và người thấp, di chuyển trong phố rất linh hoạt.
-            </p>
-            <div class="bike-footer">
-              <span class="tag">Nhỏ gọn • linh hoạt</span>
-              <a href="https://zalo.me/0334699969" class="tag" style="color:var(--accent);">
-                Đặt ngay &rarr;
-              </a>
-            </div>
-          </div>
-        </div>
-        
       </div>
     </section>
 
@@ -1068,7 +749,6 @@
     <!-- REASONS & REVIEWS -->
     <section class="container" style="padding-top:0;">
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap:24px;">
-        <!-- Reasons -->
         <div class="content-card" id="lydo">
           <h3 style="margin-bottom:16px;">Vì sao chọn Nguyễn Tú?</h3>
           <ul class="reason-list" style="padding-left:20px; margin:0;">
@@ -1079,7 +759,6 @@
           </ul>
         </div>
 
-        <!-- Reviews -->
         <div class="content-card" id="danhgia">
           <h3 style="margin-bottom:16px;">Khách hàng nói gì</h3>
           <div class="testi-wrap" id="testiSlider">
@@ -1102,10 +781,10 @@
     </section>
   </main>
 
-  <!-- FOOTER MỚI -->
+  <!-- FOOTER UPDATED -->
   <footer>
     <div class="footer-grid">
-      <!-- Cột Brand (Dòng 1 trên tablet) -->
+      <!-- Cột Brand -->
       <div class="footer-col col-brand">
         <div class="ultra-logo-pill" style="display:inline-flex;">
           <div class="logo-watch">NT</div>
@@ -1166,8 +845,9 @@
       <!-- Cột Khu vực & Liên hệ -->
       <div class="footer-col">
         <h4>Khu vực &amp; Liên hệ</h4>
-
-        <div class="footer-links" style="margin-bottom:10px;">
+        
+        <!-- Danh sách khu vực -->
+        <div class="footer-links" style="margin-bottom: 20px;">
           <a href="hoankiem.html">
             <span class="footer-link-icon">📍</span><span>Hoàn Kiếm</span>
           </a>
@@ -1184,8 +864,9 @@
             <span class="footer-link-icon">📍</span><span>Gia Lâm</span>
           </a>
         </div>
-        
-        <h4 style="margin-top: 20px;">Thông tin liên hệ</h4>
+
+        <!-- Tiêu đề Liên hệ -->
+        <h4>Thông tin liên hệ</h4>
 
         <div class="footer-contact">
           <p>📞 <a href="tel:0334699969">0334 699 969</a></p>
@@ -1193,7 +874,7 @@
           <p>📍 108 Nguyễn Văn Cừ, Bồ Đề, Long Biên, Hà Nội</p>
           <p>⏰ 9h – 21h hàng ngày</p>
 
-          <!-- Social Buttons (Icon Only, Circle) -->
+          <!-- Social Icons (Icon Only) -->
           <div class="footer-social">
             <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener" aria-label="Facebook">
               <span>📘</span>
@@ -1218,23 +899,16 @@
     </div>
   </footer>
 
-  <!-- QUICK ACTION FAB -->
+  <!-- FAB & LIGHTBOX -->
   <div class="fab-container" id="quickFab">
     <div class="fab-menu">
-      <a href="tel:0334699969" class="fab-item">
-        <span>📞</span> Gọi điện
-      </a>
-      <a href="https://zalo.me/0334699969" class="fab-item">
-        <span>💬</span> Chat Zalo
-      </a>
-      <a href="https://maps.google.com" class="fab-item">
-        <span>📍</span> Chỉ đường
-      </a>
+      <a href="tel:0334699969" class="fab-item"><span>📞</span> Gọi điện</a>
+      <a href="https://zalo.me/0334699969" class="fab-item"><span>💬</span> Chat Zalo</a>
+      <a href="https://maps.google.com" class="fab-item"><span>📍</span> Chỉ đường</a>
     </div>
     <button class="fab-main" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
   </div>
 
-  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <button class="lb-close" onclick="closeLightbox()" aria-label="Đóng ảnh">✕</button>
     <img id="lbImg" src="" alt="Zoom Bike">
@@ -1243,10 +917,9 @@
 </div>
 
 <script>
-  // --- TOGGLE THEME ---
+  // THEME
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
-  
   const savedTheme = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
@@ -1263,7 +936,7 @@
     themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
   }
 
-  // --- SIDEBAR LOGIC ---
+  // SIDEBAR
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebarOverlay');
   const menuBtn = document.getElementById('menuBtn');
@@ -1274,23 +947,20 @@
     overlay.classList.add('show');
     document.body.style.overflow = 'hidden';
   }
-
   function closeSidebar() {
     sidebar.classList.remove('open');
     overlay.classList.remove('show');
     document.body.style.overflow = '';
   }
+  if(menuBtn) menuBtn.addEventListener('click', openSidebar);
+  if(closeBtn) closeBtn.addEventListener('click', closeSidebar);
+  if(overlay) overlay.addEventListener('click', closeSidebar);
 
-  menuBtn.addEventListener('click', openSidebar);
-  closeBtn.addEventListener('click', closeSidebar);
-  overlay.addEventListener('click', closeSidebar);
-
-  // --- SUBMENU DROPDOWN ---
+  // SUBMENU
   function toggleSub(id) {
     const parent = document.getElementById(id);
     const sub = parent.querySelector('.nav-sub');
     const wasOpen = sub.classList.contains('open');
-    
     if (wasOpen) {
       sub.classList.remove('open');
       parent.classList.remove('active');
@@ -1300,7 +970,7 @@
     }
   }
 
-  // --- CALCULATOR ---
+  // CALCULATOR
   const bikeType = document.getElementById('bikeType');
   const dayCount = document.getElementById('dayCount');
   const totalPrice = document.getElementById('totalPrice');
@@ -1311,18 +981,17 @@
     const total = price * days;
     totalPrice.textContent = total.toLocaleString('vi-VN') + ' ₫';
   }
-
   if(bikeType && dayCount) {
     bikeType.addEventListener('change', updatePrice);
     dayCount.addEventListener('input', updatePrice);
   }
 
-  // --- FAB ---
+  // FAB
   function toggleFab() {
     document.getElementById('quickFab').classList.toggle('open');
   }
 
-  // --- TESTIMONIAL SLIDER ---
+  // SLIDER
   let slideIndex = 0;
   const slides = document.querySelectorAll('.testi-item');
   if(slides.length > 0) {
@@ -1333,21 +1002,19 @@
     }, 4000);
   }
 
-  // --- LIGHTBOX ---
+  // LIGHTBOX
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
-  
   document.querySelectorAll('.bike-img-wrap').forEach(wrap => {
     wrap.addEventListener('click', () => {
       const src = wrap.getAttribute('data-src');
-      lbImg.src = src;
-      lb.classList.add('active');
+      if(src) {
+        lbImg.src = src;
+        lb.classList.add('active');
+      }
     });
   });
-
-  function closeLightbox() {
-    lb.classList.remove('active');
-  }
+  function closeLightbox() { lb.classList.remove('active'); }
 </script>
 
 </body>
