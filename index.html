@@ -522,7 +522,7 @@
     .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
     .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
 
-    /* ========= FOOTER ULTRA 2.0 ========= */
+    /* ========= FOOTER ULTRA 2.0 (UPDATED LAYOUT) ========= */
     footer {
       background:
         radial-gradient(circle at top, rgba(0,113,227,0.18), transparent 55%),
@@ -543,160 +543,142 @@
       max-width: var(--max-w);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      gap: 32px;
-      padding: 24px 24px 20px;
+      /* Laptop > 1024px: 4 Columns (adjusted widths) */
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 30px; 
+      padding: 24px;
       border-radius: 24px;
-      background: linear-gradient(135deg,
-                  rgba(255,255,255,0.06),
-                  rgba(255,255,255,0.02));
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       border: 1px solid var(--border-soft);
       box-shadow: var(--shadow-soft);
       backdrop-filter: blur(18px);
     }
 
     :root[data-theme="light"] .footer-grid {
-      background: linear-gradient(135deg,
-                  rgba(255,255,255,0.96),
-                  rgba(245,245,247,0.96));
+      background: linear-gradient(135deg, rgba(255,255,255,0.96), rgba(245,245,247,0.96));
       box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     }
 
-    /* Layout responsive */
+    /* TABLET: 640px to 1024px */
     @media (max-width: 1024px) {
       .footer-grid {
-        grid-template-columns: 1.3fr 1fr 1fr;
+        /* Row 2: 3 equal columns for links */
+        grid-template-columns: 1fr 1fr 1fr; 
+        row-gap: 32px;
       }
+      /* Row 1: Brand takes full width */
       .col-brand {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        row-gap: 24px;
-      }
-      .col-brand {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
+        grid-column: 1 / -1; 
+        display: flex;
+        align-items: center;
         text-align: center;
       }
-
-      .footer-col,
-      .footer-links {
-        align-items: center;
+      .col-brand .footer-tagline {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
 
-    /* Cột & tiêu đề cột */
-    .footer-col {
-      display: flex;
-      flex-direction: column;
+    /* MOBILE: < 640px */
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr; /* 1 Column */
+        text-align: center;
+        gap: 40px;
+      }
+      .col-brand {
+        flex-direction: column;
+      }
+      .footer-col,
+      .footer-links {
+        align-items: center; /* Center items */
+      }
+      .footer-social {
+        justify-content: center;
+      }
     }
 
+    /* Column Styles */
+    .footer-col { display: flex; flex-direction: column; }
+    
     .footer-col h4 {
       font-size: 12px;
       color: var(--text-secondary);
       text-transform: uppercase;
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       letter-spacing: 0.12em;
     }
 
-    /* Tagline */
-    .footer-col.col-brand .footer-tagline {
+    .col-brand .footer-tagline {
       margin-top: 12px;
       font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.6;
     }
 
-    /* Link + icon */
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+    /* Links */
+    .footer-links { display: flex; flex-direction: column; gap: 8px; }
 
     .footer-links a {
       display: inline-flex;
       align-items: center;
       gap: 8px;
       color: var(--text);
-      font-size: 13px;
+      font-size: 14px;
       opacity: 0.9;
       white-space: nowrap;
-      padding: 4px 0;
+      transition: all 0.2s;
     }
+    .footer-links a:hover { opacity: 1; color: var(--accent); transform: translateX(2px); }
+    .footer-link-icon { font-size: 16px; }
 
-    .footer-links a:hover {
-      opacity: 1;
-      color: var(--accent);
-      transform: translateX(2px);
-    }
+    /* Contact Info */
+    .footer-contact { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .footer-contact p { margin: 6px 0; }
+    .footer-contact a { color: var(--accent); text-decoration: none; }
+    .footer-contact a:hover { text-decoration: underline; }
 
-    .footer-link-icon {
-      font-size: 16px;
-    }
-
-    /* Thông tin liên hệ + social */
-    .footer-contact {
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    .footer-contact p {
-      margin: 4px 0;
-    }
-
-    .footer-contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
-
+    /* SOCIAL ICONS BEAUTIFIED (Circle, No Text) */
     .footer-social {
-      margin-top: 10px;
+      margin-top: 16px;
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 12px;
     }
-
-    .social-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
+    
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
       border: 1px solid var(--border-soft);
-      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--text);
-      background: rgba(255,255,255,0.03);
+      font-size: 20px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    :root[data-theme="light"] .social-pill {
-      background: rgba(0,0,0,0.03);
+    :root[data-theme="light"] .social-btn {
+      background: rgba(0,0,0,0.04);
+      border-color: rgba(0,0,0,0.08);
     }
 
-    .social-pill:hover {
-      color: var(--accent);
-      border-color: var(--accent-soft);
+    .social-btn:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+      transform: scale(1.15);
+      box-shadow: 0 4px 12px rgba(0,113,227,0.4);
     }
 
-    /* Dòng copywrite cuối */
+    /* Bottom Copyright */
     .footer-bottom {
       max-width: var(--max-w);
-      margin: 18px auto 0;
-      padding-top: 16px;
+      margin: 24px auto 0;
+      padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
       display: flex;
       flex-wrap: wrap;
@@ -704,14 +686,11 @@
       align-items: center;
       color: var(--muted);
       font-size: 12px;
-      gap: 8px;
+      gap: 10px;
     }
-
-    @media (max-width: 600px) {
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
+    
+    @media (max-width: 640px) {
+      .footer-bottom { flex-direction: column; text-align: center; }
     }
 
     /* QUICK CALL FAB */
@@ -1126,7 +1105,7 @@
   <!-- FOOTER MỚI -->
   <footer>
     <div class="footer-grid">
-      <!-- Cột brand + tagline -->
+      <!-- Cột Brand (Dòng 1 trên tablet) -->
       <div class="footer-col col-brand">
         <div class="ultra-logo-pill" style="display:inline-flex;">
           <div class="logo-watch">NT</div>
@@ -1184,9 +1163,9 @@
         </a>
       </div>
 
-      <!-- Cột Khu vực & liên hệ -->
+      <!-- Cột Khu vực & Liên hệ -->
       <div class="footer-col">
-        <h4>Khu vực &amp; liên hệ</h4>
+        <h4>Khu vực &amp; Liên hệ</h4>
 
         <div class="footer-links" style="margin-bottom:10px;">
           <a href="hoankiem.html">
@@ -1206,7 +1185,6 @@
           </a>
         </div>
         
-        <!-- THÊM MỚI: tiêu đề thông tin liên hệ -->
         <h4 style="margin-top: 20px;">Thông tin liên hệ</h4>
 
         <div class="footer-contact">
@@ -1215,18 +1193,19 @@
           <p>📍 108 Nguyễn Văn Cừ, Bồ Đề, Long Biên, Hà Nội</p>
           <p>⏰ 9h – 21h hàng ngày</p>
 
+          <!-- Social Buttons (Icon Only, Circle) -->
           <div class="footer-social">
-            <a class="social-pill" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener">
-              <span>📘</span><span>Facebook</span>
+            <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener" aria-label="Facebook">
+              <span>📘</span>
             </a>
-            <a class="social-pill" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener">
-              <span>📸</span><span>Instagram</span>
+            <a class="social-btn" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener" aria-label="Instagram">
+              <span>📸</span>
             </a>
-            <a class="social-pill" href="https://www.pinterest.com/chothuexemayohanoi/" target="_blank" rel="noopener">
-              <span>📌</span><span>Pinterest</span>
+            <a class="social-btn" href="https://www.pinterest.com/chothuexemayohanoi/" target="_blank" rel="noopener" aria-label="Pinterest">
+              <span>📌</span>
             </a>
-            <a class="social-pill" href="https://rentbikehanoi.com" target="_blank" rel="noopener">
-              <span>🌐</span><span>Website</span>
+            <a class="social-btn" href="https://rentbikehanoi.com" target="_blank" rel="noopener" aria-label="Website">
+              <span>🌐</span>
             </a>
           </div>
         </div>
@@ -1268,7 +1247,6 @@
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   
-  // Check saved theme
   const savedTheme = localStorage.getItem('theme') || 'dark';
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
@@ -1307,13 +1285,11 @@
   closeBtn.addEventListener('click', closeSidebar);
   overlay.addEventListener('click', closeSidebar);
 
-  // --- SUBMENU DROPDOWN (ACCORDION) ---
+  // --- SUBMENU DROPDOWN ---
   function toggleSub(id) {
     const parent = document.getElementById(id);
     const sub = parent.querySelector('.nav-sub');
     const wasOpen = sub.classList.contains('open');
-    
-    // Close others if needed (Optional: currently independent)
     
     if (wasOpen) {
       sub.classList.remove('open');
@@ -1361,7 +1337,6 @@
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
   
-  // Logic này tự động nhận diện tất cả .bike-img-wrap kể cả các xe mới thêm
   document.querySelectorAll('.bike-img-wrap').forEach(wrap => {
     wrap.addEventListener('click', () => {
       const src = wrap.getAttribute('data-src');
