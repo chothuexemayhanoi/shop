@@ -1399,6 +1399,7 @@
 
   // 3️⃣ SCRIPT FADE IN ULTRA TOÀN TRANG
   document.addEventListener('DOMContentLoaded', () => {
+    // 1. Animation
     const blocks = document.querySelectorAll('section, footer');
     blocks.forEach((el, i) => {
       el.classList.add('section-fade');
@@ -1406,6 +1407,11 @@
         el.classList.add('show');
       }, 200 + i * 120); // delay nhẹ cho từng khối
     });
+
+    // 2. Gọi luôn 1 lần cho chắc kèo (Sync giá tiền ban đầu)
+    if (bikeType && dayCount) {
+      updatePrice();
+    }
   });
 </script>
 
