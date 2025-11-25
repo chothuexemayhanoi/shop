@@ -111,6 +111,19 @@
       flex-direction: column;
     }
 
+    /* ========= 1️⃣ FADE IN ULTRA CSS ========= */
+    .section-fade {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      will-change: opacity, transform;
+    }
+
+    .section-fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ========= HEADER ULTRA (GLASS) ========= */
     .site-header {
       position: fixed;
@@ -715,6 +728,15 @@
     /* QUICK CALL FAB */
     .fab-container { position: fixed; bottom: 20px; right: 20px; z-index: 90; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
     
+    /* 2️⃣ ANIMATION KEYFRAMES CHO NÚT ⚡ */
+    @keyframes fabWiggle {
+      0%, 100% { transform: translateY(0) scale(1); }
+      20% { transform: translateY(-2px) scale(1.06); }
+      40% { transform: translateY(2px) scale(0.98); }
+      60% { transform: translateY(-1px) scale(1.03); }
+      80% { transform: translateY(1px) scale(0.99); }
+    }
+
     .fab-main {
       width: 56px; height: 56px;
       border-radius: 50%;
@@ -727,8 +749,15 @@
       display: grid;
       place-items: center;
       transition: transform 0.2s;
+      /* Thêm animation RUNG RUNG */
+      animation: fabWiggle 1.6s ease-in-out infinite;
     }
-    .fab-main:hover { transform: scale(1.1); }
+    
+    /* Khi hover thì ngừng rung để phóng to */
+    .fab-main:hover {
+      animation: none;
+      transform: scale(1.1);
+    }
 
     .fab-menu { display: flex; flex-direction: column; gap: 10px; opacity: 0; pointer-events: none; transform: translateY(10px); transition: all 0.3s; }
     .fab-container.open .fab-menu { opacity: 1; pointer-events: auto; transform: translateY(0); }
@@ -1367,6 +1396,17 @@
   function closeLightbox() {
     lb.classList.remove('active');
   }
+
+  // 3️⃣ SCRIPT FADE IN ULTRA TOÀN TRANG
+  document.addEventListener('DOMContentLoaded', () => {
+    const blocks = document.querySelectorAll('section, footer');
+    blocks.forEach((el, i) => {
+      el.classList.add('section-fade');
+      setTimeout(() => {
+        el.classList.add('show');
+      }, 200 + i * 120); // delay nhẹ cho từng khối
+    });
+  });
 </script>
 
 </body>
