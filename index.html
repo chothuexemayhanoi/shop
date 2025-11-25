@@ -208,7 +208,6 @@
     :root[data-theme="light"] .status-chip { background: rgba(0,0,0,0.05); }
     .status-dot { width: 6px; height: 6px; background: #30d158; border-radius: 50%; box-shadow: 0 0 8px #30d158; }
 
-    /* --- [SỬA 1b] MOBILE CSS: KHÔNG ẨN CHỮ, CHỈ THU NHỎ --- */
     @media (max-width: 768px) {
       .status-chip {
         padding: 4px 8px;
@@ -523,7 +522,7 @@
     .testi-text { font-size: 18px; font-style: italic; margin-bottom: 10px; color: var(--text); }
     .testi-author { font-size: 14px; color: var(--text-secondary); font-weight: 600; }
 
-    /* ========= FOOTER ULTRA (MỚI) ========= */
+    /* ========= FOOTER ULTRA (MỚI - ĐÃ SỬA) ========= */
     footer {
       background: var(--bg-elevated);
       border-top: 1px solid var(--border-soft);
@@ -542,27 +541,54 @@
     @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } .col-brand { grid-column: 1 / -1; } }
     @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
 
-    .footer-col h4 { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 16px; letter-spacing: 1px; }
-
-    /* --- [SỬA 2a] CSS CHO FOOTER MỚI --- */
-    .footer-col.col-brand .footer-tagline {
-      margin-top: 10px;
-      font-size: 14px;
-      color: var(--text-secondary);
-      line-height: 1.6;
+    /* --- [BẮT ĐẦU PHẦN SỬA CSS FOOTER] --- */
+    .footer-col {
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Tiêu đề cột */
+    .footer-col h4 {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    /* Nhóm link */
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* Link có icon */
     .footer-links a {
-      display: block;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       color: var(--text);
-      font-size: 14px;
-      margin-bottom: 8px;
-      opacity: 0.85;
+      font-size: 13px;
+      opacity: 0.9;
+      white-space: nowrap;
     }
 
     .footer-links a:hover {
       opacity: 1;
       color: var(--accent);
+    }
+
+    .footer-link-icon {
+      font-size: 14px;
+    }
+
+    /* Các phần giữ nguyên logic cũ nhưng có thể bị ảnh hưởng */
+    .footer-col.col-brand .footer-tagline {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
     }
 
     .footer-contact {
@@ -571,18 +597,9 @@
       line-height: 1.6;
     }
 
-    .footer-contact p {
-      margin: 4px 0;
-    }
-
-    .footer-contact a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .footer-contact a:hover {
-      text-decoration: underline;
-    }
+    .footer-contact p { margin: 4px 0; }
+    .footer-contact a { color: var(--accent); text-decoration: none; }
+    .footer-contact a:hover { text-decoration: underline; }
 
     .footer-social {
       margin-top: 10px;
@@ -602,16 +619,36 @@
       color: var(--text);
       background: rgba(255,255,255,0.03);
     }
+    :root[data-theme="light"] .social-pill { background: rgba(0,0,0,0.03); }
+    .social-pill:hover { color: var(--accent); border-color: var(--accent-soft); }
 
-    :root[data-theme="light"] .social-pill {
-      background: rgba(0,0,0,0.03);
-    }
+    /* Mobile: căn giữa footer */
+    @media (max-width: 600px) {
+      .footer-grid {
+        text-align: center;
+      }
 
-    .social-pill:hover {
-      color: var(--accent);
-      border-color: var(--accent-soft);
+      .footer-col {
+        align-items: center;
+      }
+
+      .footer-links {
+        align-items: center;
+      }
+
+      .footer-links a {
+        font-size: 12px;
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        text-align: center;
+      }
     }
-    /* ------------------------------------ */
+    /* --- [KẾT THÚC PHẦN SỬA CSS FOOTER] --- */
 
     .footer-bottom {
       max-width: var(--max-w);
@@ -762,7 +799,6 @@
     </div>
 
     <div class="header-right">
-      <!-- [SỬA 1a] HEADER HTML -->
       <div class="status-chip">
         <span class="status-dot"></span>
         <span>9h – 21h</span>
@@ -1035,7 +1071,7 @@
     </section>
   </main>
 
-  <!-- [SỬA 2b] FOOTER MỚI -->
+  <!-- [ĐÃ SỬA] FOOTER MỚI -->
   <footer>
     <div class="footer-grid">
       <!-- Cột brand + tagline -->
@@ -1056,33 +1092,66 @@
       <!-- Cột Trang chính -->
       <div class="footer-col footer-links">
         <h4>Trang chính</h4>
-        <a href="index.html">Trang chủ</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="faq.html">FAQ</a>
-        <a href="dieukhoan.html">Điều khoản</a>
-        <a href="chinhsach.html">Chính sách</a>
-        <a href="lienhe.html">Liên hệ</a>
+        <a href="index.html">
+          <span class="footer-link-icon">🏠</span><span>Trang chủ</span>
+        </a>
+        <a href="gioithieu.html">
+          <span class="footer-link-icon">👋</span><span>Giới thiệu</span>
+        </a>
+        <a href="faq.html">
+          <span class="footer-link-icon">❓</span><span>FAQ</span>
+        </a>
+        <a href="dieukhoan.html">
+          <span class="footer-link-icon">📄</span><span>Điều khoản</span>
+        </a>
+        <a href="chinhsach.html">
+          <span class="footer-link-icon">🛡️</span><span>Chính sách</span>
+        </a>
+        <a href="lienhe.html">
+          <span class="footer-link-icon">📞</span><span>Liên hệ</span>
+        </a>
       </div>
 
       <!-- Cột Dịch vụ -->
       <div class="footer-col footer-links">
         <h4>Dịch vụ</h4>
-        <a href="banggia.html">Bảng giá</a>
-        <a href="thutuc.html">Thủ tục</a>
-        <a href="huongdan.html">Hướng dẫn</a>
-        <a href="loaixe.html">Loại xe</a>
-        <a href="kinhnghiem.html">Kinh nghiệm</a>
+        <a href="banggia.html">
+          <span class="footer-link-icon">💰</span><span>Bảng giá</span>
+        </a>
+        <a href="thutuc.html">
+          <span class="footer-link-icon">📑</span><span>Thủ tục</span>
+        </a>
+        <a href="huongdan.html">
+          <span class="footer-link-icon">📘</span><span>Hướng dẫn</span>
+        </a>
+        <a href="loaixe.html">
+          <span class="footer-link-icon">🏍️</span><span>Loại xe</span>
+        </a>
+        <a href="kinhnghiem.html">
+          <span class="footer-link-icon">💡</span><span>Kinh nghiệm</span>
+        </a>
       </div>
 
-      <!-- Cột Khu vực + Liên hệ -->
+      <!-- Cột Khu vực & liên hệ -->
       <div class="footer-col">
         <h4>Khu vực &amp; liên hệ</h4>
+
         <div class="footer-links" style="margin-bottom:10px;">
-          <a href="hoankiem.html">Hoàn Kiếm</a>
-          <a href="tayho.html">Tây Hồ</a>
-          <a href="badinh.html">Ba Đình</a>
-          <a href="longbien.html">Long Biên</a>
-          <a href="gialam.html">Gia Lâm</a>
+          <a href="hoankiem.html">
+            <span class="footer-link-icon">📍</span><span>Hoàn Kiếm</span>
+          </a>
+          <a href="tayho.html">
+            <span class="footer-link-icon">📍</span><span>Tây Hồ</span>
+          </a>
+          <a href="badinh.html">
+            <span class="footer-link-icon">📍</span><span>Ba Đình</span>
+          </a>
+          <a href="longbien.html">
+            <span class="footer-link-icon">📍</span><span>Long Biên</span>
+          </a>
+          <a href="gialam.html">
+            <span class="footer-link-icon">📍</span><span>Gia Lâm</span>
+          </a>
         </div>
 
         <div class="footer-contact">
