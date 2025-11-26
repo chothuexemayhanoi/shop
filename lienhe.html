@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- =========================================
-PRO ULTRA SEO MODE 2025 - PAGE: LIÊN HỆ
+PRO ULTRA SEO MODE 2025 - PAGE: LIÊN HỆ (ĐÃ SỬA LỖI)
 ========================================= -->
 <title>Liên Hệ Thuê Xe Máy Hà Nội | Thu Hà Gia Lâm 0334.699.969</title>
 <!-- Core Meta Tags -->
@@ -15,8 +15,8 @@ PRO ULTRA SEO MODE 2025 - PAGE: LIÊN HỆ
 <!-- Local SEO / Geo -->
 <meta name="geo.region" content="VN-HN" />
 <meta name="geo.placename" content="Hà Nội" />
-<meta name="geo.position" content="21.038133;105.866952" />
-<meta name="ICBM" content="21.038133, 105.866952" />
+<meta name="geo.position" content="21.036773;105.864763" />
+<meta name="ICBM" content="21.036773, 105.864763" />
 <!-- Mobile / Browser UI -->
 <meta name="theme-color" content="#000000" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -230,11 +230,10 @@ p:last-child { margin-bottom: 0; }
 .nav-sub-link { display: block; padding: 12px 16px 12px 52px; font-size: 14px; color: var(--text-primary); border-bottom: 1px solid var(--border); }
 .nav-sub-link:hover { color: var(--accent); }
 
-/* Hero - OPTIMIZED FOR CENTERED LAYOUT */
+/* Hero */
 .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 60px; background: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.15) 0%, transparent 70%); min-height: 80vh; display: flex; align-items: center; }
 @media (max-width: 768px) { .hero { padding-top: calc(var(--header-height) + 24px); padding-bottom: 40px; min-height: auto; } }
 
-/* Changed Grid to Flex Column for Centered Layout */
 .hero-grid { 
   display: flex; 
   flex-direction: column; 
@@ -259,7 +258,6 @@ p:last-child { margin-bottom: 0; }
 .btn-glass { background: rgba(125,125,125,0.1); color: var(--text-primary); border: 1px solid var(--border); }
 .btn-glass:hover { background: rgba(125,125,125,0.2); }
 
-/* Updated Card for Centered Layout */
 .calc-card {
   width: 100%;
   max-width: 450px;
@@ -270,7 +268,7 @@ p:last-child { margin-bottom: 0; }
   box-shadow: var(--shadow-md);
 }
 
-/* Contact Specifics - Optimized for 3 Devices */
+/* Contact Specifics */
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
@@ -319,7 +317,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 .footer-bottom { border-top: 1px solid var(--border); padding-top: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px; font-size: 13px; color: var(--text-tertiary); }
 .footer-toggle-icon { display: none; font-size: 18px; transition: transform 0.3s; }
 
-/* Responsive Footer - iPad & Mobile */
+/* Responsive Footer */
 @media (max-width: 1024px) { 
   .footer-grid { grid-template-columns: repeat(3, 1fr); gap: 40px 24px; } 
   .col-brand { grid-column: 1 / -1; margin-bottom: 20px; align-items: center; text-align: center; } 
@@ -363,15 +361,17 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
   </div>
   <div class="sidebar-content">
+    <!-- FIX: Dùng thẻ <a> thay vì <div> onclick để tối ưu SEO -->
     <nav class="nav-group">
-      <div class="nav-item" onclick="window.location.href='index.html'">
+      <a href="index.html" class="nav-item">
         <span class="nav-icon">🏠</span> Trang chủ
-      </div>
-      <div class="nav-item" onclick="window.location.href='gioithieu.html'">
+      </a>
+      <a href="gioithieu.html" class="nav-item">
         <span class="nav-icon">👋</span> Giới thiệu
-      </div>
+      </a>
     </nav>
     <nav class="nav-group">
+      <!-- Dropdown giữ nguyên div nhưng xử lý bên trong -->
       <div class="nav-has-sub" id="serviceMenu">
         <div class="nav-item" onclick="toggleSub('serviceMenu')">
           <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
@@ -451,7 +451,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
   <section class="hero" id="hero-contact">
     <div class="container">
       <div class="hero-grid">
-        <!-- Text Content - OPTIMIZED: Removed 'text-align: left' inline style -->
+        <!-- Text Content -->
         <div>
           <div class="hero-badges">
             <span class="badge">📍 108 Nguyễn Văn Cừ</span>
@@ -466,7 +466,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           </div>
         </div>
 
-        <!-- Contact Visual/Image Placeholder - Centered below text -->
+        <!-- Visual/Image Placeholder -->
         <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:300px; text-align:center;">
            <div style="font-size:60px; margin-bottom:20px;">🛵 💨</div>
            <h3 style="margin-bottom:10px;">Bạn cần xe gấp?</h3>
@@ -513,7 +513,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </div>
   </section>
 
-  <!-- ADDED FORM CONTACT SECTION -->
+  <!-- CONTACT FORM -->
   <section class="section" id="form-lienhe" style="background: var(--bg-surface-2);">
     <div class="container">
       <div class="section-head">
@@ -557,11 +557,10 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </div>
   </section>
 
-  <!-- STORY / CONTENT -->
+  <!-- CONTENT -->
   <section class="section" id="loi-nhan">
     <div class="container">
       <div class="card prose">
-        <!-- MODIFIED: Removed 'Motorbike Rental' as requested -->
         <h2 style="margin-bottom: 24px;">Kết nối với Thu Hà</h2>
         <p>
           Cảm ơn bạn đã quan tâm đến dịch vụ <strong>cho thuê xe máy Thu Hà</strong>. Chúng tôi hiểu rằng khi đặt chân đến một vùng đất mới như Hà Nội, việc tìm kiếm một phương tiện di chuyển tin cậy là vô cùng quan trọng. 
@@ -585,7 +584,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </div>
   </section>
 
-  <!-- MAP SECTION -->
+  <!-- MAP SECTION (ĐÃ SỬA LỖI) -->
   <section class="section" id="bando">
     <div class="container">
       <div class="section-head">
@@ -593,17 +592,20 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         <p class="section-desc">108 Nguyễn Văn Cừ, Long Biên, Hà Nội (Gần cầu Chương Dương & BX Gia Lâm)</p>
       </div>
       <div class="card" style="padding:10px;">
+        <!-- FIX: Đã thay thế iframe sai bằng iframe chuẩn 108 Nguyễn Văn Cừ -->
         <iframe 
           class="map-frame"
           title="Bản đồ Cho Thuê Xe Máy Thu Hà 108 Nguyễn Văn Cừ Hà Nội"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.924278783457!2d105.8665423147614!3d21.03821698599321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7b3a4e9b9%3A0x6b16550f22495393!2zMTA4IE5ndXnhu4VuIFbAQ24gQ-G7qywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1677123456789!5m2!1svi!2s" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.897719782552!2d105.86476331533226!3d21.036772992878724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd77983656d%3A0xa5e40a027357366!2zMTA4IE5ndXnhu4VuIFbEg24gQ-G7qywgTmfhu41jIEzDoJksIExvbmcgQmnDqm4sIEjDoCBO4buZaSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
           allowfullscreen="" 
-          loading="lazy">
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <div style="margin-top:20px; text-align:center;">
            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">
              <strong>Hướng dẫn đi lại:</strong> Cửa hàng nằm ngay mặt đường Nguyễn Văn Cừ. Nếu đi xe buýt, bạn có thể bắt các tuyến 01, 03, 11, 22, 34 dừng ngay gần điểm 108.
            </p>
+           <!-- FIX: Link map chuẩn -->
            <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" class="btn btn-glass" style="font-size:14px;">🗺️ Mở Google Maps</a>
         </div>
       </div>
@@ -612,7 +614,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 
 </main>
 
-<!-- FOOTER PRO V2 - ADDED MISSING LINKS -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -636,6 +638,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
           </a>
+          <!-- FIX: Link map chuẩn -->
           <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" class="social-link" aria-label="Google Maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           </a>
@@ -655,7 +658,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         </ul>
       </div>
 
-      <!-- Column 3: Services (ADDED MISSING LINKS) -->
+      <!-- Column 3: Services -->
       <div class="footer-col" onclick="toggleFooterCol(this)">
         <h4 class="footer-title">Dịch vụ <span class="footer-toggle-icon">▼</span></h4>
         <ul class="footer-links">
@@ -664,7 +667,6 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <li><a href="huongdan.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Hướng dẫn</a></li>
           <li><a href="loaixe.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Các loại xe</a></li>
           <li><a href="kinhnghiem.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Kinh nghiệm</a></li>
-          <!-- Added Links -->
           <li><a href="ngay.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Thuê theo ngày</a></li>
           <li><a href="tuan.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Thuê theo tuần</a></li>
           <li><a href="thang.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Thuê theo tháng</a></li>
@@ -719,6 +721,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     <a href="tel:0334699969" class="fab-label"><span>📞</span> Gọi điện</a>
     <a href="https://zalo.me/0334699969" class="fab-label"><span>💬</span> Chat Zalo</a>
     <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label"><span>🟢</span> WhatsApp</a>
+    <!-- FIX: Link map chuẩn -->
     <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" rel="noopener" class="fab-label"><span>📍</span> Chỉ đường</a>
     <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><span>⬆️</span> Lên đầu trang</button>
   </div>
