@@ -365,15 +365,15 @@
     .social-btn:hover { background: var(--accent); color: white; transform: translateY(-3px); }
     .copyright { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-tertiary); font-size: 12px; }
 
-    /* --- Floating (UPDATED) --- */
+    /* --- Floating (UPDATED: MOVED TO LEFT) --- */
     .fab-container {
       position: fixed;
       bottom: 24px;
-      right: 24px;
+      left: 24px; /* CHANGED FROM RIGHT TO LEFT */
       z-index: 99;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: flex-start; /* CHANGED FROM FLEX-END TO FLEX-START */
       gap: 12px;
     }
 
@@ -1156,7 +1156,7 @@
     </div>
   </footer>
 
-  <!-- QUICK ACTION FAB (UPDATED: Added WhatsApp + Back to Top) -->
+  <!-- QUICK ACTION FAB (UPDATED: LEFT SIDE) -->
   <div class="fab-container" id="quickFab">
     <div class="fab-menu">
       <a href="tel:0334699969" class="fab-label">
