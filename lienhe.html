@@ -230,24 +230,45 @@ p:last-child { margin-bottom: 0; }
 .nav-sub-link { display: block; padding: 12px 16px 12px 52px; font-size: 14px; color: var(--text-primary); border-bottom: 1px solid var(--border); }
 .nav-sub-link:hover { color: var(--accent); }
 
-/* Hero */
+/* Hero - OPTIMIZED FOR CENTERED LAYOUT */
 .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 60px; background: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.15) 0%, transparent 70%); min-height: 80vh; display: flex; align-items: center; }
 @media (max-width: 768px) { .hero { padding-top: calc(var(--header-height) + 24px); padding-bottom: 40px; min-height: auto; } }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero-actions { justify-content: center; } .hero-badges { justify-content: center; } }
-.hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+
+/* Changed Grid to Flex Column for Centered Layout */
+.hero-grid { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
+  gap: 40px; 
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; justify-content: center; }
 .badge { font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 4px 10px; border-radius: var(--radius-full); }
 .hero-title { font-size: clamp(32px, 6vw, 56px); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.02em; }
 .text-gradient { background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-desc { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; max-width: 500px; line-height: 1.6; }
-@media (max-width: 900px) { .hero-desc { margin-inline: auto; } }
-.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-desc { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; max-width: 600px; line-height: 1.6; margin-left: auto; margin-right: auto; }
+
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .btn:active { transform: scale(0.98); }
 .btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
 .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
 .btn-glass { background: rgba(125,125,125,0.1); color: var(--text-primary); border: 1px solid var(--border); }
 .btn-glass:hover { background: rgba(125,125,125,0.2); }
+
+/* Updated Card for Centered Layout */
+.calc-card {
+  width: 100%;
+  max-width: 450px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: var(--shadow-md);
+}
 
 /* Contact Specifics - Optimized for 3 Devices */
 .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
@@ -430,8 +451,8 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
   <section class="hero" id="hero-contact">
     <div class="container">
       <div class="hero-grid">
-        <!-- Text Content -->
-        <div style="text-align: left;">
+        <!-- Text Content - OPTIMIZED: Removed 'text-align: left' inline style -->
+        <div>
           <div class="hero-badges">
             <span class="badge">📍 108 Nguyễn Văn Cừ</span>
             <span class="badge">📞 Hỗ trợ 24/7</span>
@@ -445,7 +466,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           </div>
         </div>
 
-        <!-- Contact Visual/Image Placeholder -->
+        <!-- Contact Visual/Image Placeholder - Centered below text -->
         <div class="calc-card" style="display:flex; flex-direction:column; justify-content:center; align-items:center; min-height:300px; text-align:center;">
            <div style="font-size:60px; margin-bottom:20px;">🛵 💨</div>
            <h3 style="margin-bottom:10px;">Bạn cần xe gấp?</h3>
@@ -540,7 +561,8 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
   <section class="section" id="loi-nhan">
     <div class="container">
       <div class="card prose">
-        <h2 style="margin-bottom: 24px;">Kết nối với Thu Hà Motorbike Rental</h2>
+        <!-- MODIFIED: Removed 'Motorbike Rental' as requested -->
+        <h2 style="margin-bottom: 24px;">Kết nối với Thu Hà</h2>
         <p>
           Cảm ơn bạn đã quan tâm đến dịch vụ <strong>cho thuê xe máy Thu Hà</strong>. Chúng tôi hiểu rằng khi đặt chân đến một vùng đất mới như Hà Nội, việc tìm kiếm một phương tiện di chuyển tin cậy là vô cùng quan trọng. 
         </p>
