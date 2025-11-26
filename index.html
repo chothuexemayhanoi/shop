@@ -190,69 +190,27 @@
 
     .container { width: 100%; max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
 
-    /* --- OPTIMIZED WHITESPACE (PADDINGS) --- */
-    /* Desktop mặc định 60px cho thoáng */
+    /* --- SECTION SPACING --- */
     .section { 
       padding: 60px 0; 
     }
     .section-head { margin-bottom: 40px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
     
-    /* Mobile thu gọn padding còn 32px để đỡ trống */
     @media (max-width: 768px) {
-      .section {
-        padding: 32px 0;
-      }
-      .section-head {
-        margin-bottom: 24px;
-      }
+      .section { padding: 32px 0; }
+      .section-head { margin-bottom: 24px; }
     }
 
     .section-title { font-size: clamp(24px, 4vw, 32px); margin-bottom: 10px; }
     .section-desc { color: var(--text-secondary); font-size: 16px; }
-
-    /* --- TYPOGRAPHY BEAUTIFICATION --- */
-    .section-text-max {
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
+    .section-text-max { max-width: 720px; margin: 0 auto 24px; text-align: center; font-size: 15px; line-height: 1.7; color: var(--text-secondary); }
     
-    .prose {
-      max-width: 780px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .prose p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text-secondary);
-      margin-bottom: 20px;
-    }
-    .prose ul, .prose ol {
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
-    }
-    .prose li { margin-bottom: 10px; }
+    .prose { max-width: 780px; margin: 0 auto; }
+    .prose p, .prose ul, .prose ol { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 20px; }
     .prose strong { color: var(--text-primary); font-weight: 600; }
-    .prose a { color: var(--accent); font-weight: 500; text-decoration: none; }
+    .prose a { color: var(--accent); font-weight: 500; }
     .prose a:hover { text-decoration: underline; }
-
-    .prose-note {
-      background: var(--bg-surface-2);
-      padding: 16px 20px;
-      border-radius: 12px;
-      font-size: 14px;
-      color: var(--text-tertiary);
-      border-left: 3px solid var(--accent);
-      margin-top: 24px;
-    }
+    .prose-note { background: var(--bg-surface-2); padding: 16px 20px; border-radius: 12px; font-size: 14px; color: var(--text-tertiary); border-left: 3px solid var(--accent); margin-top: 24px; }
 
     .section-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); will-change: opacity, transform; }
     .section-fade.show { opacity: 1; transform: translateY(0); }
@@ -301,10 +259,7 @@
 
     /* Hero */
     .hero { padding-top: calc(var(--header-height) + 40px); padding-bottom: 60px; background: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.15) 0%, transparent 70%); min-height: 80vh; display: flex; align-items: center; }
-    @media (max-width: 768px) {
-      /* Mobile Hero Padding Optimization */
-      .hero { padding-top: calc(var(--header-height) + 24px); padding-bottom: 40px; min-height: auto; }
-    }
+    @media (max-width: 768px) { .hero { padding-top: calc(var(--header-height) + 24px); padding-bottom: 40px; min-height: auto; } }
     .hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
     @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } .hero-actions { justify-content: center; } .hero-badges { justify-content: center; } }
     .hero-badges { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
@@ -387,23 +342,129 @@
 
     .map-frame { width: 100%; height: 400px; border: 0; border-radius: 16px; overflow: hidden; background: var(--bg-surface-2); }
 
-    /* Footer */
-    footer { margin-top: 80px; padding: 60px 0 30px; background: var(--bg-surface); border-top: 1px solid var(--border); font-size: 14px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; margin-bottom: 40px; }
-    @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; } .col-brand { grid-column: 1 / -1; text-align: center; } }
-    @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; text-align: center; } }
-    .col-title { font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-secondary); margin-bottom: 20px; letter-spacing: 0.05em; }
-    .footer-links { display: flex; flex-direction: column; gap: 12px; }
-    .footer-links a { color: var(--text-tertiary); display: inline-flex; align-items: center; gap: 8px; }
-    .footer-links a:hover { color: var(--accent); }
-    @media (max-width: 600px) { .footer-links a { justify-content: center; } }
-    .brand-desc { font-size: 14px; color: var(--text-secondary); margin-top: 16px; line-height: 1.6; max-width: 300px; }
-    @media (max-width: 1024px) { .brand-desc { margin: 16px auto 0; } }
-    .social-row { display: flex; gap: 12px; margin-top: 20px; }
-    @media (max-width: 600px) { .social-row { justify-content: center; } }
-    .social-btn { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-surface-2); display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
-    .social-btn:hover { background: var(--accent); color: white; transform: translateY(-3px); }
-    .copyright { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-tertiary); font-size: 12px; }
+    /* =========================================
+       FOOTER OPTIMIZED (Apple Style Mega Menu)
+       ========================================= */
+    footer {
+      margin-top: 80px;
+      padding: 60px 0 30px;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr; /* 5 columns for desktop */
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .col-title {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      transition: color 0.2s, transform 0.2s;
+      display: block;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+      transform: translateX(2px);
+    }
+
+    /* Brand Column */
+    .brand-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 12px;
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg-surface-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      transition: all 0.3s;
+      border: 1px solid var(--border);
+    }
+
+    .social-btn:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .copyright {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* Responsive Footer */
+    
+    /* Tablet (1024px and down) */
+    @media (max-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 Columns */
+        gap: 30px;
+      }
+      .col-brand {
+        grid-column: 1 / -1; /* Brand spans full width on top */
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .brand-desc { margin: 12px auto; }
+      .social-row { justify-content: center; }
+    }
+
+    /* Mobile (600px and down) */
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr; /* 2 Columns for links to save vertical space */
+        gap: 30px 16px;
+      }
+      /* Brand and Socials span full width */
+      .col-brand, .col-socials {
+        grid-column: 1 / -1;
+        text-align: center;
+      }
+      /* Ensure social buttons are centered on mobile */
+      .social-row { justify-content: center; }
+      
+      .footer { padding: 40px 0 20px; }
+    }
 
     /* --- Floating (UPDATED: LEFT) --- */
     .fab-container {
@@ -1111,72 +1172,84 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <!-- Brand -->
+        
+        <!-- Brand / Contact Primary -->
         <div class="footer-col col-brand">
-          <div class="logo-pill" style="display:inline-flex;">
+          <a href="index.html" class="logo-pill" style="display: inline-flex; margin-bottom: 12px;">
             <div class="logo-icon">TH</div>
             <div class="logo-text">
               <strong>Thu Hà</strong>
               <small>Motorbike Rental</small>
             </div>
+          </a>
+          <div class="brand-desc">
+            Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín tại Hà Nội. <br>
+            Hỗ trợ 24/7 - Giao xe tận nơi.
           </div>
-          <p class="brand-desc">
-            Chuyên cho thuê xe máy du lịch &amp; công tác tại Hà Nội (Gia Lâm, Long Biên, Hoàn Kiếm). 
-            Uy tín – Chất lượng – Xe mới.
-          </p>
-        </div>
-
-        <!-- Links 1 -->
-        <div class="footer-col">
-          <h4 class="col-title">Trang chính</h4>
-          <div class="footer-links">
-            <a href="index.html"><span>🏠</span> Trang chủ</a>
-            <a href="gioithieu.html"><span>👋</span> Giới thiệu</a>
-            <a href="faq.html"><span>❓</span> FAQ</a>
-            <a href="dieukhoan.html"><span>📄</span> Điều khoản</a>
-            <a href="chinhsach.html"><span>🛡️</span> Chính sách</a>
-            <a href="lienhe.html"><span>📞</span> Liên hệ</a>
-          </div>
-        </div>
-
-        <!-- Links 2 -->
-        <div class="footer-col">
-          <h4 class="col-title">Dịch vụ</h4>
-          <div class="footer-links">
-            <a href="banggia.html"><span>💰</span> Bảng giá</a>
-            <a href="thutuc.html"><span>📑</span> Thủ tục</a>
-            <a href="huongdan.html"><span>📘</span> Hướng dẫn</a>
-            <a href="loaixe.html"><span>🏍️</span> Loại xe</a>
-            <a href="kinhnghiem.html"><span>💡</span> Kinh nghiệm</a>
-          </div>
-        </div>
-
-        <!-- Contact & Area -->
-        <div class="footer-col">
-          <h4 class="col-title">Khu vực &amp; Liên hệ</h4>
-          <div class="footer-links" style="margin-bottom:20px;">
-            <a href="gialam.html"><span>📍</span> Gia Lâm</a>
-            <a href="longbien.html"><span>📍</span> Long Biên</a>
-            <a href="hoankiem.html"><span>📍</span> Hoàn Kiếm</a>
-          </div>
-          
-          <div style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
-             📞 <a href="tel:0334699969" style="color:var(--text-primary);">0334 699 969</a><br>
-             ✉️ nguyenthuha203@gmail.com<br>
-             📍 <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" style="color:inherit; text-decoration:underline;">108 Nguyễn Văn Cừ, Long Biên, Hà Nội</a>
-          </div>
-
           <div class="social-row">
-            <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
-            <a class="social-btn" href="https://www.instagram.com/thuexemayhanoivanchinh/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
-            <a class="social-btn" href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" rel="noopener" aria-label="Google Maps">📍</a>
+            <a class="social-btn" href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" aria-label="Facebook">📘</a>
+            <a class="social-btn" href="https://zalo.me/0334699969" target="_blank" aria-label="Zalo">💬</a>
+            <a class="social-btn" href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" aria-label="Maps">📍</a>
           </div>
         </div>
+
+        <!-- Col 2: Main & Intro -->
+        <div class="footer-col">
+          <div class="col-title">Về Thu Hà</div>
+          <div class="footer-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="gioithieu.html">Giới thiệu</a>
+            <a href="faq.html">Câu hỏi (FAQ)</a>
+            <a href="lienhe.html">Liên hệ</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Services & Guides -->
+        <div class="footer-col">
+          <div class="col-title">Dịch vụ & Hướng dẫn</div>
+          <div class="footer-links">
+            <a href="banggia.html">Bảng giá</a>
+            <a href="thutuc.html">Thủ tục</a>
+            <a href="loaixe.html">Các loại xe</a>
+            <a href="kinhnghiem.html">Kinh nghiệm</a>
+            <a href="ngay.html">Thuê theo ngày</a>
+            <a href="tuan.html">Thuê theo tuần</a>
+            <a href="thang.html">Thuê theo tháng</a>
+          </div>
+        </div>
+
+        <!-- Col 4: Locations -->
+        <div class="footer-col">
+          <div class="col-title">Khu vực phục vụ</div>
+          <div class="footer-links">
+            <a href="gialam.html">Gia Lâm</a>
+            <a href="longbien.html">Long Biên</a>
+            <a href="phoco.html">Phố Cổ</a>
+            <a href="hoankiem.html">Hoàn Kiếm</a>
+            <a href="badinh.html">Ba Đình</a>
+            <a href="tayho.html">Tây Hồ</a>
+          </div>
+        </div>
+
+        <!-- Col 5: Support -->
+        <div class="footer-col col-socials">
+          <div class="col-title">Hỗ trợ khách hàng</div>
+          <div class="footer-links">
+            <a href="dieukhoan.html">Điều khoản</a>
+            <a href="chinhsach.html">Chính sách</a>
+            <a href="huongdan.html">Hướng dẫn đặt xe</a>
+            <div style="margin-top: 10px; font-size: 13px; color: var(--text-tertiary);">
+              Hotline: <a href="tel:0334699969" style="color:var(--accent); display:inline;">0334 699 969</a>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="copyright">
-        © 2025 Thu Ha.<br>
-        Cho thuê xe máy 50cc uy tín tại Hà Nội.
+        <span>© 2025 Thu Hà Motorbike Rental.</span>
+        <span style="display:none; @media(min-width:600px){display:inline;}">•</span>
+        <span>108 Nguyễn Văn Cừ, Long Biên, Hà Nội</span>
       </div>
     </div>
   </footer>
