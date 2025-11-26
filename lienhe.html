@@ -407,10 +407,14 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 
         <!-- Contact Info Card (Thay thế Calculator để giữ layout hero) -->
         <div class="calc-card contact-hero-card">
-          <div style="display:flex; justify-content:space-between; margin-bottom:10px;">
-             <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Thông tin kết nối</span>
-             <span>🌐</span>
+          <!-- MODIFIED: THÔNG TIN KẾT NỐI TRỎ VỀ INDEX -->
+          <div style="display:flex; justify-content:space-between; margin-bottom:10px; align-items:center;">
+             <a href="index.html" title="Quay lại trang chủ" style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px; text-decoration:none; display:flex; align-items:center; gap:6px;">
+               <span style="font-size:14px;">&larr;</span> Thông tin kết nối
+             </a>
+             <a href="index.html" style="text-decoration:none;"><span>🌐</span></a>
           </div>
+          <!-- END MODIFIED -->
           
           <div class="contact-row">
             <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
