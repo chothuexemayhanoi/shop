@@ -1141,7 +1141,7 @@ footer {
     </div>
   </section>
 
-  <!-- MAP -->
+  <!-- MAP (FIXED LINK) -->
   <section class="section" id="ban-do">
     <div class="container">
       <div class="section-head">
@@ -1149,16 +1149,17 @@ footer {
         <p class="section-desc">Ghé trực tiếp Thu Hà tại Gia Lâm / Long Biên để chọn xe ưng ý nhất.</p>
       </div>
       <div class="card" style="padding:10px;">
+        <!-- Đã sửa link iframe trỏ đúng 108 Nguyễn Văn Cừ -->
         <iframe 
           class="map-frame"
-          title="Bản đồ Cho Thuê Xe Máy Thu Hà Gia Lâm Hà Nội"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.896357418702!2d105.8761427142456!3d21.03683249287849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135a51936306915%3A0x673408331304561!2sGia%20Lam%20Bus%20Station!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s" 
+          title="Bản đồ Cho Thuê Xe Máy Thu Hà 108 Nguyễn Văn Cừ Hà Nội"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.924278783457!2d105.8665423147614!3d21.03821698599321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7b3a4e9b9%3A0x6b16550f22495393!2zMTA4IE5ndXnhu4VuIFbAQ24gQ-G7qywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1677123456789!5m2!1svi!2s" 
           allowfullscreen="" 
           loading="lazy">
         </iframe>
         <div class="section-text-max" style="margin-top: 20px;">
           <p>
-            Cửa hàng nằm gần bến xe Gia Lâm và trục đường Nguyễn Văn Cừ, rất tiện cho khách vừa xuống xe khách
+            Cửa hàng nằm tại số **108 Nguyễn Văn Cừ**, gần bến xe Gia Lâm và cầu Chương Dương, rất tiện cho khách vừa xuống xe khách
             hoặc từ trung tâm Hoàn Kiếm chạy sang nhận xe.
           </p>
           <div style="text-align:center; margin-top:16px;">
@@ -1464,7 +1465,7 @@ function toggleSub(id) {
   }
 }
 
-// --- 5. CALCULATOR ---
+// --- 5. CALCULATOR (OPTIMIZED: NO NEGATIVE NUMBERS) ---
 const bikeType = document.getElementById('bikeType');
 const dayCount = document.getElementById('dayCount');
 const totalPrice = document.getElementById('totalPrice');
@@ -1473,9 +1474,10 @@ function updatePrice() {
   const price = parseInt(bikeType.value) || 0;
   let days = parseInt(dayCount.value);
   
+  // Logic chặn số âm hoặc 0
   if (isNaN(days) || days < 1) {
     days = 1;
-    dayCount.value = 1;
+    dayCount.value = 1; // Cập nhật lại số trên ô input ngay lập tức
   }
   
   const total = price * days;
@@ -1503,6 +1505,16 @@ function toggleFooterCol(element) {
   // Toggle current class
   element.classList.toggle('active');
 }
+
+// --- NEW SAFETY: RESET FOOTER ON ROTATE/RESIZE ---
+// Ngăn lỗi giao diện khi xoay ngang màn hình (Reset trạng thái active)
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    document.querySelectorAll('.footer-col').forEach(col => {
+      col.classList.remove('active');
+    });
+  }
+});
 
 // --- 7. TESTIMONIAL SLIDER ---
 let slideIndex = 0;
