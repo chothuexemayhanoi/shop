@@ -174,6 +174,69 @@
     .section-title { font-size: clamp(24px, 4vw, 32px); margin-bottom: 10px; }
     .section-desc { color: var(--text-secondary); font-size: 16px; }
 
+    /* --- TYPOGRAPHY BEAUTIFICATION (NEW) --- */
+    /* Utility cho các đoạn text mô tả dài (dưới tiêu đề hoặc cuối section) */
+    .section-text-max {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    
+    /* Utility cho nội dung bài viết trong Card (Blog style) */
+    .prose {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .prose p {
+      font-size: 16px; /* Chữ to hơn chút cho dễ đọc */
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    
+    .prose ul, .prose ol {
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .prose li {
+      margin-bottom: 10px;
+    }
+
+    .prose strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .prose a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .prose a:hover {
+      text-decoration: underline;
+    }
+
+    .prose-note {
+      background: var(--bg-surface-2);
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      color: var(--text-tertiary);
+      border-left: 3px solid var(--accent);
+      margin-top: 24px;
+    }
+    /* ------------------------------------ */
+
     .section-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); will-change: opacity, transform; }
     .section-fade.show { opacity: 1; transform: translateY(0); }
 
@@ -268,6 +331,8 @@
     td { padding: 16px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
     tr:last-child td { border-bottom: none; }
     tbody tr:hover { background: rgba(125,125,125,0.03); }
+    
+    /* Modified list-pretty for general usage, specific override in .prose */
     .list-pretty li { font-size: 14px; margin-bottom: 12px; padding-left: 8px; color: var(--text-tertiary); position: relative; }
     .list-pretty li::marker { color: var(--accent); }
 
@@ -283,7 +348,7 @@
     .papers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media (max-width: 600px) { .papers-grid { grid-template-columns: 1fr; } }
     .paper-box { background: var(--bg-surface-2); padding: 24px; border-radius: 16px; border: 1px solid var(--border); }
-    .paper-head { font-weight: 700; color: var(--accent); margin-bottom: 12px; display: block; }
+    .paper-head { font-weight: 700; color: var(--accent); margin-bottom: 16px; display: block; font-size: 16px; }
     .maint-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     @media (max-width: 900px) { .maint-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .maint-grid { grid-template-columns: 1fr; } }
@@ -324,7 +389,8 @@
     .fab-container { position: fixed; bottom: 24px; right: 24px; z-index: 99; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
     .fab-menu { display: flex; flex-direction: column; gap: 10px; opacity: 0; transform: translateY(10px); pointer-events: none; transition: all 0.3s var(--ease); }
     .fab-container.open .fab-menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .fab-label { background: var(--bg-surface); padding: 8px 16px; border-radius: var(--radius-full); box-shadow: var(--shadow-md); font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); }
+    .fab-label { background: var(--bg-surface); padding: 8px 16px; border-radius: var(--radius-full); box-shadow: var(--shadow-md); font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); cursor: pointer; color: var(--text-primary); transition: background 0.2s; }
+    .fab-label:hover { background: var(--bg-surface-2); }
     .fab-main { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: white; border: none; font-size: 24px; box-shadow: 0 4px 20px rgba(0,113,227,0.4); cursor: pointer; display: grid; place-items: center; transition: transform 0.2s; }
     .fab-main:hover { transform: scale(1.1); }
     
@@ -495,8 +561,8 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Danh sách xe</h2>
-          <!-- UPDATE SECTION 1 -->
-          <p class="section-desc">
+          <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
+          <p class="section-desc section-text-max">
             Danh sách xe máy cho thuê tại Thu Hà luôn được kiểm tra, bảo dưỡng định kỳ trước khi giao cho khách.
             Bạn có thể chọn xe số, xe ga, xe 50cc không cần bằng lái hoặc xe điện phù hợp với nhu cầu di chuyển
             quanh Gia Lâm, Long Biên, Hoàn Kiếm và khu vực trung tâm Hà Nội.
@@ -626,7 +692,8 @@
           <h2 class="section-title">Bảng giá tham khảo</h2>
           <p class="section-desc">Thuê xe máy Thu Hà - Thuê càng lâu giá càng rẻ.</p>
         </div>
-        <div class="card" style="padding: 0; overflow: hidden;">
+        <!-- TYPOGRAPHY FIX: Added .prose to handle the content structure -->
+        <div class="card prose" style="padding: 0; overflow: hidden;">
           <div class="table-responsive">
             <table>
               <thead>
@@ -659,13 +726,15 @@
               </tbody>
             </table>
           </div>
-          <!-- UPDATE SECTION 2 -->
-          <p style="padding:16px 20px 20px; font-size:14px; color:var(--text-tertiary);">
-            Bảng giá trên áp dụng cho khách thuê xe máy du lịch và công tác tại khu vực Hà Nội, 
-            đặc biệt quanh bến xe Gia Lâm, Long Biên và Hoàn Kiếm. Giá có thể linh hoạt hơn nếu bạn 
-            thuê dài ngày hoặc thuê theo nhóm nhiều xe, vui lòng liên hệ trực tiếp Thu Hà để được 
-            báo giá chi tiết và ưu đãi mới nhất.
-          </p>
+          
+          <div style="padding: 24px;">
+             <p>
+              Bảng giá trên áp dụng cho khách thuê xe máy du lịch và công tác tại khu vực Hà Nội, 
+              đặc biệt quanh bến xe Gia Lâm, Long Biên và Hoàn Kiếm. Giá có thể linh hoạt hơn nếu bạn 
+              thuê dài ngày hoặc thuê theo nhóm nhiều xe, vui lòng liên hệ trực tiếp Thu Hà để được 
+              báo giá chi tiết và ưu đãi mới nhất.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -674,11 +743,10 @@
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="grid-2">
-          <!-- Reasons -->
-          <div class="card" id="lydo">
+          <!-- Reasons - TYPOGRAPHY FIX: Added .prose style logic directly or via class -->
+          <div class="card prose" id="lydo" style="max-width:100%;">
             <h3 style="margin-bottom:20px;">Vì sao chọn Thu Hà?</h3>
-            <!-- UPDATE SECTION 3 -->
-            <p style="font-size:14px; color:var(--text-secondary); margin-bottom:16px;">
+            <p>
               Khi thuê xe máy tại Hà Nội, đặc biệt là khu vực bến xe Gia Lâm, điều quan trọng không chỉ là giá rẻ
               mà còn là sự uy tín và hỗ trợ trong suốt hành trình. Thu Hà Motorbike Rental tập trung vào trải nghiệm
               thực tế của khách, từ chất lượng xe đến cách phục vụ, để bạn yên tâm vi vu khám phá phố cổ và các quận trung tâm.
@@ -720,17 +788,19 @@
           <h2 class="section-title">Thuê xe cực nhanh trong 3 bước</h2>
           <p class="section-desc">Không rườm rà giấy tờ, tập trung vào trải nghiệm của bạn.</p>
         </div>
-        <div class="card">
+        <!-- TYPOGRAPHY FIX: Added .prose to card -->
+        <div class="card prose">
           <ol class="list-pretty" style="padding-left:20px;">
-            <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969" style="color:var(--accent);">0334 699 969</a> để check xe trống &amp; giá.</li>
+            <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969">0334 699 969</a> để check xe trống &amp; giá.</li>
             <li><strong>Bước 2:</strong> Gửi vị trí khách sạn hoặc hẹn nhận xe tại bến xe Gia Lâm / Phố Cổ.</li>
             <li><strong>Bước 3:</strong> Nhận xe, ký biên nhận đơn giản (CCCD hoặc cọc nhẹ) là có thể chạy ngay.</li>
           </ol>
-          <p style="margin-top:20px; font-size:13px; color:var(--text-tertiary); background:var(--bg-surface-2); padding:12px; border-radius:8px;">
+          
+          <div class="prose-note">
             ⓘ Với khách nước ngoài, có thể hỗ trợ tiếng Anh cơ bản qua Zalo/WhatsApp (liên hệ trước để sắp xếp).
-          </p>
-          <!-- UPDATE SECTION 4 -->
-          <p style="margin-top:20px; font-size:14px; color:var(--text-secondary);">
+          </div>
+          
+          <p style="margin-top:24px;">
             Toàn bộ quy trình thuê xe máy 50cc hoặc xe ga, xe số tại Thu Hà thường chỉ mất từ 5–10 phút 
             nếu bạn chuẩn bị sẵn CCCD hoặc hộ chiếu. Khách ở khách sạn, homestay quanh Hoàn Kiếm, Gia Lâm 
             có thể đặt trước qua Zalo để được giữ xe và giao đúng giờ.
@@ -746,9 +816,9 @@
           <h2 class="section-title">Gợi ý lịch trình tham quan</h2>
           <p class="section-desc">Một vài gợi ý nhẹ nhàng để bạn đỡ mất công lên plan.</p>
         </div>
-        <div class="card">
-          <!-- UPDATE SECTION 5 -->
-          <p style="font-size:14px; color:var(--text-secondary); margin-bottom:16px;">
+        <!-- TYPOGRAPHY FIX: Added .prose -->
+        <div class="card prose">
+          <p>
             Thuê một chiếc xe máy ở Hà Nội giúp bạn chủ động về thời gian, dễ dàng kết hợp nhiều điểm tham quan 
             trong cùng một ngày mà không phụ thuộc taxi hoặc xe công nghệ. Dưới đây là một vài gợi ý lịch trình 
             đơn giản xuất phát từ khu vực Gia Lâm, Long Biên hoặc trung tâm Hoàn Kiếm để bạn tham khảo trước khi lên đường.
@@ -775,7 +845,8 @@
           <h2 class="section-title">Lưu ý khi chạy xe ở Hà Nội</h2>
           <p class="section-desc">Đặc biệt hữu ích với khách du lịch &amp; người mới tới.</p>
         </div>
-        <div class="card">
+        <!-- TYPOGRAPHY FIX: Added .prose -->
+        <div class="card prose">
           <ul class="list-pretty">
             <li>Luôn đội mũ bảo hiểm, mang theo CCCD/hộ chiếu khi ra đường.</li>
             <li>Giữ tốc độ vừa phải trong phố (30–40 km/h), chú ý xe bus &amp; ngã tư không đèn.</li>
@@ -783,8 +854,8 @@
             <li>Gửi xe tại bãi có vé, tránh để xe ngoài vỉa hè không có người trông.</li>
             <li>Nếu có vấn đề với xe (khó nổ, thủng lốp, va quệt nhẹ...) – cứ gọi thẳng số hotline Thu Hà để được xử lý.</li>
           </ul>
-          <!-- UPDATE SECTION 6 -->
-          <p style="margin-top:16px; font-size:14px; color:var(--text-secondary);">
+          
+          <p>
             Giao thông Hà Nội có thể hơi hỗn loạn với người mới đến lần đầu, đặc biệt ở các nút giao lớn và giờ cao điểm. 
             Vì vậy, khi thuê xe máy tại Thu Hà, bạn cứ mạnh dạn hỏi thêm về tuyến đường dễ đi, khung giờ ít tắc và chỗ gửi xe 
             an toàn quanh các điểm tham quan như Hồ Gươm, phố cổ, Hồ Tây để chuyến đi thoải mái hơn.
@@ -800,28 +871,28 @@
           <h2 class="section-title">Thủ tục thuê xe chi tiết</h2>
           <p class="section-desc">Đơn giản hóa tối đa để bạn nhận xe nhanh nhất.</p>
         </div>
-        <!-- UPDATE SECTION 7 (Intro) -->
-        <p style="font-size:14px; color:var(--text-secondary); margin-bottom:20px;">
+        <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
+        <p class="section-text-max">
           Thủ tục thuê xe máy tại Thu Hà được thiết kế để khách Việt Nam và khách nước ngoài đều dễ hiểu,
           minh bạch và hạn chế tối đa giấy tờ rườm rà. Chỉ cần bạn chuẩn bị đúng loại giấy tờ cần thiết,
           việc nhận xe thường diễn ra rất nhanh, phù hợp cả với lịch trình gấp hoặc khách chỉ ghé Hà Nội 1–2 ngày.
         </p>
 
         <div class="papers-grid">
-          <div class="paper-box">
+          <!-- Added .prose logic implicitly inside -->
+          <div class="paper-box" style="display:flex; flex-direction:column;">
             <span class="paper-head">🇻🇳 Khách Việt Nam / Tourist</span>
-            <ul class="list-pretty">
+            <ul class="list-pretty" style="color:var(--text-secondary); line-height:1.6;">
               <li>Chụp ảnh CCCD / CMND (2 mặt).</li>
               <li>Để lại CCCD gốc (hoặc cọc 1-2 triệu nếu muốn giữ giấy tờ).</li>
               <li>Thanh toán tiền thuê trước khi nhận xe.</li>
-              <!-- Added extra items per request -->
               <li>Ký hợp đồng thuê xe đơn giản (2 bản).</li>
               <li>Nhân viên sẽ hướng dẫn nhanh cách giữ xe, gửi xe và liên hệ hỗ trợ khi cần.</li>
             </ul>
           </div>
-          <div class="paper-box">
+          <div class="paper-box" style="display:flex; flex-direction:column;">
             <span class="paper-head">🌎 Foreigner / Expats</span>
-            <ul class="list-pretty">
+            <ul class="list-pretty" style="color:var(--text-secondary); line-height:1.6;">
               <li>Passport photo (Valid Visa).</li>
               <li>Deposit passport OR Cash Deposit (100$ - 200$).</li>
               <li>Payment in advance (Cash/Transfer).</li>
@@ -861,8 +932,8 @@
             <div style="font-size:13px; color:var(--text-secondary);">Vận hành êm, tiết kiệm xăng</div>
           </div>
         </div>
-        <!-- UPDATE SECTION 8 -->
-        <p style="margin-top:20px; font-size:14px; color:var(--text-secondary);">
+        <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
+        <p class="section-text-max" style="margin-top:40px; margin-bottom:0;">
           Mỗi chiếc xe trước khi giao đều được đội kỹ thuật thử phanh, kiểm tra lốp, đèn, xi-nhan và mức xăng cơ bản.
           Với khách thuê dài ngày hoặc đi xa khỏi nội thành Hà Nội, Thu Hà sẽ tư vấn loại xe phù hợp và dặn kỹ lịch 
           thay nhớt, kiểm tra lốp để đảm bảo an toàn tối đa trong suốt hành trình.
@@ -875,8 +946,8 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Câu hỏi thường gặp</h2>
-          <!-- UPDATE SECTION 9 (Desc) -->
-          <p class="section-desc">
+          <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
+          <p class="section-desc section-text-max">
             Giải đáp nhanh những thắc mắc của bạn về việc thuê xe máy 50cc, xe ga và xe số tại Hà Nội,
             đặc biệt là khu vực bến xe Gia Lâm và các quận trung tâm. Nếu bạn vẫn còn câu hỏi riêng, 
             chỉ cần nhắn Zalo hoặc gọi hotline, Thu Hà sẽ hỗ trợ trực tiếp.
@@ -905,7 +976,6 @@
             </div>
           </details>
 
-          <!-- UPDATE SECTION 9 (Added new FAQ) -->
           <details class="faq-item">
             <summary>Có cần đặt cọc trước khi đặt xe online không?</summary>
             <div class="faq-body">
@@ -934,14 +1004,16 @@
             allowfullscreen="" 
             loading="lazy">
           </iframe>
-          <!-- UPDATE SECTION 10 -->
-          <p style="margin:12px 12px 4px; font-size:14px; color:var(--text-secondary); text-align:center;">
-            Cửa hàng nằm gần bến xe Gia Lâm và trục đường Nguyễn Văn Cừ, rất tiện cho khách vừa xuống xe khách
-            hoặc từ trung tâm Hoàn Kiếm chạy sang nhận xe. Bạn có thể xem trước đường đi trên Google Maps,
-            sau đó gọi cho Thu Hà để được hướng dẫn chỗ gửi xe hoặc điểm hẹn nhận xe thuận tiện nhất.
-          </p>
-          <div style="text-align:center; margin-top:10px;">
-            <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" style="color:var(--accent); font-weight:600; font-size:14px;">Xem bản đồ lớn trên Google Maps &rarr;</a>
+          <!-- TYPOGRAPHY FIX: Applied .section-text-max for description below map -->
+          <div class="section-text-max" style="margin-top: 20px;">
+            <p>
+              Cửa hàng nằm gần bến xe Gia Lâm và trục đường Nguyễn Văn Cừ, rất tiện cho khách vừa xuống xe khách
+              hoặc từ trung tâm Hoàn Kiếm chạy sang nhận xe. Bạn có thể xem trước đường đi trên Google Maps,
+              sau đó gọi cho Thu Hà để được hướng dẫn chỗ gửi xe hoặc điểm hẹn nhận xe thuận tiện nhất.
+            </p>
+            <div style="text-align:center; margin-top:16px;">
+              <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" style="color:var(--accent); font-weight:600; font-size:15px; text-decoration:none;">Xem bản đồ lớn trên Google Maps &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1023,7 +1095,7 @@
     </div>
   </footer>
 
-  <!-- QUICK ACTION FAB -->
+  <!-- QUICK ACTION FAB (UPDATED: Added WhatsApp + Back to Top) -->
   <div class="fab-container" id="quickFab">
     <div class="fab-menu">
       <a href="tel:0334699969" class="fab-label">
@@ -1032,9 +1104,17 @@
       <a href="https://zalo.me/0334699969" class="fab-label">
         <span>💬</span> Chat Zalo
       </a>
+      <!-- Added WhatsApp -->
+      <a href="https://wa.me/84334699969" target="_blank" class="fab-label">
+        <span>🟢</span> WhatsApp
+      </a>
       <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" class="fab-label">
         <span>📍</span> Chỉ đường
       </a>
+      <!-- Added Back To Top -->
+      <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+        <span>⬆️</span> Lên đầu trang
+      </button>
     </div>
     <button class="fab-main" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
   </div>
@@ -1216,3 +1296,4 @@
 
 </body>
 </html>
+
