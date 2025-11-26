@@ -50,44 +50,81 @@
   <!-- Favicon -->
   <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
   <link rel="apple-touch-icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
-  <!-- Schema Markup (JSON-LD) for Local Business & SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MotorcycleRental",
-    "name": "Thu Hà Motorbike Rental",
-    "image": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
-    "url": "https://chothuexemayhanoi.github.io/vn.com/",
-    "telephone": "+84334699969",
-    "priceRange": "150.000 VNĐ - 200.000 VNĐ",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "108 Nguyễn Văn Cừ",
-      "addressLocality": "Long Biên",
-      "addressRegion": "Hà Nội",
-      "postalCode": "100000",
-      "addressCountry": "VN"
+
+  <!-- Schema Markup (JSON-LD) for Local Business & Khu vực phục vụ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://chothuexemayhanoi.github.io/vn.com/#business",
+  "name": "Thu Hà cho thuê xe máy 50cc Hà Nội",
+  "alternateName": "Thu Hà Motorbike Rental",
+  "image": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
+  "url": "https://chothuexemayhanoi.github.io/vn.com/",
+  "telephone": "+84334699969",
+  "priceRange": "150000-200000 VND",
+  "currenciesAccepted": "VND",
+  "paymentAccepted": "Cash, BankTransfer",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "108 Nguyễn Văn Cừ",
+    "addressLocality": "Long Biên",
+    "addressRegion": "Hà Nội",
+    "postalCode": "100000",
+    "addressCountry": "VN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 21.038133,
+    "longitude": 105.866952
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Long Biên, Hà Nội"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 21.038133,
-      "longitude": 105.866952
+    {
+      "@type": "AdministrativeArea",
+      "name": "Gia Lâm, Hà Nội"
     },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
+    {
+      "@type": "Place",
+      "name": "Phố Cổ, Hoàn Kiếm, Hà Nội"
     },
-    "description": "Dịch vụ cho thuê xe máy 50cc gần BX Gia Lâm và Hà Nội. Giá rẻ từ 150k. Xe mới, giao nhanh.",
-    "sameAs": [
-      "https://maps.app.goo.gl/j22inCs9owT5huN78",
-      "https://m.facebook.com/chothuexemayohanoigiare/"
-    ]
-  }
-  </script>
+    {
+      "@type": "AdministrativeArea",
+      "name": "Hoàn Kiếm, Hà Nội"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Tây Hồ, Hà Nội"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Ba Đình, Hà Nội"
+    }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
+  "description": "Dịch vụ cho thuê xe máy 50cc, xe số và xe ga gần bến xe Gia Lâm, Long Biên, Phố Cổ, Hoàn Kiếm, Tây Hồ và Ba Đình. Xe mới, giá rẻ, giao xe tận nơi, thủ tục nhanh gọn.",
+  "sameAs": [
+    "https://maps.app.goo.gl/j22inCs9owT5huN78",
+    "https://m.facebook.com/chothuexemayohanoigiare/"
+  ]
+}
+</script>
 
   <style>
     /* =========================================
