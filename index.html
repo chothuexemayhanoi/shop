@@ -174,8 +174,7 @@
     .section-title { font-size: clamp(24px, 4vw, 32px); margin-bottom: 10px; }
     .section-desc { color: var(--text-secondary); font-size: 16px; }
 
-    /* --- TYPOGRAPHY BEAUTIFICATION (NEW) --- */
-    /* Utility cho các đoạn text mô tả dài (dưới tiêu đề hoặc cuối section) */
+    /* --- TYPOGRAPHY BEAUTIFICATION --- */
     .section-text-max {
       max-width: 720px;
       margin-left: auto;
@@ -187,44 +186,27 @@
       margin-bottom: 24px;
     }
     
-    /* Utility cho nội dung bài viết trong Card (Blog style) */
     .prose {
       max-width: 780px;
       margin-left: auto;
       margin-right: auto;
     }
-    
     .prose p {
-      font-size: 16px; /* Chữ to hơn chút cho dễ đọc */
+      font-size: 16px;
       line-height: 1.75;
       color: var(--text-secondary);
       margin-bottom: 20px;
     }
-    
     .prose ul, .prose ol {
       font-size: 16px;
       line-height: 1.75;
       color: var(--text-secondary);
       margin-bottom: 24px;
     }
-
-    .prose li {
-      margin-bottom: 10px;
-    }
-
-    .prose strong {
-      color: var(--text-primary);
-      font-weight: 600;
-    }
-
-    .prose a {
-      color: var(--accent);
-      font-weight: 500;
-      text-decoration: none;
-    }
-    .prose a:hover {
-      text-decoration: underline;
-    }
+    .prose li { margin-bottom: 10px; }
+    .prose strong { color: var(--text-primary); font-weight: 600; }
+    .prose a { color: var(--accent); font-weight: 500; text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
 
     .prose-note {
       background: var(--bg-surface-2);
@@ -235,7 +217,6 @@
       border-left: 3px solid var(--accent);
       margin-top: 24px;
     }
-    /* ------------------------------------ */
 
     .section-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); will-change: opacity, transform; }
     .section-fade.show { opacity: 1; transform: translateY(0); }
@@ -332,7 +313,6 @@
     tr:last-child td { border-bottom: none; }
     tbody tr:hover { background: rgba(125,125,125,0.03); }
     
-    /* Modified list-pretty for general usage, specific override in .prose */
     .list-pretty li { font-size: 14px; margin-bottom: 12px; padding-left: 8px; color: var(--text-tertiary); position: relative; }
     .list-pretty li::marker { color: var(--accent); }
 
@@ -385,14 +365,106 @@
     .social-btn:hover { background: var(--accent); color: white; transform: translateY(-3px); }
     .copyright { border-top: 1px solid var(--border); padding-top: 24px; text-align: center; color: var(--text-tertiary); font-size: 12px; }
 
-    /* Floating */
-    .fab-container { position: fixed; bottom: 24px; right: 24px; z-index: 99; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-    .fab-menu { display: flex; flex-direction: column; gap: 10px; opacity: 0; transform: translateY(10px); pointer-events: none; transition: all 0.3s var(--ease); }
-    .fab-container.open .fab-menu { opacity: 1; transform: translateY(0); pointer-events: auto; }
-    .fab-label { background: var(--bg-surface); padding: 8px 16px; border-radius: var(--radius-full); box-shadow: var(--shadow-md); font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--border); cursor: pointer; color: var(--text-primary); transition: background 0.2s; }
-    .fab-label:hover { background: var(--bg-surface-2); }
-    .fab-main { width: 56px; height: 56px; border-radius: 50%; background: var(--accent); color: white; border: none; font-size: 24px; box-shadow: 0 4px 20px rgba(0,113,227,0.4); cursor: pointer; display: grid; place-items: center; transition: transform 0.2s; }
-    .fab-main:hover { transform: scale(1.1); }
+    /* --- Floating (UPDATED) --- */
+    .fab-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .fab-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: all 0.3s var(--ease);
+    }
+
+    .fab-container.open .fab-menu {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .fab-label {
+      background: var(--bg-surface);
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      font-weight: 500;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      color: var(--text-primary);
+      transition: background 0.2s;
+    }
+
+    .fab-label:hover {
+      background: var(--bg-surface-2);
+    }
+
+    .fab-main {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      border: none;
+      font-size: 24px;
+      box-shadow: 0 4px 20px rgba(0,113,227,0.4);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 0.2s;
+    }
+
+    /* 🔔 Hiệu ứng rung nhẹ cho quick call khi đang đóng menu */
+    @keyframes fab-wiggle {
+      0%, 100% {
+        transform: translateY(0) scale(1);
+      }
+      20% {
+        transform: translateY(-3px) rotate(-2deg) scale(1.03);
+      }
+      40% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+      60% {
+        transform: translateY(-3px) rotate(2deg) scale(1.03);
+      }
+      80% {
+        transform: translateY(0) rotate(0deg) scale(1);
+      }
+    }
+
+    /* Chỉ rung khi menu chưa mở, đỡ bị loạn mắt */
+    .fab-container:not(.open) .fab-main {
+      animation: fab-wiggle 1.3s var(--ease) infinite;
+      animation-delay: 2s;
+    }
+
+    /* Hover thì phóng to, đồng thời tắt rung cho dễ bấm */
+    .fab-main:hover {
+      transform: scale(1.1);
+      animation: none;
+    }
+
+    /* Tôn trọng người dùng hạn chế chuyển động */
+    @media (prefers-reduced-motion: reduce) {
+      .fab-container:not(.open) .fab-main {
+        animation: none;
+      }
+    }
     
     .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 200; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); }
     .lightbox.active { display: flex; animation: fadeIn 0.3s; }
@@ -504,7 +576,7 @@
 
   <!-- MAIN CONTENT -->
   <main>
-    <!-- HERO SECTION (Optimized H1 for Local SEO) -->
+    <!-- HERO SECTION -->
     <section class="hero" id="hero">
       <div class="container">
         <div class="hero-grid">
@@ -526,7 +598,7 @@
             </div>
           </div>
 
-          <!-- Calculator Card (Updated Price: Xe số 150k, Xe ga 200k) -->
+          <!-- Calculator Card -->
           <div class="calc-card">
             <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
               <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
@@ -556,12 +628,11 @@
       </div>
     </section>
 
-    <!-- BIKE LIST (Updated Prices & Alt Tags for SEO) -->
+    <!-- BIKE LIST -->
     <section class="section" id="danhsachxe">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Danh sách xe</h2>
-          <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
           <p class="section-desc section-text-max">
             Danh sách xe máy cho thuê tại Thu Hà luôn được kiểm tra, bảo dưỡng định kỳ trước khi giao cho khách.
             Bạn có thể chọn xe số, xe ga, xe 50cc không cần bằng lái hoặc xe điện phù hợp với nhu cầu di chuyển
@@ -685,14 +756,13 @@
       </div>
     </section>
 
-    <!-- PRICING (Updated Price Table) -->
+    <!-- PRICING -->
     <section class="section" id="banggia">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Bảng giá tham khảo</h2>
           <p class="section-desc">Thuê xe máy Thu Hà - Thuê càng lâu giá càng rẻ.</p>
         </div>
-        <!-- TYPOGRAPHY FIX: Added .prose to handle the content structure -->
         <div class="card prose" style="padding: 0; overflow: hidden;">
           <div class="table-responsive">
             <table>
@@ -739,11 +809,11 @@
       </div>
     </section>
 
-    <!-- REASONS & REVIEWS (Brand Updated to Thu Hà) -->
+    <!-- REASONS & REVIEWS -->
     <section class="section" style="padding-top:0;">
       <div class="container">
         <div class="grid-2">
-          <!-- Reasons - TYPOGRAPHY FIX: Added .prose style logic directly or via class -->
+          <!-- Reasons -->
           <div class="card prose" id="lydo" style="max-width:100%;">
             <h3 style="margin-bottom:20px;">Vì sao chọn Thu Hà?</h3>
             <p>
@@ -788,7 +858,6 @@
           <h2 class="section-title">Thuê xe cực nhanh trong 3 bước</h2>
           <p class="section-desc">Không rườm rà giấy tờ, tập trung vào trải nghiệm của bạn.</p>
         </div>
-        <!-- TYPOGRAPHY FIX: Added .prose to card -->
         <div class="card prose">
           <ol class="list-pretty" style="padding-left:20px;">
             <li><strong>Bước 1:</strong> Gọi/Zalo <a href="tel:0334699969">0334 699 969</a> để check xe trống &amp; giá.</li>
@@ -816,7 +885,6 @@
           <h2 class="section-title">Gợi ý lịch trình tham quan</h2>
           <p class="section-desc">Một vài gợi ý nhẹ nhàng để bạn đỡ mất công lên plan.</p>
         </div>
-        <!-- TYPOGRAPHY FIX: Added .prose -->
         <div class="card prose">
           <p>
             Thuê một chiếc xe máy ở Hà Nội giúp bạn chủ động về thời gian, dễ dàng kết hợp nhiều điểm tham quan 
@@ -845,7 +913,6 @@
           <h2 class="section-title">Lưu ý khi chạy xe ở Hà Nội</h2>
           <p class="section-desc">Đặc biệt hữu ích với khách du lịch &amp; người mới tới.</p>
         </div>
-        <!-- TYPOGRAPHY FIX: Added .prose -->
         <div class="card prose">
           <ul class="list-pretty">
             <li>Luôn đội mũ bảo hiểm, mang theo CCCD/hộ chiếu khi ra đường.</li>
@@ -871,7 +938,6 @@
           <h2 class="section-title">Thủ tục thuê xe chi tiết</h2>
           <p class="section-desc">Đơn giản hóa tối đa để bạn nhận xe nhanh nhất.</p>
         </div>
-        <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
         <p class="section-text-max">
           Thủ tục thuê xe máy tại Thu Hà được thiết kế để khách Việt Nam và khách nước ngoài đều dễ hiểu,
           minh bạch và hạn chế tối đa giấy tờ rườm rà. Chỉ cần bạn chuẩn bị đúng loại giấy tờ cần thiết,
@@ -879,7 +945,6 @@
         </p>
 
         <div class="papers-grid">
-          <!-- Added .prose logic implicitly inside -->
           <div class="paper-box" style="display:flex; flex-direction:column;">
             <span class="paper-head">🇻🇳 Khách Việt Nam / Tourist</span>
             <ul class="list-pretty" style="color:var(--text-secondary); line-height:1.6;">
@@ -932,7 +997,6 @@
             <div style="font-size:13px; color:var(--text-secondary);">Vận hành êm, tiết kiệm xăng</div>
           </div>
         </div>
-        <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
         <p class="section-text-max" style="margin-top:40px; margin-bottom:0;">
           Mỗi chiếc xe trước khi giao đều được đội kỹ thuật thử phanh, kiểm tra lốp, đèn, xi-nhan và mức xăng cơ bản.
           Với khách thuê dài ngày hoặc đi xa khỏi nội thành Hà Nội, Thu Hà sẽ tư vấn loại xe phù hợp và dặn kỹ lịch 
@@ -946,7 +1010,6 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title">Câu hỏi thường gặp</h2>
-          <!-- TYPOGRAPHY FIX: Applied .section-text-max -->
           <p class="section-desc section-text-max">
             Giải đáp nhanh những thắc mắc của bạn về việc thuê xe máy 50cc, xe ga và xe số tại Hà Nội,
             đặc biệt là khu vực bến xe Gia Lâm và các quận trung tâm. Nếu bạn vẫn còn câu hỏi riêng, 
@@ -988,7 +1051,7 @@
       </div>
     </section>
 
-    <!-- MAP (Updated Link and Iframe Source for Local SEO) -->
+    <!-- MAP -->
     <section class="section" id="ban-do">
       <div class="container">
         <div class="section-head">
@@ -996,7 +1059,6 @@
           <p class="section-desc">Ghé trực tiếp Thu Hà tại Gia Lâm / Long Biên để chọn xe ưng ý nhất.</p>
         </div>
         <div class="card" style="padding:10px;">
-          <!-- Embed Google Maps pointing to the area to ensure relevant display -->
           <iframe 
             class="map-frame"
             title="Bản đồ Cho Thuê Xe Máy Thu Hà Gia Lâm Hà Nội"
@@ -1004,7 +1066,6 @@
             allowfullscreen="" 
             loading="lazy">
           </iframe>
-          <!-- TYPOGRAPHY FIX: Applied .section-text-max for description below map -->
           <div class="section-text-max" style="margin-top: 20px;">
             <p>
               Cửa hàng nằm gần bến xe Gia Lâm và trục đường Nguyễn Văn Cừ, rất tiện cho khách vừa xuống xe khách
@@ -1065,7 +1126,7 @@
           </div>
         </div>
 
-        <!-- Contact & Area (Optimized Address Link) -->
+        <!-- Contact & Area -->
         <div class="footer-col">
           <h4 class="col-title">Khu vực &amp; Liên hệ</h4>
           <div class="footer-links" style="margin-bottom:20px;">
@@ -1104,19 +1165,19 @@
       <a href="https://zalo.me/0334699969" class="fab-label">
         <span>💬</span> Chat Zalo
       </a>
-      <!-- Added WhatsApp -->
-      <a href="https://wa.me/84334699969" target="_blank" class="fab-label">
+      <!-- WhatsApp (Added) -->
+      <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label">
         <span>🟢</span> WhatsApp
       </a>
-      <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" class="fab-label">
+      <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" rel="noopener" class="fab-label">
         <span>📍</span> Chỉ đường
       </a>
-      <!-- Added Back To Top -->
+      <!-- Back To Top (Added) -->
       <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
         <span>⬆️</span> Lên đầu trang
       </button>
     </div>
-    <button class="fab-main" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
+    <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
   </div>
 
   <!-- LIGHTBOX -->
@@ -1232,9 +1293,12 @@
     dayCount.addEventListener('input', updatePrice);
   }
 
-  // --- 6. FAB ---
+  // --- 6. FAB (OPTIMIZED) ---
+  const quickFab = document.getElementById('quickFab');
+
   function toggleFab() {
-    document.getElementById('quickFab').classList.toggle('open');
+    if (!quickFab) return;
+    quickFab.classList.toggle('open');
   }
 
   // --- 7. TESTIMONIAL SLIDER ---
