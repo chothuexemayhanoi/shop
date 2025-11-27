@@ -265,7 +265,7 @@ p:last-child { margin-bottom: 0; }
 .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
 .btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
+.btn-primary { background: var(--accent); color: white !important; /* Force Text Color */ box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
 .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
 .btn-glass { background: rgba(125,125,125,0.1); color: var(--text-primary); border: 1px solid var(--border); }
 .btn-glass:hover { background: rgba(125,125,125,0.2); }
@@ -410,7 +410,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <span class="badge">📖 Câu chuyện thương hiệu</span>
           <span class="badge">❤️ Phục vụ từ 2015</span>
         </div>
-        <h1 class="hero-title">Về Chúng Tôi <br /><span class="text-gradient">Thu Hà Motorbike Rental</span></h1>
+        <h1 class="hero-title">Về Chúng Tôi <br /><span class="text-gradient">Cho thuê xe máy 50cc - Thu Hà</span></h1>
         <p class="hero-desc">Hành trình 10 năm mang đến trải nghiệm thuê xe máy "An toàn - Tiện lợi - Minh bạch" cho du khách tại Hà Nội.</p>
         <div class="hero-actions">
            <a href="tel:0334699969" class="btn btn-primary">📞 Liên hệ 0334 699 969</a>
@@ -496,16 +496,20 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
            Nếu bạn lần đầu đến Hà Nội và chưa biết đi đâu, ăn gì, đừng ngần ngại hỏi chúng tôi. Đội ngũ Thu Hà luôn sẵn lòng chia sẻ <a href="kinhnghiem.html">kinh nghiệm du lịch Hà Nội</a> "chuẩn dân bản địa" hoàn toàn miễn phí.
         </p>
 
-        <h2>5. Kết nối với Thu Hà</h2>
-        <p>
-          Chúng tôi luôn ở đây, sẵn sàng lắng nghe và phục vụ bạn 24/7. Dù bạn cần thuê xe gấp lúc nửa đêm hay cần cứu hộ khi xe gặp sự cố, đừng ngần ngại liên hệ.
-        </p>
-        <p>
-          Hãy để Thu Hà trở thành người bạn đồng hành tin cậy trong mỗi chuyến đi của bạn tại mảnh đất nghìn năm văn hiến này.
-        </p>
-        
-        <div style="text-align: center; margin-top: 40px;">
-           <a href="lienhe.html" class="btn btn-primary">Đặt xe ngay hôm nay</a>
+        <!-- MODIFIED SECTION 5: ADDED ICON & FIXED BUTTON TEXT -->
+        <div style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
+           <div style="font-size: 40px; margin-bottom: 10px;">🤝</div>
+           <h2>5. Kết nối với Thu Hà</h2>
+           <p style="text-align: center;">
+             Chúng tôi luôn ở đây, sẵn sàng lắng nghe và phục vụ bạn 24/7. Dù bạn cần thuê xe gấp lúc nửa đêm hay cần cứu hộ khi xe gặp sự cố, đừng ngần ngại liên hệ.
+           </p>
+           <p style="text-align: center;">
+             Hãy để Thu Hà trở thành người bạn đồng hành tin cậy trong mỗi chuyến đi của bạn tại mảnh đất nghìn năm văn hiến này.
+           </p>
+           
+           <div style="margin-top: 30px;">
+              <a href="lienhe.html" class="btn btn-primary" style="color: #ffffff !important;">Đặt xe ngay hôm nay</a>
+           </div>
         </div>
 
       </article>
@@ -612,7 +616,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2025 Thu Hà.</div>
+      <div>© 2025 Cho thuê xe máy Hà Nội - Thu Hà.</div>
       <div style="font-size:12px; opacity:0.6;"><a href="dieukhoan.html">Điều khoản</a> • <a href="chinhsach.html">Chính sách bảo mật</a></div>
     </div>
   </div>
