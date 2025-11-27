@@ -302,9 +302,13 @@ p:last-child { margin-bottom: 0; }
 .text-gradient { background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-desc { font-size: 16px; color: var(--text-secondary); margin-bottom: 32px; max-width: 600px; line-height: 1.6; margin-left: auto; margin-right: auto; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border-bottom: none !important; }
 .btn:active { transform: scale(0.98); }
-.btn-primary { background: var(--accent); color: white; box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
+.btn-primary { 
+  background: var(--accent); 
+  color: white !important; /* FIX: Added !important to override .prose a color */
+  box-shadow: 0 4px 15px rgba(0,113,227,0.4); 
+}
 .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
 .btn-glass { background: rgba(125,125,125,0.1); color: var(--text-primary); border: 1px solid var(--border); }
 .btn-glass:hover { background: rgba(125,125,125,0.2); }
