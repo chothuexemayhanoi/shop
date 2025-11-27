@@ -86,7 +86,7 @@ Trang chủ – Thu Hà Cho thuê xe máy 50cc Hà Nội
   },
   "description": "Dịch vụ cho thuê xe máy 50cc, xe số và xe ga gần bến xe Gia Lâm, Long Biên, Phố Cổ, Hoàn Kiếm. Xe mới, giá rẻ, giao xe tận nơi, thủ tục nhanh gọn.",
   "sameAs": [
-    "https://maps.app.goo.gl/j22inCs9owT5huN78",
+    "https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội",
     "https://m.facebook.com/chothuexemayohanoigiare/"
   ]
 }
@@ -546,14 +546,7 @@ footer {
     transform: rotate(180deg);
   }
   
-  /* Keep contact visible or make it collapsible too? 
-     Design choice: Keep Contact visible for better UX or Collapsible.
-     Here we make links collapsible, Contact is usually better always visible or clearly marked.
-     Let's make Contact Collapsible too for consistency, but auto-open usually.
-  */
-  
   .col-contact .contact-list {
-     /* Inherit behavior similar to footer-links */
      display: none;
      margin-top: 16px;
   }
@@ -1141,30 +1134,76 @@ footer {
     </div>
   </section>
 
-  <!-- MAP (FIXED LINK) -->
-  <section class="section" id="ban-do">
+  <!-- CONTACT FORM (MAILTO) - NEW ADDITION -->
+  <section class="section" id="form-dat-xe">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Gửi yêu cầu đặt xe</h2>
+        <p class="section-desc">Điền thông tin để chúng tôi liên hệ lại sớm nhất.</p>
+      </div>
+      <div class="card prose" style="max-width: 600px; margin: 0 auto;">
+        <!-- Sử dụng enctype="text/plain" để nội dung email dễ đọc hơn -->
+        <form action="mailto:nguyenthuha203@gmail.com?subject=Yeu cau dat xe tu Website" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label for="contactName" class="form-label">Họ và tên</label>
+            <input type="text" id="contactName" name="Ho_Ten" class="form-control" placeholder="Nhập tên của bạn" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="contactPhone" class="form-label">Số điện thoại / Zalo</label>
+            <input type="tel" id="contactPhone" name="So_Dien_Thoai" class="form-control" placeholder="Nhập SĐT để liên hệ" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="contactBike" class="form-label">Loại xe quan tâm</label>
+            <select id="contactBike" name="Loai_Xe" class="form-control">
+              <option value="Xe_So_150k">Xe số (Wave, Sirius) - 150k</option>
+              <option value="Xe_Ga_200k">Xe ga (Vision, AirBlade) - 200k</option>
+              <option value="Xe_50cc_200k">Xe 50cc (Không cần bằng) - 200k</option>
+              <option value="Xe_Dien_150k">Xe điện - 150k</option>
+              <option value="Tu_Van_Them">Cần tư vấn thêm</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="contactMsg" class="form-label">Lời nhắn (Ngày nhận xe, địa chỉ giao...)</label>
+            <textarea id="contactMsg" name="Loi_Nhan" class="form-control" rows="4" placeholder="Ví dụ: Tôi muốn thuê từ sáng mai tại phố cổ..."></textarea>
+          </div>
+          
+          <div style="text-align:center; margin-top:24px;">
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">📨 Gửi yêu cầu ngay</button>
+            <p style="font-size:12px; color:var(--text-tertiary); margin-top:12px;">
+              *Hệ thống sẽ mở ứng dụng Email của bạn để gửi thông tin trực tiếp tới Thu Hà.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP (FIXED LINK & CONTENT) -->
+  <section class="section" id="bando">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Vị trí cửa hàng</h2>
         <p class="section-desc">Ghé trực tiếp Thu Hà tại Gia Lâm / Long Biên để chọn xe ưng ý nhất.</p>
       </div>
+      <!-- CODE BẢN ĐỒ MỚI -->
       <div class="card" style="padding:10px;">
-        <!-- Đã sửa link iframe trỏ đúng 108 Nguyễn Văn Cừ -->
         <iframe 
-          class="map-frame"
-          title="Bản đồ Cho Thuê Xe Máy Thu Hà 108 Nguyễn Văn Cừ Hà Nội"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.924278783457!2d105.8665423147614!3d21.03821698599321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd7b3a4e9b9%3A0x6b16550f22495393!2zMTA4IE5ndXnhu4VuIFbAQ24gQ-G7qywgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1677123456789!5m2!1svi!2s" 
-          allowfullscreen="" 
-          loading="lazy">
+            class="map-frame"
+            title="Bản đồ Cho Thuê Xe Máy Thu Hà"
+            src="https://www.google.com/maps?q=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội&output=embed" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
         </iframe>
-        <div class="section-text-max" style="margin-top: 20px;">
-          <p>
-            Cửa hàng nằm tại số 108 Nguyễn Văn Cừ, Long Biên gần bến xe Gia Lâm và cầu Chương Dương, rất tiện cho khách vừa xuống xe khách
-            hoặc từ trung tâm Hoàn Kiếm chạy sang nhận xe.
-          </p>
-          <div style="text-align:center; margin-top:16px;">
-            <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" style="color:var(--accent); font-weight:600; font-size:15px; text-decoration:none;">Xem bản đồ lớn trên Google Maps &rarr;</a>
-          </div>
+
+        <div style="margin-top:20px; text-align:center;">
+             <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">
+               <strong>Hướng dẫn đi lại:</strong> Cửa hàng nằm ngay mặt đường Nguyễn Văn Cừ.
+             </p>
+             <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="btn btn-glass" style="font-size:14px;">🗺️ Mở Google Maps Chỉ Đường</a>
         </div>
       </div>
     </div>
@@ -1197,8 +1236,8 @@ footer {
           <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
           </a>
-          <!-- Maps SVG -->
-          <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" class="social-link" aria-label="Google Maps">
+          <!-- Maps SVG (UPDATED LINK) -->
+          <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="social-link" aria-label="Google Maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           </a>
         </div>
@@ -1406,7 +1445,8 @@ footer {
     <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label">
       <span>🟢</span> WhatsApp
     </a>
-    <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" rel="noopener" class="fab-label">
+    <!-- Updated Link in FAB -->
+    <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener" class="fab-label">
       <span>📍</span> Chỉ đường
     </a>
     <!-- Back To Top -->
