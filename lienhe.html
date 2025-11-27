@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- =========================================
-PRO ULTRA SEO MODE 2025 - PAGE: LIÊN HỆ (ĐÃ SỬA LỖI)
+PRO ULTRA SEO MODE 2025 - PAGE: LIÊN HỆ (FINAL FIX)
 ========================================= -->
 <title>Liên Hệ Thuê Xe Máy Hà Nội | Thu Hà Gia Lâm 0334.699.969</title>
 <!-- Core Meta Tags -->
@@ -361,7 +361,6 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
   </div>
   <div class="sidebar-content">
-    <!-- FIX: Dùng thẻ <a> thay vì <div> onclick để tối ưu SEO -->
     <nav class="nav-group">
       <a href="index.html" class="nav-item">
         <span class="nav-icon">🏠</span> Trang chủ
@@ -513,29 +512,30 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM (ĐÃ SỬA: DÙNG MAILTO) -->
   <section class="section" id="form-lienhe" style="background: var(--bg-surface-2);">
     <div class="container">
       <div class="section-head">
         <h2 class="section-title">Gửi yêu cầu đặt xe</h2>
-        <p class="section-desc">Điền thông tin bên dưới, chúng tôi sẽ liên hệ lại sau 15 phút.</p>
+        <p class="section-desc">Điền thông tin bên dưới, hệ thống sẽ mở ứng dụng Email của bạn để gửi cho chúng tôi.</p>
       </div>
       <div class="card prose" style="max-width: 700px; margin: 0 auto; background: var(--bg-surface);">
-        <form id="bookingForm" onsubmit="event.preventDefault(); alert('Cảm ơn! Chúng tôi sẽ liên hệ lại sớm.');">
+        <!-- FIX 2: Sửa form thành mailto -->
+        <form id="bookingForm" action="mailto:nguyenthuha203@gmail.com" method="post" enctype="text/plain">
           <div class="form-row">
              <div class="form-group">
                 <label class="form-label">Họ và tên</label>
-                <input type="text" class="form-input" placeholder="Nhập tên của bạn" required>
+                <input type="text" name="Ho_Ten" class="form-input" placeholder="Nhập tên của bạn" required>
              </div>
              <div class="form-group">
                 <label class="form-label">Số điện thoại</label>
-                <input type="tel" class="form-input" placeholder="SĐT liên hệ" required>
+                <input type="tel" name="SDT" class="form-input" placeholder="SĐT liên hệ" required>
              </div>
           </div>
           <div class="form-row">
              <div class="form-group">
                 <label class="form-label">Loại xe quan tâm</label>
-                <select class="form-select">
+                <select name="Loai_Xe" class="form-select">
                    <option>Xe số 50cc</option>
                    <option>Xe ga 50cc</option>
                    <option>Xe ga 110cc-125cc</option>
@@ -544,12 +544,12 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
              </div>
              <div class="form-group">
                 <label class="form-label">Ngày dự kiến nhận</label>
-                <input type="date" class="form-input">
+                <input type="date" name="Ngay_Nhan" class="form-input">
              </div>
           </div>
           <div class="form-group">
              <label class="form-label">Lời nhắn</label>
-             <textarea class="form-textarea" rows="4" placeholder="Ví dụ: Tôi cần thuê 3 ngày, giao tại bến xe Gia Lâm..."></textarea>
+             <textarea name="Loi_Nhan" class="form-textarea" rows="4" placeholder="Ví dụ: Tôi cần thuê 3 ngày, giao tại bến xe Gia Lâm..."></textarea>
           </div>
           <button type="submit" class="btn btn-primary" style="width:100%;">Gửi yêu cầu ngay</button>
         </form>
@@ -584,7 +584,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </div>
   </section>
 
-  <!-- MAP SECTION (ĐÃ SỬA LỖI) -->
+  <!-- MAP SECTION (ĐÃ SỬA LỖI: LINK & IFRAME) -->
   <section class="section" id="bando">
     <div class="container">
       <div class="section-head">
@@ -592,11 +592,11 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         <p class="section-desc">108 Nguyễn Văn Cừ, Long Biên, Hà Nội (Gần cầu Chương Dương & BX Gia Lâm)</p>
       </div>
       <div class="card" style="padding:10px;">
-        <!-- FIX: Đã thay thế iframe sai bằng iframe chuẩn 108 Nguyễn Văn Cừ -->
+        <!-- FIX 1: iframe chuẩn xác 108 Nguyễn Văn Cừ -->
         <iframe 
           class="map-frame"
           title="Bản đồ Cho Thuê Xe Máy Thu Hà 108 Nguyễn Văn Cừ Hà Nội"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.897719782552!2d105.86476331533226!3d21.036772992878724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd77983656d%3A0xa5e40a027357366!2zMTA4IE5ndXnhu4VuIFbEg24gQ-G7qywgTmfhu41jIEzDoJksIExvbmcgQmnDqm4sIEjDoCBO4buZaSwgVmlldG5hbQ!5e0!3m2!1sen!2s!4v1699999999999!5m2!1sen!2s" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.897376662863!2d105.86476337599972!3d21.03677398749841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abd77f6d655d%3A0x6339697669046778!2zMTA4IE5ndXnhu4VuIFbEg24gQ-G6qywgTmcuyogVsSDQvSwgTG9uZyBCacOqbiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
           allowfullscreen="" 
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
@@ -605,8 +605,8 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
            <p style="color:var(--text-secondary); font-size:14px; margin-bottom:12px;">
              <strong>Hướng dẫn đi lại:</strong> Cửa hàng nằm ngay mặt đường Nguyễn Văn Cừ. Nếu đi xe buýt, bạn có thể bắt các tuyến 01, 03, 11, 22, 34 dừng ngay gần điểm 108.
            </p>
-           <!-- FIX: Link map chuẩn -->
-           <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" class="btn btn-glass" style="font-size:14px;">🗺️ Mở Google Maps</a>
+           <!-- FIX 3: Link map Google chuẩn -->
+           <a href="https://maps.app.goo.gl/Fk8hS" target="_blank" class="btn btn-glass" style="font-size:14px;">🗺️ Mở Google Maps</a>
         </div>
       </div>
     </div>
@@ -639,7 +639,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
           </a>
           <!-- FIX: Link map chuẩn -->
-          <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" class="social-link" aria-label="Google Maps">
+          <a href="https://maps.app.goo.gl/Fk8hS" class="social-link" aria-label="Google Maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           </a>
         </div>
@@ -722,7 +722,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     <a href="https://zalo.me/0334699969" class="fab-label"><span>💬</span> Chat Zalo</a>
     <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label"><span>🟢</span> WhatsApp</a>
     <!-- FIX: Link map chuẩn -->
-    <a href="https://maps.app.goo.gl/j22inCs9owT5huN78" target="_blank" rel="noopener" class="fab-label"><span>📍</span> Chỉ đường</a>
+    <a href="https://maps.app.goo.gl/Fk8hS" target="_blank" rel="noopener" class="fab-label"><span>📍</span> Chỉ đường</a>
     <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><span>⬆️</span> Lên đầu trang</button>
   </div>
   <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
