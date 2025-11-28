@@ -1,0 +1,21 @@
+{
+  "name": "Thuê xe máy Thu Hà",
+  "short_name": "Thu Hà Motorbike",
+  "start_url": "/shop/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Dịch vụ cho thuê xe máy 50cc uy tín tại Gia Lâm & Hà Nội.",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
