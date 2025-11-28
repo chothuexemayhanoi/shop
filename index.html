@@ -574,7 +574,7 @@ footer {
   position: fixed;
   bottom: 24px;
   left: 24px;
-  z-index: 99;
+  z-index: 105; /* FIX: Increased Z-Index from 99 to 105 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -666,14 +666,14 @@ footer {
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
   </div>
   <div class="sidebar-content">
-    <!-- Group 1: Main -->
+    <!-- Group 1: Main (FIXED: CHANGED DIV TO A) -->
     <nav class="nav-group">
-      <div class="nav-item" onclick="window.location.href='index.html'">
+      <a href="index.html" class="nav-item">
         <span class="nav-icon">🏠</span> Trang chủ
-      </div>
-      <div class="nav-item" onclick="window.location.href='gioithieu.html'">
+      </a>
+      <a href="gioithieu.html" class="nav-item">
         <span class="nav-icon">👋</span> Giới thiệu
-      </div>
+      </a>
     </nav>
 
     <!-- Group 2: Services & Address (Dropdowns) -->
