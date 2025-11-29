@@ -2,10 +2,7 @@
 <html lang="vi" data-theme="dark">
 <head>
 <meta charset="UTF-8" />
-<meta name="p:domain_verify" content="780967fea7bdc0db1820359859ba07d4"/>
-<meta name="google-site-verification" content="YgszTGf4DhvDm3Mngo28IQONPqjHPMZZhQIHFfKPFYA" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <!-- =========================================
 PRO ULTRA SEO MODE 2025 - OPTIMIZED
 Trang chủ – Thu Hà Cho thuê xe máy 50cc Hà Nội
@@ -657,6 +654,28 @@ footer {
 .lightbox.active { display: flex; animation: fadeIn 0.3s; }
 .lightbox img { max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 0 40px rgba(0,0,0,0.5); }
 .lb-close { position: absolute; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer; }
+
+/* AI FEATURES CSS */
+.ai-result-box {
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+.ai-result-box strong {
+  color: var(--accent);
+}
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 </style>
 </head>
 <body>
@@ -783,7 +802,7 @@ footer {
           </div>
         </div>
 
-        <!-- Calculator Card -->
+        <!-- Calculator Card with NEW AI Bike Consultant -->
         <div class="calc-card">
           <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
             <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
@@ -808,6 +827,22 @@ footer {
             <span style="font-size:14px; color:var(--text-tertiary);">Tạm tính:</span>
             <span class="price-display" id="totalPrice">150.000 ₫</span>
           </div>
+
+          <!-- NEW AI CONSULTANT MINI SECTION -->
+          <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border);">
+            <p style="font-size: 13px; margin-bottom: 10px; color: var(--text-secondary);">
+              <strong>Bạn chưa biết chọn xe nào?</strong>
+            </p>
+            <div style="display:flex; gap:8px;">
+              <input type="text" id="consultHeight" class="form-control" placeholder="Cao (cm)?" style="font-size:13px; padding:8px;">
+              <input type="text" id="consultDest" class="form-control" placeholder="Đi đâu?" style="font-size:13px; padding:8px;">
+            </div>
+            <button onclick="consultBike()" class="btn btn-primary" style="width:100%; margin-top:10px; font-size:13px; padding:8px;">
+              ✨ AI Tư vấn ngay
+            </button>
+             <div id="consultResult" style="margin-top:10px; font-size:13px; color:var(--text-primary); display:none;"></div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1034,6 +1069,82 @@ footer {
         </div>
       </div>
       
+      <!-- NEW AI ITINERARY SECTION -->
+      <section class="section" id="ai-planner" style="padding-bottom: 0;">
+        <div class="card prose" style="max-width: 100%; background: linear-gradient(135deg, rgba(0,113,227,0.05) 0%, rgba(0,0,0,0) 100%); border-color: var(--accent-soft);">
+          <div class="section-head" style="margin-bottom: 24px;">
+            <h3 style="color: var(--accent);">✨ AI Tour Guide: Lên lịch trình vi vu</h3>
+            <p style="font-size: 14px; color: var(--text-secondary);">
+              Bạn chưa biết đi đâu? Hãy để Trợ lý AI của Thu Hà gợi ý lộ trình ăn chơi "chuẩn bài" cho bạn.
+            </p>
+          </div>
+          
+          <div class="grid-2" style="margin-bottom: 20px;">
+            <div class="form-group">
+              <label class="form-label">Bạn có bao nhiêu thời gian?</label>
+              <select id="aiTime" class="form-control">
+                <option value="1 buổi (Sáng/Chiều)">1 buổi (Sáng/Chiều)</option>
+                <option value="1 ngày trọn vẹn">1 ngày trọn vẹn</option>
+                <option value="Buổi tối (Night Tour)">Buổi tối (Night Tour)</option>
+                <option value="2 ngày 1 đêm (Đi ngoại thành)">2 ngày 1 đêm (Đi ngoại thành)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Sở thích của bạn là gì?</label>
+              <input type="text" id="aiInterest" class="form-control" placeholder="Ví dụ: Chụp ảnh, Cà phê, Ăn vặt, Lịch sử...">
+            </div>
+          </div>
+          <button onclick="generateItinerary()" id="btnGenerateItinerary" class="btn btn-primary" style="width: 100%;">
+            ✨ Tạo lịch trình ngay
+          </button>
+          
+          <div id="aiResult" class="ai-result-box" style="display:none; margin-top: 24px; padding: 20px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--accent);">
+            <!-- Content will load here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW AI UTILITIES SECTION (TRANSLATOR + TRAFFIC LAW) -->
+      <section class="section" id="ai-utilities" style="padding-top:24px;">
+        <div class="container">
+          <div class="grid-2">
+            <!-- AI Translator -->
+            <div class="card prose" style="max-width: 100%;">
+              <h3 style="color: var(--accent); display:flex; align-items:center; gap:8px;">
+                <span>🗣️</span> AI Translator
+              </h3>
+              <p style="font-size: 14px; color: var(--text-secondary); margin-bottom:16px;">
+                Nhập câu tiếng Anh bạn muốn nói (ví dụ: "Where is the gas station?"), AI sẽ dịch sang tiếng Việt kèm cách đọc.
+              </p>
+              <div class="form-group">
+                <input type="text" id="transInput" class="form-control" placeholder="Type here (e.g. I have a flat tire)">
+              </div>
+              <button onclick="translateText()" class="btn btn-glass" style="width:100%; justify-content:center;">
+                🇻🇳 Dịch sang tiếng Việt
+              </button>
+              <div id="transResult" class="ai-result-box" style="margin-top:16px; display:none; padding:12px; background:var(--bg-surface-2); border-radius:8px;"></div>
+            </div>
+
+            <!-- AI Traffic Law -->
+            <div class="card prose" style="max-width: 100%;">
+              <h3 style="color: var(--accent); display:flex; align-items:center; gap:8px;">
+                <span>👮</span> Hỏi luật giao thông
+              </h3>
+              <p style="font-size: 14px; color: var(--text-secondary); margin-bottom:16px;">
+                Thắc mắc về luật đi đường tại Việt Nam? Hỏi AI ngay để tránh bị phạt (ví dụ: "Được rẽ phải khi đèn đỏ không?").
+              </p>
+              <div class="form-group">
+                <input type="text" id="lawInput" class="form-control" placeholder="Nhập câu hỏi của bạn...">
+              </div>
+              <button onclick="askTrafficLaw()" class="btn btn-glass" style="width:100%; justify-content:center;">
+                📜 Tra cứu luật
+              </button>
+              <div id="lawResult" class="ai-result-box" style="margin-top:16px; display:none; padding:12px; background:var(--bg-surface-2); border-radius:8px;"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- SEO Article 3: Travel Tips (Full Width) -->
       <div class="card prose" style="margin-top:24px; max-width:100%;">
         <h3>🗺️ Gợi ý lịch trình "City Tour" Hà Nội bằng xe máy</h3>
@@ -1842,6 +1953,140 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(el);
   });
 });
+
+// --- 10. GEMINI API INTEGRATION (AI FEATURES) ---
+const apiKey = ""; // Runtime Injected
+
+async function callGemini(userPrompt, systemPrompt) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+  
+  const payload = {
+    contents: [{ parts: [{ text: userPrompt }] }],
+    systemInstruction: { parts: [{ text: systemPrompt }] }
+  };
+
+  let delay = 1000;
+  for (let i = 0; i < 5; i++) {
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      
+      if (!response.ok) {
+        if (response.status === 429) {
+          throw new Error("Too Many Requests");
+        }
+        throw new Error(`Error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || "Xin lỗi, AI đang bận. Vui lòng thử lại.";
+    } catch (err) {
+      if (i === 4) return "Hệ thống đang quá tải, vui lòng thử lại sau giây lát.";
+      await new Promise(r => setTimeout(r, delay));
+      delay *= 2;
+    }
+  }
+}
+
+// Feature 1: AI Itinerary Planner
+async function generateItinerary() {
+  const time = document.getElementById('aiTime').value;
+  const interest = document.getElementById('aiInterest').value;
+  const resultBox = document.getElementById('aiResult');
+  const btn = document.getElementById('btnGenerateItinerary');
+
+  if (!interest.trim()) {
+    alert("Vui lòng nhập sở thích của bạn!");
+    return;
+  }
+
+  // UI Loading
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = '<span class="loading-spinner"></span> Đang lên kế hoạch cho bạn...';
+  btn.disabled = true;
+
+  const systemPrompt = `Bạn là hướng dẫn viên du lịch địa phương làm việc cho cửa hàng "Thu Hà Cho Thuê Xe Máy" tại 108 Nguyễn Văn Cừ, Long Biên, Hà Nội. 
+  Nhiệm vụ của bạn là tạo một lịch trình đi xe máy an toàn, thú vị.
+  Luôn bắt đầu lịch trình từ cửa hàng Thu Hà (Long Biên).
+  Gợi ý các quán ăn ngon, địa điểm chụp ảnh đẹp.
+  Giọng điệu: Thân thiện, nhiệt tình, dùng emoji.
+  Định dạng: Dùng thẻ HTML đơn giản (<ul>, <li>, <strong>) để xuống dòng và in đậm. Không dùng Markdown.`;
+
+  const userPrompt = `Hãy tạo lịch trình đi xe máy tại Hà Nội. Thời gian: ${time}. Sở thích: ${interest}.`;
+
+  const text = await callGemini(userPrompt, systemPrompt);
+  const formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  resultBox.innerHTML = formattedText;
+  btn.disabled = false;
+}
+
+// Feature 2: AI Bike Consultant
+async function consultBike() {
+  const height = document.getElementById('consultHeight').value;
+  const dest = document.getElementById('consultDest').value;
+  const resultBox = document.getElementById('consultResult');
+
+  if (!height || !dest) {
+    alert("Vui lòng nhập chiều cao và điểm đến!");
+    return;
+  }
+
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = '<span class="loading-spinner"></span> Đang suy nghĩ...';
+
+  const systemPrompt = `Bạn là chuyên gia kỹ thuật tại cửa hàng Thu Hà. Kho xe gồm: 
+  1. SYM Elite 50cc (200k) - Thấp, nhẹ, không cần bằng.
+  2. Yamaha Sirius (150k) - Xe số, khỏe, leo dốc tốt.
+  3. Honda Vision (200k) - Xe ga quốc dân, dễ lái.
+  4. Honda Wave 110cc (150k) - Xe số bền bỉ.
+  5. Honda Air Blade 125cc (200k) - Xe ga khỏe, to, hợp chở người yêu/đi xa.
+  6. Xe đạp điện (150k) - Đi gần trong phố.
+  7. Yamaha Mio (200k) - Xe ga siêu thấp.
+  
+  Dựa vào chiều cao và điểm đến của khách, hãy khuyên dùng 1 chiếc xe cụ thể nhất. Giải thích ngắn gọn tại sao (dưới 40 từ).`;
+
+  const userPrompt = `Khách cao ${height}, muốn đi ${dest}. Tư vấn xe nào?`;
+
+  const text = await callGemini(userPrompt, systemPrompt);
+  resultBox.innerHTML = `<strong>💡 Gợi ý:</strong> ${text}`;
+}
+
+// Feature 3: AI Translator
+async function translateText() {
+  const input = document.getElementById('transInput').value;
+  const resultBox = document.getElementById('transResult');
+  
+  if(!input.trim()) return;
+  
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = '<span class="loading-spinner"></span> Đang dịch...';
+  
+  const systemPrompt = "Bạn là trợ lý thông dịch cho khách du lịch nước ngoài tại Việt Nam. Hãy dịch câu nói của họ sang tiếng Việt tự nhiên, ngắn gọn để họ giao tiếp với người dân. Kèm theo phần phiên âm (pronunciation guide) dễ đọc.";
+  const userPrompt = `Dịch sang tiếng Việt: "${input}"`;
+  
+  const text = await callGemini(userPrompt, systemPrompt);
+  resultBox.innerHTML = text.replace(/\n/g, '<br>');
+}
+
+// Feature 4: Traffic Law AI
+async function askTrafficLaw() {
+  const input = document.getElementById('lawInput').value;
+  const resultBox = document.getElementById('lawResult');
+  
+  if(!input.trim()) return;
+  
+  resultBox.style.display = 'block';
+  resultBox.innerHTML = '<span class="loading-spinner"></span> Đang tra cứu luật...';
+  
+  const systemPrompt = "Bạn là cảnh sát giao thông thân thiện. Hãy giải đáp ngắn gọn (dưới 50 từ) về luật giao thông đường bộ Việt Nam cho khách thuê xe máy. Tập trung vào xe máy.";
+  const userPrompt = `Câu hỏi về luật: "${input}"`;
+  
+  const text = await callGemini(userPrompt, systemPrompt);
+  resultBox.innerHTML = text;
+}
 </script>
 <!-- AI Chatbot Script -->
 <script src="https://motoopen.github.io/chothuexemayhanoi/motoai_v39_modelfirst_nomarkdown_nolink.js"></script>
