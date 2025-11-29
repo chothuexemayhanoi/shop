@@ -69,7 +69,7 @@ Trang chủ – Thu Hà Cho thuê xe máy 50cc Hà Nội
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": 21.038133,
-    "longitude": 105.866952
+    "longitude": 105.866952"
   },
   "areaServed": [
     { "@type": "AdministrativeArea", "name": "Long Biên, Hà Nội" },
@@ -1954,10 +1954,51 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// --- 10. GEMINI API INTEGRATION (AI FEATURES) ---
-const apiKey = ""; // Runtime Injected
+// --- 10. GEMINI API INTEGRATION & "AI GIẢ LẬP" (SIMULATED AI) ---
+const apiKey = ""; // API Key Empty as requested (Simulated Mode will trigger)
+
+// Simulated AI Brain (Mock logic for local file execution)
+function runSimulatedAI(userPrompt, systemPrompt) {
+  const p = userPrompt.toLowerCase();
+  
+  // 1. Consultant Logic (Tư vấn xe)
+  if (systemPrompt.includes("chuyên gia kỹ thuật") || p.includes("tư vấn xe")) {
+    if (p.includes("150") || p.includes("1m5") || p.includes("thấp")) return "Với chiều cao khiêm tốn, bạn nên chọn **Honda Vision** hoặc **Yamaha Mio/Cuxi** nhé. Yên thấp, nhẹ nhàng, dễ chống chân. Nếu chưa có bằng lái thì **SYM Elite 50cc** là chân ái!";
+    if (p.includes("160") || p.includes("1m6")) return "Chiều cao này đi xe nào cũng đẹp! Tiết kiệm xăng thì chọn **Wave/Sirius** (150k), muốn sang chảnh, cốp rộng thì lấy **Honda Vision** (200k) nhé.";
+    if (p.includes("170") || p.includes("1m7") || p.includes("cao")) return "Cao ráo thế này đi **Honda Air Blade** (200k) là chuẩn bài nhất, ngồi thoải mái, máy khỏe, chở bạn gái đi chơi bao ngầu.";
+    if (p.includes("xa") || p.includes("đồi") || p.includes("dốc") || p.includes("tam đảo") || p.includes("sóc sơn")) return "Đi đường xa hoặc leo dốc, mình khuyên dùng **Yamaha Sirius** hoặc **Honda Wave**. Xe số máy khỏe, leo dốc tốt hơn xe ga và tiết kiệm xăng hơn.";
+    return "Với nhu cầu cơ bản đi quanh phố, **Honda Vision** là lựa chọn an toàn, phổ biến và dễ lái nhất cho mọi người.";
+  }
+
+  // 2. Itinerary Logic (Lịch trình)
+  if (systemPrompt.includes("hướng dẫn viên") || p.includes("lịch trình")) {
+    if (p.includes("buổi")) return "<ul><li><strong>8:00:</strong> Nhận xe tại Thu Hà (108 Nguyễn Văn Cừ).</li><li><strong>8:30:</strong> Ăn sáng Phở Bò Khôi Hói hoặc Phở Gà Nguyệt.</li><li><strong>9:30:</strong> Cafe đường tàu (đoạn Phùng Hưng) check-in sống ảo.</li><li><strong>10:30:</strong> Tham quan Nhà Thờ Lớn & ăn kem Tràng Tiền.</li><li><strong>11:30:</strong> Lượn một vòng Hồ Gươm rồi trả xe.</li></ul>";
+    if (p.includes("tối") || p.includes("night")) return "<ul><li><strong>19:00:</strong> Lượn một vòng Hồ Tây hóng gió, ăn bánh tôm.</li><li><strong>20:30:</strong> Ghé phố ẩm thực Tống Duy Tân hoặc ăn phở cuốn Ngũ Xã.</li><li><strong>21:30:</strong> Trà chanh Nhà Thờ hoặc lên cầu Long Biên hóng mát.</li><li><strong>22:30:</strong> Về lại Long Biên nghỉ ngơi.</li></ul>";
+    return "<ul><li><strong>Sáng:</strong> Lăng Bác - Chùa Một Cột - Hoàng Thành Thăng Long.</li><li><strong>Trưa:</strong> Bún chả Hương Liên (Obama) hoặc Bún đậu mắm tôm Hàng Khay.</li><li><strong>Chiều:</strong> Hồ Tây - Chùa Trấn Quốc - Cafe view hồ.</li><li><strong>Tối:</strong> Phố đi bộ Hồ Gươm (cuối tuần) hoặc Phố bia Tạ Hiện.</li></ul>";
+  }
+
+  // 3. Translator Logic (Dịch thuật giả lập)
+  if (systemPrompt.includes("thông dịch")) {
+    return "<i>(Chế độ AI Giả lập):</i><br><b>Tiếng Việt:</b> Xin chào, tôi cần giúp đỡ!<br><b>Phát âm:</b> <i>Sin chao, toi can zup do</i><br><br>(Lưu ý: Để dịch chính xác câu của bạn, vui lòng kết nối mạng và thêm API Key).";
+  }
+
+  // 4. Traffic Law Logic (Luật giao thông)
+  if (systemPrompt.includes("cảnh sát giao thông") || p.includes("luật")) {
+    return "<strong>Luật cơ bản tại Hà Nội:</strong><br>- Luôn đội mũ bảo hiểm (cả người ngồi sau).<br>- Tuyệt đối không uống rượu bia khi lái xe (mức phạt rất nặng).<br>- Tốc độ trong phố tối đa 40-50km/h.<br>- Chú ý biển cấm rẽ phải khi đèn đỏ ở một số ngã tư lớn.<br>- Nếu bị CSGT dừng xe, hãy bình tĩnh xuất trình giấy tờ xe (bên mình đã cung cấp đủ).";
+  }
+
+  return "Hệ thống AI đang ở chế độ Offline (Giả lập). Yêu cầu của bạn đã được ghi nhận!";
+}
 
 async function callGemini(userPrompt, systemPrompt) {
+  // Check if API Key is present. If NOT, use Simulated AI.
+  if (!apiKey || apiKey.trim() === "") {
+    console.log("No API Key detected. Switching to Simulated AI Mode.");
+    // Simulate network delay for realism
+    await new Promise(r => setTimeout(r, 800)); 
+    return runSimulatedAI(userPrompt, systemPrompt);
+  }
+
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
   
   const payload = {
@@ -1966,7 +2007,7 @@ async function callGemini(userPrompt, systemPrompt) {
   };
 
   let delay = 1000;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 3; i++) { // Reduced retries for speed
     try {
       const response = await fetch(url, {
         method: "POST",
@@ -1975,16 +2016,14 @@ async function callGemini(userPrompt, systemPrompt) {
       });
       
       if (!response.ok) {
-        if (response.status === 429) {
-          throw new Error("Too Many Requests");
-        }
         throw new Error(`Error: ${response.status}`);
       }
 
       const data = await response.json();
-      return data.candidates?.[0]?.content?.parts?.[0]?.text || "Xin lỗi, AI đang bận. Vui lòng thử lại.";
+      return data.candidates?.[0]?.content?.parts?.[0]?.text || "Xin lỗi, AI đang bận.";
     } catch (err) {
-      if (i === 4) return "Hệ thống đang quá tải, vui lòng thử lại sau giây lát.";
+      console.warn("API Error, retrying or switching to Simulation:", err);
+      if (i === 2) return runSimulatedAI(userPrompt, systemPrompt); // Fallback to simulation on error
       await new Promise(r => setTimeout(r, delay));
       delay *= 2;
     }
@@ -2008,13 +2047,7 @@ async function generateItinerary() {
   resultBox.innerHTML = '<span class="loading-spinner"></span> Đang lên kế hoạch cho bạn...';
   btn.disabled = true;
 
-  const systemPrompt = `Bạn là hướng dẫn viên du lịch địa phương làm việc cho cửa hàng "Thu Hà Cho Thuê Xe Máy" tại 108 Nguyễn Văn Cừ, Long Biên, Hà Nội. 
-  Nhiệm vụ của bạn là tạo một lịch trình đi xe máy an toàn, thú vị.
-  Luôn bắt đầu lịch trình từ cửa hàng Thu Hà (Long Biên).
-  Gợi ý các quán ăn ngon, địa điểm chụp ảnh đẹp.
-  Giọng điệu: Thân thiện, nhiệt tình, dùng emoji.
-  Định dạng: Dùng thẻ HTML đơn giản (<ul>, <li>, <strong>) để xuống dòng và in đậm. Không dùng Markdown.`;
-
+  const systemPrompt = `Bạn là hướng dẫn viên du lịch địa phương làm việc cho cửa hàng "Thu Hà Cho Thuê Xe Máy". Giọng điệu: Thân thiện.`;
   const userPrompt = `Hãy tạo lịch trình đi xe máy tại Hà Nội. Thời gian: ${time}. Sở thích: ${interest}.`;
 
   const text = await callGemini(userPrompt, systemPrompt);
@@ -2037,17 +2070,7 @@ async function consultBike() {
   resultBox.style.display = 'block';
   resultBox.innerHTML = '<span class="loading-spinner"></span> Đang suy nghĩ...';
 
-  const systemPrompt = `Bạn là chuyên gia kỹ thuật tại cửa hàng Thu Hà. Kho xe gồm: 
-  1. SYM Elite 50cc (200k) - Thấp, nhẹ, không cần bằng.
-  2. Yamaha Sirius (150k) - Xe số, khỏe, leo dốc tốt.
-  3. Honda Vision (200k) - Xe ga quốc dân, dễ lái.
-  4. Honda Wave 110cc (150k) - Xe số bền bỉ.
-  5. Honda Air Blade 125cc (200k) - Xe ga khỏe, to, hợp chở người yêu/đi xa.
-  6. Xe đạp điện (150k) - Đi gần trong phố.
-  7. Yamaha Mio (200k) - Xe ga siêu thấp.
-  
-  Dựa vào chiều cao và điểm đến của khách, hãy khuyên dùng 1 chiếc xe cụ thể nhất. Giải thích ngắn gọn tại sao (dưới 40 từ).`;
-
+  const systemPrompt = `Bạn là chuyên gia kỹ thuật tại cửa hàng Thu Hà. Tư vấn xe dựa trên chiều cao và điểm đến.`;
   const userPrompt = `Khách cao ${height}, muốn đi ${dest}. Tư vấn xe nào?`;
 
   const text = await callGemini(userPrompt, systemPrompt);
@@ -2064,7 +2087,7 @@ async function translateText() {
   resultBox.style.display = 'block';
   resultBox.innerHTML = '<span class="loading-spinner"></span> Đang dịch...';
   
-  const systemPrompt = "Bạn là trợ lý thông dịch cho khách du lịch nước ngoài tại Việt Nam. Hãy dịch câu nói của họ sang tiếng Việt tự nhiên, ngắn gọn để họ giao tiếp với người dân. Kèm theo phần phiên âm (pronunciation guide) dễ đọc.";
+  const systemPrompt = "Bạn là trợ lý thông dịch.";
   const userPrompt = `Dịch sang tiếng Việt: "${input}"`;
   
   const text = await callGemini(userPrompt, systemPrompt);
@@ -2081,14 +2104,14 @@ async function askTrafficLaw() {
   resultBox.style.display = 'block';
   resultBox.innerHTML = '<span class="loading-spinner"></span> Đang tra cứu luật...';
   
-  const systemPrompt = "Bạn là cảnh sát giao thông thân thiện. Hãy giải đáp ngắn gọn (dưới 50 từ) về luật giao thông đường bộ Việt Nam cho khách thuê xe máy. Tập trung vào xe máy.";
+  const systemPrompt = "Bạn là cảnh sát giao thông thân thiện.";
   const userPrompt = `Câu hỏi về luật: "${input}"`;
   
   const text = await callGemini(userPrompt, systemPrompt);
   resultBox.innerHTML = text;
 }
 </script>
-<!-- AI Chatbot Script -->
+<!-- AI Chatbot Script (External) -->
 <script src="https://motoopen.github.io/chothuexemayhanoi/motoai_v39_modelfirst_nomarkdown_nolink.js"></script>
 </body>
 </html>
