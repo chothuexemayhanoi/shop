@@ -42,6 +42,9 @@ UPDATED: REMOVED "MOTOR", OPTIMIZED FOR LOCAL MAP NAME
 <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 <link rel="apple-touch-icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 
+<!-- Security: DOMPurify -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" xintegrity="sha512-H+rglffZ6f5MypGE9j1ykUX9xsA2XjjO+O5/wDkzj3Yqsy5vyT38s5KsxB010V92uIe7XF8sO+uJ6gBfJ8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- Schema Markup (JSON-LD) - Article/Policy -->
 <script type="application/ld+json">
 {
@@ -283,9 +286,10 @@ p:last-child { margin-bottom: 0; }
 .sidebar-close { width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(125, 125, 125, 0.15); color: var(--text-secondary); cursor: pointer; }
 .sidebar-content { padding: 16px; flex: 1; overflow-y: auto; }
 .nav-group { background: var(--bg-surface-2); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; }
+/* A11y Upgrade: Button styles for nav items */
+.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid var(--border); border-radius: 0; font-family: inherit; }
 .nav-item:last-child { border-bottom: none; }
-.nav-item:active { background: rgba(125,125,125,0.1); }
+.nav-item:active, .nav-item:focus { background: rgba(125,125,125,0.1); outline: none; }
 .nav-icon { margin-right: 12px; font-size: 18px; width: 24px; text-align: center; }
 .nav-sub { display: none; background: rgba(0,0,0,0.05); }
 .nav-sub.open { display: block; animation: slideDown 0.3s; }
@@ -354,27 +358,33 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 <div class="page-wrap">
 <!-- SIDEBAR + OVERLAY -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-<aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu chính">
   <div class="sidebar-header">
     <div class="sidebar-title">Menu</div>
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
   </div>
   <div class="sidebar-content">
+    <!-- Group 1: Main -->
     <nav class="nav-group">
-      <a href="index.html" class="nav-item">
+      <!-- Changed div to button for accessibility -->
+      <button class="nav-item" onclick="window.location.href='index.html'">
         <span class="nav-icon">🏠</span> Trang chủ
-      </a>
-      <a href="gioithieu.html" class="nav-item">
+      </button>
+      <button class="nav-item" onclick="window.location.href='gioithieu.html'">
         <span class="nav-icon">👋</span> Giới thiệu
-      </a>
+      </button>
     </nav>
+
+    <!-- Group 2: Services & Address (Dropdowns) -->
     <nav class="nav-group">
+      <!-- Dropdown Dịch vụ -->
       <div class="nav-has-sub" id="serviceMenu">
-        <div class="nav-item" onclick="toggleSub('serviceMenu')">
+        <!-- Changed div to button for accessibility -->
+        <button type="button" class="nav-item" onclick="toggleSub('serviceMenu')" aria-expanded="false" aria-controls="serviceMenu-sub">
           <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
           <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-        </div>
-        <div class="nav-sub">
+        </button>
+        <div class="nav-sub" id="serviceMenu-sub">
           <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
           <a href="thutuc.html" class="nav-sub-link">Thủ tục</a>
           <a href="huongdan.html" class="nav-sub-link">Hướng dẫn</a>
@@ -385,12 +395,15 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <a href="thang.html" class="nav-sub-link">Thuê theo tháng</a>
         </div>
       </div>
+
+      <!-- Dropdown Địa chỉ -->
       <div class="nav-has-sub" id="addrMenu">
-        <div class="nav-item" onclick="toggleSub('addrMenu')">
+        <!-- Changed div to button for accessibility -->
+        <button type="button" class="nav-item" onclick="toggleSub('addrMenu')" aria-expanded="false" aria-controls="addrMenu-sub">
           <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
           <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-        </div>
-        <div class="nav-sub">
+        </button>
+        <div class="nav-sub" id="addrMenu-sub">
           <a href="gialam.html" class="nav-sub-link">Gia Lâm (New)</a>
           <a href="longbien.html" class="nav-sub-link">Long Biên</a>
           <a href="phoco.html" class="nav-sub-link">Phố Cổ</a>
@@ -400,6 +413,8 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         </div>
       </div>
     </nav>
+
+    <!-- Group 3: Info -->
     <nav class="nav-group">
       <a href="faq.html" class="nav-item">
         <span class="nav-icon">❓</span> FAQ
@@ -407,7 +422,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
       <a href="dieukhoan.html" class="nav-item">
         <span class="nav-icon">📝</span> Điều khoản
       </a>
-      <a href="chinhsach.html" class="nav-item" style="color:var(--accent); background:rgba(0,113,227,0.1);">
+      <a href="chinhsach.html" class="nav-item" style="color:var(--accent); background:rgba(0,113,227,0.1); font-weight:600;">
         <span class="nav-icon">🛡️</span> Chính sách
       </a>
       <a href="lienhe.html" class="nav-item">
@@ -420,7 +435,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 <!-- HEADER -->
 <header class="site-header">
   <div class="header-left">
-    <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+    <button class="icon-btn" id="menuBtn" aria-label="Mở menu" aria-controls="sidebar">☰</button>
   </div>
   
   <div class="header-center">
@@ -613,13 +628,13 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín số 1 tại Gia Lâm & Hà Nội. Thủ tục nhanh gọn, xe mới, hỗ trợ 24/7.
         </p>
         <div class="social-group">
-          <a href="https://m.facebook.com/chothuexemayohanoigiare/" class="social-link" aria-label="Facebook">
+          <a href="https://m.facebook.com/chothuexemayohanoigiare/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
             <svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
           </a>
-          <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo">
+          <a href="https://zalo.me/0334699969" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Zalo">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
           </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" class="social-link" aria-label="Google Maps">
+          <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Maps">
             <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
           </a>
         </div>
@@ -699,9 +714,9 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 <div class="fab-container" id="quickFab">
   <div class="fab-menu">
     <a href="tel:0334699969" class="fab-label"><span>📞</span> Gọi điện</a>
-    <a href="https://zalo.me/0334699969" class="fab-label"><span>💬</span> Chat Zalo</a>
-    <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label"><span>🟢</span> WhatsApp</a>
-    <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener" class="fab-label"><span>📍</span> Chỉ đường</a>
+    <a href="https://zalo.me/0334699969" target="_blank" rel="noopener noreferrer" class="fab-label"><span>💬</span> Chat Zalo</a>
+    <a href="https://wa.me/84334699969" target="_blank" rel="noopener noreferrer" class="fab-label"><span>🟢</span> WhatsApp</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="fab-label"><span>📍</span> Chỉ đường</a>
     <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><span>⬆️</span> Lên đầu trang</button>
   </div>
   <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
@@ -726,6 +741,8 @@ themeToggle.addEventListener('click', () => {
   updateThemeIcon(next);
 });
 
+// UI Logic: Show the icon of the STATE WE WILL GO TO
+// If Dark -> Show Sun (Light). If Light -> Show Moon (Dark).
 function updateThemeIcon(theme) {
   themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
 }
@@ -751,22 +768,63 @@ function updateOpeningStatus() {
   }
 }
 
-// --- 3. SIDEBAR LOGIC ---
+// --- 3. SIDEBAR LOGIC & A11Y (Focus Trap) ---
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('sidebarClose');
 
+// Focus Trap Variables
+const focusableElements = sidebar.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+const firstFocusableElement = focusableElements[0];
+const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
 function openSidebar() {
   sidebar.classList.add('open');
   overlay.classList.add('show');
   document.body.style.overflow = 'hidden';
+  
+  // A11y: Move focus to close button
+  setTimeout(() => closeBtn.focus(), 100);
+  
+  // Add Escape key listener
+  document.addEventListener('keydown', handleSidebarKeydown);
 }
 
 function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('show');
   document.body.style.overflow = '';
+  
+  // A11y: Return focus to menu trigger
+  menuBtn.focus();
+  
+  // Remove Escape key listener
+  document.removeEventListener('keydown', handleSidebarKeydown);
+}
+
+function handleSidebarKeydown(e) {
+  const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+  const isEscPressed = e.key === 'Escape' || e.keyCode === 27;
+
+  if (isEscPressed) {
+    closeSidebar();
+    return;
+  }
+
+  if (!isTabPressed) return;
+
+  if (e.shiftKey) { // Shift + Tab
+    if (document.activeElement === firstFocusableElement) {
+      lastFocusableElement.focus();
+      e.preventDefault();
+    }
+  } else { // Tab
+    if (document.activeElement === lastFocusableElement) {
+      firstFocusableElement.focus();
+      e.preventDefault();
+    }
+  }
 }
 
 menuBtn.addEventListener('click', openSidebar);
@@ -775,16 +833,20 @@ overlay.addEventListener('click', closeSidebar);
 
 // --- 4. SUBMENU DROPDOWN ---
 function toggleSub(id) {
-  const parent = document.getElementById(id);
-  const sub = parent.querySelector('.nav-sub');
+  const parent = document.getElementById(id); // The .nav-has-sub div
+  const triggerBtn = parent.querySelector('.nav-item'); // The button
+  const sub = parent.querySelector('.nav-sub'); // The submenu container
+  
   const wasOpen = sub.classList.contains('open');
   
   if (wasOpen) {
     sub.classList.remove('open');
     parent.classList.remove('active');
+    triggerBtn.setAttribute('aria-expanded', 'false');
   } else {
     sub.classList.add('open');
     parent.classList.add('active');
+    triggerBtn.setAttribute('aria-expanded', 'true');
   }
 }
 
@@ -822,14 +884,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('section, footer, .toc-box, article').forEach(el => {
-    el.classList.add('section-fade');
-    observer.observe(el);
-  });
+  document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
 });
 </script>
 <!-- AI Chatbot Script -->
 <script src="https://motoopen.github.io/chothuexemayhanoi/motoai_v39_modelfirst_nomarkdown_nolink.js"></script>
 </body>
 </html>
-
