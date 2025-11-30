@@ -3,14 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- 
+  =========================================
+  SUGGESTED CSP HEADER (Uncomment & Configure on Server Side)
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://generativelanguage.googleapis.com; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'self' https://generativelanguage.googleapis.com; frame-src 'self' https://www.google.com;
+  =========================================
+-->
+
 <!-- =========================================
 PRO ULTRA SEO MODE 2025 - ABOUT PAGE
 Giới thiệu – Thu Hà Cho thuê xe máy 50cc Hà Nội
 ========================================= -->
 <title>Về Chúng Tôi | Thu Hà Cho Thuê Xe Máy 50cc Uy Tín Số 1 Gia Lâm</title>
 <!-- Core Meta Tags -->
-<meta name="description" content="Tìm hiểu về Thu Hà - Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín nhất tại Gia Lâm & Long Biên. Lịch sử 10 năm, xe mới, giá từ 150k, không cần bằng lái." />
-<meta name="keywords" content="giới thiệu thu hà, về chúng tôi thuê xe máy, thuê xe máy uy tín hà nội, thuê xe máy gia lâm, lịch sử thuê xe thu hà, cửa hàng xe máy nguyễn văn cừ" />
+<meta name="description" content="Tìm hiểu về Thu Hà - Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín nhất tại Gia Lâm & Long Biên. Lịch sử phát triển từ 145 Sài Đồng, xe mới, giá từ 150k, không cần bằng lái." />
+<meta name="keywords" content="giới thiệu thu hà, về chúng tôi thuê xe máy, thuê xe máy uy tín hà nội, thuê xe máy gia lâm, lịch sử thuê xe thu hà, cửa hàng xe máy nguyễn văn cừ, thuê xe máy sài đồng" />
 <meta name="author" content="Thu Hà" />
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 <!-- Local SEO / Geo -->
@@ -29,7 +37,7 @@ Giới thiệu – Thu Hà Cho thuê xe máy 50cc Hà Nội
 <meta property="og:url" content="https://chothuexemayhanoi.github.io/shop/gioithieu.html" />
 <meta property="og:site_name" content="Thu Hà Cho Thuê Xe Máy 50cc Hà Nội" />
 <meta property="og:title" content="Câu Chuyện Của Thu Hà - Dịch Vụ Cho Thuê Xe Máy Tận Tâm Tại Hà Nội" />
-<meta property="og:description" content="Hành trình từ một cửa hàng nhỏ tại Gia Lâm đến địa chỉ thuê xe máy tin cậy cho hàng nghìn du khách. Xe 50cc không cần bằng, phục vụ 24/7." />
+<meta property="og:description" content="Hành trình từ một cửa hàng nhỏ tại Sài Đồng đến địa chỉ thuê xe máy tin cậy cho hàng nghìn du khách. Xe 50cc không cần bằng, phục vụ 24/7." />
 <meta property="og:image" content="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 <meta property="og:image:alt" content="Cửa hàng cho thuê xe máy Thu Hà - 108 Nguyễn Văn Cừ" />
 <meta property="og:locale" content="vi_VN" />
@@ -41,6 +49,9 @@ Giới thiệu – Thu Hà Cho thuê xe máy 50cc Hà Nội
 <!-- Favicon -->
 <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 <link rel="apple-touch-icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
+
+<!-- SECURITY: DOMPurify for sanitizing AI outputs -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" xintegrity="sha512-H+rP+0ybW5YK9yX1M2/tXYJjXyz1E80z8zD+F91wzZCcG01m/0/1GZ6YdGzA9T+T+04ZCA7c4q7yK8y9v8W9g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
 <!-- Schema Markup (JSON-LD) -->
 <script type="application/ld+json">
@@ -54,14 +65,24 @@ Giới thiệu – Thu Hà Cho thuê xe máy 50cc Hà Nội
       "image": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
       "url": "https://chothuexemayhanoi.github.io/shop/",
       "telephone": "+84334699969",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "108 Nguyễn Văn Cừ",
-        "addressLocality": "Long Biên",
-        "addressRegion": "Hà Nội",
-        "postalCode": "100000",
-        "addressCountry": "VN"
-      },
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "108 Nguyễn Văn Cừ",
+          "addressLocality": "Long Biên",
+          "addressRegion": "Hà Nội",
+          "postalCode": "100000",
+          "addressCountry": "VN"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "145 Phố Sài Đồng",
+          "addressLocality": "Long Biên",
+          "addressRegion": "Hà Nội",
+          "postalCode": "100000",
+          "addressCountry": "VN"
+        }
+      ],
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": 21.038133,
@@ -240,10 +261,12 @@ p:last-child { margin-bottom: 0; }
 .sidebar.open { transform: translateX(0); }
 .sidebar-header { padding: 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); }
 .sidebar-title { font-size: 18px; font-weight: 700; }
-.sidebar-close { width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(125, 125, 125, 0.15); color: var(--text-secondary); cursor: pointer; }
+.sidebar-close { width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(125, 125, 125, 0.15); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .sidebar-content { padding: 16px; flex: 1; overflow-y: auto; }
 .nav-group { background: var(--bg-surface-2); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; }
+
+/* FIXED: .nav-item can be a button or link now */
+.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; text-align: left; background: transparent; border-left: none; border-right: none; border-top: none; width: 100%; font-family: inherit;}
 .nav-item:last-child { border-bottom: none; }
 .nav-item:active { background: rgba(125,125,125,0.1); }
 .nav-icon { margin-right: 12px; font-size: 18px; width: 24px; text-align: center; }
@@ -263,7 +286,7 @@ p:last-child { margin-bottom: 0; }
 .text-gradient { background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .hero-desc { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
 .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 28px; border-radius: var(--radius-full); font-weight: 500; font-size: 15px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; border: none; }
 .btn:active { transform: scale(0.98); }
 .btn-primary { background: var(--accent); color: white !important; /* Force Text Color */ box-shadow: 0 4px 15px rgba(0,113,227,0.4); }
 .btn-primary:hover { background: var(--accent-hover); box-shadow: 0 6px 20px rgba(0,113,227,0.5); }
@@ -308,32 +331,34 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 .fab-container:not(.open) .fab-main { animation: fab-wiggle 1.3s var(--ease) infinite; animation-delay: 2s; }
 .fab-main:hover { transform: scale(1.1); animation: none; }
 @media (prefers-reduced-motion: reduce) { .fab-container:not(.open) .fab-main { animation: none; } }
+/* Honeypot hidden field */
+.honey-pot { opacity: 0; position: absolute; top: 0; left: 0; height: 0; width: 0; z-index: -1; }
 </style>
 </head>
 <body>
 <div class="page-wrap">
 <!-- SIDEBAR + OVERLAY -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-<aside class="sidebar" id="sidebar">
+<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu chính">
   <div class="sidebar-header">
     <div class="sidebar-title">Menu</div>
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
   </div>
   <div class="sidebar-content">
     <nav class="nav-group">
-      <div class="nav-item" onclick="window.location.href='index.html'">
-        <span class="nav-icon">🏠</span> Trang chủ
-      </div>
-      <div class="nav-item" onclick="window.location.href='gioithieu.html'">
-        <span class="nav-icon">👋</span> Giới thiệu
-      </div>
+      <a href="index.html" class="nav-item">
+        <span style="display:flex; align-items: center;"><span class="nav-icon">🏠</span> Trang chủ</span>
+      </a>
+      <a href="gioithieu.html" class="nav-item">
+        <span style="display:flex; align-items: center;"><span class="nav-icon">👋</span> Giới thiệu</span>
+      </a>
     </nav>
     <nav class="nav-group">
       <div class="nav-has-sub" id="serviceMenu">
-        <div class="nav-item" onclick="toggleSub('serviceMenu')">
-          <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
+        <button type="button" class="nav-item" onclick="toggleSub('serviceMenu')" aria-expanded="false">
+          <span style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</span>
           <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-        </div>
+        </button>
         <div class="nav-sub">
           <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
           <a href="thutuc.html" class="nav-sub-link">Thủ tục</a>
@@ -346,10 +371,10 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         </div>
       </div>
       <div class="nav-has-sub" id="addrMenu">
-        <div class="nav-item" onclick="toggleSub('addrMenu')">
-          <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
+        <button type="button" class="nav-item" onclick="toggleSub('addrMenu')" aria-expanded="false">
+          <span style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</span>
           <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-        </div>
+        </button>
         <div class="nav-sub">
           <a href="gialam.html" class="nav-sub-link">Gia Lâm (New)</a>
           <a href="longbien.html" class="nav-sub-link">Long Biên</a>
@@ -362,16 +387,16 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
     </nav>
     <nav class="nav-group">
       <a href="faq.html" class="nav-item">
-        <span class="nav-icon">❓</span> FAQ
+        <span style="display:flex; align-items: center;"><span class="nav-icon">❓</span> FAQ</span>
       </a>
       <a href="dieukhoan.html" class="nav-item">
-        <span class="nav-icon">📝</span> Điều khoản
+        <span style="display:flex; align-items: center;"><span class="nav-icon">📝</span> Điều khoản</span>
       </a>
       <a href="chinhsach.html" class="nav-item">
-        <span class="nav-icon">🛡️</span> Chính sách
+        <span style="display:flex; align-items: center;"><span class="nav-icon">🛡️</span> Chính sách</span>
       </a>
       <a href="lienhe.html" class="nav-item">
-        <span class="nav-icon">📞</span> Liên hệ
+        <span style="display:flex; align-items: center;"><span class="nav-icon">📞</span> Liên hệ</span>
       </a>
     </nav>
   </div>
@@ -431,9 +456,9 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
         </p>
 
         <p>
-          Cách đây 10 năm, việc thuê xe máy ở khu vực bến xe Gia Lâm hay Long Biên thường đi kèm với nỗi lo: 
-          xe cũ nát, giá cả không rõ ràng, và thủ tục giữ giấy tờ phức tạp. Với mong muốn thay đổi định kiến đó, 
-          tôi đã thành lập "Thu Hà Motorbike Rental" với tôn chỉ duy nhất: <strong>"Xe phải ngon – Giá phải chuẩn – Khách phải vui"</strong>.
+          Khởi đầu từ một cửa hàng nhỏ tại <strong>145 Phố Sài Đồng</strong>, chúng tôi đã thấu hiểu nỗi lo của khách hàng khi thuê xe ở khu vực Bến xe Gia Lâm hay Long Biên: 
+          sợ xe cũ nát, sợ bị "chặt chém" giá cả, và e ngại thủ tục giữ giấy tờ phức tạp. Với mong muốn thay đổi định kiến đó, 
+          tôi đã mở rộng và phát triển "Thu Hà Motorbike Rental" với tôn chỉ duy nhất: <strong>"Xe phải ngon – Giá phải chuẩn – Khách phải vui"</strong>.
         </p>
 
         <h2>1. Tại sao lại là xe 50cc?</h2>
@@ -453,15 +478,19 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
            <img src="https://raw.githubusercontent.com/motorbikenguyenha/chothuexemay50cc/refs/heads/main/IMG_5312.jpeg" alt="Đội xe ga 50cc SYM Elite mới cứng tại cửa hàng Thu Hà" loading="lazy">
         </div>
 
-        <h2>2. Vị trí "Vàng" tại Gia Lâm & Long Biên</h2>
+        <h2>2. Mạng lưới rộng khắp: Từ Sài Đồng đến Nguyễn Văn Cừ</h2>
         <p>
-          Cửa hàng chính của chúng tôi đặt tại <strong>108 Nguyễn Văn Cừ, Long Biên</strong>. Đây không phải là sự lựa chọn ngẫu nhiên.
+          Để phục vụ tốt nhất nhu cầu của khách hàng, Thu Hà hiện có sự hiện diện mạnh mẽ tại hai vị trí chiến lược của quận Long Biên:
+        </p>
+        <ul>
+           <li><strong>Cơ sở 1 (Kho xe & Bảo dưỡng):</strong> 145 Phố Sài Đồng, Long Biên. Đây là nơi khởi nguồn và cũng là trung tâm bảo dưỡng chính, đảm bảo mọi chiếc xe trước khi lăn bánh đều đạt chuẩn kỹ thuật cao nhất.</li>
+           <li><strong>Cơ sở 2 (Văn phòng chính):</strong> 108 Nguyễn Văn Cừ, Long Biên. Vị trí "vàng" ngay cửa ngõ thủ đô, chỉ cách cầu Chương Dương vài phút đi xe, cực kỳ thuận tiện cho khách du lịch di chuyển sang Phố Cổ.</li>
+        </ul>
+        <p>
+          Đặc biệt, nếu bạn vừa xuống xe khách tại <strong>Bến xe Gia Lâm</strong> (chỉ cách văn phòng Nguyễn Văn Cừ 500m), bạn không cần tốn tiền taxi. Hãy đi bộ vài bước hoặc gọi cho chúng tôi, Thu Hà sẽ giao xe tận cổng bến trong vòng 10-15 phút.
         </p>
         <p>
-          Nằm ngay cửa ngõ thủ đô, vị trí này cực kỳ thuận lợi cho khách đến từ các tỉnh lân cận qua <strong>Bến xe Gia Lâm</strong> (chỉ cách 500m). Thay vì phải bắt taxi đắt đỏ vào phố cổ rồi mới đi tìm thuê xe, bạn có thể xuống xe khách, đi bộ vài bước sang Thu Hà nhận xe và bắt đầu hành trình của mình ngay lập tức.
-        </p>
-        <p>
-          Chúng tôi hiểu rằng việc di chuyển hành lý cồng kềnh là một cực hình. Vì vậy, dịch vụ <a href="gialam.html">Giao xe tận nơi tại Gia Lâm</a> của Thu Hà luôn sẵn sàng hỗ trợ bạn trong vòng 15-20 phút.
+          Tìm hiểu thêm về dịch vụ <a href="gialam.html">Giao xe tận nơi tại Gia Lâm</a> của chúng tôi.
         </p>
 
         <h2>3. Cam kết chất lượng dịch vụ</h2>
@@ -496,7 +525,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
            Nếu bạn lần đầu đến Hà Nội và chưa biết đi đâu, ăn gì, đừng ngần ngại hỏi chúng tôi. Đội ngũ Thu Hà luôn sẵn lòng chia sẻ <a href="kinhnghiem.html">kinh nghiệm du lịch Hà Nội</a> "chuẩn dân bản địa" hoàn toàn miễn phí.
         </p>
 
-        <!-- MODIFIED SECTION 5: ADDED ICON & FIXED BUTTON TEXT -->
+        <!-- CALL TO ACTION SECTION -->
         <div style="text-align: center; margin-top: 60px; margin-bottom: 20px;">
            <div style="font-size: 40px; margin-bottom: 10px;">🤝</div>
            <h2>5. Kết nối với Thu Hà</h2>
@@ -534,7 +563,7 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <div style="margin-top:20px; text-align:center;">
-             <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="btn btn-glass">📍 Chỉ đường Google Maps</a>
+             <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="btn btn-glass">📍 Chỉ đường Google Maps</a>
         </div>
       </div>
     </div>
@@ -558,14 +587,16 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín số 1 tại Gia Lâm & Hà Nội. Thủ tục nhanh gọn, xe mới, hỗ trợ 24/7.
         </p>
         <div class="social-group">
-          <a href="https://m.facebook.com/chothuexemayohanoigiare/" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg></a>
-          <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg></a>
-          <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="social-link" aria-label="Google Maps"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></a>
+          <a href="https://m.facebook.com/chothuexemayohanoigiare/" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg></a>
+          <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg></a>
+          <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Maps"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></a>
         </div>
       </div>
       <!-- Column 2: Quick Links -->
       <div class="footer-col" onclick="toggleFooterCol(this)">
-        <h4 class="footer-title">Về Thu Hà <span class="footer-toggle-icon">▼</span></h4>
+        <button class="footer-title" aria-expanded="false" style="background:none; border:none; width:100%; padding:0; text-align:left; color:inherit; font:inherit; cursor:pointer;">
+          Về Thu Hà <span class="footer-toggle-icon">▼</span>
+        </button>
         <ul class="footer-links">
           <li><a href="index.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Trang chủ</a></li>
           <li><a href="gioithieu.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Giới thiệu</a></li>
@@ -575,9 +606,11 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <li><a href="lienhe.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Liên hệ</a></li>
         </ul>
       </div>
-      <!-- Column 3: Services (Updated with Menu items) -->
+      <!-- Column 3: Services -->
       <div class="footer-col" onclick="toggleFooterCol(this)">
-        <h4 class="footer-title">Dịch vụ <span class="footer-toggle-icon">▼</span></h4>
+        <button class="footer-title" aria-expanded="false" style="background:none; border:none; width:100%; padding:0; text-align:left; color:inherit; font:inherit; cursor:pointer;">
+          Dịch vụ <span class="footer-toggle-icon">▼</span>
+        </button>
         <ul class="footer-links">
           <li><a href="banggia.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Bảng giá</a></li>
           <li><a href="thutuc.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Thủ tục thuê</a></li>
@@ -589,9 +622,11 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
           <li><a href="thang.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Thuê theo tháng</a></li>
         </ul>
       </div>
-      <!-- Column 4: Locations (Updated with Menu items) -->
+      <!-- Column 4: Locations -->
       <div class="footer-col" onclick="toggleFooterCol(this)">
-        <h4 class="footer-title">Khu vực <span class="footer-toggle-icon">▼</span></h4>
+        <button class="footer-title" aria-expanded="false" style="background:none; border:none; width:100%; padding:0; text-align:left; color:inherit; font:inherit; cursor:pointer;">
+          Khu vực <span class="footer-toggle-icon">▼</span>
+        </button>
         <ul class="footer-links">
           <li><a href="gialam.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Gia Lâm</a></li>
           <li><a href="longbien.html" class="footer-link-item"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Long Biên</a></li>
@@ -603,7 +638,9 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
       </div>
       <!-- Column 5: Contact -->
       <div class="footer-col col-contact" onclick="toggleFooterCol(this)">
-        <h4 class="footer-title">Liên hệ <span class="footer-toggle-icon">▼</span></h4>
+        <button class="footer-title" aria-expanded="false" style="background:none; border:none; width:100%; padding:0; text-align:left; color:inherit; font:inherit; cursor:pointer;">
+          Liên hệ <span class="footer-toggle-icon">▼</span>
+        </button>
         <div class="contact-list">
           <div class="contact-item">
             <span class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
@@ -631,9 +668,9 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 <div class="fab-container" id="quickFab">
   <div class="fab-menu">
     <a href="tel:0334699969" class="fab-label"><span>📞</span> Gọi điện</a>
-    <a href="https://zalo.me/0334699969" class="fab-label"><span>💬</span> Chat Zalo</a>
-    <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label"><span>🟢</span> WhatsApp</a>
-    <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener" class="fab-label"><span>📍</span> Chỉ đường</a>
+    <a href="https://zalo.me/0334699969" target="_blank" rel="noopener noreferrer" class="fab-label"><span>💬</span> Chat Zalo</a>
+    <a href="https://wa.me/84334699969" target="_blank" rel="noopener noreferrer" class="fab-label"><span>🟢</span> WhatsApp</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="fab-label"><span>📍</span> Chỉ đường</a>
     <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });"><span>⬆️</span> Lên đầu trang</button>
   </div>
   <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
@@ -642,9 +679,11 @@ footer { margin-top: 80px; padding: 80px 0 40px; background: var(--bg-surface); 
 </div> <!-- End Page Wrap -->
 
 <script>
-// --- 1. TOGGLE DARK/LIGHT THEME ---
+// --- 1. TOGGLE DARK/LIGHT THEME (FIXED LOGIC) ---
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
+
+// Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
 updateThemeIcon(savedTheme);
@@ -657,60 +696,149 @@ themeToggle.addEventListener('click', () => {
   updateThemeIcon(next);
 });
 
-function updateThemeIcon(theme) { themeToggle.textContent = theme === 'light' ? '🌙' : '☀️'; }
+function updateThemeIcon(currentTheme) {
+  // Logic: Show the icon for the NEXT state.
+  // If current is Dark, show Sun (to switch to Light).
+  // If current is Light, show Moon (to switch to Dark).
+  themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+}
 
 // --- 2. OPENING STATUS LOGIC (9h-21h) ---
 const statusDot = document.getElementById('statusDot');
 const statusText = document.getElementById('statusText');
+
 function updateOpeningStatus() {
   if (!statusDot || !statusText) return;
   const now = new Date();
   const hour = now.getHours();
   const isOpen = hour >= 9 && hour < 21;
+
   if (isOpen) {
-    statusDot.classList.add('open'); statusDot.classList.remove('closed'); statusText.textContent = 'Đang mở • 9h – 21h';
+    statusDot.classList.add('open');
+    statusDot.classList.remove('closed');
+    statusText.textContent = 'Đang mở • 9h – 21h';
   } else {
-    statusDot.classList.add('closed'); statusDot.classList.remove('open'); statusText.textContent = 'Đã đóng • 9h – 21h';
+    statusDot.classList.add('closed');
+    statusDot.classList.remove('open');
+    statusText.textContent = 'Đã đóng • 9h – 21h';
   }
 }
 
-// --- 3. SIDEBAR LOGIC ---
+// --- 3. SIDEBAR LOGIC + FOCUS TRAP (A11Y) ---
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('sidebarClose');
-function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  sidebar.focus(); // Move focus to sidebar
+  document.addEventListener('keydown', trapFocus);
+}
+
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', trapFocus);
+  menuBtn.focus(); // Restore focus to trigger
+}
+
+function trapFocus(e) {
+  if (e.key === 'Escape') {
+    closeSidebar();
+    return;
+  }
+  if (e.key !== 'Tab') return;
+
+  const focusable = sidebar.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+
+  if (e.shiftKey) {
+    if (document.activeElement === first) {
+      last.focus();
+      e.preventDefault();
+    }
+  } else {
+    if (document.activeElement === last) {
+      first.focus();
+      e.preventDefault();
+    }
+  }
+}
+
 menuBtn.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
-// --- 4. SUBMENU ---
+// --- 4. SUBMENU DROPDOWN ---
 function toggleSub(id) {
   const parent = document.getElementById(id);
+  const btn = parent.querySelector('button.nav-item');
   const sub = parent.querySelector('.nav-sub');
-  if (sub.classList.contains('open')) { sub.classList.remove('open'); parent.classList.remove('active'); } 
-  else { sub.classList.add('open'); parent.classList.add('active'); }
+  const wasOpen = sub.classList.contains('open');
+  
+  if (wasOpen) {
+    sub.classList.remove('open');
+    parent.classList.remove('active');
+    btn.setAttribute('aria-expanded', 'false');
+  } else {
+    sub.classList.add('open');
+    parent.classList.add('active');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
-// --- 5. FAB & FOOTER MOBILE ---
+// --- 5. FAB & FOOTER ---
 const quickFab = document.getElementById('quickFab');
-function toggleFab() { if (quickFab) quickFab.classList.toggle('open'); }
-function toggleFooterCol(element) { if (window.innerWidth <= 600) element.classList.toggle('active'); }
-window.addEventListener('resize', () => { if (window.innerWidth > 600) document.querySelectorAll('.footer-col').forEach(col => col.classList.remove('active')); });
+function toggleFab() {
+  if (!quickFab) return;
+  quickFab.classList.toggle('open');
+}
+
+function toggleFooterCol(element) {
+  if (window.innerWidth > 600) return;
+  const titleBtn = element.querySelector('.footer-title');
+  const isExpanded = element.classList.contains('active');
+  
+  element.classList.toggle('active');
+  if(titleBtn) titleBtn.setAttribute('aria-expanded', !isExpanded);
+}
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 600) {
+    document.querySelectorAll('.footer-col').forEach(col => {
+      col.classList.remove('active');
+      const btn = col.querySelector('.footer-title');
+      if(btn) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+});
 
 // --- 6. INIT ---
 document.addEventListener('DOMContentLoaded', () => {
   updateOpeningStatus();
   setInterval(updateOpeningStatus, 60 * 1000);
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('show'); observer.unobserve(entry.target); } });
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
   }, { threshold: 0.1 });
-  document.querySelectorAll('section, footer').forEach(el => { el.classList.add('section-fade'); observer.observe(el); });
+
+  document.querySelectorAll('section, footer').forEach(el => {
+    el.classList.add('section-fade');
+    observer.observe(el);
+  });
 });
 </script>
 <!-- AI Chatbot Script -->
 <script src="https://motoopen.github.io/chothuexemayhanoi/motoai_v39_modelfirst_nomarkdown_nolink.js"></script>
 </body>
 </html>
-
