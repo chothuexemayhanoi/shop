@@ -40,6 +40,9 @@ Các loại xe máy cho thuê tại Hà Nội - Thu Hà
 <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 <link rel="apple-touch-icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 
+<!-- SECURITY: DOMPurify -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+
 <!-- SCHEMA MARKUP: ItemList (Danh sách sản phẩm xe) -->
 <script type="application/ld+json">
 {
@@ -213,7 +216,10 @@ p:last-child { margin-bottom: 0; }
 .sidebar-close { width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(125, 125, 125, 0.15); color: var(--text-secondary); cursor: pointer; }
 .sidebar-content { padding: 16px; flex: 1; overflow-y: auto; }
 .nav-group { background: var(--bg-surface-2); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; }
+
+/* A11Y UPDATE: Button Style Reset for Nav Items */
+button.nav-item { background: transparent; border: none; width: 100%; text-align: left; font-family: inherit; }
+.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; text-decoration: none; }
 .nav-item:last-child { border-bottom: none; }
 .nav-item:active { background: rgba(125,125,125,0.1); }
 .nav-icon { margin-right: 12px; font-size: 18px; width: 24px; text-align: center; }
@@ -343,23 +349,24 @@ footer { padding: 40px 0 20px; }
 <div class="sidebar-content">
   <!-- Group 1: Main -->
   <nav class="nav-group">
-    <div class="nav-item" onclick="window.location.href='index.html'">
+    <!-- A11y Update: Changed div to button -->
+    <button type="button" class="nav-item" onclick="window.location.href='index.html'">
       <span class="nav-icon">🏠</span> Trang chủ
-    </div>
-    <div class="nav-item" onclick="window.location.href='gioithieu.html'">
+    </button>
+    <button type="button" class="nav-item" onclick="window.location.href='gioithieu.html'">
       <span class="nav-icon">👋</span> Giới thiệu
-    </div>
+    </button>
   </nav>
 
   <!-- Group 2: Services & Address (Dropdowns) -->
   <nav class="nav-group">
     <!-- Dropdown Dịch vụ -->
-    <div class="nav-has-sub active" id="serviceMenu">
-      <div class="nav-item" onclick="toggleSub('serviceMenu')">
+    <div class="nav-has-sub" id="serviceMenu">
+      <button type="button" class="nav-item" onclick="toggleSub('serviceMenu')" aria-expanded="false" aria-controls="serviceSub">
         <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
         <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-      </div>
-      <div class="nav-sub open">
+      </button>
+      <div class="nav-sub" id="serviceSub">
         <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
         <a href="thutuc.html" class="nav-sub-link">Thủ tục</a>
         <a href="huongdan.html" class="nav-sub-link">Hướng dẫn</a>
@@ -373,11 +380,11 @@ footer { padding: 40px 0 20px; }
 
     <!-- Dropdown Địa chỉ -->
     <div class="nav-has-sub" id="addrMenu">
-      <div class="nav-item" onclick="toggleSub('addrMenu')">
+      <button type="button" class="nav-item" onclick="toggleSub('addrMenu')" aria-expanded="false" aria-controls="addrSub">
         <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
         <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-      </div>
-      <div class="nav-sub">
+      </button>
+      <div class="nav-sub" id="addrSub">
         <a href="gialam.html" class="nav-sub-link">Gia Lâm (New)</a>
         <a href="longbien.html" class="nav-sub-link">Long Biên</a>
         <a href="phoco.html" class="nav-sub-link">Phố Cổ</a>
@@ -459,6 +466,9 @@ footer { padding: 40px 0 20px; }
           <span>🧮</span>
         </div>
        
+        <!-- HONEYPOT (Anti-Spam hidden field) -->
+        <input type="text" name="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+
         <div class="form-group">
           <label class="form-label">Chọn dòng xe</label>
           <select id="bikeType" class="form-control">
@@ -470,7 +480,8 @@ footer { padding: 40px 0 20px; }
         </div>
         <div class="form-group">
           <label class="form-label">Số ngày thuê</label>
-          <input type="number" id="dayCount" class="form-control" value="1" min="1">
+          <!-- Form Validation: required, min value -->
+          <input type="number" id="dayCount" class="form-control" value="1" min="1" required>
         </div>
        
         <div class="calc-result">
@@ -678,7 +689,7 @@ footer { padding: 40px 0 20px; }
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
         </a>
         <!-- Maps SVG -->
-        <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="social-link" aria-label="Google Maps">
+        <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Maps">
           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
         </a>
       </div>
@@ -882,10 +893,10 @@ footer { padding: 40px 0 20px; }
   <a href="https://zalo.me/0334699969" class="fab-label">
     <span>💬</span> Chat Zalo
   </a>
-  <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label">
+  <a href="https://wa.me/84334699969" target="_blank" rel="noopener noreferrer" class="fab-label">
     <span>🟢</span> WhatsApp
   </a>
-  <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener" class="fab-label">
+  <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="fab-label">
     <span>📍</span> Chỉ đường
   </a>
   <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
@@ -912,7 +923,13 @@ html.setAttribute('data-theme', next);
 localStorage.setItem('theme', next);
 updateThemeIcon(next);
 });
-function updateThemeIcon(theme) { themeToggle.textContent = theme === 'light' ? '🌙' : '☀️'; }
+
+// Update icon logic: Show the icon of the state we will switch TO
+// If Light (Sun), show Moon to switch to Dark.
+// If Dark, show Sun to switch to Light.
+function updateThemeIcon(theme) {
+  themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+}
 
 // --- 2. OPENING STATUS LOGIC (9h-21h) ---
 const statusDot = document.getElementById('statusDot');
@@ -929,37 +946,93 @@ if (isOpen) {
 }
 }
 
-// --- 3. SIDEBAR LOGIC ---
+// --- 3. SIDEBAR LOGIC (A11Y: Focus Trap + Escape Key) ---
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('sidebarClose');
-function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+
+function openSidebar() {
+  sidebar.classList.add('open');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  // A11y: Listen for Escape key
+  document.addEventListener('keydown', handleSidebarKeydown);
+  // A11y: Move focus to close button
+  setTimeout(() => closeBtn.focus(), 100);
+}
+
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  overlay.classList.remove('show');
+  document.body.style.overflow = '';
+  // A11y: Clean up listeners and return focus
+  document.removeEventListener('keydown', handleSidebarKeydown);
+  menuBtn.focus();
+}
+
+function handleSidebarKeydown(e) {
+  if (e.key === 'Escape') {
+    closeSidebar();
+  }
+  // Focus Trap Logic (Keep focus inside sidebar)
+  const focusable = sidebar.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  const firstFocusable = focusable[0];
+  const lastFocusable = focusable[focusable.length - 1];
+
+  if (e.key === 'Tab') {
+    if (e.shiftKey) { // Shift + Tab
+      if (document.activeElement === firstFocusable) {
+        e.preventDefault();
+        lastFocusable.focus();
+      }
+    } else { // Tab
+      if (document.activeElement === lastFocusable) {
+        e.preventDefault();
+        firstFocusable.focus();
+      }
+    }
+  }
+}
+
 menuBtn.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
-// --- 4. SUBMENU DROPDOWN ---
+// --- 4. SUBMENU DROPDOWN (A11Y Update) ---
 function toggleSub(id) {
-const parent = document.getElementById(id);
-const sub = parent.querySelector('.nav-sub');
-const wasOpen = sub.classList.contains('open');
-if (wasOpen) { sub.classList.remove('open'); parent.classList.remove('active'); }
-else { sub.classList.add('open'); parent.classList.add('active'); }
+  const parent = document.getElementById(id);
+  const btn = parent.querySelector('.nav-item'); // Button trigger
+  const sub = parent.querySelector('.nav-sub');
+  const wasOpen = sub.classList.contains('open');
+
+  if (wasOpen) {
+    sub.classList.remove('open');
+    parent.classList.remove('active');
+    btn.setAttribute('aria-expanded', 'false');
+  } else {
+    sub.classList.add('open');
+    parent.classList.add('active');
+    btn.setAttribute('aria-expanded', 'true');
+  }
 }
 
-// --- 5. CALCULATOR LOGIC ---
+// --- 5. CALCULATOR LOGIC (Security: DOMPurify) ---
 const bikeType = document.getElementById('bikeType');
 const dayCount = document.getElementById('dayCount');
 const totalPrice = document.getElementById('totalPrice');
+
 function updatePrice() {
-const price = parseInt(bikeType.value) || 0;
-let days = parseInt(dayCount.value);
-if (isNaN(days) || days < 1) { days = 1; dayCount.value = 1; }
-const total = price * days;
-totalPrice.textContent = total.toLocaleString('vi-VN') + ' ₫';
+  const price = parseInt(bikeType.value) || 0;
+  let days = parseInt(dayCount.value);
+  if (isNaN(days) || days < 1) { days = 1; dayCount.value = 1; }
+  
+  const total = price * days;
+  // Use DOMPurify before setting text
+  const safeText = DOMPurify.sanitize(total.toLocaleString('vi-VN') + ' ₫');
+  totalPrice.textContent = safeText;
 }
+
 if (bikeType && dayCount) {
  bikeType.addEventListener('change', updatePrice);
  dayCount.addEventListener('input', updatePrice);
