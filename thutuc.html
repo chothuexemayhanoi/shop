@@ -40,41 +40,44 @@ Thủ tục thuê xe máy Hà Nội - Thu Hà
 <link rel="icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 <link rel="apple-touch-icon" href="https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg" />
 
-<!-- SCHEMA MARKUP: HowTo (Tối ưu cho bài viết hướng dẫn thủ tục) -->
+<!-- SECURITY: DOMPurify -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+
+<!-- SCHEMA MARKUP: HowTo -->
 <script type="application/ld+json">
 {
- "@context": "https://schema.org",
- "@type": "HowTo",
- "name": "Quy trình thuê xe máy tại Hà Nội - Thu Hà",
- "description": "Hướng dẫn 3 bước thuê xe máy đơn giản tại Hà Nội chỉ với CCCD hoặc Hộ chiếu.",
- "totalTime": "PT10M",
- "step": [
-   {
-     "@type": "HowToStep",
-     "name": "Liên hệ đặt xe",
-     "text": "Gọi điện hoặc nhắn tin Zalo cho Thu Hà để chọn loại xe và chốt lịch nhận.",
-     "image": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
-     "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc1"
-   },
-   {
-     "@type": "HowToStep",
-     "name": "Chuẩn bị giấy tờ",
-     "text": "Mang theo CCCD gắn chip (đối chiếu) hoặc Hộ chiếu (với khách nước ngoài).",
-     "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc2"
-   },
-   {
-     "@type": "HowToStep",
-     "name": "Ký hợp đồng và nhận xe",
-     "text": "Ký hợp đồng thuê xe minh bạch, thanh toán tiền thuê và nhận xe ngay.",
-     "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc3"
-   }
- ]
+"@context": "https://schema.org",
+"@type": "HowTo",
+"name": "Quy trình thuê xe máy tại Hà Nội - Thu Hà",
+"description": "Hướng dẫn 3 bước thuê xe máy đơn giản tại Hà Nội chỉ với CCCD hoặc Hộ chiếu.",
+"totalTime": "PT10M",
+"step": [
+  {
+    "@type": "HowToStep",
+    "name": "Liên hệ đặt xe",
+    "text": "Gọi điện hoặc nhắn tin Zalo cho Thu Hà để chọn loại xe và chốt lịch nhận.",
+    "image": "https://i.postimg.cc/zvH4Sh18/IMG-5028.jpg",
+    "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc1"
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Chuẩn bị giấy tờ",
+    "text": "Mang theo CCCD gắn chip (đối chiếu) hoặc Hộ chiếu (với khách nước ngoài).",
+    "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc2"
+  },
+  {
+    "@type": "HowToStep",
+    "name": "Ký hợp đồng và nhận xe",
+    "text": "Ký hợp đồng thuê xe minh bạch, thanh toán tiền thuê và nhận xe ngay.",
+    "url": "https://chothuexemayhanoi.github.io/shop/thutuc.html#buoc3"
+  }
+]
 }
 </script>
 
 <style>
 /* =========================================
- CORE STYLE (Inherited from Main)
+CORE STYLE (Inherited from Main)
 ========================================= */
 :root {
 /* Palette - Apple Style */
@@ -214,7 +217,10 @@ p:last-child { margin-bottom: 0; }
 .sidebar-close { width: 30px; height: 30px; border-radius: 50%; border: none; background: rgba(125, 125, 125, 0.15); color: var(--text-secondary); cursor: pointer; }
 .sidebar-content { padding: 16px; flex: 1; overflow-y: auto; }
 .nav-group { background: var(--bg-surface-2); border-radius: 12px; overflow: hidden; margin-bottom: 20px; }
-.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; }
+
+/* A11Y UPDATE: Button Style Reset for Nav Items */
+button.nav-item { background: transparent; border: none; width: 100%; text-align: left; font-family: inherit; }
+.nav-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; font-size: 15px; color: var(--text-primary); border-bottom: 1px solid var(--border); cursor: pointer; transition: background 0.2s; text-decoration: none; }
 .nav-item:last-child { border-bottom: none; }
 .nav-item:active { background: rgba(125,125,125,0.1); }
 .nav-icon { margin-right: 12px; font-size: 18px; width: 24px; text-align: center; }
@@ -336,97 +342,98 @@ footer { padding: 40px 0 20px; }
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
 <aside class="sidebar" id="sidebar">
 <div class="sidebar-header">
-  <div class="sidebar-title">Menu</div>
-  <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
+ <div class="sidebar-title">Menu</div>
+ <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
 </div>
 <div class="sidebar-content">
-  <!-- Group 1: Main -->
-  <nav class="nav-group">
-    <div class="nav-item" onclick="window.location.href='index.html'">
-      <span class="nav-icon">🏠</span> Trang chủ
-    </div>
-    <div class="nav-item" onclick="window.location.href='gioithieu.html'">
-      <span class="nav-icon">👋</span> Giới thiệu
-    </div>
-  </nav>
+ <!-- Group 1: Main -->
+ <nav class="nav-group">
+   <!-- A11y Update: Changed div to button -->
+   <button type="button" class="nav-item" onclick="window.location.href='index.html'">
+     <span class="nav-icon">🏠</span> Trang chủ
+   </button>
+   <button type="button" class="nav-item" onclick="window.location.href='gioithieu.html'">
+     <span class="nav-icon">👋</span> Giới thiệu
+   </button>
+ </nav>
 
-  <!-- Group 2: Services & Address (Dropdowns) -->
-  <nav class="nav-group">
-    <!-- Dropdown Dịch vụ -->
-    <div class="nav-has-sub" id="serviceMenu">
-      <div class="nav-item" onclick="toggleSub('serviceMenu')">
-        <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
-        <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-      </div>
-      <div class="nav-sub">
-        <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
-        <a href="thutuc.html" class="nav-sub-link" style="color:var(--accent); font-weight:600;">Thủ tục</a>
-        <a href="huongdan.html" class="nav-sub-link">Hướng dẫn</a>
-        <a href="loaixe.html" class="nav-sub-link">Các loại xe</a>
-        <a href="kinhnghiem.html" class="nav-sub-link">Kinh nghiệm</a>
-        <a href="ngay.html" class="nav-sub-link">Thuê theo ngày</a>
-        <a href="tuan.html" class="nav-sub-link">Thuê theo tuần</a>
-        <a href="thang.html" class="nav-sub-link">Thuê theo tháng</a>
-      </div>
-    </div>
+ <!-- Group 2: Services & Address (Dropdowns) -->
+ <nav class="nav-group">
+   <!-- Dropdown Dịch vụ -->
+   <div class="nav-has-sub" id="serviceMenu">
+     <button type="button" class="nav-item" onclick="toggleSub('serviceMenu')" aria-expanded="false" aria-controls="serviceSub">
+       <div style="display:flex; align-items:center;"><span class="nav-icon">🏍️</span> Dịch vụ</div>
+       <span style="font-size:12px; color:var(--text-secondary);">▼</span>
+     </button>
+     <div class="nav-sub" id="serviceSub">
+       <a href="banggia.html" class="nav-sub-link">Bảng giá</a>
+       <a href="thutuc.html" class="nav-sub-link" style="color:var(--accent); font-weight:600;">Thủ tục</a>
+       <a href="huongdan.html" class="nav-sub-link">Hướng dẫn</a>
+       <a href="loaixe.html" class="nav-sub-link">Các loại xe</a>
+       <a href="kinhnghiem.html" class="nav-sub-link">Kinh nghiệm</a>
+       <a href="ngay.html" class="nav-sub-link">Thuê theo ngày</a>
+       <a href="tuan.html" class="nav-sub-link">Thuê theo tuần</a>
+       <a href="thang.html" class="nav-sub-link">Thuê theo tháng</a>
+     </div>
+   </div>
 
-    <!-- Dropdown Địa chỉ -->
-    <div class="nav-has-sub" id="addrMenu">
-      <div class="nav-item" onclick="toggleSub('addrMenu')">
-        <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
-        <span style="font-size:12px; color:var(--text-secondary);">▼</span>
-      </div>
-      <div class="nav-sub">
-        <a href="gialam.html" class="nav-sub-link">Gia Lâm (New)</a>
-        <a href="longbien.html" class="nav-sub-link">Long Biên</a>
-        <a href="phoco.html" class="nav-sub-link">Phố Cổ</a>
-        <a href="hoankiem.html" class="nav-sub-link">Hoàn Kiếm</a>
-        <a href="badinh.html" class="nav-sub-link">Ba Đình</a>
-        <a href="tayho.html" class="nav-sub-link">Tây Hồ</a>
-      </div>
-    </div>
-  </nav>
+   <!-- Dropdown Địa chỉ -->
+   <div class="nav-has-sub" id="addrMenu">
+     <button type="button" class="nav-item" onclick="toggleSub('addrMenu')" aria-expanded="false" aria-controls="addrSub">
+       <div style="display:flex; align-items:center;"><span class="nav-icon">📍</span> Khu vực</div>
+       <span style="font-size:12px; color:var(--text-secondary);">▼</span>
+     </button>
+     <div class="nav-sub" id="addrSub">
+       <a href="gialam.html" class="nav-sub-link">Gia Lâm (New)</a>
+       <a href="longbien.html" class="nav-sub-link">Long Biên</a>
+       <a href="phoco.html" class="nav-sub-link">Phố Cổ</a>
+       <a href="hoankiem.html" class="nav-sub-link">Hoàn Kiếm</a>
+       <a href="badinh.html" class="nav-sub-link">Ba Đình</a>
+       <a href="tayho.html" class="nav-sub-link">Tây Hồ</a>
+     </div>
+   </div>
+ </nav>
 
-  <!-- Group 3: Info -->
-  <nav class="nav-group">
-    <a href="faq.html" class="nav-item">
-      <span class="nav-icon">❓</span> FAQ
-    </a>
-    <a href="dieukhoan.html" class="nav-item">
-      <span class="nav-icon">📝</span> Điều khoản
-    </a>
-    <a href="chinhsach.html" class="nav-item">
-      <span class="nav-icon">🛡️</span> Chính sách
-    </a>
-    <a href="lienhe.html" class="nav-item">
-      <span class="nav-icon">📞</span> Liên hệ
-    </a>
-  </nav>
+ <!-- Group 3: Info -->
+ <nav class="nav-group">
+   <a href="faq.html" class="nav-item">
+     <span class="nav-icon">❓</span> FAQ
+   </a>
+   <a href="dieukhoan.html" class="nav-item">
+     <span class="nav-icon">📝</span> Điều khoản
+   </a>
+   <a href="chinhsach.html" class="nav-item">
+     <span class="nav-icon">🛡️</span> Chính sách
+   </a>
+   <a href="lienhe.html" class="nav-item">
+     <span class="nav-icon">📞</span> Liên hệ
+   </a>
+ </nav>
 </div>
 </aside>
 
 <!-- HEADER -->
 <header class="site-header">
 <div class="header-left">
-  <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
+ <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
 </div>
 
 <div class="header-center">
-  <a href="index.html" class="logo-pill">
-    <div class="logo-icon">TH</div>
-    <div class="logo-text">
-      <strong>Thu Hà</strong>
-      <small>Cho Thuê Xe Máy 50cc</small>
-    </div>
-  </a>
+ <a href="index.html" class="logo-pill">
+   <div class="logo-icon">TH</div>
+   <div class="logo-text">
+     <strong>Thu Hà</strong>
+     <small>Cho Thuê Xe Máy 50cc</small>
+   </div>
+ </a>
 </div>
 
 <div class="header-right">
-  <div class="status-chip">
-    <span class="status-dot" id="statusDot"></span>
-    <span id="statusText">9h – 21h</span>
-  </div>
-  <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
+ <div class="status-chip">
+   <span class="status-dot" id="statusDot"></span>
+   <span id="statusText">9h – 21h</span>
+ </div>
+ <button class="icon-btn" id="themeToggle" aria-label="Đổi giao diện">🌙</button>
 </div>
 </header>
 
@@ -434,179 +441,183 @@ footer { padding: 40px 0 20px; }
 <main>
 <!-- HERO SECTION WITH CALCULATOR -->
 <section class="hero" id="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <!-- Text Content -->
-      <div style="text-align: left;">
-        <div class="hero-badges">
-          <span class="badge">📝 Thủ tục đơn giản</span>
-          <span class="badge">⚡ Nhận xe trong 5 phút</span>
-        </div>
-        <h1 class="hero-title">Thủ tục thuê xe máy Hà Nội <br /><span class="text-gradient">Nhanh Gọn - Uy Tín</span></h1>
-        <p class="hero-desc">Bỏ qua nỗi lo về thủ tục rườm rà. Tại Thu Hà, chúng tôi tối giản quy trình để bạn có trải nghiệm thuê xe máy dễ dàng nhất tại Thủ đô.</p>
-       
-        <div class="hero-actions">
-          <a href="#quy-trinh-chi-tiet" class="btn btn-primary">Xem chi tiết ↓</a>
-          <a href="tel:0334699969" class="btn btn-glass">📞 Gọi tư vấn</a>
-        </div>
-      </div>
+ <div class="container">
+   <div class="hero-grid">
+     <!-- Text Content -->
+     <div style="text-align: left;">
+       <div class="hero-badges">
+         <span class="badge">📝 Thủ tục đơn giản</span>
+         <span class="badge">⚡ Nhận xe trong 5 phút</span>
+       </div>
+       <h1 class="hero-title">Thủ tục thuê xe máy Hà Nội <br /><span class="text-gradient">Nhanh Gọn - Uy Tín</span></h1>
+       <p class="hero-desc">Bỏ qua nỗi lo về thủ tục rườm rà. Tại Thu Hà, chúng tôi tối giản quy trình để bạn có trải nghiệm thuê xe máy dễ dàng nhất tại Thủ đô.</p>
+     
+       <div class="hero-actions">
+         <a href="#quy-trinh-chi-tiet" class="btn btn-primary">Xem chi tiết ↓</a>
+         <a href="tel:0334699969" class="btn btn-glass">📞 Gọi tư vấn</a>
+       </div>
+     </div>
 
-      <!-- Calculator Card (RESTORED) -->
-      <div class="calc-card">
-        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
-          <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
-          <span>🧮</span>
-        </div>
-       
-        <div class="form-group">
-          <label class="form-label">Chọn dòng xe</label>
-          <select id="bikeType" class="form-control">
-            <option value="150000">Xe Số (Wave/Sirius) - 150k</option>
-            <option value="200000">Xe Ga (Vision/AirBlade) - 200k</option>
-            <option value="200000">Xe 50cc (Elite/Cub) - 200k</option>
-            <option value="150000">Xe Điện - 150k</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Số ngày thuê</label>
-          <input type="number" id="dayCount" class="form-control" value="1" min="1">
-        </div>
-       
-        <div class="calc-result">
-          <span style="font-size:14px; color:var(--text-tertiary);">Tạm tính:</span>
-          <span class="price-display" id="totalPrice">150.000 ₫</span>
-        </div>
-      </div>
-    </div>
-  </div>
+     <!-- Calculator Card (RESTORED) -->
+     <div class="calc-card">
+       <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+         <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
+         <span>🧮</span>
+       </div>
+     
+       <!-- HONEYPOT (Anti-Spam hidden field) -->
+       <input type="text" name="website_hp" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+       <div class="form-group">
+         <label class="form-label">Chọn dòng xe</label>
+         <select id="bikeType" class="form-control">
+           <option value="150000">Xe Số (Wave/Sirius) - 150k</option>
+           <option value="200000">Xe Ga (Vision/AirBlade) - 200k</option>
+           <option value="200000">Xe 50cc (Elite/Cub) - 200k</option>
+           <option value="150000">Xe Điện - 150k</option>
+         </select>
+       </div>
+       <div class="form-group">
+         <label class="form-label">Số ngày thuê</label>
+         <!-- Form Validation: required, min value -->
+         <input type="number" id="dayCount" class="form-control" value="1" min="1" required>
+       </div>
+     
+       <div class="calc-result">
+         <span style="font-size:14px; color:var(--text-tertiary);">Tạm tính:</span>
+         <span class="price-display" id="totalPrice">150.000 ₫</span>
+       </div>
+     </div>
+   </div>
+ </div>
 </section>
 
 <!-- MAIN ARTICLE SECTION -->
 <section class="section" id="quy-trinh-chi-tiet">
-  <div class="container section-fade">
-    <article class="content-article">
-       
-       <!-- INTRO STORYTELLING -->
-       <div class="article-block">
-           <p class="article-text">
-               Đã bao giờ bạn rơi vào cảnh muốn thuê một chiếc xe máy để vi vu phố phường Hà Nội nhưng lại chùn bước vì những yêu cầu "khó nhằn"? Phải đặt cọc hàng triệu đồng, giữ hộ chiếu gốc, hay những bản hợp đồng dài ngoằng đầy rẫy thuật ngữ pháp lý khó hiểu.
-           </p>
-           <p class="article-text">
-               Hiểu được điều đó, thương hiệu <strong>Thu Hà</strong> đã xây dựng một quy trình <a href="thutuc.html" class="internal-link">thủ tục thuê xe máy Hà Nội</a> hoàn toàn khác biệt. Chúng tôi tin rằng: <em>"Niềm tin giữa người với người là tài sản lớn nhất"</em>. Vì vậy, mọi thủ tục tại đây đều được tinh gọn tối đa để bạn có thể cầm lái chỉ sau một tách trà.
-           </p>
-       </div>
+ <div class="container section-fade">
+   <article class="content-article">
+     
+      <!-- INTRO STORYTELLING -->
+      <div class="article-block">
+          <p class="article-text">
+              Đã bao giờ bạn rơi vào cảnh muốn thuê một chiếc xe máy để vi vu phố phường Hà Nội nhưng lại chùn bước vì những yêu cầu "khó nhằn"? Phải đặt cọc hàng triệu đồng, giữ hộ chiếu gốc, hay những bản hợp đồng dài ngoằng đầy rẫy thuật ngữ pháp lý khó hiểu.
+          </p>
+          <p class="article-text">
+              Hiểu được điều đó, thương hiệu <strong>Thu Hà</strong> đã xây dựng một quy trình <a href="thutuc.html" class="internal-link">thủ tục thuê xe máy Hà Nội</a> hoàn toàn khác biệt. Chúng tôi tin rằng: <em>"Niềm tin giữa người với người là tài sản lớn nhất"</em>. Vì vậy, mọi thủ tục tại đây đều được tinh gọn tối đa để bạn có thể cầm lái chỉ sau một tách trà.
+          </p>
+      </div>
 
-       <!-- STEP BY STEP PROCESS -->
-       <div class="article-block">
-           <h2 class="article-h2">Quy trình 3 bước nhận xe siêu tốc</h2>
-           <p class="article-text">Không cần chờ đợi mòn mỏi, quy trình thuê xe tại Thu Hà được gói gọn trong 3 bước đơn giản:</p>
-           
-           <ol class="step-list">
-               <li class="step-item">
-                   <div class="step-title">Bước 1: Liên hệ & Đặt xe</div>
-                   <p class="article-text">
-                       Bạn có thể tham khảo trước <a href="banggia.html" class="internal-link">bảng giá thuê xe máy</a> niêm yết công khai trên website. Sau đó, hãy gọi điện hoặc nhắn tin qua Zalo/Facebook cho Thu Hà. Đội ngũ nhân viên sẽ tư vấn dòng xe phù hợp (xe số, xe ga, hay xe 50cc) và chốt lịch nhận xe.
-                   </p>
-               </li>
-               <li class="step-item">
-                   <div class="step-title">Bước 2: Đối chiếu giấy tờ (Không giữ bản gốc)</div>
-                   <p class="article-text">
-                       Khi đến nhận xe (tại cửa hàng hoặc giao tận nơi), nhân viên sẽ đối chiếu giấy tờ tùy thân của bạn. Điểm đặc biệt là chúng tôi <strong>chụp ảnh lại để lưu hồ sơ</strong> chứ không nhất thiết phải giữ giấy tờ gốc của bạn (tùy từng trường hợp cụ thể sẽ có linh động).
-                   </p>
-               </li>
-               <li class="step-item">
-                   <div class="step-title">Bước 3: Ký hợp đồng & Vi vu</div>
-                   <p class="article-text">
-                       Hai bên ký vào bản hợp đồng thuê xe ngắn gọn (được soạn thảo rõ ràng, bảo vệ quyền lợi đôi bên). Bạn thanh toán tiền thuê, nhận chìa khóa, mũ bảo hiểm và bắt đầu hành trình khám phá <a href="phoco.html" class="internal-link">Phố Cổ</a> hay vi vu ngoại thành.
-                   </p>
-               </li>
-           </ol>
-       </div>
+      <!-- STEP BY STEP PROCESS -->
+      <div class="article-block">
+          <h2 class="article-h2">Quy trình 3 bước nhận xe siêu tốc</h2>
+          <p class="article-text">Không cần chờ đợi mòn mỏi, quy trình thuê xe tại Thu Hà được gói gọn trong 3 bước đơn giản:</p>
+         
+          <ol class="step-list">
+              <li class="step-item">
+                  <div class="step-title">Bước 1: Liên hệ & Đặt xe</div>
+                  <p class="article-text">
+                      Bạn có thể tham khảo trước <a href="banggia.html" class="internal-link">bảng giá thuê xe máy</a> niêm yết công khai trên website. Sau đó, hãy gọi điện hoặc nhắn tin qua Zalo/Facebook cho Thu Hà. Đội ngũ nhân viên sẽ tư vấn dòng xe phù hợp (xe số, xe ga, hay xe 50cc) và chốt lịch nhận xe.
+                  </p>
+              </li>
+              <li class="step-item">
+                  <div class="step-title">Bước 2: Đối chiếu giấy tờ (Không giữ bản gốc)</div>
+                  <p class="article-text">
+                      Khi đến nhận xe (tại cửa hàng hoặc giao tận nơi), nhân viên sẽ đối chiếu giấy tờ tùy thân của bạn. Điểm đặc biệt là chúng tôi <strong>chụp ảnh lại để lưu hồ sơ</strong> chứ không nhất thiết phải giữ giấy tờ gốc của bạn (tùy từng trường hợp cụ thể sẽ có linh động).
+                  </p>
+              </li>
+              <li class="step-item">
+                  <div class="step-title">Bước 3: Ký hợp đồng & Vi vu</div>
+                  <p class="article-text">
+                      Hai bên ký vào bản hợp đồng thuê xe ngắn gọn (được soạn thảo rõ ràng, bảo vệ quyền lợi đôi bên). Bạn thanh toán tiền thuê, nhận chìa khóa, mũ bảo hiểm và bắt đầu hành trình khám phá <a href="phoco.html" class="internal-link">Phố Cổ</a> hay vi vu ngoại thành.
+                  </p>
+              </li>
+          </ol>
+      </div>
 
-       <!-- DOCUMENTS REQUIRED SECTION -->
-       <div class="article-block">
-           <h2 class="article-h2">Giấy tờ cần chuẩn bị là gì?</h2>
-           <p class="article-text">Tùy vào đối tượng khách hàng, Thu Hà có những chính sách linh hoạt khác nhau. Dưới đây là những giấy tờ cơ bản bạn cần mang theo:</p>
+      <!-- DOCUMENTS REQUIRED SECTION -->
+      <div class="article-block">
+          <h2 class="article-h2">Giấy tờ cần chuẩn bị là gì?</h2>
+          <p class="article-text">Tùy vào đối tượng khách hàng, Thu Hà có những chính sách linh hoạt khác nhau. Dưới đây là những giấy tờ cơ bản bạn cần mang theo:</p>
 
-           <div class="doc-grid">
-               <!-- Card 1: Khách du lịch -->
-               <div class="doc-card">
-                   <h3 class="article-h3" style="margin-top:0">🛵 Khách Du Lịch</h3>
-                   <ul class="check-list">
-                       <li>Căn cước công dân (CCCD) gắn chip hoặc Hộ chiếu (Passport).</li>
-                       <li>Vé máy bay/Tàu hỏa khứ hồi (hình ảnh trên điện thoại).</li>
-                       <li>Booking khách sạn/Homestay tại Hà Nội.</li>
-                   </ul>
-               </div>
+          <div class="doc-grid">
+              <!-- Card 1: Khách du lịch -->
+              <div class="doc-card">
+                  <h3 class="article-h3" style="margin-top:0">🛵 Khách Du Lịch</h3>
+                  <ul class="check-list">
+                      <li>Căn cước công dân (CCCD) gắn chip hoặc Hộ chiếu (Passport).</li>
+                      <li>Vé máy bay/Tàu hỏa khứ hồi (hình ảnh trên điện thoại).</li>
+                      <li>Booking khách sạn/Homestay tại Hà Nội.</li>
+                  </ul>
+              </div>
 
-               <!-- Card 2: Sinh viên -->
-               <div class="doc-card">
-                   <h3 class="article-h3" style="margin-top:0">🎓 Sinh Viên</h3>
-                   <ul class="check-list">
-                       <li>Thẻ sinh viên (còn hạn).</li>
-                       <li>CCCD gắn chip.</li>
-                       <li>Ưu đãi giảm giá cọc hoặc miễn cọc nếu có đầy đủ giấy tờ chính chủ.</li>
-                   </ul>
-               </div>
+              <!-- Card 2: Sinh viên -->
+              <div class="doc-card">
+                  <h3 class="article-h3" style="margin-top:0">🎓 Sinh Viên</h3>
+                  <ul class="check-list">
+                      <li>Thẻ sinh viên (còn hạn).</li>
+                      <li>CCCD gắn chip.</li>
+                      <li>Ưu đãi giảm giá cọc hoặc miễn cọc nếu có đầy đủ giấy tờ chính chủ.</li>
+                  </ul>
+              </div>
 
-               <!-- Card 3: Người đi làm/Công tác -->
-               <div class="doc-card">
-                   <h3 class="article-h3" style="margin-top:0">💼 Người Đi Làm</h3>
-                   <ul class="check-list">
-                       <li>CCCD gắn chip.</li>
-                       <li>Bằng lái xe máy (A1/A2) để đối chiếu khả năng lái xe.</li>
-                       <li>Danh thiếp hoặc thẻ nhân viên (nếu có để tăng độ uy tín).</li>
-                   </ul>
-               </div>
-           </div>
-       </div>
+              <!-- Card 3: Người đi làm/Công tác -->
+              <div class="doc-card">
+                  <h3 class="article-h3" style="margin-top:0">💼 Người Đi Làm</h3>
+                  <ul class="check-list">
+                      <li>CCCD gắn chip.</li>
+                      <li>Bằng lái xe máy (A1/A2) để đối chiếu khả năng lái xe.</li>
+                      <li>Danh thiếp hoặc thẻ nhân viên (nếu có để tăng độ uy tín).</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
 
-       <!-- DEPOSIT POLICY (SENSITIVE TOPIC) -->
-       <div class="article-block">
-           <h2 class="article-h2">Chính sách đặt cọc: Minh bạch và Linh hoạt</h2>
-           <div class="highlight-box">
-               <h3 class="article-h3" style="margin-top:0; color:var(--accent);">Tại sao phải đặt cọc?</h3>
-               <p class="article-text">
-                   Khoản đặt cọc là cam kết trách nhiệm giữa người thuê và chiếc xe. Tuy nhiên, tại Thu Hà, chúng tôi hiểu rằng không ai muốn bỏ ra một số tiền lớn để "nằm im" một chỗ.
-               </p>
-           </div>
-           <p class="article-text">
-               Chính vì vậy, mức cọc tại Thu Hà cực kỳ linh hoạt:
-           </p>
-           <ul class="check-list">
-               <li><strong>Khách du lịch có vé khứ hồi & khách sạn:</strong> Có thể hỗ trợ <strong>KHÔNG CẦN CỌC</strong> tiền mặt, chỉ cần để lại 1 loại giấy tờ làm tin.</li>
-               <li><strong>Khách thuê xe số/xe 50cc:</strong> Mức cọc thấp, chỉ từ 500k - 1 triệu đồng.</li>
-               <li><strong>Khách thuê xe ga cao cấp (SH, AirBlade mới):</strong> Mức cọc thỏa thuận, nhưng cam kết thấp hơn thị trường 30%.</li>
-           </ul>
-           <p class="article-text">
-               <em>*Lưu ý: Tiền cọc sẽ được hoàn trả 100% ngay khi bạn trả xe và không phát sinh hư hại.</em>
-           </p>
-       </div>
+      <!-- DEPOSIT POLICY (SENSITIVE TOPIC) -->
+      <div class="article-block">
+          <h2 class="article-h2">Chính sách đặt cọc: Minh bạch và Linh hoạt</h2>
+          <div class="highlight-box">
+              <h3 class="article-h3" style="margin-top:0; color:var(--accent);">Tại sao phải đặt cọc?</h3>
+              <p class="article-text">
+                  Khoản đặt cọc là cam kết trách nhiệm giữa người thuê và chiếc xe. Tuy nhiên, tại Thu Hà, chúng tôi hiểu rằng không ai muốn bỏ ra một số tiền lớn để "nằm im" một chỗ.
+              </p>
+          </div>
+          <p class="article-text">
+              Chính vì vậy, mức cọc tại Thu Hà cực kỳ linh hoạt:
+          </p>
+          <ul class="check-list">
+              <li><strong>Khách du lịch có vé khứ hồi & khách sạn:</strong> Có thể hỗ trợ <strong>KHÔNG CẦN CỌC</strong> tiền mặt, chỉ cần để lại 1 loại giấy tờ làm tin.</li>
+              <li><strong>Khách thuê xe số/xe 50cc:</strong> Mức cọc thấp, chỉ từ 500k - 1 triệu đồng.</li>
+              <li><strong>Khách thuê xe ga cao cấp (SH, AirBlade mới):</strong> Mức cọc thỏa thuận, nhưng cam kết thấp hơn thị trường 30%.</li>
+          </ul>
+          <p class="article-text">
+              <em>*Lưu ý: Tiền cọc sẽ được hoàn trả 100% ngay khi bạn trả xe và không phát sinh hư hại.</em>
+          </p>
+      </div>
 
-       <!-- INTERNAL LINKS & CTA -->
-       <div class="article-block">
-           <h2 class="article-h2">Các câu hỏi thường gặp về thủ tục</h2>
-           <p class="article-text">
-               <strong>1. Tôi chưa có bằng lái xe thì thuê xe gì?</strong><br>
-               Bạn hoàn toàn có thể thuê các dòng xe 50cc tại Thu Hà. Đây là dòng xe không yêu cầu bằng lái, rất phù hợp cho học sinh hoặc người chưa thi bằng. Xem thêm tại mục <a href="loaixe.html" class="internal-link">các loại xe 50cc</a>.
-           </p>
-           <p class="article-text">
-               <strong>2. Tôi ở Gia Lâm muốn thuê xe thì làm thế nào?</strong><br>
-               Thu Hà có cơ sở chính ngay tại Nguyễn Văn Cừ, Long Biên. Chúng tôi hỗ trợ giao xe miễn phí bán kính gần khu vực <a href="gialam.html" class="internal-link">Gia Lâm</a> và Bến xe Gia Lâm.
-           </p>
-       </div>
+      <!-- INTERNAL LINKS & CTA -->
+      <div class="article-block">
+          <h2 class="article-h2">Các câu hỏi thường gặp về thủ tục</h2>
+          <p class="article-text">
+              <strong>1. Tôi chưa có bằng lái xe thì thuê xe gì?</strong><br>
+              Bạn hoàn toàn có thể thuê các dòng xe 50cc tại Thu Hà. Đây là dòng xe không yêu cầu bằng lái, rất phù hợp cho học sinh hoặc người chưa thi bằng. Xem thêm tại mục <a href="loaixe.html" class="internal-link">các loại xe 50cc</a>.
+          </p>
+          <p class="article-text">
+              <strong>2. Tôi ở Gia Lâm muốn thuê xe thì làm thế nào?</strong><br>
+              Thu Hà có cơ sở chính ngay tại Nguyễn Văn Cừ, Long Biên. Chúng tôi hỗ trợ giao xe miễn phí bán kính gần khu vực <a href="gialam.html" class="internal-link">Gia Lâm</a> và Bến xe Gia Lâm.
+          </p>
+      </div>
 
-       <div style="background: var(--bg-surface-2); padding: 30px; border-radius: 20px; text-align: center; margin-top: 50px; border: 1px dashed var(--accent);">
-           <h3 style="font-size: 24px; margin-bottom: 15px;">Sẵn sàng cho chuyến đi?</h3>
-           <p style="color: var(--text-secondary); margin-bottom: 25px;">Đừng để thủ tục rườm rà làm chậm chân bạn. Liên hệ với Thu Hà ngay hôm nay.</p>
-           <div class="hero-actions" style="justify-content: center;">
-               <a href="https://zalo.me/0334699969" class="btn btn-primary">Chat Zalo Ngay</a>
-               <a href="lienhe.html" class="btn btn-glass">Xem địa chỉ</a>
-           </div>
-       </div>
+      <div style="background: var(--bg-surface-2); padding: 30px; border-radius: 20px; text-align: center; margin-top: 50px; border: 1px dashed var(--accent);">
+          <h3 style="font-size: 24px; margin-bottom: 15px;">Sẵn sàng cho chuyến đi?</h3>
+          <p style="color: var(--text-secondary); margin-bottom: 25px;">Đừng để thủ tục rườm rà làm chậm chân bạn. Liên hệ với Thu Hà ngay hôm nay.</p>
+          <div class="hero-actions" style="justify-content: center;">
+              <a href="https://zalo.me/0334699969" class="btn btn-primary">Chat Zalo Ngay</a>
+              <a href="lienhe.html" class="btn btn-glass">Xem địa chỉ</a>
+          </div>
+      </div>
 
-    </article>
-  </div>
+   </article>
+ </div>
 </section>
 
 </main>
@@ -614,243 +625,243 @@ footer { padding: 40px 0 20px; }
 <!-- FOOTER -->
 <footer>
 <div class="container">
-  <div class="footer-grid">
-   
-    <!-- Column 1: Brand Info -->
-    <div class="footer-col col-brand">
-      <a href="index.html" class="logo-pill" style="display: inline-flex; margin-bottom: 12px; padding:0; background:none;">
-        <div class="logo-icon">TH</div>
-        <div class="logo-text">
-          <strong>Thu Hà</strong>
-          <small>Cho Thuê xe máy 50cc Hà Nội</small>
-        </div>
-      </a>
-      <p class="footer-brand-desc">
-        Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín số 1 tại Gia Lâm & Hà Nội. Thủ tục nhanh gọn, xe mới, hỗ trợ 24/7.
-      </p>
-      <div class="social-group">
-        <!-- Facebook SVG -->
-        <a href="https://m.facebook.com/chothuexemayohanoigiare/" class="social-link" aria-label="Facebook">
-          <svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
-        </a>
-        <!-- Zalo SVG -->
-        <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
-        </a>
-        <!-- Maps SVG -->
-        <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" class="social-link" aria-label="Google Maps">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-        </a>
-      </div>
-    </div>
+ <div class="footer-grid">
+ 
+   <!-- Column 1: Brand Info -->
+   <div class="footer-col col-brand">
+     <a href="index.html" class="logo-pill" style="display: inline-flex; margin-bottom: 12px; padding:0; background:none;">
+       <div class="logo-icon">TH</div>
+       <div class="logo-text">
+         <strong>Thu Hà</strong>
+         <small>Cho Thuê xe máy 50cc Hà Nội</small>
+       </div>
+     </a>
+     <p class="footer-brand-desc">
+       Dịch vụ cho thuê xe máy 50cc, xe ga, xe số uy tín số 1 tại Gia Lâm & Hà Nội. Thủ tục nhanh gọn, xe mới, hỗ trợ 24/7.
+     </p>
+     <div class="social-group">
+       <!-- Facebook SVG -->
+       <a href="https://m.facebook.com/chothuexemayohanoigiare/" class="social-link" aria-label="Facebook">
+         <svg viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02Z"/></svg>
+       </a>
+       <!-- Zalo SVG -->
+       <a href="https://zalo.me/0334699969" class="social-link" aria-label="Zalo">
+         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 5.92 2 10.75c0 2.76 1.46 5.22 3.74 6.84L5.2 21.5l4.3-2.15c.81.22 1.66.34 2.5.34 5.52 0 10-3.92 10-8.75S17.52 2 12 2zm-1 12.5h-2v-4h2v4zm4 0h-2v-4h2v4z"/></svg>
+       </a>
+       <!-- Maps SVG -->
+       <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Google Maps">
+         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+       </a>
+     </div>
+   </div>
 
-    <!-- Column 2: Quick Links (Collapsible) -->
-    <div class="footer-col" onclick="toggleFooterCol(this)">
-      <h4 class="footer-title">
-        Về Thu Hà
-        <span class="footer-toggle-icon">▼</span>
-      </h4>
-      <ul class="footer-links">
-        <li>
-          <a href="index.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Trang chủ
-          </a>
-        </li>
-        <li>
-          <a href="gioithieu.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Giới thiệu
-          </a>
-        </li>
-        <li>
-          <a href="faq.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Câu hỏi (FAQ)
-          </a>
-        </li>
-        <li>
-          <a href="dieukhoan.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Điều khoản
-          </a>
-        </li>
-        <li>
-          <a href="chinhsach.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Chính sách
-          </a>
-        </li>
-        <li>
-          <a href="lienhe.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Liên hệ
-          </a>
-        </li>
-      </ul>
-    </div>
+   <!-- Column 2: Quick Links (Collapsible) -->
+   <div class="footer-col" onclick="toggleFooterCol(this)">
+     <h4 class="footer-title">
+       Về Thu Hà
+       <span class="footer-toggle-icon">▼</span>
+     </h4>
+     <ul class="footer-links">
+       <li>
+         <a href="index.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Trang chủ
+         </a>
+       </li>
+       <li>
+         <a href="gioithieu.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Giới thiệu
+         </a>
+       </li>
+       <li>
+         <a href="faq.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Câu hỏi (FAQ)
+         </a>
+       </li>
+       <li>
+         <a href="dieukhoan.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Điều khoản
+         </a>
+       </li>
+       <li>
+         <a href="chinhsach.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Chính sách
+         </a>
+       </li>
+       <li>
+         <a href="lienhe.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Liên hệ
+         </a>
+       </li>
+     </ul>
+   </div>
 
-    <!-- Column 3: Services (Collapsible) -->
-    <div class="footer-col" onclick="toggleFooterCol(this)">
-      <h4 class="footer-title">
-        Dịch vụ
-        <span class="footer-toggle-icon">▼</span>
-      </h4>
-      <ul class="footer-links">
-        <li>
-          <a href="banggia.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Bảng giá
-          </a>
-        </li>
-        <li>
-          <a href="thutuc.html" class="footer-link-item" style="color:var(--accent);">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Thủ tục thuê
-          </a>
-        </li>
-        <li>
-          <a href="huongdan.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Hướng dẫn
-          </a>
-        </li>
-        <li>
-          <a href="loaixe.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Các loại xe
-          </a>
-        </li>
-        <li>
-          <a href="kinhnghiem.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Kinh nghiệm
-          </a>
-        </li>
-        <li>
-          <a href="ngay.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Thuê theo ngày
-          </a>
-        </li>
-        <li>
-          <a href="tuan.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Thuê theo tuần
-          </a>
-        </li>
-        <li>
-          <a href="thang.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Thuê theo tháng
-          </a>
-        </li>
-      </ul>
-    </div>
+   <!-- Column 3: Services (Collapsible) -->
+   <div class="footer-col" onclick="toggleFooterCol(this)">
+     <h4 class="footer-title">
+       Dịch vụ
+       <span class="footer-toggle-icon">▼</span>
+     </h4>
+     <ul class="footer-links">
+       <li>
+         <a href="banggia.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Bảng giá
+         </a>
+       </li>
+       <li>
+         <a href="thutuc.html" class="footer-link-item" style="color:var(--accent);">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Thủ tục thuê
+         </a>
+       </li>
+       <li>
+         <a href="huongdan.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Hướng dẫn
+         </a>
+       </li>
+       <li>
+         <a href="loaixe.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Các loại xe
+         </a>
+       </li>
+       <li>
+         <a href="kinhnghiem.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Kinh nghiệm
+         </a>
+       </li>
+       <li>
+         <a href="ngay.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Thuê theo ngày
+         </a>
+       </li>
+       <li>
+         <a href="tuan.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Thuê theo tuần
+         </a>
+       </li>
+       <li>
+         <a href="thang.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Thuê theo tháng
+         </a>
+       </li>
+     </ul>
+   </div>
 
-    <!-- Column 4: Locations (Collapsible) -->
-    <div class="footer-col" onclick="toggleFooterCol(this)">
-      <h4 class="footer-title">
-        Khu vực
-        <span class="footer-toggle-icon">▼</span>
-      </h4>
-      <ul class="footer-links">
-        <li>
-          <a href="gialam.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Gia Lâm
-          </a>
-        </li>
-        <li>
-          <a href="longbien.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Long Biên
-          </a>
-        </li>
-        <li>
-          <a href="phoco.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Phố Cổ
-          </a>
-        </li>
-        <li>
-          <a href="hoankiem.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Hoàn Kiếm
-          </a>
-        </li>
-        <li>
-          <a href="badinh.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Ba Đình
-          </a>
-        </li>
-        <li>
-          <a href="tayho.html" class="footer-link-item">
-            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-            Tây Hồ
-          </a>
-        </li>
-      </ul>
-    </div>
+   <!-- Column 4: Locations (Collapsible) -->
+   <div class="footer-col" onclick="toggleFooterCol(this)">
+     <h4 class="footer-title">
+       Khu vực
+       <span class="footer-toggle-icon">▼</span>
+     </h4>
+     <ul class="footer-links">
+       <li>
+         <a href="gialam.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Gia Lâm
+         </a>
+       </li>
+       <li>
+         <a href="longbien.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Long Biên
+         </a>
+       </li>
+       <li>
+         <a href="phoco.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Phố Cổ
+         </a>
+       </li>
+       <li>
+         <a href="hoankiem.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Hoàn Kiếm
+         </a>
+       </li>
+       <li>
+         <a href="badinh.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Ba Đình
+         </a>
+       </li>
+       <li>
+         <a href="tayho.html" class="footer-link-item">
+           <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+           Tây Hồ
+         </a>
+       </li>
+     </ul>
+   </div>
 
-    <!-- Column 5: Contact Info -->
-    <div class="footer-col col-contact" onclick="toggleFooterCol(this)">
-      <h4 class="footer-title">
-        Liên hệ
-        <span class="footer-toggle-icon">▼</span>
-      </h4>
-      <div class="contact-list">
-        <div class="contact-item">
-          <span class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          </span>
-          <span><a href="tel:0334699969" style="color:var(--text-primary); font-weight:700;">0334 699 969</a></span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-          </span>
-          <span>108 Nguyễn Văn Cừ, Long Biên, Hà Nội</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          </span>
-          <span>nguyenthuha203@gmail.com</span>
-        </div>
-      </div>
-    </div>
+   <!-- Column 5: Contact Info -->
+   <div class="footer-col col-contact" onclick="toggleFooterCol(this)">
+     <h4 class="footer-title">
+       Liên hệ
+       <span class="footer-toggle-icon">▼</span>
+     </h4>
+     <div class="contact-list">
+       <div class="contact-item">
+         <span class="contact-icon">
+           <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+         </span>
+         <span><a href="tel:0334699969" style="color:var(--text-primary); font-weight:700;">0334 699 969</a></span>
+       </div>
+       <div class="contact-item">
+         <span class="contact-icon">
+           <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+         </span>
+         <span>108 Nguyễn Văn Cừ, Long Biên, Hà Nội</span>
+       </div>
+       <div class="contact-item">
+         <span class="contact-icon">
+           <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+         </span>
+         <span>nguyenthuha203@gmail.com</span>
+       </div>
+     </div>
+   </div>
 
-  </div>
+ </div>
 
-  <div class="footer-bottom">
-    <div><a href="index.html" style="text-decoration:none; color:inherit;">© Cho thuê xe máy 50cc Hà Nội - Thu Hà</a></div>
-    <div style="font-size:12px; opacity:0.6; margin-top:5px;">
-      <a href="dieukhoan.html">Điều khoản</a> • <a href="chinhsach.html">Chính sách bảo mật</a>
-    </div>
-  </div>
+ <div class="footer-bottom">
+   <div><a href="index.html" style="text-decoration:none; color:inherit;">© Cho thuê xe máy 50cc Hà Nội - Thu Hà</a></div>
+   <div style="font-size:12px; opacity:0.6; margin-top:5px;">
+     <a href="dieukhoan.html">Điều khoản</a> • <a href="chinhsach.html">Chính sách bảo mật</a>
+   </div>
+ </div>
 </div>
 </footer>
 
 <!-- QUICK ACTION FAB -->
 <div class="fab-container" id="quickFab">
 <div class="fab-menu">
-  <a href="tel:0334699969" class="fab-label">
-    <span>📞</span> Gọi điện
-  </a>
-  <a href="https://zalo.me/0334699969" class="fab-label">
-    <span>💬</span> Chat Zalo
-  </a>
-  <a href="https://wa.me/84334699969" target="_blank" rel="noopener" class="fab-label">
-    <span>🟢</span> WhatsApp
-  </a>
-  <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener" class="fab-label">
-    <span>📍</span> Chỉ đường
-  </a>
-  <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
-    <span>⬆️</span> Lên đầu trang
-  </button>
+ <a href="tel:0334699969" class="fab-label">
+   <span>📞</span> Gọi điện
+ </a>
+ <a href="https://zalo.me/0334699969" class="fab-label">
+   <span>💬</span> Chat Zalo
+ </a>
+ <a href="https://wa.me/84334699969" target="_blank" rel="noopener noreferrer" class="fab-label">
+   <span>🟢</span> WhatsApp
+ </a>
+ <a href="https://www.google.com/maps/search/?api=1&query=108+Nguyễn+Văn+Cừ,+Long+Biên,+Hà+Nội" target="_blank" rel="noopener noreferrer" class="fab-label">
+   <span>📍</span> Chỉ đường
+ </a>
+ <button type="button" class="fab-label" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+   <span>⬆️</span> Lên đầu trang
+ </button>
 </div>
 <button class="fab-main" type="button" onclick="toggleFab()" aria-label="Menu tác vụ nhanh">⚡</button>
 </div>
@@ -872,7 +883,13 @@ html.setAttribute('data-theme', next);
 localStorage.setItem('theme', next);
 updateThemeIcon(next);
 });
-function updateThemeIcon(theme) { themeToggle.textContent = theme === 'light' ? '🌙' : '☀️'; }
+
+// Update icon logic: Show the icon of the state we will switch TO
+// If Light (Sun), show Moon to switch to Dark.
+// If Dark, show Sun to switch to Light.
+function updateThemeIcon(theme) {
+ themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+}
 
 // --- 2. OPENING STATUS LOGIC (9h-21h) ---
 const statusDot = document.getElementById('statusDot');
@@ -883,47 +900,103 @@ const now = new Date();
 const hour = now.getHours();
 const isOpen = hour >= 9 && hour < 21;
 if (isOpen) {
-  statusDot.classList.add('open'); statusDot.classList.remove('closed'); statusText.textContent = 'Đang mở • 9h – 21h';
+ statusDot.classList.add('open'); statusDot.classList.remove('closed'); statusText.textContent = 'Đang mở • 9h – 21h';
 } else {
-  statusDot.classList.add('closed'); statusDot.classList.remove('open'); statusText.textContent = 'Đã đóng • 9h – 21h';
+ statusDot.classList.add('closed'); statusDot.classList.remove('open'); statusText.textContent = 'Đã đóng • 9h – 21h';
 }
 }
 
-// --- 3. SIDEBAR LOGIC ---
+// --- 3. SIDEBAR LOGIC (A11Y: Focus Trap + Escape Key) ---
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('sidebarClose');
-function openSidebar() { sidebar.classList.add('open'); overlay.classList.add('show'); document.body.style.overflow = 'hidden'; }
-function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('show'); document.body.style.overflow = ''; }
+
+function openSidebar() {
+ sidebar.classList.add('open');
+ overlay.classList.add('show');
+ document.body.style.overflow = 'hidden';
+ // A11y: Listen for Escape key
+ document.addEventListener('keydown', handleSidebarKeydown);
+ // A11y: Move focus to close button
+ setTimeout(() => closeBtn.focus(), 100);
+}
+
+function closeSidebar() {
+ sidebar.classList.remove('open');
+ overlay.classList.remove('show');
+ document.body.style.overflow = '';
+ // A11y: Clean up listeners and return focus
+ document.removeEventListener('keydown', handleSidebarKeydown);
+ menuBtn.focus();
+}
+
+function handleSidebarKeydown(e) {
+ if (e.key === 'Escape') {
+   closeSidebar();
+ }
+ // Focus Trap Logic (Keep focus inside sidebar)
+ const focusable = sidebar.querySelectorAll('button, a, input, select, textarea, [tabindex]:not([tabindex="-1"])');
+ const firstFocusable = focusable[0];
+ const lastFocusable = focusable[focusable.length - 1];
+
+ if (e.key === 'Tab') {
+   if (e.shiftKey) { // Shift + Tab
+     if (document.activeElement === firstFocusable) {
+       e.preventDefault();
+       lastFocusable.focus();
+     }
+   } else { // Tab
+     if (document.activeElement === lastFocusable) {
+       e.preventDefault();
+       firstFocusable.focus();
+     }
+   }
+ }
+}
+
 menuBtn.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
 overlay.addEventListener('click', closeSidebar);
 
-// --- 4. SUBMENU DROPDOWN ---
+// --- 4. SUBMENU DROPDOWN (A11Y Update) ---
 function toggleSub(id) {
-const parent = document.getElementById(id);
-const sub = parent.querySelector('.nav-sub');
-const wasOpen = sub.classList.contains('open');
-if (wasOpen) { sub.classList.remove('open'); parent.classList.remove('active'); }
-else { sub.classList.add('open'); parent.classList.add('active'); }
+ const parent = document.getElementById(id);
+ const btn = parent.querySelector('.nav-item'); // Button trigger
+ const sub = parent.querySelector('.nav-sub');
+ const wasOpen = sub.classList.contains('open');
+
+ if (wasOpen) {
+   sub.classList.remove('open');
+   parent.classList.remove('active');
+   btn.setAttribute('aria-expanded', 'false');
+ } else {
+   sub.classList.add('open');
+   parent.classList.add('active');
+   btn.setAttribute('aria-expanded', 'true');
+ }
 }
 
-// --- 5. CALCULATOR LOGIC (RESTORED) ---
+// --- 5. CALCULATOR LOGIC (Security: DOMPurify) ---
 const bikeType = document.getElementById('bikeType');
 const dayCount = document.getElementById('dayCount');
 const totalPrice = document.getElementById('totalPrice');
+
 function updatePrice() {
-const price = parseInt(bikeType.value) || 0;
-let days = parseInt(dayCount.value);
-if (isNaN(days) || days < 1) { days = 1; dayCount.value = 1; }
-const total = price * days;
-totalPrice.textContent = total.toLocaleString('vi-VN') + ' ₫';
+ const price = parseInt(bikeType.value) || 0;
+ let days = parseInt(dayCount.value);
+ if (isNaN(days) || days < 1) { days = 1; dayCount.value = 1; }
+ 
+ const total = price * days;
+ // Use DOMPurify before setting text (though textContent is safe, this follows the protocol)
+ const safeText = DOMPurify.sanitize(total.toLocaleString('vi-VN') + ' ₫');
+ totalPrice.textContent = safeText;
 }
+
 if (bikeType && dayCount) {
- bikeType.addEventListener('change', updatePrice);
- dayCount.addEventListener('input', updatePrice);
- updatePrice(); // Init on load
+bikeType.addEventListener('change', updatePrice);
+dayCount.addEventListener('input', updatePrice);
+updatePrice(); // Init on load
 }
 
 // --- 6. FAB & FOOTER MOBILE ---
@@ -938,12 +1011,12 @@ updateOpeningStatus();
 setInterval(updateOpeningStatus, 60 * 1000);
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
+ entries.forEach(entry => {
+   if (entry.isIntersecting) {
+     entry.target.classList.add('show');
+     observer.unobserve(entry.target);
+   }
+ });
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.section-fade').forEach(el => observer.observe(el));
