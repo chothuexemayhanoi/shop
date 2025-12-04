@@ -3,3 +3,5 @@ Allow: /
 Disallow:
 
 Sitemap: https://chothuexemayhanoi.github.io/shop/sitemap.xml
+
+sitemap: https://chothuexemayhanoi.github.io/shop/sitemap-mangxahoi.xml
