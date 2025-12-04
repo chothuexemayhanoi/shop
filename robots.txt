@@ -4,4 +4,4 @@ Disallow:
 
 Sitemap: https://chothuexemayhanoi.github.io/shop/sitemap.xml
 
-sitemap: https://chothuexemayhanoi.github.io/shop/sitemap-mangxahoi.xml
+Sitemap: https://chothuexemayhanoi.github.io/shop/sitemap-mangxahoi.xml
