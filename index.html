@@ -48,7 +48,7 @@ Trang chủ – Thu Hà Cho thuê xe máy 50cc Hà Nội
 <!-- SECURITY: DOMPurify for sanitizing AI outputs -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js" xintegrity="sha512-H+rP+0ybW5YK9yX1M2/tXYJjXyz1E80z8zD+F91wzZCcG01m/0/1GZ6YdGzA9T+T+04ZCA7c4q7yK8y9v8W9g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
 
-<!-- Schema Markup (JSON-LD) - FIXED: Removed extra quotes, ensured numbers -->
+<!-- Schema Markup (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -518,7 +518,7 @@ footer {
 
 @media (max-width: 600px) {
   footer { padding: 40px 0 20px; }
-  
+   
   .footer-grid {
     display: flex;
     flex-direction: column;
@@ -529,7 +529,7 @@ footer {
     border-bottom: 1px solid var(--border);
     padding: 16px 0;
   }
-  
+   
   .footer-col:last-child { border-bottom: none; }
   .col-brand { border-bottom: none; padding-bottom: 24px; }
 
@@ -541,7 +541,7 @@ footer {
   }
 
   .footer-toggle-icon { display: block; }
-  
+   
   .footer-links {
     max-height: 0;
     opacity: 0;
@@ -553,16 +553,16 @@ footer {
     opacity: 1;
     margin-top: 16px;
   }
-  
+   
   .footer-col.active .footer-toggle-icon {
     transform: rotate(180deg);
   }
-  
+   
   .col-contact .contact-list {
      display: none;
      margin-top: 16px;
   }
-  
+   
   .col-contact.active .contact-list {
     display: flex;
     animation: fadeIn 0.4s;
@@ -682,8 +682,9 @@ footer {
 <body>
 <div class="page-wrap">
 <!-- SIDEBAR + OVERLAY -->
+<!-- FIXED: Sidebar tabindex="-1" and aria-hidden="true" -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu chính">
+<aside class="sidebar" id="sidebar" role="dialog" aria-modal="true" aria-label="Menu chính" tabindex="-1" aria-hidden="true">
   <div class="sidebar-header">
     <div class="sidebar-title">Menu</div>
     <button class="sidebar-close" id="sidebarClose" aria-label="Đóng menu">✕</button>
@@ -762,7 +763,7 @@ footer {
   <div class="header-left">
     <button class="icon-btn" id="menuBtn" aria-label="Mở menu">☰</button>
   </div>
-  
+   
   <div class="header-center">
     <a href="index.html" class="logo-pill">
       <div class="logo-icon">TH</div>
@@ -797,7 +798,7 @@ footer {
           </div>
           <h1 class="hero-title">Thuê xe máy 50cc <br /><span class="text-gradient">Gần BX Gia Lâm & Hà Nội</span></h1>
           <p class="hero-desc">Dịch vụ <a href="https://thuexemaynguyentu.com" style="color:var(--accent); font-weight:600;">Thuê xe máy Hà Nội</a> Thu Hà uy tín. Xe mới, thủ tục đơn giản cọc nhẹ, CCCD. Giao xe tận nơi khách sạn, homestay.</p>
-          
+           
           <div class="hero-actions">
             <a href="tel:0334699969" class="btn btn-primary">📞 Gọi 0334 699 969</a>
             <a href="https://zalo.me/0334699969" target="_blank" rel="noopener noreferrer" class="btn btn-glass">💬 Chat Zalo</a>
@@ -813,7 +814,7 @@ footer {
             <span style="font-weight:600; text-transform:uppercase; color:var(--text-secondary); letter-spacing:1px; font-size:12px;">Dự tính chi phí</span>
             <span>🧮</span>
           </div>
-          
+           
           <div class="form-group">
             <label for="bikeType" class="form-label">Loại xe</label>
             <select id="bikeType" class="form-control">
@@ -827,7 +828,7 @@ footer {
             <label for="dayCount" class="form-label">Số ngày thuê</label>
             <input type="number" id="dayCount" class="form-control" value="1" min="1">
           </div>
-          
+           
           <div class="calc-result">
             <span style="font-size:14px; color:var(--text-tertiary);">Tạm tính:</span>
             <span class="price-display" id="totalPrice">150.000 ₫</span>
@@ -864,7 +865,7 @@ footer {
           quanh Gia Lâm, Long Biên, Hoàn Kiếm và khu vực trung tâm Hà Nội.
         </p>
       </div>
-      
+       
       <div class="bike-grid">
         <!-- Item 1 -->
         <div class="bike-card">
@@ -1021,7 +1022,7 @@ footer {
             </tbody>
           </table>
         </div>
-        
+         
         <div style="padding: 24px;">
            <p>
             Bảng giá trên áp dụng cho khách thuê xe máy du lịch và công tác tại khu vực Hà Nội, 
@@ -1065,7 +1066,7 @@ footer {
            </ul>
         </div>
       </div>
-      
+       
       <!-- NEW AI ITINERARY SECTION -->
       <section class="section" id="ai-planner" style="padding-bottom: 0;">
         <div class="card prose" style="max-width: 100%; background: linear-gradient(135deg, rgba(0,113,227,0.05) 0%, rgba(0,0,0,0) 100%); border-color: var(--accent-soft);">
@@ -1075,7 +1076,7 @@ footer {
               Bạn chưa biết đi đâu? Hãy để Trợ lý AI của Thu Hà gợi ý lộ trình ăn chơi "chuẩn bài" cho bạn.
             </p>
           </div>
-          
+           
           <div class="grid-2" style="margin-bottom: 20px;">
             <div class="form-group">
               <label for="aiTime" class="form-label">Bạn có bao nhiêu thời gian?</label>
@@ -1094,7 +1095,7 @@ footer {
           <button onclick="generateItinerary()" id="btnGenerateItinerary" class="btn btn-primary" style="width: 100%;">
             ✨ Tạo lịch trình ngay
           </button>
-          
+           
           <div id="aiResult" class="ai-result-box" style="display:none; margin-top: 24px; padding: 20px; background: var(--bg-surface); border-radius: 12px; border: 1px solid var(--accent);">
             <!-- Content will load here -->
           </div>
@@ -1197,7 +1198,7 @@ footer {
           <li><strong>Bước 2:</strong> Gửi vị trí khách sạn hoặc hẹn nhận xe tại bến xe Gia Lâm / Phố Cổ.</li>
           <li><strong>Bước 3:</strong> Nhận xe, ký biên nhận đơn giản (CCCD hoặc cọc nhẹ) là có thể chạy ngay.</li>
         </ol>
-        
+         
         <div class="prose-note">
           ⓘ Với khách nước ngoài, có thể hỗ trợ tiếng Anh cơ bản qua Zalo/WhatsApp (liên hệ trước để sắp xếp).
         </div>
@@ -1215,7 +1216,7 @@ footer {
           đặc biệt là khu vực bến xe Gia Lâm và các quận trung tâm.
         </p>
       </div>
-      
+       
       <div class="faq-group">
         <details class="faq-item">
           <summary>Tôi không có bằng lái xe thì thuê loại nào?</summary>
@@ -1257,12 +1258,12 @@ footer {
             <label for="contactName" class="form-label">Họ và tên</label>
             <input type="text" id="contactName" name="Ho_Ten" class="form-control" placeholder="Nhập tên của bạn" required>
           </div>
-          
+           
           <div class="form-group">
             <label for="contactPhone" class="form-label">Số điện thoại / Zalo</label>
             <input type="tel" id="contactPhone" name="So_Dien_Thoai" class="form-control" placeholder="Nhập SĐT để liên hệ" pattern="[0-9]{9,11}" required>
           </div>
-          
+           
           <div class="form-group">
             <label for="contactBike" class="form-label">Loại xe quan tâm</label>
             <select id="contactBike" name="Loai_Xe" class="form-control">
@@ -1273,12 +1274,12 @@ footer {
               <option value="Tu_Van_Them">Cần tư vấn thêm</option>
             </select>
           </div>
-          
+           
           <div class="form-group">
             <label for="contactMsg" class="form-label">Lời nhắn (Ngày nhận xe, địa chỉ giao...)</label>
             <textarea id="contactMsg" name="Loi_Nhan" class="form-control" rows="4" placeholder="Ví dụ: Tôi muốn thuê từ sáng mai tại phố cổ..."></textarea>
           </div>
-          
+           
           <div style="text-align:center; margin-top:24px;">
             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">📨 Gửi yêu cầu ngay</button>
             <p style="font-size:12px; color:var(--text-tertiary); margin-top:12px;">
@@ -1562,7 +1563,7 @@ footer {
         <div class="contact-list">
           <div class="contact-item">
             <span class="contact-icon">
-              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             </span>
             <span><a href="tel:0334699969" style="color:var(--text-primary); font-weight:700;">0334 699 969</a></span>
           </div>
@@ -1669,25 +1670,42 @@ function updateOpeningStatus() {
 }
 
 // --- 3. SIDEBAR LOGIC + FOCUS TRAP (A11Y) ---
+// REPLACED: improved sidebar focus-trap & safer logic
 const sidebar = document.getElementById('sidebar');
 const overlay = document.getElementById('sidebarOverlay');
 const menuBtn = document.getElementById('menuBtn');
 const closeBtn = document.getElementById('sidebarClose');
 
 function openSidebar() {
+  if (!sidebar) return;
   sidebar.classList.add('open');
   overlay.classList.add('show');
   document.body.style.overflow = 'hidden';
-  sidebar.focus(); // Move focus to sidebar
+  sidebar.setAttribute('aria-hidden', 'false');
+
+  // Find focusable elements inside sidebar
+  const focusable = Array.from(sidebar.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                           .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+  // Focus the first focusable element if exists, else focus the sidebar itself (now focusable via tabindex)
+  if (focusable.length) {
+    focusable[0].focus();
+  } else {
+    sidebar.focus();
+  }
+
+  // Add keydown listener for focus trap & Escape
   document.addEventListener('keydown', trapFocus);
 }
 
 function closeSidebar() {
+  if (!sidebar) return;
   sidebar.classList.remove('open');
   overlay.classList.remove('show');
   document.body.style.overflow = '';
+  sidebar.setAttribute('aria-hidden', 'true');
   document.removeEventListener('keydown', trapFocus);
-  menuBtn.focus(); // Restore focus to trigger
+  if (menuBtn) menuBtn.focus();
 }
 
 function trapFocus(e) {
@@ -1697,9 +1715,22 @@ function trapFocus(e) {
   }
   if (e.key !== 'Tab') return;
 
-  const focusable = sidebar.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+  const focusable = Array.from(sidebar.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                           .filter(el => !el.hasAttribute('disabled') && el.offsetParent !== null);
+
+  if (focusable.length === 0) {
+    return;
+  }
+
   const first = focusable[0];
   const last = focusable[focusable.length - 1];
+
+  // If focus is still outside sidebar (rare), bring it to first
+  if (!sidebar.contains(document.activeElement)) {
+    first.focus();
+    e.preventDefault();
+    return;
+  }
 
   if (e.shiftKey) {
     if (document.activeElement === first) {
@@ -1714,27 +1745,44 @@ function trapFocus(e) {
   }
 }
 
-menuBtn.addEventListener('click', openSidebar);
-closeBtn.addEventListener('click', closeSidebar);
-overlay.addEventListener('click', closeSidebar);
+if (menuBtn) menuBtn.addEventListener('click', openSidebar);
+if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+if (overlay) overlay.addEventListener('click', closeSidebar);
 
-// --- 4. SUBMENU DROPDOWN ---
+// --- 4. SUBMENU DROPDOWN (IMPROVED) ---
 function toggleSub(id) {
   const parent = document.getElementById(id);
-  const btn = parent.querySelector('button.nav-item');
+  if (!parent) return;
+  // find button that toggles; allow either button.nav-item or direct .nav-item
+  const btn = parent.querySelector('button.nav-item') || parent.querySelector('.nav-item');
   const sub = parent.querySelector('.nav-sub');
+  if (!sub) return;
+
   const wasOpen = sub.classList.contains('open');
-  
+
   if (wasOpen) {
     sub.classList.remove('open');
     parent.classList.remove('active');
-    btn.setAttribute('aria-expanded', 'false');
+    if (btn && btn.setAttribute) btn.setAttribute('aria-expanded', 'false');
   } else {
     sub.classList.add('open');
     parent.classList.add('active');
-    btn.setAttribute('aria-expanded', 'true');
+    if (btn && btn.setAttribute) btn.setAttribute('aria-expanded', 'true');
   }
 }
+
+// Add keyboard support for nav toggles (Enter / Space)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav-has-sub > .nav-item, .nav-has-sub > button').forEach(btn => {
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const parent = btn.closest('.nav-has-sub');
+        if (parent && parent.id) toggleSub(parent.id);
+      }
+    });
+  });
+});
 
 // --- 5. CALCULATOR ---
 const bikeType = document.getElementById('bikeType');
@@ -1782,7 +1830,7 @@ function toggleFooterCol(element) {
   if (window.innerWidth > 600) return;
   const titleBtn = element.querySelector('.footer-title');
   const isExpanded = element.classList.contains('active');
-  
+   
   element.classList.toggle('active');
   if(titleBtn) titleBtn.setAttribute('aria-expanded', !isExpanded);
 }
@@ -1938,7 +1986,7 @@ async function generateItinerary() {
   // Format formatting
   text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
   text = text.replace(/\n/g, '<br>');
-  
+   
   renderSafe('aiResult', text);
   btn.disabled = false;
 }
@@ -1967,11 +2015,11 @@ async function consultBike() {
 async function translateText() {
   const input = document.getElementById('transInput').value;
   if(!input.trim()) return;
-  
+   
   const resultBox = document.getElementById('transResult');
   resultBox.style.display = 'block';
   renderSafe('transResult', '<span class="loading-spinner"></span> Đang dịch...');
-  
+   
   const text = await callGemini(`Dịch: "${input}"`, "Bạn là thông dịch viên.");
   renderSafe('transResult', text.replace(/\n/g, '<br>'));
 }
@@ -1980,11 +2028,11 @@ async function translateText() {
 async function askTrafficLaw() {
   const input = document.getElementById('lawInput').value;
   if(!input.trim()) return;
-  
+   
   const resultBox = document.getElementById('lawResult');
   resultBox.style.display = 'block';
   renderSafe('lawResult', '<span class="loading-spinner"></span> Đang tra cứu...');
-  
+   
   const text = await callGemini(`Luật: "${input}"`, "Bạn là cảnh sát giao thông.");
   renderSafe('lawResult', text);
 }
